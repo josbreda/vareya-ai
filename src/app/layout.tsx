@@ -5,6 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { GTM } from "@/components/layout/GTM";
 import { ConsentBanner } from "@/components/layout/ConsentBanner";
+import { organizationSchema, websiteSchema } from "@/lib/seo";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -46,6 +47,18 @@ export default function RootLayout({
     <html lang="en-GB" className={`${inter.variable} h-full`}>
       <head>
         <GTM />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema()),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema()),
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-white text-slate-900 antialiased">
         <a href="#main-content" className="skip-link">
