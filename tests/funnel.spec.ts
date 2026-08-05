@@ -78,10 +78,13 @@ test.describe("Quote Form", () => {
 
   test("quote: validation rejects empty required fields", async ({ page }) => {
     await page.goto("/request-fulfilment-quote/");
-    // Accept privacy, submit empty form
-    await page.locator("input[type='checkbox']").first().check();
+    // Check the privacy checkbox (the last one, required for form submission)
+    const checkboxes = page.locator("input[type='checkbox']");
+    const count = await checkboxes.count();
+    await checkboxes.nth(count - 1).check();
     await page.click("text=Request quote");
-    await expect(page.locator("text=Name is required")).toBeVisible();
+    // Validation should show error for empty name
+    await expect(page.getByText("Name is required", { exact: true })).toBeVisible();
   });
 });
 
