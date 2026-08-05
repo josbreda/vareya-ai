@@ -1,0 +1,195 @@
+/**
+ * POST /api/leads
+ *
+ * Processes fulfilment scan and quote form submissions.
+ * Processing order: validate → Turnstile → insert → notify → confirm → log
+ *
+ * Security:
+ * - Server-side only (service role key never exposed)
+ * - Turnstile validated server-side
+ * - Honeypot detection
+ * - Input sanitisation
+ * - No PII in responses
+ */
+
+import { NextRequest, NextResponse } from "next/server";
+import { generateSubmissionId, sanitiseLeadData, validateLeadInput } from "@/lib/leads";
+import { validateTurnstile } from "@/lib/turnstile";
+import { sendInternalNotification, sendProspectConfirmation } from "@/lib/email";
+import { SERVER_ENV } from "@/lib/leads/config";
+
+export async function POST(request: NextRequest) {
+  const startTime = Date.now();
+
+  try {
+    const raw = await request.json();
+
+    // 0. Honeypot check
+    if (raw.website && (raw.website as string).trim() !== "") {
+      // Bot detected — return fake success
+      console.log("[api/leads] Honeypot triggered — returning fake success");
+      return NextResponse.json({
+        success: true,
+        submission_id: generateSubmissionId(),
+      });
+    }
+
+    // 1. Validate input
+    const { valid, errors } = validateLeadInput(raw);
+    if (!valid) {
+      return NextResponse.json(
+        { error: "Validation failed", details: errors },
+        { status: 422 }
+      );
+    }
+
+    // 1a. Rate limiting (basic — per IP)
+    // TODO: Implement proper rate limiting with Redis or Upstash
+
+    // 2. Validate Turnstile
+    const turnstileToken = (raw.turnstile_token as string) || "";
+    const turnstileValid = await validateTurnstile(turnstileToken);
+    if (!turnstileValid) {
+      return NextResponse.json(
+        { error: "Security check failed. Please refresh and try again." },
+        { status: 400 }
+      );
+    }
+
+    // 3. Sanitise and generate submission ID
+    const submissionId = generateSubmissionId();
+    const clean = sanitiseLeadData({ ...raw, submission_id: submissionId });
+
+    // 4. Insert into Supabase
+    let leadId: string | null = null;
+    const supabaseConfigured = SERVER_ENV.supabaseUrl && SERVER_ENV.supabaseServiceRoleKey;
+
+    if (supabaseConfigured) {
+      try {
+        // Dynamic import to avoid build errors when Supabase not installed
+        const { createClient } = await import("@supabase/supabase-js");
+        const supabase = createClient(
+          SERVER_ENV.supabaseUrl,
+          SERVER_ENV.supabaseServiceRoleKey
+        );
+
+        const { data: lead, error: insertError } = await supabase
+          .from("leads")
+          .insert({
+            submission_id: submissionId,
+            form_type: clean.form_type,
+            status: "new",
+            name: clean.name,
+            company: clean.company,
+            work_email: clean.work_email,
+            phone: clean.phone || null,
+            website: clean.website || null,
+            company_country: clean.company_country || null,
+            monthly_order_volume: clean.monthly_order_volume || null,
+            sku_count: clean.sku_count || null,
+            product_category: clean.product_category || null,
+            target_markets: clean.target_markets || [],
+            ecommerce_platform: clean.ecommerce_platform || null,
+            amazon_fbm: clean.amazon_fbm || false,
+            returns_required: clean.returns_required || false,
+            desired_start_date: clean.desired_start_date || null,
+            comments: clean.comments || null,
+            scan_answers: clean.form_type === "scan" ? clean : null,
+            landing_page: clean.landing_page || "",
+            referrer: clean.referrer || "",
+            utm_source: clean.utm_source || null,
+            utm_medium: clean.utm_medium || null,
+            utm_campaign: clean.utm_campaign || null,
+            utm_content: clean.utm_content || null,
+            device: clean.device || null,
+            privacy_acknowledged_at: clean.privacy_acknowledged_at || new Date().toISOString(),
+          })
+          .select("id")
+          .single();
+
+        if (insertError) {
+          console.error("[api/leads] Supabase insert error:", insertError);
+          // Don't expose internal error details
+          return NextResponse.json(
+            { error: "Unable to process your submission. Please try again." },
+            { status: 500 }
+          );
+        }
+
+        leadId = lead?.id || null;
+
+        // Log lead event
+        await supabase.from("lead_events").insert({
+          lead_id: leadId,
+          event_name: "lead_created",
+          metadata: {
+            form_type: clean.form_type,
+            submission_id: submissionId,
+            company: clean.company,
+            processing_time_ms: Date.now() - startTime,
+          },
+        });
+      } catch (err) {
+        console.error("[api/leads] Supabase error:", err);
+        return NextResponse.json(
+          { error: "Unable to process your submission. Please try again." },
+          { status: 500 }
+        );
+      }
+    } else {
+      // Supabase not configured — log and continue with mock
+      console.log("[api/leads] Supabase not configured — lead logged only:", {
+        submission_id: submissionId,
+        form_type: clean.form_type,
+        company: clean.company,
+        name: clean.name,
+        processing_time_ms: Date.now() - startTime,
+      });
+    }
+
+    // 5. Send internal notification (non-blocking)
+    // Fire-and-forget — email failure must not roll back lead
+    sendInternalNotification(
+      submissionId,
+      (clean.form_type as string) || "unknown",
+      (clean.company as string) || "Unknown",
+      (clean.name as string) || "Unknown"
+    ).catch((err) => {
+      console.error("[api/leads] Internal notification failed:", err);
+    });
+
+    // 6. Send prospect confirmation (non-blocking)
+    if (clean.work_email) {
+      sendProspectConfirmation(
+        clean.work_email as string,
+        (clean.name as string) || "there",
+        (clean.form_type as string) || "unknown",
+        submissionId
+      ).catch((err) => {
+        console.error("[api/leads] Prospect confirmation failed:", err);
+      });
+    }
+
+    // 7. Return success
+    return NextResponse.json({
+      success: true,
+      submission_id: submissionId,
+    });
+  } catch (err) {
+    console.error("[api/leads] Unhandled error:", err);
+    return NextResponse.json(
+      { error: "Something went wrong. Please try again." },
+      { status: 500 }
+    );
+  }
+}
+
+/**
+ * Rate limiting helper — placeholder.
+ * Replace with Upstash Redis or similar in production.
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+function _checkRateLimit(_ip: string): boolean {
+  // TODO: Implement rate limiting
+  return true;
+}
