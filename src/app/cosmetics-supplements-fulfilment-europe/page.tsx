@@ -64,7 +64,7 @@ export default function CosmeticsPage() {
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">Built for beauty and wellness brands</h2>
           <p className="text-muted text-center max-w-2xl mx-auto mb-12">From serums to supplements, your products deserve fulfilment that matches your brand quality.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[{ title: "Qualification first", desc: "Before you send a single product, we review your catalogue to confirm we are the right fulfilment partner. No surprises, no mismatched expectations." }, { title: "Attention to detail", desc: "Your packaging, your branding, your customer experience. We handle every order with the care your brand deserves." }, { title: "Scalable as you grow", desc: `From ${CAPABILITIES.minMonthlyOrders.toLocaleString()} orders a month to many times that. Our process scales with your brand's growth.` }].map(item => (
+            {[{ title: "Qualification first", desc: "Before you send a single product, we review your catalogue to confirm we are the right fulfilment partner. No surprises, no mismatched expectations." }, { title: "Attention to detail", desc: "Your packaging, your branding, your customer experience. We handle orders with the care your brand deserves." }, { title: "Scalable as you grow", desc: `From ${CAPABILITIES.minMonthlyOrders.toLocaleString()} orders a month to many times that. Our process scales with your brand's growth.` }].map(item => (
               <div key={item.title} className="p-6 bg-white rounded-xl border border-slate-200">
                 <h3 className="font-semibold text-slate-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-muted leading-relaxed">{item.desc}</p>

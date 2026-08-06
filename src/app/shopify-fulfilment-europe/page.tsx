@@ -69,7 +69,7 @@ export default function ShopifyFulfilmentPage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4">Built for Shopify merchants</h2>
           <p className="text-muted max-w-2xl mx-auto mb-10">Fulfilment that works the way your Shopify store does — automatically.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
-            {[{ title: "Automatic order sync", desc: "Orders flow from Shopify to our warehouse without any manual steps. Focus on growing your store — we handle the rest." }, { title: "Real-time tracking", desc: "Shipping updates and tracking numbers sync back to Shopify. Your customers stay informed throughout the delivery process." }, { title: "One integration, all of Europe", desc: "Whether you sell to one European country or twenty, one Shopify-Vareya connection covers all your fulfilment needs." }].map(item => (
+            {[{ title: "Automatic order sync", desc: "Orders flow from Shopify to our warehouse without any manual steps. Focus on growing your store — we handle the rest." }, { title: "Tracking updates", desc: "Shipping updates and tracking numbers sync back to Shopify. Your customers stay informed throughout the delivery process." }, { title: "One integration, all of Europe", desc: "One Shopify-Vareya connection covers your European fulfilment needs across the markets discussed during qualification." }].map(item => (
               <div key={item.title} className="p-6 bg-white rounded-xl border border-slate-200">
                 <h3 className="font-semibold text-slate-900 mb-2">{item.title}</h3>
                 <p className="text-sm text-muted leading-relaxed">{item.desc}</p>
