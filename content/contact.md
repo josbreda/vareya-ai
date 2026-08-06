@@ -16,7 +16,7 @@ requiresRaymondApproval: false
 
 ## Intro
 
-For fulfilment enquiries, the fulfilment scan or quote request form is the fastest way to reach the right next step. For anything else, reach Vareya directly using the details below.
+For fulfilment and logistics enquiries, the fulfilment scan or quote request form is the most direct way to reach the right next step. For anything else, reach Vareya directly using the details below.
 
 ## Contact details
 

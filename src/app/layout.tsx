@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | Vareya",
   },
   description:
-    "Fast, reliable order fulfilment from Breda, the Netherlands. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling included.",
+    "Reliable order fulfilment from Breda, the Netherlands. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling available.",
   metadataBase: new URL("https://vareya.ai"),
   openGraph: {
     type: "website",

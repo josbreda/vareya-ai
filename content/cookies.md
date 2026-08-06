@@ -1,43 +1,56 @@
 ---
 route: "/cookies/"
 pageType: "legal"
-status: "approved-draft"
+status: "production-draft"
 seoTitle: "Cookie Policy | Vareya"
-metaDescription: "How Vareya BV uses cookies and similar technologies on this website."
+metaDescription: "How Vareya uses cookies and similar technologies on vareya.ai."
 h1: "Cookie Policy"
-primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
-secondaryCtaLabel: "Request a fulfilment quote"
-secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: true
 ---
 
 # Cookie Policy
 
-## What cookies are
+**Last updated: 6 August 2026**
 
-Cookies are small text files placed on your device when you visit a website. They are used to make the website function, to remember choices, and in some cases to understand how the website is used.
+## What are cookies
 
-## Cookies used on this website
+Cookies are small text files placed on your device when you visit a website. They help the website function, improve security, and provide anonymised usage information.
 
-[PLACEHOLDER: list of specific cookies, their names, purposes and durations, matching the tools actually implemented on the production website].
+## Cookies we use
 
-## Categories
+### Essential cookies
 
-Essential cookies: required for the website and forms, such as the fulfilment scan, to function.
+| Cookie | Provider | Purpose | Duration |
+|---|---|---|---|
+| `cf-turnstile-*` | Cloudflare | Security — spam/bot protection on forms | Session |
+| `consent` | vareya.ai | Stores your cookie preferences | 12 months |
 
-Analytics cookies: [PLACEHOLDER: confirm whether analytics cookies are used, and by which provider, before publication].
+### Analytics cookies
 
-Marketing cookies: [PLACEHOLDER: confirm whether marketing or advertising cookies are used, and by which provider, before publication].
+| Cookie | Provider | Purpose | Duration |
+|---|---|---|---|
+| `_ga` | Google Analytics 4 | Distinguishes unique visitors | 2 years |
+| `_ga_*` | Google Analytics 4 | Persists session state | 2 years |
+
+Analytics cookies are only set if you accept them via the cookie banner. If you decline, no analytics cookies are placed.
+
+## Third-party services
+
+We use the following third-party services that may set cookies:
+
+- **Cloudflare Turnstile** — provides bot detection on our forms. Essential for security. No personal data is collected for advertising.
+- **Google Analytics 4** — provides anonymised website usage statistics. IP addresses are anonymised. No personal data (names, emails, phone numbers) is sent to Google Analytics.
 
 ## Managing cookies
 
-You can manage or disable cookies through your browser settings. Disabling essential cookies may affect the functioning of this website, including the fulfilment scan and quote request form.
+You can manage your preferences via the cookie banner that appears when you first visit the site. You can change your choice at any time by clicking "Cookie settings" in the footer.
+
+You can also control cookies through your browser settings. Note that disabling essential cookies may affect form functionality.
+
+## Changes to this policy
+
+We may update this policy to reflect changes in the cookies or third-party services we use. The version published on this website is the current version.
 
 ## Contact
 
-Questions about this policy can be sent to info@vareya.nl.
-
-## Note on this draft
-
-This is an operational draft. Sections marked with a placeholder require confirmation of the specific cookies and third-party tools in use before publication. Final wording must match the processors actually used by the production website.
+For questions about this cookie policy, contact: **info@vareya.nl**

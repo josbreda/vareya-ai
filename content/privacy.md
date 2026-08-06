@@ -1,55 +1,85 @@
 ---
 route: "/privacy/"
 pageType: "legal"
-status: "approved-draft"
+status: "production-draft"
 seoTitle: "Privacy Policy | Vareya"
-metaDescription: "How Vareya BV collects, uses and protects personal data submitted through this website."
+metaDescription: "How Vareya BV collects, uses and protects personal data submitted through vareya.ai."
 h1: "Privacy Policy"
-primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
-secondaryCtaLabel: "Request a fulfilment quote"
-secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: true
 ---
 
 # Privacy Policy
 
+**Last updated: 6 August 2026**
+
 ## Who we are
 
-This website is operated by Vareya BV, Bagven Park 6, 4838 EH Breda, The Netherlands. Contact: info@vareya.nl.
+This website (vareya.ai) is operated by **Vareya BV**, a company registered in the Netherlands.
 
-Company registration number: [PLACEHOLDER: KVK registration number to be confirmed].
-
-VAT number: [PLACEHOLDER: VAT number to be confirmed].
+- Address: Bagven Park 6, 4838 EH Breda, The Netherlands
+- Email: info@vareya.nl
+- Phone: +31 6 19 12 34 72
+- KVK: 65877535
+- VAT: NL856299790B02
 
 ## What data we collect
 
-Through the fulfilment scan, the quote request form and the contact page, we may collect: company name, website, company country, order volume, number of SKUs, product category, parcel details, ecommerce platform, current fulfilment setup, target markets, desired start date, full name, work email and phone number.
+Through the fulfilment scan, quote request form and contact page, we may collect:
+
+- Company name, website, and country of registration
+- Monthly order volume and approximate number of SKUs
+- Product category and parcel details
+- Current ecommerce platform and fulfilment setup
+- Target markets and desired start date
+- Your full name, work email address, and optionally your phone number
+- Information about whether you require returns handling
+- Any comments you choose to provide
 
 ## Why we collect it
 
-We use this data to assess fulfilment fit, respond to enquiries, and follow up on quote requests. We do not use this data for any purpose beyond assessing and responding to your enquiry.
+We use this data solely to assess whether your fulfilment needs may fit Vareya's setup, to respond to your enquiry, and to follow up on quote requests. We do not use your data for any other purpose.
+
+## Legal basis
+
+We process your data on the basis of your consent (by submitting the form) and our legitimate interest in responding to business enquiries.
 
 ## Who processes this data
 
-[PLACEHOLDER: list of processors and tools actually used by the production website, for example hosting provider, email provider and any CRM or form-handling service]. Final wording must match the processors actually used by the production website.
+Your data is processed by the following service providers:
+
+| Provider | Purpose | Location |
+|---|---|---|
+| **Vercel Inc.** | Website hosting and form delivery | Global (US/EU) |
+| **Supabase Inc.** | Lead database (PostgreSQL) | EU (Frankfurt, Germany) |
+| **Resend Inc.** | Transactional email delivery | US |
+| **Cloudflare Inc.** | Security (Turnstile spam protection) | Global |
+| **Google LLC** | Website analytics (GA4/GTM) | US |
 
 ## How long we keep it
 
-[PLACEHOLDER: data retention period to be confirmed].
+Enquiry data is retained for a maximum of 2 years from your last interaction, unless you request earlier deletion. Analytics data is retained in accordance with Google Analytics 4 settings (currently 14 months).
 
 ## Your rights
 
-Under applicable data protection law, you have the right to request access to, correction of, or deletion of your personal data, and to object to certain processing. To exercise these rights, contact info@vareya.nl.
+Under the GDPR, you have the right to:
+
+- Request access to your personal data
+- Request correction or deletion of your data
+- Object to or restrict processing
+- Withdraw consent at any time
+- Data portability
+- Lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens)
+
+To exercise any of these rights, contact us at **info@vareya.nl**.
+
+## Cookies and tracking
+
+We use cookies for security (Cloudflare Turnstile) and analytics (Google Analytics 4). See our [Cookie Policy](/cookies/) for details. You can manage your cookie preferences at any time via the cookie banner.
 
 ## Data protection contact
 
-[PLACEHOLDER: named data protection contact or officer, if one is appointed].
+For data protection enquiries, contact: **info@vareya.nl**
 
 ## Changes to this policy
 
 We may update this policy from time to time. The version published on this website is the current version.
-
-## Note on this draft
-
-This is an operational draft. Sections marked with a placeholder require legal or technical confirmation before publication. Final wording must match the processors, retention periods and company details actually used by the production website.
