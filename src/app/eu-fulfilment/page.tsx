@@ -1,57 +1,59 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CapabilityStrip } from "@/components/marketing/CapabilityStrip";
-import { CTABanner } from "@/components/marketing/CTABanner";
 import { FAQ } from "@/components/marketing/FAQ";
-import { ProcessSection } from "@/components/marketing/ProcessSection";
-import { APPROVED_HEADLINES, APPROVED_VALUE_PROPS } from "@/content/claims";
-import { CAPABILITIES, COMPANY, WAREHOUSE } from "@/content/facts";
-import { PAGE_META } from "@/content/pages";
-
-const pageMeta = PAGE_META["/eu-fulfilment/"];
+import { APPROVED_DESTINATIONS, CAPABILITIES } from "@/content/facts";
 
 export const metadata: Metadata = {
-  title: { absolute: pageMeta.title },
-  description: pageMeta.description,
-  alternates: { canonical: pageMeta.canonical },
+  title: "EU Fulfilment from the Netherlands | Vareya",
+  description:
+    "How Vareya uses a warehouse in Breda, the Netherlands, to fulfil ecommerce orders across Europe, covering shipping, returns and onboarding.",
+  alternates: { canonical: "https://vareya.ai/eu-fulfilment/" },
 };
 
-const VALUE_CARDS = [
-  {
-    title: "A Netherlands fulfilment base",
-    body: `Position inventory at ${WAREHOUSE.label} in ${COMPANY.city}, ${COMPANY.country}, and run European order fulfilment from one operating location.`,
-  },
-  APPROVED_VALUE_PROPS[1],
-  APPROVED_VALUE_PROPS[0],
-  APPROVED_VALUE_PROPS[2],
+const destinationList = APPROVED_DESTINATIONS.join(", ");
+
+const PROCESS = [
+  "Share volume, product category and target markets. Product fit is confirmed during qualification.",
+  "Connect your sales channel and agree stock intake.",
+  "Send stock to Breda.",
+  "Orders are picked, packed and shipped via the carrier network.",
+  CAPABILITIES.returns,
 ];
 
-const EU_FAQ = [
+const FAQ_ITEMS = [
   {
-    question: "Where is Vareya based?",
-    answer: `${COMPANY.legalName} operates from ${WAREHOUSE.street}, ${WAREHOUSE.postcode} ${WAREHOUSE.city}, ${WAREHOUSE.country}. Inventory is received, stored, picked and packed at our Breda fulfilment centre.`,
-  },
-  {
-    question: "Which carriers can deliver European orders?",
-    answer: `Vareya works with ${CAPABILITIES.carriers.slice(0, -1).join(", ")} and ${CAPABILITIES.carriers[CAPABILITIES.carriers.length - 1]}. The appropriate carrier mix is reviewed against your destinations, parcel profile and service requirements.`,
-  },
-  {
-    question: "What transit times can customers expect?",
+    question: "Why do brands fulfil from the Netherlands for EU orders?",
     answer:
-      "Transit expectations vary by destination, carrier and selected service. During qualification, we review your main European markets and the available carrier options rather than presenting one delivery time for every country.",
+      "Its location and logistics infrastructure make it a common base for shipping across Europe.",
   },
   {
-    question: "Why use a fulfilment location in the Netherlands?",
+    question: "Does Vareya only ship within Europe?",
     answer:
-      "A Breda stock position gives a European e-commerce brand one place for inventory, connected order fulfilment and returns. Vareya then uses its available carrier network to serve customers across Europe.",
+      "No. Vareya also ships to markets including the United States, Canada, Australia, New Zealand, Brazil, China, Hong Kong and Japan.",
   },
   {
-    question: "Can Vareya connect to Shopify and handle returns?",
-    answer: `${CAPABILITIES.shopify}. Orders flow directly from the store to the warehouse. ${CAPABILITIES.returns}, with returned products inspected, restocked where appropriate and reflected in inventory.`,
+    question: "What volume do I need to work with Vareya?",
+    answer: CAPABILITIES.volume,
   },
   {
-    question: "Is there a minimum monthly order volume?",
-    answer: `Vareya is generally best suited to brands shipping ${CAPABILITIES.minMonthlyOrders} or more orders per month. Product and operational fit are confirmed during qualification.`,
+    question: "Can Vareya handle my returns?",
+    answer: CAPABILITIES.returns,
+  },
+  {
+    question: "How long does onboarding take?",
+    answer:
+      "This is confirmed during qualification, as it depends on your specific setup.",
+  },
+];
+
+const INTERNAL_LINKS = [
+  { href: "/", label: "Ecommerce fulfilment in Europe" },
+  { href: "/shopify-fulfilment-europe/", label: "Shopify fulfilment in Europe" },
+  { href: "/eu-fulfilment-us-brands/", label: "EU fulfilment for US brands" },
+  { href: "/eu-fulfilment-uk-brands/", label: "EU fulfilment for UK brands" },
+  {
+    href: "/cosmetics-supplements-fulfilment-europe/",
+    label: "Cosmetics and supplements fulfilment",
   },
 ];
 
@@ -59,154 +61,163 @@ export default function EUFulfilmentPage() {
   return (
     <>
       <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white">
-        <div className="container-site py-16 sm:py-24 lg:py-28">
+        <div className="container-site py-20 sm:py-24">
           <nav aria-label="Breadcrumb" className="mb-8 text-sm text-white/75">
-            <ol className="flex items-center gap-2">
-              <li>
-                <Link href="/" className="transition-colors hover:text-white">
-                  Home
-                </Link>
-              </li>
-              <li aria-hidden="true">/</li>
-              <li aria-current="page">EU fulfilment</li>
-            </ol>
+            <Link href="/" className="hover:text-white">Home</Link>
+            <span aria-hidden="true" className="px-2">/</span>
+            <span aria-current="page">EU fulfilment</span>
           </nav>
-          <div className="max-w-3xl">
-            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-white/75">
-              Fulfilment from Breda, the Netherlands
-            </p>
-            <h1 className="mb-6 text-[clamp(2.25rem,6vw,4rem)] font-bold tracking-tight">
-              EU-wide fulfilment from the Netherlands
+          <div className="max-w-4xl">
+            <h1 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              Using the Netherlands as your EU fulfilment base
             </h1>
-            <p className="mb-8 max-w-2xl text-lg leading-relaxed text-white/85 sm:text-xl">
-              A practical European fulfilment operation for growing e-commerce brands, with connected orders,
-              multi-carrier delivery and returns handled from Breda.
-            </p>
-            <Link
-              href="/fulfilment-scan/"
-              className="inline-flex items-center justify-center rounded-lg bg-accent px-6 py-3 text-base font-semibold text-white shadow-sm transition-colors hover:bg-accent-light"
-            >
-              {APPROVED_HEADLINES.scan}
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <CapabilityStrip />
-
-      <section className="py-16 sm:py-20" aria-labelledby="eu-introduction">
-        <div className="container-site grid gap-10 lg:grid-cols-[minmax(0,1.5fr)_minmax(280px,0.7fr)] lg:items-start">
-          <div className="max-w-3xl">
-            <h2 id="eu-introduction" className="mb-6 text-slate-900">
-              One fulfilment operation for European orders
-            </h2>
-            <div className="space-y-5 text-base leading-8 text-muted sm:text-lg">
+            <div className="mb-8 max-w-3xl space-y-3 text-lg leading-relaxed text-white/85 sm:text-xl">
               <p>
-                European growth creates an operational question: where should inventory sit, how should online
-                orders reach the warehouse, and where should customer returns go? Vareya brings those activities
-                together at its fulfilment centre in {COMPANY.city}.
+                Many international ecommerce brands use the Netherlands as a base for
+                shipping into Europe. Vareya fulfils orders from a warehouse in Breda,
+                handling shipping, onboarding and the agreed return flow.
               </p>
-              <p>
-                Shopify orders can flow directly to the fulfilment operation, removing the need to build a manual
-                order hand-off. For delivery, Vareya works with {CAPABILITIES.carriers.join(", ")}. The service mix
-                can be matched to the destinations and parcel profile discussed during qualification.
-              </p>
-              <p>
-                Returns handling is available as part of the fulfilment service. Returned products come back to
-                Breda for inspection, restocking where appropriate and an inventory update, keeping the forward
-                and reverse flow in the same operation.
-              </p>
+              <p>{CAPABILITIES.volume}</p>
+            </div>
+            <div className="flex flex-col gap-4 sm:flex-row">
+              <Link href="/fulfilment-scan/" className="rounded-lg bg-white px-6 py-3 text-center font-semibold text-primary hover:bg-slate-100">
+                Check your EU fulfilment fit
+              </Link>
+              <Link href="/request-fulfilment-quote/" className="rounded-lg border border-white/30 px-6 py-3 text-center font-medium hover:bg-white/10">
+                Request a fulfilment quote
+              </Link>
             </div>
           </div>
-          <aside className="rounded-2xl border border-slate-200 bg-slate-50 p-6" aria-label="Vareya location summary">
-            <p className="mb-2 text-sm font-semibold uppercase tracking-wider text-primary">Fulfilment centre</p>
-            <p className="text-xl font-bold text-slate-900">{WAREHOUSE.label}</p>
-            <address className="mt-4 not-italic leading-7 text-muted">
-              {WAREHOUSE.street}
-              <br />
-              {WAREHOUSE.postcode} {WAREHOUSE.city}
-              <br />
-              {WAREHOUSE.country}
-            </address>
-          </aside>
         </div>
       </section>
 
-      <section className="bg-slate-50 py-16 sm:py-20" aria-labelledby="eu-benefits">
-        <div className="container-site">
-          <div className="mb-12 max-w-2xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Core capabilities</p>
-            <h2 id="eu-benefits" className="mb-4 text-slate-900">
-              Build a clearer European fulfilment workflow
-            </h2>
-            <p className="leading-7 text-muted">
-              Start with the stock position, store connection, delivery requirements and returns process your brand
-              actually needs. Qualification confirms whether the full operating profile fits Vareya.
+      <section className="border-b border-slate-200 bg-slate-50 py-12" aria-labelledby="quick-answer">
+        <div className="container-site max-w-4xl">
+          <h2 id="quick-answer" className="mb-4 text-2xl font-bold">Quick answer</h2>
+          <div className="space-y-3 leading-7 text-muted">
+            <p>
+              The Netherlands is a common base for EU ecommerce fulfilment because of
+              its location and logistics infrastructure. Vareya operates a warehouse in
+              Breda, the Netherlands, shipping orders across Europe and to other
+              international markets.
             </p>
+            <p>{CAPABILITIES.volume}</p>
+            <p>{CAPABILITIES.returns}</p>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {VALUE_CARDS.map((card) => (
-              <article key={card.title} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
-                <h3 className="mb-3 text-lg font-semibold text-slate-900">{card.title}</h3>
-                <p className="text-sm leading-7 text-muted">{card.body}</p>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20" aria-labelledby="why-netherlands">
+        <div className="container-site max-w-4xl">
+          <h2 id="why-netherlands" className="mb-5 text-2xl font-bold sm:text-3xl">
+            Why the Netherlands
+          </h2>
+          <p className="leading-8 text-muted sm:text-lg">
+            The Netherlands sits within reach of major European population centres and
+            has established logistics and carrier infrastructure. For brands shipping
+            into multiple European countries, holding stock in one Netherlands-based
+            location can simplify the operational picture compared with shipping each
+            order individually from outside Europe.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-16" aria-labelledby="capability-block">
+        <div className="container-site">
+          <h2 id="capability-block" className="mb-8 text-2xl font-bold">Capabilities</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              CAPABILITIES.shopify,
+              CAPABILITIES.amazonFbm,
+              CAPABILITIES.returns,
+              "Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail.",
+              CAPABILITIES.cutOff,
+              CAPABILITIES.volume,
+            ].map((item) => (
+              <p key={item} className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-6 text-muted">
+                {item}
+              </p>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20" aria-labelledby="process">
+        <div className="container-site">
+          <h2 id="process" className="mb-10 text-2xl font-bold sm:text-3xl">How the process works</h2>
+          <div className="grid gap-5 md:grid-cols-5">
+            {PROCESS.map((body, index) => (
+              <article key={body} className="rounded-xl border border-slate-200 p-5">
+                <p className="mb-3 text-sm font-semibold text-primary">Step {index + 1}</p>
+                <p className="text-sm leading-6 text-muted">{body}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20" aria-labelledby="eu-planning">
-        <div className="container-site">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">Plan around your order profile</p>
-            <h2 id="eu-planning" className="mb-5 text-slate-900">
-              The right carrier and process depend on the detail
-            </h2>
-            <p className="leading-8 text-muted sm:text-lg">
-              A useful fulfilment review looks beyond a country list. Vareya considers your monthly orders,
-              platform, destinations, returns requirements and product dimensions before confirming fit.
+      <section className="bg-slate-50 py-16" aria-labelledby="shipping-destinations">
+        <div className="container-site max-w-5xl">
+          <h2 id="shipping-destinations" className="mb-5 text-2xl font-bold">
+            Shipping and destinations
+          </h2>
+          <p className="leading-8 text-muted">
+            From Breda, Vareya ships to {destinationList}, using DHL, PostNL, Asendia,
+            FedEx and Royal Mail.
+          </p>
+        </div>
+      </section>
+
+      <section className="py-16" aria-labelledby="returns">
+        <div className="container-site max-w-4xl">
+          <h2 id="returns" className="mb-4 text-2xl font-bold">Returns</h2>
+          <p className="leading-7 text-muted">{CAPABILITIES.returns}</p>
+        </div>
+      </section>
+
+      <section className="border-y border-slate-200 bg-slate-50 py-16" aria-labelledby="fit">
+        <div className="container-site max-w-4xl">
+          <h2 id="fit" className="mb-5 text-2xl font-bold">Who this fits</h2>
+          <div className="space-y-3 leading-7 text-muted">
+            <p>{CAPABILITIES.volume}</p>
+            <p>
+              Vareya works with brands selling via Shopify or Amazon FBM, in cosmetics,
+              supplements, phone cases, accessories or other smaller parcel products
+              with combined dimensions below 900 mm and a maximum length of 600 mm.
+              Product fit is confirmed during qualification.
             </p>
-          </div>
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <article className="rounded-xl border border-slate-200 p-6">
-              <h3 className="mb-3 text-lg font-semibold text-slate-900">Destination mix</h3>
-              <p className="text-sm leading-7 text-muted">
-                Share the European markets your customers order from so carrier options can be reviewed against
-                the actual delivery profile.
-              </p>
-            </article>
-            <article className="rounded-xl border border-slate-200 p-6">
-              <h3 className="mb-3 text-lg font-semibold text-slate-900">Product and parcel fit</h3>
-              <p className="text-sm leading-7 text-muted">
-                Vareya specialises in smaller parcel products. Suitable parcels have combined dimensions below{" "}
-                {CAPABILITIES.parcelLimits.combinedDimensionsMm} mm and a maximum length of{" "}
-                {CAPABILITIES.parcelLimits.maxLengthMm} mm.
-              </p>
-            </article>
-            <article className="rounded-xl border border-slate-200 p-6">
-              <h3 className="mb-3 text-lg font-semibold text-slate-900">Returns decisions</h3>
-              <p className="text-sm leading-7 text-muted">
-                Define what should happen when a product comes back. Vareya can receive, inspect and restock returns
-                as part of the standard fulfilment flow.
-              </p>
-            </article>
           </div>
         </div>
       </section>
 
-      <ProcessSection />
+      <FAQ items={FAQ_ITEMS} />
 
-      <FAQ
-        items={EU_FAQ}
-        heading="EU fulfilment questions"
-        subheading="Practical answers about running European order fulfilment from Breda."
-      />
+      <section className="py-14" aria-labelledby="related-pages">
+        <div className="container-site">
+          <h2 id="related-pages" className="mb-6 text-2xl font-bold">Related fulfilment pages</h2>
+          <div className="flex flex-wrap gap-3">
+            {INTERNAL_LINKS.map((link) => (
+              <Link key={link.href} href={link.href} className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-primary hover:border-primary/40">
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <CTABanner
-        title="Is Vareya a fit for your European order profile?"
-        subtitle="Use the fulfilment scan to share your platform, monthly orders, markets and current set-up."
-        primaryLabel="Check your EU fulfilment fit"
-      />
+      <section className="bg-primary py-16 text-white">
+        <div className="container-site text-center">
+          <h2 className="mb-4 text-2xl font-bold sm:text-3xl">Assess your EU fulfilment setup</h2>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <Link href="/fulfilment-scan/" className="rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
+              Check your EU fulfilment fit
+            </Link>
+            <Link href="/request-fulfilment-quote/" className="rounded-lg border border-white/30 px-6 py-3 font-medium hover:bg-white/10">
+              Request a fulfilment quote
+            </Link>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

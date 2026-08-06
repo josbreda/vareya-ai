@@ -1,0 +1,160 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "sourceFile": "content/home.md",
+      "seoTitle": "EU Ecommerce Fulfilment from the Netherlands | Vareya",
+      "metaDescription": "Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Check your fulfilment fit in minutes.",
+      "h1": "Ecommerce fulfilment in Europe, run from the Netherlands",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": ["/eu-fulfilment/", "/shopify-fulfilment-europe/", "/eu-fulfilment-us-brands/", "/eu-fulfilment-uk-brands/", "/cosmetics-supplements-fulfilment-europe/", "/fulfilment-scan/", "/request-fulfilment-quote/", "/contact/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/eu-fulfilment/",
+      "sourceFile": "content/eu-fulfilment.md",
+      "seoTitle": "EU Fulfilment from the Netherlands | Vareya",
+      "metaDescription": "How Vareya uses a warehouse in Breda, the Netherlands, to fulfil ecommerce orders across Europe, covering shipping, returns and onboarding.",
+      "h1": "Using the Netherlands as your EU fulfilment base",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": ["/", "/shopify-fulfilment-europe/", "/eu-fulfilment-us-brands/", "/eu-fulfilment-uk-brands/", "/cosmetics-supplements-fulfilment-europe/", "/fulfilment-scan/", "/request-fulfilment-quote/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/shopify-fulfilment-europe/",
+      "sourceFile": "content/shopify-fulfilment-europe.md",
+      "seoTitle": "Shopify Fulfilment in Europe | Vareya",
+      "metaDescription": "Vareya offers Shopify integration for ecommerce fulfilment from a warehouse in Breda, the Netherlands, shipping across Europe and beyond.",
+      "h1": "Shopify fulfilment from a Netherlands warehouse",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": ["/", "/eu-fulfilment/", "/eu-fulfilment-us-brands/", "/eu-fulfilment-uk-brands/", "/cosmetics-supplements-fulfilment-europe/", "/fulfilment-scan/", "/request-fulfilment-quote/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/eu-fulfilment-us-brands/",
+      "sourceFile": "content/eu-fulfilment-us-brands.md",
+      "seoTitle": "EU Fulfilment for US Ecommerce Brands | Vareya",
+      "metaDescription": "How US ecommerce brands can assess EU-based fulfilment from a Netherlands warehouse for shipping to European customers.",
+      "h1": "EU fulfilment for US ecommerce brands",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": ["/", "/eu-fulfilment/", "/shopify-fulfilment-europe/", "/eu-fulfilment-uk-brands/", "/cosmetics-supplements-fulfilment-europe/", "/fulfilment-scan/", "/request-fulfilment-quote/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/eu-fulfilment-uk-brands/",
+      "sourceFile": "content/eu-fulfilment-uk-brands.md",
+      "seoTitle": "EU Fulfilment for UK Ecommerce Brands | Vareya",
+      "metaDescription": "How UK ecommerce brands can assess EU-based fulfilment from a Netherlands warehouse for shipping to European customers.",
+      "h1": "EU fulfilment for UK ecommerce brands",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": ["/", "/eu-fulfilment/", "/shopify-fulfilment-europe/", "/eu-fulfilment-us-brands/", "/cosmetics-supplements-fulfilment-europe/", "/fulfilment-scan/", "/request-fulfilment-quote/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/cosmetics-supplements-fulfilment-europe/",
+      "sourceFile": "content/cosmetics-supplements-fulfilment-europe.md",
+      "seoTitle": "Cosmetics and Supplements Fulfilment in Europe | Vareya",
+      "metaDescription": "Vareya specialises in fulfilling cosmetics and supplements orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond.",
+      "h1": "Cosmetics and supplements fulfilment from the Netherlands",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": ["/", "/eu-fulfilment/", "/shopify-fulfilment-europe/", "/eu-fulfilment-us-brands/", "/eu-fulfilment-uk-brands/", "/fulfilment-scan/", "/request-fulfilment-quote/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/fulfilment-scan/",
+      "sourceFile": "content/fulfilment-scan.md",
+      "seoTitle": "Check Your EU Fulfilment Fit | Vareya",
+      "metaDescription": "Check whether your volume, product category, sales channels and target markets may fit Vareya's fulfilment setup.",
+      "h1": "Check your EU fulfilment fit",
+      "primaryCTA": { "label": "Start the scan", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": ["/eu-fulfilment/", "/request-fulfilment-quote/", "/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/fulfilment-scan/thank-you/",
+      "sourceFile": "content/fulfilment-scan.md",
+      "seoTitle": "Fulfilment Scan Received | Vareya",
+      "metaDescription": "Confirmation that your fulfilment scan has been received.",
+      "h1": "Thanks, your fulfilment scan has been received",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": false,
+      "requiredInternalLinks": ["/eu-fulfilment/", "/request-fulfilment-quote/", "/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/request-fulfilment-quote/",
+      "sourceFile": "content/request-fulfilment-quote.md",
+      "seoTitle": "Request a Fulfilment Quote | Vareya",
+      "metaDescription": "Share details about your ecommerce operation and Vareya will follow up with next steps on a fulfilment quote.",
+      "h1": "Request a fulfilment quote",
+      "primaryCTA": { "label": "Submit quote request", "route": "/request-fulfilment-quote/" },
+      "secondaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "indexable": true,
+      "requiredInternalLinks": ["/fulfilment-scan/", "/eu-fulfilment/", "/contact/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/request-fulfilment-quote/thank-you/",
+      "sourceFile": "content/request-fulfilment-quote.md",
+      "seoTitle": "Quote Request Received | Vareya",
+      "metaDescription": "Confirmation that your fulfilment quote request has been received.",
+      "h1": "Thanks, your quote request has been received",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Contact Vareya", "route": "/contact/" },
+      "indexable": false,
+      "requiredInternalLinks": ["/fulfilment-scan/", "/eu-fulfilment/", "/contact/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/contact/",
+      "sourceFile": "content/contact.md",
+      "seoTitle": "Contact Vareya | EU Ecommerce Fulfilment",
+      "metaDescription": "Contact Vareya BV, based in Breda, the Netherlands, for ecommerce fulfilment enquiries across Europe and beyond.",
+      "h1": "Contact Vareya",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": ["/fulfilment-scan/", "/request-fulfilment-quote/", "/"],
+      "approvalStatus": "approved-draft"
+    },
+    {
+      "route": "/privacy/",
+      "sourceFile": "content/privacy.md",
+      "seoTitle": "Privacy Policy | Vareya",
+      "metaDescription": "How Vareya BV collects, uses and protects personal data submitted through this website.",
+      "h1": "Privacy Policy",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": [],
+      "approvalStatus": "pending-approval"
+    },
+    {
+      "route": "/cookies/",
+      "sourceFile": "content/cookies.md",
+      "seoTitle": "Cookie Policy | Vareya",
+      "metaDescription": "How Vareya BV uses cookies and similar technologies on this website.",
+      "h1": "Cookie Policy",
+      "primaryCTA": { "label": "Check your EU fulfilment fit", "route": "/fulfilment-scan/" },
+      "secondaryCTA": { "label": "Request a fulfilment quote", "route": "/request-fulfilment-quote/" },
+      "indexable": true,
+      "requiredInternalLinks": [],
+      "approvalStatus": "pending-approval"
+    }
+  ]
+}

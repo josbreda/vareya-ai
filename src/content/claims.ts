@@ -1,76 +1,111 @@
 /**
- * Vareya — Approved marketing claims.
- * Claims NOT listed here MUST NOT appear in copy.
- * This is the gate between what we want to say and what we can say.
+ * Vareya — approved public claims.
+ * This module follows content/claims-register.md v1.1.
  */
 
 import { CAPABILITIES, COMPANY } from "./facts";
 
+export const REQUIRED_CLAIMS = {
+  cutOff:
+    "Cut-off times of up to 23:00 may be available by agreement.",
+  volume:
+    "Vareya is generally best suited to brands shipping 500 or more orders per month.",
+  returns:
+    "Returns handling is available. Contact Vareya to discuss the required returns process.",
+  specialistFallback:
+    "Have customs, tax or specialist handling requirements? Include them in the fulfilment scan so Vareya can confirm which parts of the proposed setup can be supported.",
+  postSubmission:
+    "Vareya will review your answers and send an initial fit response by email within one working day.",
+} as const;
+
 export const APPROVED_HEADLINES = {
-  primary: "European fulfilment for growing e-commerce brands",
-  secondary: "Fast, reliable order fulfilment from Breda, the Netherlands",
+  primary: "Ecommerce fulfilment in Europe, run from the Netherlands",
+  secondary:
+    `Vareya fulfils ecommerce orders from a warehouse in ${COMPANY.city}, ${COMPANY.country}, shipping across Europe, the United Kingdom and further afield.`,
   scan: "Check your EU fulfilment fit",
   quote: "Request a fulfilment quote",
 } as const;
 
 export const APPROVED_VALUE_PROPS = [
   {
-    title: "Shopify-ready fulfilment",
-    body: `${CAPABILITIES.shopify}. Orders flow directly from your store to our warehouse.`,
+    title: "Shopify integration",
+    body: CAPABILITIES.shopify,
   },
   {
-    title: "Multi-carrier delivery",
-    body: `We work with ${CAPABILITIES.carriers.slice(0, -1).join(", ")} and ${CAPABILITIES.carriers[CAPABILITIES.carriers.length - 1]} to get your products to customers across Europe.`,
+    title: "Amazon FBM fulfilment",
+    body: CAPABILITIES.amazonFbm,
   },
   {
-    title: "Returns included",
-    body: "Returns handling is part of our standard fulfilment service. No hidden fees.",
+    title: "Carrier network",
+    body: `Carriers include ${CAPABILITIES.carriers.slice(0, -1).join(", ")} and ${CAPABILITIES.carriers.at(-1)}.`,
   },
   {
-    title: "Flexible cut-off times",
-    body: `Cut-off times ${CAPABILITIES.cutOffTime} — giving your operations team more time to process daily orders.`,
+    title: "Returns handling",
+    body: REQUIRED_CLAIMS.returns,
   },
   {
-    title: "Product-fit review",
-    body: "Every brand goes through qualification. We make sure your products are a good match for our fulfilment process.",
+    title: "Cut-off times",
+    body: REQUIRED_CLAIMS.cutOff,
   },
 ] as const;
 
 export const APPROVED_PROCESS_STEPS = [
   {
     step: 1,
-    title: "You send us your products",
-    body: "Ship your inventory to our Breda warehouse. We handle receiving and storage.",
+    title: "Qualification",
+    body: "Share your volume, product category, sales channels and target markets. Product fit is confirmed during qualification.",
   },
   {
     step: 2,
-    title: "Orders sync automatically",
-    body: "Your Shopify or Amazon orders flow directly to our fulfilment system.",
+    title: "Onboarding",
+    body: "Connect your sales channel and agree stock intake with Vareya.",
   },
   {
     step: 3,
-    title: "We pick, pack, and ship",
-    body: `Your orders are picked, packed, and shipped — with cut-off times ${CAPABILITIES.cutOffTime}.`,
+    title: "Inbound stock",
+    body: "Send stock to the Breda warehouse.",
   },
   {
     step: 4,
-    title: "We handle returns",
-    body: "Customer returns come back to us. We inspect, restock, and update your inventory.",
+    title: "Pick, pack and ship",
+    body: "Orders are picked, packed and handed to the relevant carrier.",
+  },
+  {
+    step: 5,
+    title: "Returns",
+    body: REQUIRED_CLAIMS.returns,
   },
 ] as const;
 
+/**
+ * Prohibited marketing language and unapproved positive capability claims.
+ * The word "best" is permitted only inside REQUIRED_CLAIMS.volume.
+ */
 export const FORBIDDEN_CLAIMS = [
-  "customs handling",
-  "VAT services",
+  "fastest",
+  "cheapest",
+  "leading",
+  "number one",
+  "customs support",
+  "import support",
+  "VAT-related support",
   "IOSS",
-  "EORI",
   "DDP",
-  "certified",
-  "ISO",
+  "temperature-controlled storage",
+  "certifications",
+  "batch management",
+  "expiry-date management",
+  "FEFO",
+  "FIFO",
+  "regulated-product handling",
   "AutoStore",
   "robots",
-  "automation",
-  "multi-warehouse",
-  "same-day dispatch guaranteed",
-  "next-day delivery guaranteed",
+  "automation claims",
+  "multi-warehousing",
+  "guaranteed same-day dispatch",
+  "guaranteed delivery times",
+  "instant quotation",
+  "instant savings",
+  "No specific capability is claimed on this page.",
+  "Rest of the World",
 ] as const;

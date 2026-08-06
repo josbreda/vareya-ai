@@ -1,0 +1,106 @@
+---
+route: "/"
+pageType: "homepage"
+status: "approved-draft"
+seoTitle: "EU Ecommerce Fulfilment from the Netherlands | Vareya"
+metaDescription: "Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Check your fulfilment fit in minutes."
+h1: "Ecommerce fulfilment in Europe, run from the Netherlands"
+primaryCtaLabel: "Check your EU fulfilment fit"
+primaryCtaRoute: "/fulfilment-scan/"
+secondaryCtaLabel: "Request a fulfilment quote"
+secondaryCtaRoute: "/request-fulfilment-quote/"
+requiresRaymondApproval: false
+---
+
+# Ecommerce fulfilment in Europe, run from the Netherlands
+
+## Hero
+
+Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe, the United Kingdom and further afield. Vareya works with Shopify and Amazon FBM sellers in cosmetics, supplements, phone cases, accessories and other smaller parcel products. Vareya is generally best suited to brands shipping 500 or more orders per month. Check whether your operation fits before you talk to anyone.
+
+Primary CTA: Check your EU fulfilment fit → /fulfilment-scan/
+Secondary CTA: Request a fulfilment quote → /request-fulfilment-quote/
+
+## Quick answer
+
+Vareya is an ecommerce fulfilment operator based in Breda, the Netherlands, shipping orders across Europe, the United Kingdom, the United States and other international markets. Vareya works with Shopify and Amazon FBM sellers, is generally best suited to brands shipping 500 or more orders per month, and specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products.
+
+## Capability strip
+
+Netherlands-based warehouse. Shopify integration available. Amazon FBM fulfilment available. Returns handling available. Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail. Cut-off times of up to 23:00 may be available by agreement.
+
+## Who Vareya helps
+
+Vareya is generally best suited to brands shipping 500 or more orders per month, selling through Shopify or Amazon FBM. Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products. Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm. Product fit is confirmed during qualification.
+
+## Problems Vareya helps solve
+
+Growing order volumes can outpace an in-house fulfilment setup. Shipping into multiple European and international markets from a single base adds coordination overhead. Returns need a defined process rather than an improvised one. Fulfilment needs to connect cleanly with the sales channels a brand already uses. Vareya's setup is built around these operational points.
+
+## How the process works
+
+Step one, qualification: share your volume, product category, sales channels and target markets; product fit is confirmed during qualification.
+
+Step two, onboarding: connect your sales channel and agree stock intake with Vareya.
+
+Step three, inbound stock: send stock to the Breda warehouse.
+
+Step four, pick, pack and ship: orders are picked, packed and handed to the relevant carrier.
+
+Step five, returns: returns handling is available. Contact Vareya to discuss the required returns process.
+
+## Relevant capabilities
+
+Shopify integration is available. Amazon FBM fulfilment is available. Returns handling is available. Contact Vareya to discuss the required returns process. Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail. Cut-off times of up to 23:00 may be available by agreement. Vareya is generally best suited to brands shipping 500 or more orders per month. Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.
+
+## Ecommerce integrations
+
+Shopify integration is available. If you sell through a different platform, share the details during qualification so product fit can be assessed.
+
+## International shipping
+
+Vareya ships to Australia, Austria, Belgium, Brazil, Bulgaria, Canada, China, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hong Kong, Hungary, Ireland, Italy, Japan, Latvia, Lithuania, Luxembourg, Malta, New Zealand, Norway, Poland, Portugal, Romania, Slovakia, Slovenia, Spain, Sweden, Switzerland, United Kingdom and United States, using a carrier network that includes DHL, PostNL, Asendia, FedEx and Royal Mail.
+
+## Returns
+
+Returns handling is available. Contact Vareya to discuss the required returns process.
+
+## Target-market cards
+
+EU fulfilment: using the Netherlands as a base for shipping across Europe. Links to /eu-fulfilment/
+
+US brands: assessing fulfilment within Europe for US-based ecommerce brands. Links to /eu-fulfilment-us-brands/
+
+UK brands: shipping into the EU from a Netherlands base. Links to /eu-fulfilment-uk-brands/
+
+Cosmetics and supplements: fulfilment for smaller-parcel product categories. Links to /cosmetics-supplements-fulfilment-europe/
+
+## Fulfilment-scan CTA
+
+Check whether your current volume, product category, sales channels and target markets may fit Vareya's fulfilment setup. Check your EU fulfilment fit → /fulfilment-scan/
+
+## FAQ
+
+What does Vareya do? Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and to a range of international markets.
+
+Which sales channels does Vareya support? Shopify integration is available, and Amazon FBM fulfilment is available.
+
+What order volume does Vareya work with? Vareya is generally best suited to brands shipping 500 or more orders per month.
+
+Does Vareya handle returns? Returns handling is available. Contact Vareya to discuss the required returns process.
+
+How do I know if my brand is a fit? Complete the fulfilment scan. Product fit is confirmed during qualification.
+
+## Footer CTA
+
+See whether your fulfilment needs match Vareya's setup. Check your EU fulfilment fit → /fulfilment-scan/, or request a fulfilment quote → /request-fulfilment-quote/.
+
+## Internal links
+
+/eu-fulfilment/, /shopify-fulfilment-europe/, /eu-fulfilment-us-brands/, /eu-fulfilment-uk-brands/, /cosmetics-supplements-fulfilment-europe/, /fulfilment-scan/, /request-fulfilment-quote/, /contact/
+
+## Image recommendation
+
+A neutral, non-branded photograph or illustration of parcel packing or shipping activity. No identifiable staff, no branded third-party equipment, no scale-implying wide shots of a warehouse floor.
+
+Suggested alt text: Parcels being packed for ecommerce shipping.
