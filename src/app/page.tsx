@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/components/marketing/FAQ";
+import { NetworkHero } from "@/components/marketing/NetworkHero";
 import { APPROVED_DESTINATIONS, CAPABILITIES } from "@/content/facts";
 
 export const metadata: Metadata = {
@@ -86,39 +87,14 @@ const HOME_FAQ = [
 export default function HomePage() {
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white">
-        <div className="container-site py-20 sm:py-28 lg:py-32">
-          <div className="max-w-4xl">
-            <h1 className="mb-6 text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">
-              Ecommerce fulfilment in Europe, run from the Netherlands
-            </h1>
-            <div className="mb-8 max-w-3xl space-y-3 text-lg leading-relaxed text-white/85 sm:text-xl">
-              <p>
-                Vareya fulfils ecommerce orders from a warehouse in Breda, the
-                Netherlands, shipping across Europe, the United Kingdom and further
-                afield. Vareya works with Shopify and Amazon FBM sellers in cosmetics,
-                supplements, phone cases, accessories and other smaller parcel products.
-              </p>
-              <p>{CAPABILITIES.volume}</p>
-              <p>Check whether your operation fits before you talk to anyone.</p>
-            </div>
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/fulfilment-scan/"
-                className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-slate-100"
-              >
-                Check your EU fulfilment fit
-              </Link>
-              <Link
-                href="/request-fulfilment-quote/"
-                className="inline-flex items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-medium text-white transition-colors hover:bg-white/10"
-              >
-                Request a fulfilment quote
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <NetworkHero
+        badge="European Fulfilment — Breda, NL"
+        title="Ecommerce fulfilment in Europe, run from the Netherlands"
+        description="Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling included."
+        primaryCTA={{ label: "Check your EU fulfilment fit", href: "/fulfilment-scan/" }}
+        secondaryCTA={{ label: "Request a fulfilment quote", href: "/request-fulfilment-quote/" }}
+        proofItems={["Breda, NL", "Shopify-ready", "5 carriers", "Returns included"]}
+      />
 
       <section className="border-b border-slate-200 bg-slate-50 py-10" aria-labelledby="quick-answer">
         <div className="container-site max-w-4xl">
