@@ -94,7 +94,31 @@ export default function HomePage() {
         primaryCTA={{ label: "Check your EU fulfilment fit", href: "/fulfilment-scan/" }}
         secondaryCTA={{ label: "Request a fulfilment quote", href: "/request-fulfilment-quote/" }}
         proofItems={["Breda, NL", "Shopify-ready", "5 carriers", "Returns included"]}
-      />
+      >
+        {/* Warehouse SVG illustration */}
+        <svg className="w-full max-w-[380px] h-auto" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="whGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stopColor="#5EEAD4" stopOpacity=".25"/>
+              <stop offset="1" stopColor="#0F766E" stopOpacity=".08"/>
+            </linearGradient>
+          </defs>
+          <rect width="400" height="320" rx="16" fill="url(#whGrad)" stroke="rgba(94,234,212,.12)"/>
+          {/* Isometric floor */}
+          <polygon points="200,20 355,100 200,180 45,100" fill="rgba(15,118,110,.1)" stroke="rgba(94,234,212,.18)"/>
+          <polygon points="200,180 355,100 355,220 200,300" fill="rgba(15,118,110,.05)" stroke="rgba(94,234,212,.1)"/>
+          <polygon points="200,180 45,100 45,220 200,300" fill="rgba(15,118,110,.07)" stroke="rgba(94,234,212,.12)"/>
+          {/* Racks */}
+          <rect x="260" y="155" width="28" height="12" rx="2" fill="rgba(249,115,22,.18)"/>
+          <rect x="250" y="172" width="38" height="12" rx="2" fill="rgba(94,234,212,.12)"/>
+          <rect x="100" y="150" width="24" height="10" rx="2" fill="rgba(94,234,212,.1)"/>
+          {/* Parcels */}
+          <circle cx="200" cy="240" r="4" fill="#5EEAD4" opacity=".5"/>
+          <circle cx="215" cy="250" r="3" fill="#5EEAD4" opacity=".3"/>
+          <circle cx="185" cy="255" r="3.5" fill="#F97316" opacity=".4"/>
+          <circle cx="160" cy="230" r="2.5" fill="#5EEAD4" opacity=".25"/>
+        </svg>
+      </NetworkHero>
 
       <section className="border-b border-slate-200 bg-slate-50 py-10" aria-labelledby="quick-answer">
         <div className="container-site max-w-4xl">
