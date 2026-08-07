@@ -129,6 +129,45 @@ export async function POST(request: NextRequest) {
             processing_time_ms: Date.now() - startTime,
           },
         });
+
+        // 4.5 Sync to HubSpot (non-blocking, downstream from Supabase)
+        if (process.env.HUBSPOT_ACCESS_TOKEN) {
+          try {
+            const { syncToHubSpot } = await import("@/lib/hooks/useHubspotSync");
+            syncToHubSpot({
+              name: String(clean.name || ""),
+              company: String(clean.company || ""),
+              work_email: String(clean.work_email || ""),
+              phone_number: clean.phone ? String(clean.phone) : undefined,
+              company_country: clean.company_country ? String(clean.company_country) : undefined,
+              ecommerce_platform: clean.ecommerce_platform ? String(clean.ecommerce_platform) : undefined,
+              monthly_order_volume: clean.monthly_order_volume ? String(clean.monthly_order_volume) : undefined,
+              target_markets: Array.isArray(clean.target_markets) ? clean.target_markets : undefined,
+              landing_page: clean.landing_page ? String(clean.landing_page) : undefined,
+              device: clean.device ? String(clean.device) : undefined,
+              utm_source: clean.utm_source ? String(clean.utm_source) : undefined,
+              utm_medium: clean.utm_medium ? String(clean.utm_medium) : undefined,
+              utm_campaign: clean.utm_campaign ? String(clean.utm_campaign) : undefined,
+              utm_content: clean.utm_content ? String(clean.utm_content) : undefined,
+              submission_id: submissionId,
+              form_type: String(clean.form_type || "unknown"),
+            }).then((hsResult) => {
+              if (hsResult.error) {
+                console.error("[api/leads] HubSpot sync error:", hsResult.error);
+              } else {
+                console.log("[api/leads] HubSpot synced:", {
+                  contactId: hsResult.contactId,
+                  companyId: hsResult.companyId,
+                  taskId: hsResult.taskId,
+                });
+              }
+            }).catch((hsErr) => {
+              console.error("[api/leads] HubSpot sync failed:", hsErr);
+            });
+          } catch (importErr) {
+            console.error("[api/leads] HubSpot module load failed:", importErr);
+          }
+        }
       } catch (err) {
         console.error("[api/leads] Supabase error:", err);
         return NextResponse.json(
