@@ -1,0 +1,37 @@
+client_id,topic,prompt,language,countries,personas,tags,is_active,priority,answer_type
+vareya-prompt-001,Entity accuracy,What is Vareya and what services does it provide?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,entity-accuracy,true,P0,factual
+vareya-prompt-002,Entity accuracy,Where is Vareya's warehouse located?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,entity-accuracy,true,P0,factual
+vareya-prompt-003,Entity accuracy,Which ecommerce platforms does Vareya support?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,entity-accuracy,true,P0,factual
+vareya-prompt-004,Entity accuracy,Which parcel carriers does Vareya use?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,entity-accuracy,true,P0,factual
+vareya-prompt-005,Entity accuracy,Does Vareya handle returns?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,entity-accuracy,true,P0,factual
+vareya-prompt-006,Entity accuracy,What monthly order volume is Vareya generally suited to?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,entity-accuracy,true,P0,factual
+vareya-prompt-007,Provider discovery,Which fulfilment providers in the Netherlands work with Shopify brands?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,provider-discovery,true,P1,recommendation
+vareya-prompt-008,Provider discovery,Which European fulfilment providers support Amazon FBM sellers?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,provider-discovery,true,P1,recommendation
+vareya-prompt-009,Provider discovery,Which fulfilment company is suitable for smaller-parcel brands shipping 500 or more orders per month?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,provider-discovery,true,P1,recommendation
+vareya-prompt-010,Provider discovery,What are practical European fulfilment options for a growing ecommerce brand?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,provider-discovery,true,P1,recommendation
+vareya-prompt-011,Provider discovery,"Which Netherlands-based fulfilment providers ship to the United Kingdom, the United States and EU destinations?",en,GB|US,E-commerce founder|Operations lead|Logistics manager,provider-discovery,true,P1,recommendation
+vareya-prompt-012,Provider discovery,"Which fulfilment operators work with cosmetics, supplements, phone cases and accessories?",en,GB|US,E-commerce founder|Operations lead|Logistics manager,provider-discovery,true,P1,recommendation
+vareya-prompt-013,Shopify and Amazon FBM,How do I choose a Shopify fulfilment partner in Europe?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,platform-fit,true,P1,comparison
+vareya-prompt-014,Shopify and Amazon FBM,Which Netherlands fulfilment providers offer Shopify integration?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,platform-fit,true,P1,comparison
+vareya-prompt-015,Shopify and Amazon FBM,What should I ask before connecting Shopify to a European fulfilment provider?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,platform-fit,true,P1,comparison
+vareya-prompt-016,Shopify and Amazon FBM,Can an Amazon FBM seller outsource European fulfilment from the Netherlands?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,platform-fit,true,P1,comparison
+vareya-prompt-017,Shopify and Amazon FBM,"Compare Shopify fulfilment options for brands shipping 500 to 2,000 monthly orders in Europe.",en,GB|US,E-commerce founder|Operations lead|Logistics manager,platform-fit,true,P1,comparison
+vareya-prompt-018,Shopify and Amazon FBM,Which fulfilment providers support both Shopify and Amazon FBM in Europe?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,platform-fit,true,P1,comparison
+vareya-prompt-019,European market entry,How should a US ecommerce brand set up fulfilment in Europe?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,market-entry,true,P1,how-to
+vareya-prompt-020,European market entry,What should a UK brand consider when moving EU stock to the Netherlands?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,market-entry,true,P1,how-to
+vareya-prompt-021,European market entry,Is the Netherlands a practical base for ecommerce fulfilment across Europe?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,market-entry,true,P1,how-to
+vareya-prompt-022,European market entry,Which EU fulfilment providers work with international brands entering Europe?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,market-entry,true,P1,how-to
+vareya-prompt-023,European market entry,What information should a brand prepare before requesting a European fulfilment quote?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,market-entry,true,P1,how-to
+vareya-prompt-024,European market entry,How can a smaller-parcel brand assess whether a Netherlands fulfilment setup fits?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,market-entry,true,P1,how-to
+vareya-prompt-025,Product and volume fit,Which European fulfilment providers specialise in cosmetics and supplements?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,product-fit,true,P1,recommendation
+vareya-prompt-026,Product and volume fit,What fulfilment requirements matter for phone cases and accessories?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,product-fit,true,P1,recommendation
+vareya-prompt-027,Product and volume fit,How do fulfilment providers qualify smaller-parcel products?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,product-fit,true,P1,recommendation
+vareya-prompt-028,Product and volume fit,Which fulfilment partner handles parcels with combined dimensions below 900 mm and a maximum length of 600 mm?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,product-fit,true,P1,recommendation
+vareya-prompt-029,Product and volume fit,What questions should a supplement brand ask a European fulfilment provider?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,product-fit,true,P1,recommendation
+vareya-prompt-030,Product and volume fit,Which data should a cosmetics brand provide for fulfilment qualification?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,product-fit,true,P1,recommendation
+vareya-prompt-031,Returns and operations,Which European fulfilment providers offer returns handling?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,operations,true,P1,comparison
+vareya-prompt-032,Returns and operations,How do I compare returns processes among EU fulfilment companies?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,operations,true,P1,comparison
+vareya-prompt-033,Returns and operations,Which carriers can a Netherlands fulfilment provider use for international ecommerce orders?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,operations,true,P1,comparison
+vareya-prompt-034,Returns and operations,What does an agreed late order cut-off mean for ecommerce fulfilment?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,operations,true,P1,comparison
+vareya-prompt-035,Returns and operations,Which fulfilment providers may offer cut-off times up to 23:00 by agreement?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,operations,true,P1,comparison
+vareya-prompt-036,Returns and operations,How does Vareya compare with other European fulfilment providers?,en,GB|US,E-commerce founder|Operations lead|Logistics manager,operations,true,P1,comparison

@@ -1,195 +1,237 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CLAIM_PRIMARY_CTA } from "@/content/claims";
+import {
+  getKnowledgeArticle,
+  KNOWLEDGE_ARTICLES,
+} from "@/content/knowledge";
+import { breadcrumbSchema } from "@/lib/seo";
 
-interface Article {
-  slug: string;
-  title: string;
-  description: string;
-  published: string;
-  topic: string;
-  body: string;
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return KNOWLEDGE_ARTICLES.map((article) => ({ slug: article.slug }));
 }
-
-const ARTICLES: Record<string, Article> = {
-  "what-is-cooperative-fulfilment": {
-    slug: "what-is-cooperative-fulfilment",
-    title: "What is cooperative fulfilment?",
-    description:
-      "How a cooperative model changes the relationship between a fulfilment provider and the brands it serves — and why this matters for smaller e-commerce brands.",
-    published: "August 2026",
-    topic: "Cooperative model",
-    body: `
-In traditional fulfilment, a third-party logistics (3PL) provider charges per pick, per pack, and per shipment. The 3PL is a supplier: you pay for a service, and your incentive is to negotiate the lowest price. The 3PL's incentive is to maximise its margin within that price.
-
-**Cooperative fulfilment turns that dynamic around.**
-
-In a cooperative model, the brands that use the fulfilment service collectively own the operation. There are no outside shareholders extracting profit. The brands \u2014 the members \u2014 own the warehouse, the carrier contracts, the technology, and the processes together.
-
-## How it works
-
-The core mechanism is simple:
-
-1. **Volume bundling.** Individual brands — especially those shipping a few hundred to a few thousand orders per month — are often too small to negotiate good rates with carriers, packaging suppliers, or software providers. By combining volumes across multiple member brands, the cooperative negotiates as a larger entity.
-
-2. **Democratic governance.** Members make decisions together. One member, one vote — not one share, one vote. The cooperative's direction is guided by the people who depend on it day to day, not by investors looking for a return.
-
-3. **Surplus goes back to members.** When Vareya operates efficiently, the financial surplus returns to the members. This aligns everyone's incentives: the cooperative has no reason to cut corners at the members' expense, because the members *are* the cooperative.
-
-4. **Built for continuity.** Cooperatives are not built to be sold. The goal is building a stable, reliable operation that serves its members for the long term.
-
-## Why this matters for smaller brands
-
-Smaller e-commerce brands face a structural disadvantage in fulfilment. They do not have the volume to justify their own warehouse, their own carrier contracts, or their own technology stack. Traditional 3PLs often have minimum volume thresholds that exclude them \u2014 or they charge rates that make the unit economics difficult.
-
-A cooperative model solves this by letting smaller brands pool their volumes. Each brand individually might be too small for the best rates. Together, the group becomes a meaningful logistics operation.
-
-## What cooperative fulfilment is not
-
-It is worth being clear about what this *does not* mean:
-
-- It does **not** mean the brands have to manage the warehouse themselves. Vareya handles the day-to-day fulfilment operations — receiving, storage, picking, packing, shipping, and returns. The cooperative owns the operation; it does not require members to work in it.
-
-- It does **not** mean every decision requires a vote. Operational decisions are made by the people running the warehouse. Strategic decisions — pricing structure, major investments, membership criteria — are made collectively.
-
-- It is **not** a temporary experiment. Cooperatives are a well-established legal form in the Netherlands (Coöperatie U.A.) with clear governance rules, member protections, and operational frameworks.
-
-## Is this new?
-
-Cooperative models exist in many industries — agriculture, banking, insurance, retail. Agricultural cooperatives, for example, allow individual farmers to pool their produce and negotiate better prices together than any single farmer could achieve alone.
-
-Applying the same logic to e-commerce fulfilment is less common, but the underlying principle is the same: bundling demand creates collective bargaining power that individual players cannot access on their own.
-
-## The status of Vareya's cooperative
-
-Vareya is being built as a cooperative. The fulfilment operation — warehouse in Breda, carrier network, Shopify and Amazon FBM integrations — is operational. The cooperative structure itself is being built alongside it.
-
-The first members will help define how the cooperative works in practice. This is a deliberate choice: building the governance with the people who will use it, rather than imposing a finished framework on a group that had no say in designing it.
-
-## Questions to ask when evaluating a cooperative fulfilment model
-
-If you are considering a cooperative approach to fulfilment, here are some questions worth asking:
-
-- Who makes the decisions about pricing, investments, and membership?
-- How is surplus distributed?
-- What happens if a member leaves?
-- What are the membership criteria?
-- How are disputes resolved?
-- What legal structure underpins the cooperative?
-
-These are the same questions Vareya is working through as it builds its cooperative foundation.
-    `.trim(),
-  },
-};
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}: PageProps<"/knowledge/[slug]">): Promise<Metadata> {
   const { slug } = await params;
-  const article = ARTICLES[slug];
-  if (!article) return { title: "Article not found" };
+  const article = getKnowledgeArticle(slug);
+
+  if (!article) notFound();
+
+  const canonical = `https://vareya.ai/knowledge/${article.slug}/`;
 
   return {
-    title: `${article.title} | Vareya Knowledge`,
+    title: article.title,
     description: article.description,
-    alternates: { canonical: `https://vareya.ai/knowledge/${slug}` },
+    alternates: { canonical },
+    openGraph: {
+      title: article.title,
+      description: article.description,
+      url: canonical,
+      type: "article",
+      publishedTime: article.publishedAt,
+    },
   };
 }
 
 export default async function KnowledgeArticlePage({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+}: PageProps<"/knowledge/[slug]">) {
   const { slug } = await params;
-  const article = ARTICLES[slug];
+  const article = getKnowledgeArticle(slug);
 
   if (!article) notFound();
 
+  const canonical = `https://vareya.ai/knowledge/${article.slug}/`;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.description,
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    mainEntityOfPage: canonical,
+    author: {
+      "@type": "Organization",
+      name: "Vareya BV",
+      url: "https://vareya.ai/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Vareya BV",
+      url: "https://vareya.ai/",
+    },
+    inLanguage: "en-GB",
+  };
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://vareya.ai/" },
+    { name: "Knowledge", url: "https://vareya.ai/knowledge/" },
+    { name: article.title, url: canonical },
+  ]);
+  const relatedArticles = KNOWLEDGE_ARTICLES.filter(
+    (candidate) => candidate.slug !== article.slug,
+  );
+
   return (
     <>
-      <article className="py-16 sm:py-20">
-        <div className="container-site max-w-3xl">
-          <Link
-            href="/knowledge/"
-            className="inline-flex items-center gap-1 text-sm text-primary hover:underline mb-8"
-          >
-            ← Back to Knowledge
-          </Link>
+      <script
+        type="application/ld+json"
+        data-schema="article"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        data-schema="breadcrumb"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
 
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-xs font-medium text-primary uppercase tracking-wider">
-              {article.topic}
-            </span>
-            <span className="text-xs text-muted">{article.published}</span>
+      <article>
+        <header className="border-b border-border bg-surface">
+          <div className="container-site max-w-4xl py-12 sm:py-16">
+            <nav aria-label="Breadcrumb" className="mb-9 text-sm text-muted">
+              <Link href="/" className="transition-colors hover:text-primary">
+                Home
+              </Link>
+              <span className="mx-2" aria-hidden="true">/</span>
+              <Link href="/knowledge/" className="transition-colors hover:text-primary">
+                Knowledge
+              </Link>
+              <span className="mx-2" aria-hidden="true">/</span>
+              <span aria-current="page" className="text-ink">{article.topic}</span>
+            </nav>
+
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-sm">
+              <span className="font-semibold uppercase tracking-[0.14em] text-primary">
+                {article.topic}
+              </span>
+              <span className="h-1 w-1 rounded-full bg-border" aria-hidden="true" />
+              <time dateTime={article.publishedAt} className="text-muted">
+                {article.publishedLabel}
+              </time>
+            </div>
+            <h1 className="mt-5 max-w-3xl text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+              {article.title}
+            </h1>
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-muted">
+              {article.description}
+            </p>
           </div>
+        </header>
 
-          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-ink mb-4">
-            {article.title}
-          </h1>
-          <p className="text-lg text-muted leading-relaxed mb-10">
-            {article.description}
-          </p>
-
-          <div className="prose prose-slate max-w-none text-muted leading-7 space-y-4">
-            {article.body.split("\n\n").map((paragraph, i) => {
-              if (paragraph.startsWith("## ")) {
-                return (
-                  <h2 key={i} className="text-xl font-bold text-ink mt-10 mb-4">
-                    {paragraph.replace("## ", "")}
+        <div className="container-site max-w-4xl py-14 sm:py-20">
+          <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_180px]">
+            <div className="min-w-0">
+              {article.sections.map((section, index) => (
+                <section
+                  key={section.heading}
+                  aria-labelledby={`section-${index + 1}`}
+                  className="not-first:mt-14"
+                >
+                  <p className="mb-3 font-mono text-xs font-semibold tracking-[0.16em] text-accent" aria-hidden="true">
+                    0{index + 1}
+                  </p>
+                  <h2
+                    id={`section-${index + 1}`}
+                    className="text-2xl font-bold text-ink sm:text-3xl"
+                  >
+                    {section.heading}
                   </h2>
-                );
-              }
-              if (paragraph.startsWith("### ")) {
-                return (
-                  <h3 key={i} className="text-lg font-semibold text-ink mt-8 mb-3">
-                    {paragraph.replace("### ", "")}
-                  </h3>
-                );
-              }
-              if (paragraph.startsWith("1. ") || paragraph.startsWith("2. ") || paragraph.startsWith("3. ") || paragraph.startsWith("4. ")) {
-                return (
-                  <p key={i}>{paragraph}</p>
-                );
-              }
-              if (paragraph.startsWith("- ")) {
-                return (
-                  <ul key={i} className="list-disc pl-5 space-y-1">
-                    {paragraph.split("\n").map((item, j) => (
-                      <li key={j}>{item.replace("- ", "")}</li>
+                  <div className="mt-5 space-y-5 text-[1.03rem] leading-8 text-muted">
+                    {section.paragraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
                     ))}
-                  </ul>
-                );
-              }
-              // Bold text handling
-              const withBold = paragraph.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
-              if (withBold !== paragraph) {
-                return (
-                  <p key={i} dangerouslySetInnerHTML={{ __html: withBold }} />
-                );
-              }
-              return <p key={i}>{paragraph}</p>;
-            })}
+                  </div>
+                  {section.bullets && (
+                    <ul className="mt-6 space-y-3 rounded-2xl border border-border bg-surface p-6 text-sm leading-6 text-muted">
+                      {section.bullets.map((item) => (
+                        <li key={item} className="flex gap-3">
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+              ))}
+            </div>
+
+            <aside className="hidden lg:block" aria-label="On this page">
+              <div className="sticky top-24 border-l border-border pl-5">
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-ink">
+                  On this page
+                </p>
+                <ol className="mt-4 space-y-3">
+                  {article.sections.map((section, index) => (
+                    <li key={section.heading}>
+                      <a
+                        href={`#section-${index + 1}`}
+                        className="text-xs leading-5 text-muted transition-colors hover:text-primary"
+                      >
+                        {section.heading}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </aside>
           </div>
         </div>
       </article>
 
-      <section className="py-16 sm:py-20 bg-surface">
+      <section className="border-y border-border bg-surface py-14 sm:py-16" aria-labelledby="related-guides">
+        <div className="container-site max-w-5xl">
+          <div className="flex items-end justify-between gap-4">
+            <div>
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+                Continue the review
+              </p>
+              <h2 id="related-guides" className="text-2xl font-bold text-ink">
+                Related guides
+              </h2>
+            </div>
+            <Link href="/knowledge/" className="text-sm font-semibold text-primary hover:underline">
+              All knowledge
+            </Link>
+          </div>
+
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {relatedArticles.map((related) => (
+              <Link
+                key={related.slug}
+                href={`/knowledge/${related.slug}/`}
+                className="rounded-2xl border border-border bg-white p-6 transition-all hover:border-primary/30 hover:shadow-sm"
+              >
+                <span className="text-xs font-semibold uppercase tracking-[0.12em] text-primary">
+                  {related.topic}
+                </span>
+                <h3 className="mt-2 text-lg font-semibold leading-7 text-ink">
+                  {related.title}
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{related.summary}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary py-16 text-white" aria-labelledby="article-cta-heading">
         <div className="container-site max-w-3xl text-center">
-          <h2 className="text-xl font-bold text-ink mb-4">
-            Want to learn more about cooperative fulfilment?
+          <h2 id="article-cta-heading" className="text-3xl font-bold">
+            Check the operation against your order profile
           </h2>
-          <p className="text-muted mb-6">
-            If the cooperative model resonates with how you think about your business, the next step
-            is checking whether your fulfilment setup may fit.
+          <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/75">
+            The fulfilment scan collects the practical inputs Vareya needs for an initial fit
+            review. Product fit is confirmed during qualification.
           </p>
           <Link
             href="/fulfilment-scan/"
-            className="inline-flex items-center px-6 py-3 bg-accent text-ink font-semibold rounded-[10px] hover:bg-[#FF8A3D] transition-colors"
+            className="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-slate-100"
           >
-            Check your fit →
+            {CLAIM_PRIMARY_CTA}
           </Link>
         </div>
       </section>

@@ -1,0 +1,161 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+      "title": "HubSpot authentication overview",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 2,
+      "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/working-with-oauth",
+      "title": "HubSpot OAuth guide",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 3,
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/authentication/manage-oauth-tokens",
+      "title": "HubSpot OAuth token management",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 4,
+      "url": "https://developers.hubspot.com/docs/developer-tooling/platform/usage-guidelines",
+      "title": "HubSpot API usage and limits",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 5,
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/objects/contacts/guide",
+      "title": "HubSpot Contacts API",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 6,
+      "url": "https://developers.hubspot.com/docs/api-reference/legacy/crm/objects/companies/guide",
+      "title": "HubSpot Companies API v3",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 7,
+      "url": "https://developers.hubspot.com/docs/api-reference/legacy/crm/objects/deals/guide",
+      "title": "HubSpot Deals API v3",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 8,
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/activities/tasks/guide",
+      "title": "HubSpot Tasks API",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 9,
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/associations/associate-records/guide",
+      "title": "HubSpot Associations API",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 10,
+      "url": "https://developers.hubspot.com/docs/api-reference/crm-properties-v3/core/post-crm-v3-properties-objectType",
+      "title": "HubSpot Properties API v3",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 11,
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/owners/guide",
+      "title": "HubSpot Owners API",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 12,
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/pipelines/guide",
+      "title": "HubSpot Pipelines API",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 13,
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/crm/search-the-crm",
+      "title": "HubSpot CRM Search",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 14,
+      "url": "https://developers.hubspot.com/docs/api-reference/legacy/webhooks/guide",
+      "title": "HubSpot Webhooks v3",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 15,
+      "url": "https://developers.hubspot.com/docs/apps/legacy-apps/authentication/validating-requests",
+      "title": "HubSpot webhook request validation",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 16,
+      "url": "https://developers.hubspot.com/docs/api-reference/error-handling",
+      "title": "HubSpot error handling",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 17,
+      "url": "https://supabase.com/docs/guides/functions",
+      "title": "Supabase Edge Functions",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 18,
+      "url": "https://supabase.com/docs/guides/cron",
+      "title": "Supabase Cron",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 19,
+      "url": "https://supabase.com/docs/guides/queues",
+      "title": "Supabase Queues",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 20,
+      "url": "https://supabase.com/docs/guides/functions/secrets",
+      "title": "Supabase Edge Function secrets",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 21,
+      "url": "https://developers.hubspot.com/docs/apps/developer-platform/add-features/configure-webhooks",
+      "title": "HubSpot project app webhook configuration",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 22,
+      "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/request-validation",
+      "title": "HubSpot request validation",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 23,
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/webhooks/guide",
+      "title": "HubSpot Webhooks API 2026-03",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 24,
+      "url": "https://developers.hubspot.com/docs/apps/legacy-apps/private-apps/overview",
+      "title": "HubSpot private apps overview",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 25,
+      "url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/oauth/working-with-oauth",
+      "title": "HubSpot current OAuth guide",
+      "accessed": "2026-08-07"
+    },
+    {
+      "id": 26,
+      "url": "https://developers.hubspot.com/docs/api-reference/latest/communication-preferences/guide",
+      "title": "HubSpot communication preferences API",
+      "accessed": "2026-08-07"
+    }
+  ]
+}

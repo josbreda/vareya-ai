@@ -1,147 +1,268 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { COMPANY, CAPABILITIES } from "@/content/facts";
+import {
+  CLAIM_PRIMARY_CTA,
+  CLAIM_RETURNS,
+  CLAIM_VOLUME,
+} from "@/content/claims";
+import { APPROVED_FACTS } from "@/content/claims";
+import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Why Vareya.ai | European Fulfilment Vision",
+  title: "Why Vareya.ai: A Cooperative Fulfilment Vision",
   description:
-    "Fulfilment organised cooperatively: members own the operation, efficiency benefits go back to members, and decisions are made together. Built from Breda, the Netherlands.",
+    "Raymond's vision for cooperative fulfilment: developing democratic member ownership, shared scale and rules for returning eligible surplus to members.",
   alternates: { canonical: "https://vareya.ai/why-vareya-ai/" },
+  openGraph: {
+    title: "Why Vareya.ai: A Cooperative Fulfilment Vision",
+    description:
+      "A developing member-owned model for organising European e-commerce fulfilment together.",
+    url: "https://vareya.ai/why-vareya-ai/",
+    type: "website",
+  },
 };
 
+const PRINCIPLES = [
+  {
+    number: "01",
+    title: "Democratic member ownership",
+    body: "The intended model gives participating members a defined voice in strategic decisions. The final voting rights and reserved decisions will be set out in the cooperative's formal documents.",
+  },
+  {
+    number: "02",
+    title: "Shared scale",
+    body: "Participating brands combine fulfilment demand. The cooperative can then organise shared warehouse, carrier and technology requirements around the group rather than around one brand alone.",
+  },
+  {
+    number: "03",
+    title: "Value back to members",
+    body: "The vision is that any eligible surplus created by the cooperative goes back to members or strengthens their shared operation, according to rules adopted by the cooperative.",
+  },
+] as const;
+
+const BUILDING_STEPS = [
+  {
+    title: "Prove the operational fit",
+    body: "Start with the practical work: product fit, order data, stock intake, picking, packing, dispatch and returns.",
+  },
+  {
+    title: "Develop the member rules",
+    body: "Define eligibility, voting rights, cost allocation, reserves, surplus treatment, leaving rules and dispute resolution.",
+  },
+  {
+    title: "Test governance in practice",
+    body: "Use early member input to check that strategic participation supports — rather than slows — day-to-day fulfilment.",
+  },
+] as const;
+
 export default function WhyVareyaPage() {
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://vareya.ai/" },
+    { name: "Why Vareya.ai", url: "https://vareya.ai/why-vareya-ai/" },
+  ]);
+
   return (
     <>
-      <section className="bg-gradient-to-br from-primary-950 via-ink to-ink text-white">
-        <div className="container-site py-16 sm:py-24">
-          <div className="max-w-3xl">
-            <span className="inline-block px-3 py-1 mb-5 text-[13px] text-network bg-network/10 border border-network/20 rounded-full">
-              Vision
-            </span>
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
+      <script
+        type="application/ld+json"
+        data-schema="breadcrumb"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+
+      <section className="relative overflow-hidden bg-gradient-to-br from-primary-950 via-ink to-slate-950 text-white">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-40"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 78% 24%, rgba(94,234,212,.18), transparent 28%), radial-gradient(circle at 15% 80%, rgba(249,115,22,.12), transparent 22%)",
+          }}
+        />
+        <div className="container-site relative py-16 sm:py-24 lg:py-28">
+          <nav aria-label="Breadcrumb" className="mb-10 text-sm text-white/55">
+            <Link href="/" className="transition-colors hover:text-white">
+              Home
+            </Link>
+            <span className="mx-2" aria-hidden="true">/</span>
+            <span aria-current="page">Why Vareya.ai</span>
+          </nav>
+
+          <div className="max-w-4xl">
+            <p className="mb-5 inline-flex rounded-full border border-network/20 bg-network/10 px-3 py-1 text-[13px] font-medium text-network">
+              Raymond&apos;s vision
+            </p>
+            <h1 className="max-w-3xl text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
               A different kind of fulfilment company
             </h1>
-            <p className="text-lg text-white/65 leading-relaxed max-w-xl">
-              Most fulfilment providers are built to maximise margins for outside shareholders. Vareya is being built differently — as a cooperative where the brands that use the service become members and owners.
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
+              Vareya is developing a cooperative model in which the brands using the
+              operation can help own it, shape it and share in the value it creates.
             </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/fulfilment-scan/"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg bg-accent px-6 py-3 font-semibold text-ink transition-colors hover:bg-accent-light"
+              >
+                {CLAIM_PRIMARY_CTA}
+              </Link>
+              <Link
+                href="/knowledge/what-is-cooperative-fulfilment/"
+                className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/25 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
+              >
+                Read how the model could work
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="py-16 sm:py-20">
-        <div className="container-site max-w-3xl">
-          <h2 className="text-2xl font-bold mb-6">The cooperative model</h2>
-          <div className="prose prose-slate max-w-none space-y-4 text-muted leading-7">
-            <p>
-              Vareya is being set up as a cooperative (Coöperatie U.A.), which means the members — the brands that
-              use the fulfilment service — collectively own and govern the operation.
-            </p>
-            <p>
-              This is different from a traditional fulfilment company. In a traditional model, every bit of efficiency
-              that gets discovered becomes margin for shareholders. In Vareya&apos;s model, the operation belongs to
-              the members themselves.
-            </p>
-            <p>
-              The principle is simple: organise fulfilment cooperatively, bundle volumes from multiple
-              smaller brands, and create an efficient fulfilment setup where the benefits of scale go
-              back to the members.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20 bg-surface">
-        <div className="container-site max-w-3xl">
-          <h2 className="text-2xl font-bold mb-8">What this means in practice</h2>
-          <div className="grid gap-6">
-            {[
-              {
-                title: "Democratic governance",
-                body: "Members make decisions together. One member, one vote — regardless of volume. The direction of Vareya is guided by the members, not by external shareholders.",
-              },
-              {
-                title: "Efficiency belongs to members",
-                body: "When the cooperative operates efficiently, the surplus goes back to the members — not to outside investors. This aligns the incentives: everyone benefits from doing things well.",
-              },
-              {
-                title: "Bundled volumes, better terms",
-                body: "Individual brands are often too small to negotiate the best rates with carriers, packaging suppliers, or technology providers. By combining volumes across members, the cooperative can negotiate as a larger entity.",
-              },
-              {
-                title: "Built for the long term",
-                body: "Cooperatives are designed for continuity, not for an exit. The goal is building a stable, reliable fulfilment operation that serves members for decades — not selling to the highest bidder after a few years.",
-              },
-            ].map((item) => (
-              <div key={item.title} className="p-6 rounded-xl bg-white border border-border">
-                <h3 className="font-semibold text-ink mb-2">{item.title}</h3>
-                <p className="text-sm text-muted leading-relaxed">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20">
-        <div className="container-site max-w-3xl">
-          <h2 className="text-2xl font-bold mb-6">Who this is for</h2>
-          <div className="prose prose-slate max-w-none space-y-4 text-muted leading-7">
-            <p>
-              Vareya is designed for brands that want more than just a fulfilment provider. It is for
-              brands that want to be part of building something — a shared operation that gets better
-              as more members join.
-            </p>
-            <p>{CAPABILITIES.volume}</p>
-            <p>
-              Vareya currently operates from {COMPANY.city}, {COMPANY.country}, and is building its
-              cooperative membership. The first members will help shape how the cooperative operates.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20 bg-surface">
-        <div className="container-site max-w-3xl">
-          <h2 className="text-2xl font-bold mb-6">How we are building this</h2>
-          <div className="prose prose-slate max-w-none space-y-4 text-muted leading-7">
-            <p>
-              Vareya is not a finished product. The cooperative structure, the membership model,
-              and the governance processes are being built alongside the fulfilment operation itself.
-            </p>
-            <p>
-              The early members will help define how the cooperative works — from governance rules
-              to how surplus gets distributed. This is a deliberate choice: building the structure
-              with the people who will use it, rather than imposing a finished template.
-            </p>
-            <p>
-              What is operational today is the fulfilment service itself: the warehouse in Breda,
-              the carrier network, the Shopify and Amazon FBM integrations, and the returns handling.
-              The cooperative layer is being added on top of that foundation.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-16 sm:py-20 bg-primary text-white">
-        <div className="container-site text-center max-w-2xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
-            Interested in being part of this?
-          </h2>
-          <p className="text-primary-light/80 mb-8">
-            The first members will shape how Vareya operates. If the cooperative model resonates with how
-            you think about your business, we would like to talk.
+      <section className="border-y border-network/15 bg-primary-950 py-7 text-white" aria-label="Vision status">
+        <div className="container-site flex max-w-4xl flex-col gap-2 sm:flex-row sm:items-start sm:gap-5">
+          <span className="shrink-0 text-sm font-semibold uppercase tracking-[0.16em] text-network">
+            Clear status
+          </span>
+          <p className="text-sm leading-6 text-white/70">
+            The cooperative structure and membership terms are being developed. This page
+            explains the intended direction; it is not a completed membership offer or a
+            substitute for the cooperative&apos;s final legal documents.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24" aria-labelledby="model-heading">
+        <div className="container-site">
+          <div className="grid gap-10 lg:grid-cols-[0.78fr_1.22fr] lg:gap-16">
+            <div>
+              <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+                The proposed model
+              </p>
+              <h2 id="model-heading" className="text-3xl font-bold text-ink sm:text-4xl">
+                Organise fulfilment around the members who depend on it
+              </h2>
+              <p className="mt-5 leading-7 text-muted">
+                The goal is not to add a cooperative label to a conventional service. It is
+                to design ownership, governance and value allocation around participating
+                brands while keeping warehouse responsibilities clear.
+              </p>
+            </div>
+
+            <div className="grid gap-4">
+              {PRINCIPLES.map((principle) => (
+                <article
+                  key={principle.number}
+                  className="group grid gap-4 rounded-2xl border border-border bg-white p-6 shadow-[0_14px_45px_rgba(8,26,29,0.05)] sm:grid-cols-[auto_1fr] sm:p-7"
+                >
+                  <span className="font-mono text-sm font-semibold text-accent" aria-hidden="true">
+                    {principle.number}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-semibold text-ink">{principle.title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-muted">{principle.body}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface py-16 sm:py-24" aria-labelledby="today-heading">
+        <div className="container-site">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+              Operation and ownership
+            </p>
+            <h2 id="today-heading" className="text-3xl font-bold text-ink sm:text-4xl">
+              What exists today — and what comes next
+            </h2>
+            <p className="mt-5 leading-7 text-muted">
+              The practical fulfilment operation is the foundation. The cooperative layer is
+              being designed alongside it and needs its own formal decisions.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            <article className="rounded-2xl border border-border bg-white p-7 sm:p-9">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-primary">
+                Operational foundation
+              </p>
+              <h3 className="text-2xl font-bold text-ink">Fulfilment from Breda</h3>
+              <div className="mt-5 space-y-3 text-sm leading-6 text-muted">
+                <p>Warehouse: {APPROVED_FACTS.address}.</p>
+                <p>{APPROVED_FACTS.shopify}</p>
+                <p>{APPROVED_FACTS.amazonFbm}</p>
+                <p>{CLAIM_RETURNS}</p>
+              </div>
+            </article>
+
+            <article className="rounded-2xl border border-primary/20 bg-primary-950 p-7 text-white sm:p-9">
+              <p className="mb-4 text-sm font-semibold uppercase tracking-[0.14em] text-network">
+                Cooperative development
+              </p>
+              <h3 className="text-2xl font-bold">Membership rules still to formalise</h3>
+              <p className="mt-5 text-sm leading-6 text-white/70">
+                Eligibility, democratic rights, cost allocation, reserves, treatment of any
+                surplus and exit terms must be adopted in the cooperative&apos;s constitutional
+                and membership documents before they become final member commitments.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-24" aria-labelledby="building-heading">
+        <div className="container-site max-w-5xl">
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+            Build deliberately
+          </p>
+          <h2 id="building-heading" className="text-3xl font-bold text-ink sm:text-4xl">
+            From practical fit to shared governance
+          </h2>
+
+          <ol className="mt-10 grid gap-5 md:grid-cols-3">
+            {BUILDING_STEPS.map((step, index) => (
+              <li key={step.title} className="rounded-2xl border border-border p-6">
+                <span className="mb-5 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-sm font-bold text-white">
+                  {index + 1}
+                </span>
+                <h3 className="text-lg font-semibold text-ink">{step.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">{step.body}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-10 rounded-2xl border border-accent/25 bg-accent-soft p-6 sm:p-8">
+            <h3 className="text-xl font-semibold text-ink">Who should explore the model?</h3>
+            <p className="mt-3 leading-7 text-muted">
+              Brands should first assess whether the operation fits their product, volume,
+              channels and markets. {CLAIM_VOLUME} If the operational fit is sound, the
+              developing member model becomes the next conversation.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-primary py-16 text-white" aria-labelledby="vision-cta-heading">
+        <div className="container-site max-w-3xl text-center">
+          <h2 id="vision-cta-heading" className="text-3xl font-bold">
+            Start with the operational fit
+          </h2>
+          <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/75">
+            Share your current order profile, channels, product category and target markets.
+            Vareya can then review the operation before discussing the developing member model.
+          </p>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
               href="/fulfilment-scan/"
-              className="inline-flex items-center px-6 py-3 bg-accent text-ink font-semibold rounded-[10px] hover:bg-[#FF8A3D] transition-colors"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-slate-100"
             >
-              Check your fit →
+              {CLAIM_PRIMARY_CTA}
             </Link>
             <Link
               href="/contact/"
-              className="inline-flex items-center px-6 py-3 border border-white/20 text-white rounded-[10px] hover:bg-white/5 transition-colors"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-white/30 px-6 py-3 font-semibold text-white transition-colors hover:bg-white/10"
             >
-              Contact Vareya
+              Ask about the vision
             </Link>
           </div>
         </div>

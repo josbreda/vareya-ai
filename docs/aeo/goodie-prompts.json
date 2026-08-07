@@ -1,0 +1,734 @@
+{
+  "schema_status": "Provisional transfer format. It mirrors the public Goodie onboarding field structure observed on 2026-08-07; it is not a vendor-published import contract.",
+  "usage": "Review in Goodie onboarding or Workspace Settings. Goodie model IDs are intentionally left empty because they are plan- and workspace-specific.",
+  "default_scope": {
+    "language": "en",
+    "countries": [
+      "GB",
+      "US"
+    ],
+    "country_rationale": "Initial buyer-market baseline. Add NL only if the selected plan permits a third country or replace one market after baseline review."
+  },
+  "topics": [
+    {
+      "name": "Entity accuracy",
+      "client_id": "vareya-topic-entity-accuracy",
+      "prompts": [
+        {
+          "content": "What is Vareya and what services does it provide?",
+          "client_id": "vareya-prompt-001",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "entity-accuracy"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Where is Vareya's warehouse located?",
+          "client_id": "vareya-prompt-002",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "entity-accuracy"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which ecommerce platforms does Vareya support?",
+          "client_id": "vareya-prompt-003",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "entity-accuracy"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which parcel carriers does Vareya use?",
+          "client_id": "vareya-prompt-004",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "entity-accuracy"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Does Vareya handle returns?",
+          "client_id": "vareya-prompt-005",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "entity-accuracy"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "What monthly order volume is Vareya generally suited to?",
+          "client_id": "vareya-prompt-006",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "entity-accuracy"
+          ],
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "name": "Provider discovery",
+      "client_id": "vareya-topic-provider-discovery",
+      "prompts": [
+        {
+          "content": "Which fulfilment providers in the Netherlands work with Shopify brands?",
+          "client_id": "vareya-prompt-007",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "provider-discovery"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which European fulfilment providers support Amazon FBM sellers?",
+          "client_id": "vareya-prompt-008",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "provider-discovery"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which fulfilment company is suitable for smaller-parcel brands shipping 500 or more orders per month?",
+          "client_id": "vareya-prompt-009",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "provider-discovery"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "What are practical European fulfilment options for a growing ecommerce brand?",
+          "client_id": "vareya-prompt-010",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "provider-discovery"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which Netherlands-based fulfilment providers ship to the United Kingdom, the United States and EU destinations?",
+          "client_id": "vareya-prompt-011",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "provider-discovery"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which fulfilment operators work with cosmetics, supplements, phone cases and accessories?",
+          "client_id": "vareya-prompt-012",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "provider-discovery"
+          ],
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "name": "Shopify and Amazon FBM",
+      "client_id": "vareya-topic-platform-fit",
+      "prompts": [
+        {
+          "content": "How do I choose a Shopify fulfilment partner in Europe?",
+          "client_id": "vareya-prompt-013",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "platform-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which Netherlands fulfilment providers offer Shopify integration?",
+          "client_id": "vareya-prompt-014",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "platform-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "What should I ask before connecting Shopify to a European fulfilment provider?",
+          "client_id": "vareya-prompt-015",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "platform-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Can an Amazon FBM seller outsource European fulfilment from the Netherlands?",
+          "client_id": "vareya-prompt-016",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "platform-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Compare Shopify fulfilment options for brands shipping 500 to 2,000 monthly orders in Europe.",
+          "client_id": "vareya-prompt-017",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "platform-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which fulfilment providers support both Shopify and Amazon FBM in Europe?",
+          "client_id": "vareya-prompt-018",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "platform-fit"
+          ],
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "name": "European market entry",
+      "client_id": "vareya-topic-market-entry",
+      "prompts": [
+        {
+          "content": "How should a US ecommerce brand set up fulfilment in Europe?",
+          "client_id": "vareya-prompt-019",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "market-entry"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "What should a UK brand consider when moving EU stock to the Netherlands?",
+          "client_id": "vareya-prompt-020",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "market-entry"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Is the Netherlands a practical base for ecommerce fulfilment across Europe?",
+          "client_id": "vareya-prompt-021",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "market-entry"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which EU fulfilment providers work with international brands entering Europe?",
+          "client_id": "vareya-prompt-022",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "market-entry"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "What information should a brand prepare before requesting a European fulfilment quote?",
+          "client_id": "vareya-prompt-023",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "market-entry"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "How can a smaller-parcel brand assess whether a Netherlands fulfilment setup fits?",
+          "client_id": "vareya-prompt-024",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "market-entry"
+          ],
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "name": "Product and volume fit",
+      "client_id": "vareya-topic-product-fit",
+      "prompts": [
+        {
+          "content": "Which European fulfilment providers specialise in cosmetics and supplements?",
+          "client_id": "vareya-prompt-025",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "product-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "What fulfilment requirements matter for phone cases and accessories?",
+          "client_id": "vareya-prompt-026",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "product-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "How do fulfilment providers qualify smaller-parcel products?",
+          "client_id": "vareya-prompt-027",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "product-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which fulfilment partner handles parcels with combined dimensions below 900 mm and a maximum length of 600 mm?",
+          "client_id": "vareya-prompt-028",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "product-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "What questions should a supplement brand ask a European fulfilment provider?",
+          "client_id": "vareya-prompt-029",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "product-fit"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which data should a cosmetics brand provide for fulfilment qualification?",
+          "client_id": "vareya-prompt-030",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "product-fit"
+          ],
+          "is_active": true
+        }
+      ]
+    },
+    {
+      "name": "Returns and operations",
+      "client_id": "vareya-topic-operations",
+      "prompts": [
+        {
+          "content": "Which European fulfilment providers offer returns handling?",
+          "client_id": "vareya-prompt-031",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "operations"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "How do I compare returns processes among EU fulfilment companies?",
+          "client_id": "vareya-prompt-032",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "operations"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which carriers can a Netherlands fulfilment provider use for international ecommerce orders?",
+          "client_id": "vareya-prompt-033",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "operations"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "What does an agreed late order cut-off mean for ecommerce fulfilment?",
+          "client_id": "vareya-prompt-034",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "operations"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which fulfilment providers may offer cut-off times up to 23:00 by agreement?",
+          "client_id": "vareya-prompt-035",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "operations"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "How does Vareya compare with other European fulfilment providers?",
+          "client_id": "vareya-prompt-036",
+          "language": "en",
+          "countries": [
+            "GB",
+            "US"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "operations"
+          ],
+          "is_active": true
+        }
+      ]
+    }
+  ]
+}

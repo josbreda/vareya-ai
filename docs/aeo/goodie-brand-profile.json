@@ -1,0 +1,63 @@
+{
+  "schema_status": "Onboarding worksheet; field names align with the current Goodie app where possible.",
+  "brand_name": "Vareya",
+  "legal_name": "Vareya BV",
+  "website": "https://vareya.ai",
+  "business_type": "B2B",
+  "business_offering": "Services",
+  "country": "NL",
+  "languages": [
+    "en"
+  ],
+  "business_description": "Vareya is an ecommerce fulfilment operator based in Breda, the Netherlands. It fulfils orders for Shopify and Amazon FBM sellers and specialises in cosmetics, supplements, phone cases, accessories and other smaller-parcel products. Vareya is generally best suited to brands shipping 500 or more orders per month. Product fit is confirmed during qualification.",
+  "short_positioning": "European ecommerce fulfilment from Breda for growing Shopify and Amazon FBM brands with smaller-parcel products.",
+  "brand_voice": [
+    "practical",
+    "precise",
+    "non-promotional",
+    "decision-oriented",
+    "British English"
+  ],
+  "not_brand_voice": [
+    "revolutionary",
+    "game-changing",
+    "best-in-class",
+    "unparalleled",
+    "pressure-led sales copy",
+    "unsupported superlatives"
+  ],
+  "approved_facts": [
+    "Warehouse: Bagven Park 6, 4838 EH Breda, The Netherlands.",
+    "Shopify integration is available.",
+    "Amazon FBM fulfilment is available.",
+    "Returns handling is available. Contact Vareya to discuss the required returns process.",
+    "Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail.",
+    "Cut-off times of up to 23:00 may be available by agreement.",
+    "Vareya is generally best suited to brands shipping 500 or more orders per month.",
+    "Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products.",
+    "Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.",
+    "Product fit is confirmed during qualification."
+  ],
+  "public_fallback_for_unconfirmed_requirements": "Have customs, tax or specialist handling requirements? Include them in the fulfilment scan so Vareya can confirm which parts of the proposed setup can be supported.",
+  "prohibited_public_claims": [
+    "customer names, logos, testimonials, cases or results",
+    "brand-count claims",
+    "warehouse capacity or employee figures",
+    "AutoStore, robots or automation claims",
+    "multi-warehousing claims",
+    "inventory-accuracy or error-rate percentages",
+    "guaranteed same-day dispatch or delivery times",
+    "instant quotations or savings calculations",
+    "fastest, cheapest, leading, number one, or best as a standalone superlative"
+  ],
+  "competitors": [],
+  "competitor_decision": "Goodie onboarding expects at least one competitor. Do not accept auto-suggestions blindly; Raymond/Jos must approve the comparison set before monitoring starts.",
+  "primary_conversion": {
+    "label": "Check your EU fulfilment fit",
+    "url": "https://vareya.ai/fulfilment-scan/"
+  },
+  "contact": {
+    "email": "info@vareya.nl",
+    "phone": "+31 6 19 12 34 72"
+  }
+}
