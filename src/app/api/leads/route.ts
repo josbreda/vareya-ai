@@ -133,8 +133,8 @@ export async function POST(request: NextRequest) {
         // 4.5 Sync to HubSpot (non-blocking, downstream from Supabase)
         if (process.env.HUBSPOT_ACCESS_TOKEN) {
           try {
-            const { syncToHubSpot } = await import("@/lib/hooks/useHubspotSync");
-            syncToHubSpot({
+            const { syncLead } = await import("@/lib/hubspot");
+            syncLead({
               name: String(clean.name || ""),
               company: String(clean.company || ""),
               work_email: String(clean.work_email || ""),
