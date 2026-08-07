@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/components/marketing/FAQ";
 import { NetworkHero } from "@/components/marketing/NetworkHero";
+import { RotatingHeadline } from "@/components/marketing/RotatingHeadline";
 import { APPROVED_DESTINATIONS, CAPABILITIES } from "@/content/facts";
 
 export const metadata: Metadata = {
@@ -122,9 +123,12 @@ export default function HomePage() {
 
       <section className="border-b border-slate-200 bg-slate-50 py-10" aria-labelledby="quick-answer">
         <div className="container-site max-w-4xl">
-          <h2 id="quick-answer" className="mb-3 text-2xl font-bold text-slate-900">
-            Quick answer
-          </h2>
+          <RotatingHeadline
+            prefix="European fulfilment for"
+            words={["Shopify", "Amazon FBM", "DTC brands", "cosmetics", "supplements", "accessories"]}
+            interval={1800}
+            className="mb-3 text-2xl font-bold text-slate-900 block"
+          />
           <div className="space-y-3 leading-7 text-muted">
             <p>
               Vareya is an ecommerce fulfilment operator based in Breda, the
