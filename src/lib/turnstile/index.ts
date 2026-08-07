@@ -5,6 +5,11 @@ import { SERVER_ENV } from "../leads/config";
  * Returns true if the token is valid, false otherwise.
  */
 export async function validateTurnstile(token: string): Promise<boolean> {
+  // Allow test token in development for end-to-end testing
+  if (token === "test" && process.env.NODE_ENV === "development") {
+    return true;
+  }
+
   if (!SERVER_ENV.turnstileSecretKey) {
     // Not configured yet — allow through in development
     console.warn("[turnstile] Secret key not configured — allowing request");

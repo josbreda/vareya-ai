@@ -66,8 +66,6 @@ async function upsertContact(lead: LeadData): Promise<string> {
     firstname: lead.name.split(" ")[0] || lead.name,
     lastname: lead.name.split(" ").slice(1).join(" ") || "",
     phone: lead.phone_number || "",
-    ecommerce_platform: lead.ecommerce_platform || "",
-    monthly_order_volume: lead.monthly_order_volume || "",
     hs_lead_status: "NEW",
   };
 
