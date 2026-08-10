@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -150,6 +150,9 @@ export default function FulfilmentScanPage() {
 /* ── Multi-step form ── */
 function ScanForm() {
   const router = useRouter();
+  const turnstileRef = useRef<string | null>(null);
+  const turnstileContainerRef = useRef<HTMLDivElement>(null);
+
   const [step, setStep] = useState(0);
   const [data, setData] = useState<ScanFormData>(INITIAL);
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -159,6 +162,26 @@ function ScanForm() {
 
   const current = STEPS[step];
   const isLast = step === TOTAL_STEPS - 1;
+
+  // Render Turnstile widget on contact step
+  useEffect(() => {
+    if (current.type === "contact" && turnstileContainerRef.current && !turnstileRef.current) {
+      const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+      if (siteKey && (window as any).turnstile) {
+        turnstileRef.current = (window as any).turnstile.render(turnstileContainerRef.current, {
+          sitekey: siteKey,
+          theme: "light",
+          size: "normal",
+        });
+      }
+    }
+    return () => {
+      if (turnstileRef.current && (window as any).turnstile) {
+        (window as any).turnstile.remove(turnstileRef.current);
+        turnstileRef.current = null;
+      }
+    };
+  }, [current.type]);
 
   const update = useCallback(
     (field: keyof ScanFormData, value: string | string[]) => {
@@ -227,7 +250,7 @@ function ScanForm() {
         utm_campaign: params.get("utm_campaign") || "",
         utm_content: params.get("utm_content") || "",
         device: /Mobi|Android/i.test(navigator.userAgent) ? "mobile" : "desktop",
-        turnstile_token: "", // placeholder until Turnstile keys available
+        turnstile_token: (window as any).turnstile?.getResponse?.(turnstileRef.current) || "",
       };
 
       const res = await fetch("/api/leads", {
@@ -330,6 +353,7 @@ function ScanForm() {
               value={data.phone}
               onChange={(v) => update("phone", v)}
             />
+            <div ref={turnstileContainerRef} className="mt-3 flex justify-center" />
           </div>
         )}
 
