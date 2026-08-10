@@ -153,7 +153,11 @@ export default function HomePage() {
               CAPABILITIES.shopify,
               CAPABILITIES.amazonFbm,
               CAPABILITIES.returns,
-              `Carriers include ${CAPABILITIES.carriers.slice(0, -1).join(", ")} and ${CAPABILITIES.carriers.at(-1)}.`,
+              CAPABILITIES.postNL,
+              CAPABILITIES.shipHero,
+              CAPABILITIES.carrierSelection,
+              CAPABILITIES.customs,
+              CAPABILITIES.weekendFulfilment,
               CAPABILITIES.cutOff,
             ].map((item) => (
               <p key={item} className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-6 text-muted">
@@ -222,9 +226,10 @@ export default function HomePage() {
             <p>{CAPABILITIES.shopify}</p>
             <p>{CAPABILITIES.amazonFbm}</p>
             <p>{CAPABILITIES.returns}</p>
-            <p>
-              Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail.
-            </p>
+            <p>{CAPABILITIES.postNL}</p>
+            <p>{CAPABILITIES.shipHero}</p>
+            <p>{CAPABILITIES.customs}</p>
+            <p>{CAPABILITIES.weekendFulfilment}</p>
             <p>{CAPABILITIES.cutOff}</p>
             <p>{CAPABILITIES.volume}</p>
             <p>
@@ -250,16 +255,30 @@ export default function HomePage() {
           <div>
             <h2 className="mb-4 text-2xl font-bold">International shipping</h2>
             <p className="leading-7 text-muted">
-              Vareya ships to {destinationList}, using a carrier network that includes
-              DHL, PostNL, Asendia, FedEx and Royal Mail.
+              {CAPABILITIES.postNL}
+            </p>
+            <p className="mt-3 leading-7 text-muted">
+              {CAPABILITIES.carrierSelection}
             </p>
           </div>
         </div>
       </section>
 
-      <section className="bg-slate-50 py-12" aria-labelledby="returns">
+      <section className="bg-slate-50 py-12" aria-labelledby="support">
         <div className="container-site max-w-4xl">
-          <h2 id="returns" className="mb-4 text-2xl font-bold">Returns</h2>
+          <h2 id="support" className="mb-4 text-2xl font-bold">How you're supported</h2>
+          <div className="space-y-3 leading-7 text-muted">
+            <p>{CAPABILITIES.support}</p>
+            <p>{CAPABILITIES.slas}</p>
+            <p>{CAPABILITIES.allInRates}</p>
+            <p className="italic text-slate-500">{CAPABILITIES.ambition}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12" aria-labelledby="returns-heading">
+        <div className="container-site max-w-4xl">
+          <h2 id="returns-heading" className="mb-4 text-2xl font-bold">Returns</h2>
           <p className="leading-7 text-muted">{CAPABILITIES.returns}</p>
         </div>
       </section>
