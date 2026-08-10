@@ -18,17 +18,34 @@ interface LeadData {
 
 interface SyncResult { contactId: string | null; companyId: string | null; taskId: string | null; dealId: string | null; status: SyncStatus; fitScore?: number; error?: string; }
 
-function scoreFit(lead: LeadData): { score: number; status: string } {
-  let score = 0;
-  if (lead.ecommerce_platform?.toLowerCase() === "shopify") score += 1;
-  if (lead.ecommerce_platform?.toLowerCase().includes("amazon")) score += 1;
+function scoreWarmth(lead: LeadData): { fitScore: number; intentScore: number; totalScore: number; status: string } {
+  // FIT SCORE (0-50): operational compatibility
+  let fit = 0;
+  if (lead.ecommerce_platform?.toLowerCase() === "shopify") fit += 10;
+  if (lead.ecommerce_platform?.toLowerCase().includes("amazon")) fit += 5;
   const vol = lead.monthly_order_volume || "";
-  if (vol.includes("1000") || vol.includes("2000") || vol.includes("5000")) score += 2;
-  else if (vol.includes("500")) score += 1;
-  if ((lead.target_markets || []).length > 3) score += 1;
-  if (lead.form_type === "scan") score += 2;
-  const status = score >= 7 ? "QUALIFIED" : score >= 4 ? "POSSIBLE FIT" : "NOT A FIT";
-  return { score, status };
+  if (vol.includes("2000") || vol.includes("5000")) fit += 15;
+  else if (vol.includes("1000")) fit += 12;
+  else if (vol.includes("500")) fit += 8;
+  if ((lead.target_markets || []).length >= 3) fit += 5;
+  if ((lead.target_markets || []).length >= 5) fit += 5;
+  fit = Math.min(fit, 50);
+  
+  // INTENT SCORE (0-50): commercial signals
+  let intent = 0;
+  if (lead.form_type === "scan") intent += 20;  // highest intent
+  else if (lead.form_type === "quote") intent += 25;  // explicit buying intent
+  if (lead.utm_source?.toLowerCase().includes("linkedin")) intent += 5;
+  if (lead.utm_medium === "cpc") intent += 5;
+  if (lead.utm_campaign) intent += 3;
+  if (lead.landing_page?.includes("scan")) intent += 5;
+  if (lead.landing_page?.includes("quote")) intent += 5;
+  if (lead.landing_page?.includes("shopify") || lead.landing_page?.includes("us-brands")) intent += 3;
+  intent = Math.min(intent, 50);
+  
+  const total = fit + intent;
+  const status = total >= 70 ? "HOT" : total >= 40 ? "WARM" : total >= 20 ? "COOL" : "COLD";
+  return { fitScore: fit, intentScore: intent, totalScore: total, status };
 }
 
 async function hs(method: string, path: string, body?: unknown) {
@@ -63,13 +80,13 @@ export async function syncLead(lead: LeadData): Promise<SyncResult> {
     // 3. Association
     try { await hs("PUT",`/crm/v4/objects/contacts/${contactId}/associations/companies/${companyId}`); } catch(e) { /* non-blocking */ }
     // 4. Score & task
-    const fit = scoreFit(lead);
-    result.fitScore = fit.score;
+    const w = scoreWarmth(lead);
+    result.fitScore = w.totalScore;
     const taskBody = {
       properties: {
-        hs_task_subject: `[${fit.status}] ${lead.company} — ${lead.name}`,
-        hs_task_body: `FIT SCORE: ${fit.score}/10 (${fit.status})\n\nSubmission: ${lead.submission_id}\nForm: ${lead.form_type}\nPlatform: ${lead.ecommerce_platform||"N/A"}\nVolume: ${lead.monthly_order_volume||"N/A"}\nMarkets: ${(lead.target_markets||[]).join(", ")||"N/A"}\nLanding: ${lead.landing_page||"N/A"}\nDevice: ${lead.device||"N/A"}\n\nREVIEW: Check platform compatibility, volume threshold (500+/mo), product fit, market coverage within 1 working day.`,
-        hs_task_status: "NOT_STARTED", hs_task_priority: fit.score >= 4 ? "HIGH" : "MEDIUM",
+        hs_task_subject: `[${w.status}] ${lead.company} — ${lead.name}`,
+        hs_task_body: `WARMTH: ${w.totalScore}/100 (${w.status}) | FIT: ${w.fitScore}/50 | INTENT: ${w.intentScore}/50\n\nSubmission: ${lead.submission_id}\nForm: ${lead.form_type}\nPlatform: ${lead.ecommerce_platform||"N/A"}\nVolume: ${lead.monthly_order_volume||"N/A"}\nMarkets: ${(lead.target_markets||[]).join(", ")||"N/A"}\nLanding: ${lead.landing_page||"N/A"}\nDevice: ${lead.device||"N/A"}\n\nREVIEW: Check platform compatibility, volume threshold (500+/mo), product fit, market coverage within 1 working day.`,
+        hs_task_status: "NOT_STARTED", hs_task_priority: w.totalScore >= 40 ? "HIGH" : "MEDIUM",
         hs_timestamp: new Date().toISOString(),
       },
     };
