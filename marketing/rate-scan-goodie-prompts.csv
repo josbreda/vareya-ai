@@ -1,0 +1,31 @@
+topic_id,prompt,persona,funnel_stage,intent,target_page,status,claim_risk,goodie_priority
+A1,"What information do I need to give a 3PL to get a fulfilment quote?",DTC founder,awareness,high,/knowledge/fulfilment-quotation-requirements/,missing,low,P0
+A2,"How long does it take to get a fulfilment quotation from a 3PL?",Operations manager,comparison,medium,/knowledge/fulfilment-quotation-requirements/,missing,low,P1
+A3,"What is the minimum order volume for a 3PL?",Small brand founder,qualification,high,/knowledge/,exists,low,P0
+A4,"Fulfilment quotation checklist for Shopify brands",Shopify merchant,solution,high,/knowledge/fulfilment-quotation-requirements/,partial,low,P1
+B1,"Why do different 3PLs charge such different fulfilment rates?",DTC founder,education,medium,/knowledge/fulfilment-cost-drivers/,missing,medium,P0
+B2,"What does all-in fulfilment pricing actually include?",Operations lead,comparison,high,/knowledge/fulfilment-cost-drivers/,missing,medium,P0
+B3,"Hidden costs in fulfilment — what to ask before signing",Founder,awareness,high,/knowledge/fulfilment-cost-drivers/,missing,low,P1
+C1,"How do parcel dimensions affect fulfilment and shipping costs?",Operations manager,education,high,/knowledge/parcel-profile-and-costs/,missing,low,P0
+C2,"Does SKU count affect fulfilment pricing?",Small brand,education,medium,/knowledge/parcel-profile-and-costs/,missing,low,P1
+C3,"How does destination mix affect carrier choice and shipping cost?",Cross-border brand,education,high,/knowledge/parcel-profile-and-costs/,missing,low,P0
+D1,"Which carriers do Netherlands fulfilment companies use?",International brand,research,medium,/knowledge/ecommerce-fulfilment-netherlands-guide/,exists,low,P0
+D2,"PostNL vs DHL for ecommerce fulfilment in the Netherlands",Local brand,comparison,medium,/knowledge/ecommerce-fulfilment-netherlands-guide/,exists,medium,P1
+D3,"Royal Mail direct entry for UK shipments from Europe",UK brand,solution,high,/knowledge/,exists,low,P1
+E1,"How to compare 3PL fulfilment partners fairly",DTC founder,comparison,high,/knowledge/compare-fulfilment-partners/,missing,low,P0
+E2,"Shipping software vs carrier contract vs fulfilment partner",Scaling brand,solution,high,/knowledge/compare-fulfilment-partners/,missing,medium,P0
+E3,"When to switch from self-fulfilment to a 3PL",Growing founder,awareness,medium,/knowledge/compare-fulfilment-partners/,missing,low,P1
+F1,"How many pallets of storage do I need in a fulfilment warehouse?",Inbound planning,education,medium,/knowledge/warehouse-storage-planning/,missing,low,P1
+F2,"How to estimate warehouse storage needs for ecommerce inventory",Operations lead,education,medium,/knowledge/warehouse-storage-planning/,missing,low,P1
+F3,"Do 3PLs charge per pallet per SKU or per m2?",Founder,education,medium,/knowledge/warehouse-storage-planning/,missing,medium,P2
+G1,"How does Shopify connect to a 3PL fulfilment partner?",Shopify merchant,solution,high,/knowledge/shopify-fulfilment-europe-what-to-look-for/,exists,low,P0
+G2,"Does ShipHero work with European 3PLs?",Operations lead,solution,medium,/knowledge/shopify-fulfilment-europe-what-to-look-for/,exists,low,P1
+G3,"WooCommerce fulfilment in Europe — how does it work?",WooCommerce store,solution,medium,/knowledge/woocommerce-fulfilment-europe/,missing,low,P2
+H1,"Which countries do EU fulfilment centres ship to?",International brand,research,medium,/knowledge/,exists,low,P0
+H2,"How should I split my order volumes across EU countries?",Expanding brand,planning,medium,/knowledge/,missing,low,P1
+H3,"Shipping from the Netherlands to the UK after Brexit",UK/EU brand,awareness,high,/eu-fulfilment-uk-brands/,exists,low,P0
+I1,"What counts as a small parcel for fulfilment pricing?",Small brand,education,medium,/knowledge/parcel-profile-and-costs/,missing,low,P1
+I2,"Why do small webshops pay higher shipping rates than big brands?",Founder,awareness,high,/knowledge/small-brand-shipping-rates/,missing,high,P0
+I3,"How can smaller brands reduce cross-border shipping costs?",Brand,solution,medium,/knowledge/small-brand-shipping-rates/,missing,medium,P1
+J1,"What is cooperative fulfilment — how does it work in practice?",Values founder,education,medium,/why-vareya-ai/,review-gated,high,P2
+J2,"How does pooled shipping volume work for small ecommerce brands?",Curious founder,education,low,REVIEW-ONLY,internal,highest,P2
