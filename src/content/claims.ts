@@ -1,6 +1,6 @@
 // ============================================================================
 // Vareya.ai — Canonical Claims Constants
-// Source: content/claims-register.md v1.1 (2026-08-06, Raymond-approved)
+// Source: content/claims-register.md v1.2 (2026-08-09, Raymond-approved)
 // ============================================================================
 // These three sentences MUST be reproduced VERBATIM wherever cut-off,
 // volume or returns are mentioned on any page. No rewording permitted.
@@ -14,6 +14,45 @@ export const CLAIM_VOLUME =
 
 export const CLAIM_RETURNS =
   "Returns handling is available. Contact Vareya to discuss the required returns process.";
+
+// ============================================================================
+// v1.2 additions (9 August 2026 — Raymond, DECISIONS_FOR_RAYMOND.md point 9,
+// A-008–A-018)
+// ============================================================================
+
+export const CLAIM_POSTNL =
+  "PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.";
+
+export const CLAIM_SUPPORT =
+  "Customer support is included at no additional charge.";
+
+export const CLAIM_SLAS =
+  "Clients can agree customised SLAs with Vareya, within boundaries confirmed during qualification.";
+
+export const CLAIM_SHIPHERO =
+  "Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.";
+
+export const CLAIM_ALL_IN =
+  "Vareya's fulfilment rates are fixed and all-in per agreement — no hidden costs beyond what the agreement sets out.";
+
+export const CLAIM_INTERNATIONAL =
+  "Vareya has multiple years of experience fulfilling for large international brands.";
+
+export const CLAIM_CUSTOMS =
+  "Customs clearance support is available for shipments into and out of Europe. Contact Vareya to discuss specific requirements.";
+
+export const CLAIM_ROYAL_MAIL =
+  "Shipments to the United Kingdom may be entered directly into the Royal Mail domestic network. Exact delivery timing depends on the agreed shipping method and is confirmed during qualification.";
+
+export const CLAIM_CARRIER_SELECTION =
+  "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics.";
+
+export const CLAIM_WEEKEND =
+  "Weekend fulfilment (Saturday and Sunday order processing) is available on a structural basis.";
+
+// Ambition — Vision/About pages only, always future-framed
+export const CLAIM_AMBITION =
+  "Vareya's ambition is to become the most consumer-focused fulfilment organisation in Europe.";
 
 // ============================================================================
 // Approved public-facing fallback for specialist capabilities
@@ -61,7 +100,7 @@ export const PROHIBITED_TERMS = [
 // "best" is ONLY permitted inside CLAIM_VOLUME verbatim — audit separately
 
 // ============================================================================
-// Approved shipping destinations (do not add/remove)
+// Approved shipping destinations v1.2 (do not add/remove)
 // ============================================================================
 
 export const APPROVED_DESTINATIONS = [
@@ -70,7 +109,8 @@ export const APPROVED_DESTINATIONS = [
   "Finland", "France", "Germany", "Greece", "Hong Kong", "Hungary",
   "Ireland", "Italy", "Japan", "Latvia", "Lithuania", "Luxembourg",
   "Malta", "New Zealand", "Norway", "Poland", "Portugal", "Romania",
-  "Slovakia", "Slovenia", "Spain", "Sweden", "Switzerland",
+  "Saudi Arabia", "Slovakia", "Slovenia", "South Korea", "Spain",
+  "Sweden", "Switzerland", "Turkey", "United Arab Emirates",
   "United Kingdom", "United States",
 ] as const;
 

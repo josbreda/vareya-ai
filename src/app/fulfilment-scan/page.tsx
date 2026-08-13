@@ -3,6 +3,14 @@
 import { useState, useCallback, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import {
+  trackRateScanBack,
+  trackRateScanComplete,
+  trackRateScanStart,
+  trackRateScanStep,
+  trackRateScanValidationError,
+  trackRateScanView,
+} from "@/lib/scan-analytics";
 
 /* ── Step definitions ── */
 const STEPS = [
@@ -163,6 +171,17 @@ function ScanForm() {
   const current = STEPS[step];
   const isLast = step === TOTAL_STEPS - 1;
 
+  // Analytics: view + first step render
+  useEffect(() => {
+    trackRateScanView();
+    trackRateScanStart();
+  }, []);
+
+  // Analytics: step change
+  useEffect(() => {
+    if (step > 0) trackRateScanStep(step, current.id);
+  }, [step, current.id]);
+
   // Render Turnstile widget on contact step
   useEffect(() => {
     if (current.type === "contact" && turnstileContainerRef.current && !turnstileRef.current) {
@@ -220,6 +239,9 @@ function ScanForm() {
     }
 
     setErrors(errs);
+    if (Object.keys(errs).length > 0) {
+      trackRateScanValidationError(current.id);
+    }
     return Object.keys(errs).length === 0;
   };
 
@@ -228,7 +250,10 @@ function ScanForm() {
     setStep((s) => Math.min(s + 1, TOTAL_STEPS - 1));
   };
 
-  const prev = () => setStep((s) => Math.max(s - 1, 0));
+  const prev = () => {
+    trackRateScanBack(step);
+    setStep((s) => Math.max(s - 1, 0));
+  };
 
   const submit = async () => {
     if (!validateStep()) return;
