@@ -66,8 +66,37 @@ export default function NlFulfilmentBrabantPage() {
     { name: "Fulfilment Noord-Brabant", url: "https://vareya.ai/nl/fulfilment-noord-brabant/" },
   ]);
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Vareya BV",
+    description:
+      "Fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops, gespecialiseerd in cosmetics, supplements en andere kleinere pakketten.",
+    url: "https://vareya.ai/",
+    telephone: "+31 6 19 12 34 72",
+    email: "info@vareya.nl",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Bagven Park 6",
+      postalCode: "4838 EH",
+      addressLocality: "Breda",
+      addressRegion: "Noord-Brabant",
+      addressCountry: "NL",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 51.5666,
+      longitude: 4.7273,
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        data-schema="localbusiness"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+      />
       <script
         type="application/ld+json"
         data-schema="breadcrumb"

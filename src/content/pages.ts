@@ -101,6 +101,24 @@ export const PAGE_META: Record<string, PageMeta> = {
       "Vareya is een fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops vanaf 500 orders per maand, met PostNL als strategische partner.",
     canonical: `${BASE}/nl/fulfilment-noord-brabant/`,
   },
+  "/nl/fulfilmentcentrum-kiezen/": {
+    title: "Hoe kies je een fulfilmentcentrum in Noord-Brabant? | Vareya",
+    description:
+      "Een praktisch stappenplan voor webshops die een fulfilmentcentrum in Noord-Brabant willen kiezen: locatie, integraties, vervoerders, tarieven en retouren.",
+    canonical: `${BASE}/nl/fulfilmentcentrum-kiezen/`,
+  },
+  "/nl/wat-kost-fulfilment-brabant/": {
+    title: "Wat kost fulfilment in Brabant? | Vareya",
+    description:
+      "De kostenfactoren van fulfilment in Brabant: orderaantal, pakketprofiel, bestemmingen, opslag, integraties en serviceniveaus.",
+    canonical: `${BASE}/nl/wat-kost-fulfilment-brabant/`,
+  },
+  "/nl/fulfilment-uitbesteden-breda/": {
+    title: "Fulfilment uitbesteden in Breda: stappenplan voor webshops | Vareya",
+    description:
+      "Stappenplan voor webshops die fulfilment willen uitbesteden in Breda: voorraad, software, pakketprofiel, onboarding en retouren.",
+    canonical: `${BASE}/nl/fulfilment-uitbesteden-breda/`,
+  },
   "/thank-you/scan/": {
     title: "Thank You | Vareya",
     description: "Thank you for completing the fulfilment scan.",
