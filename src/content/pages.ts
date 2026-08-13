@@ -77,6 +77,24 @@ export const PAGE_META: Record<string, PageMeta> = {
     description: "How Vareya uses cookies and similar technologies on our website.",
     canonical: `${BASE}/cookies/`,
   },
+  "/about/": {
+    title: "About Vareya | European Fulfilment from the Netherlands",
+    description:
+      "Vareya fulfils ecommerce orders from Breda, the Netherlands. Company details, capabilities and contact information.",
+    canonical: `${BASE}/about/`,
+  },
+  "/why-vareya-ai/": {
+    title: "Why Vareya.ai: A Cooperative Fulfilment Vision | Vareya",
+    description:
+      "The vision behind Vareya: operational fulfilment from Breda and a developing cooperative model for member ownership.",
+    canonical: `${BASE}/why-vareya-ai/`,
+  },
+  "/knowledge/": {
+    title: "European Fulfilment Knowledge | Vareya",
+    description:
+      "Practical guides for evaluating European e-commerce fulfilment, quotations, costs and platform integration.",
+    canonical: `${BASE}/knowledge/`,
+  },
   "/thank-you/scan/": {
     title: "Thank You | Vareya",
     description: "Thank you for completing the fulfilment scan.",
