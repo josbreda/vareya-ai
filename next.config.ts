@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Keep trailing slashes consistent with site-wide canonicals
+  trailingSlash: true,
+
   // Strict TypeScript in production
   typescript: {
     ignoreBuildErrors: false,
