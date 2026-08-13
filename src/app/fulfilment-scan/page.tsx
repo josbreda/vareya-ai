@@ -289,6 +289,7 @@ function ScanForm() {
         throw new Error(body.error || "Something went wrong. Please try again.");
       }
 
+      trackRateScanComplete();
       router.push("/thank-you/scan/");
     } catch (err: unknown) {
       const message =
