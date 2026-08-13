@@ -95,6 +95,12 @@ export const PAGE_META: Record<string, PageMeta> = {
       "Practical guides for evaluating European e-commerce fulfilment, quotations, costs and platform integration.",
     canonical: `${BASE}/knowledge/`,
   },
+  "/nl/fulfilment-noord-brabant/": {
+    title: "Fulfilmentcentrum Brabant | Vareya in Breda",
+    description:
+      "Vareya is een fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops vanaf 500 orders per maand, met PostNL als strategische partner.",
+    canonical: `${BASE}/nl/fulfilment-noord-brabant/`,
+  },
   "/thank-you/scan/": {
     title: "Thank You | Vareya",
     description: "Thank you for completing the fulfilment scan.",
