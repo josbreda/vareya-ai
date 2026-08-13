@@ -4,6 +4,7 @@ import { COMPANY } from "@/content/facts";
 const FOOTER_LINKS = {
   Services: [
     { label: "EU Fulfilment", href: "/eu-fulfilment/" },
+    { label: "Fulfilmentcentrum Brabant", href: "/nl/fulfilment-noord-brabant/" },
     { label: "Shopify Fulfilment", href: "/shopify-fulfilment-europe/" },
     { label: "US Brands", href: "/eu-fulfilment-us-brands/" },
     { label: "UK Brands", href: "/eu-fulfilment-uk-brands/" },
