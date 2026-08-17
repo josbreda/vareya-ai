@@ -189,10 +189,10 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
       "The nine operational inputs a 3PL needs for a meaningful fulfilment quotation — volume, destinations, parcels, SKUs, storage and platform. Includes a quotation checklist.",
     summary:
       "A quotation-ready profile: the nine inputs that turn an enquiry into a reliable fulfilment quotation, with two composite examples and a checklist.",
-    publishedAt: null,
-    publishedLabel: null,
+    publishedAt: "2026-08-17",
+    publishedLabel: "17 August 2026",
     topic: "Quotation",
-    indexable: false,
+    indexable: true,
     reviewer: "Jos",
     reviewedAt: "2026-08-17",
     primaryCta: { label: "Start your Free Rate Scan", route: "/free-rate-scan/" },
@@ -593,10 +593,10 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
       {
         heading: "Human contribution and review",
         paragraphs: [
-          "This review draft combines approved Vareya claims, source research and operational input supplied by Raymond and Jos on 17 August 2026. The examples are composite and anonymised. Identifiable lead information is not included.",
+          "This article combines approved Vareya claims, source research and operational input supplied by Raymond and Jos on 17 August 2026. The examples are composite and anonymised. Identifiable lead information is not included.",
         ],
         reviewNote:
-          "Publication requires explicit release approval. This review draft remains unindexed until then.",
+          "Reviewed by Jos on 2026-08-17. Claims audited against the Claims Register (v1.3).",
       },
     ],
   },

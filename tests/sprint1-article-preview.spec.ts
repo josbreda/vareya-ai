@@ -59,7 +59,12 @@ test.describe("Content Sprint 01 — article preview", () => {
     await expect(sources.filter({ hasText: "Shopify" })).toBeVisible();
 
     // Review block — named reviewer + date, no literal placeholders
-    await expect(page.getByText("Reviewed by Jos on 2026-08-17")).toBeVisible();
+    await expect(
+      page.getByText("Reviewed by Jos on 2026-08-17", { exact: true }),
+    ).toBeVisible();
+    await expect(
+      page.getByText(/Claims audited against the Claims Register/),
+    ).toBeVisible();
     await expect(page.getByText("[REVIEWER NAME]")).toHaveCount(0);
 
     // CTAs
@@ -69,11 +74,24 @@ test.describe("Content Sprint 01 — article preview", () => {
     await expect(secondary).toHaveAttribute("href", "/request-fulfilment-quote/");
   });
 
-  test("article is noindex during preview", async ({ page }) => {
+  test("article is indexable after publication", async ({ page }) => {
     await page.goto(ARTICLE);
-    const robots = page.locator('meta[name="robots"]');
-    await expect(robots).toHaveAttribute("content", /noindex/);
-    await expect(robots).toHaveAttribute("content", /nofollow/);
+    const robotsMeta = await page.locator('meta[name="robots"]').count();
+    if (robotsMeta > 0) {
+      const content = await page.locator('meta[name="robots"]').first().getAttribute("content");
+      expect(content).not.toMatch(/noindex/);
+    }
+    // no Review draft badge anymore
+    await expect(page.getByText("Review draft")).toHaveCount(0);
+    // published date visible
+    await expect(page.locator("time", { hasText: "17 August 2026" }).first()).toBeVisible();
+    // sitemap includes the article
+    const sitemapResponse = await page.request.get("/sitemap.xml");
+    expect(sitemapResponse.status()).toBe(200);
+    const sitemap = await sitemapResponse.text();
+    expect(sitemap).toContain(
+      "https://vareya.ai/knowledge/fulfilment-quotation-requirements/",
+    );
   });
 
   test("PII-free analytics events fire", async ({ page }) => {

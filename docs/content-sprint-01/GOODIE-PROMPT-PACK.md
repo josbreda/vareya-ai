@@ -1,6 +1,6 @@
 # Content Sprint 01 — Goodie Prompt Pack (article-mapped)
 **Article:** What information does a 3PL need to prepare a fulfilment quotation? (`/knowledge/fulfilment-quotation-requirements/`)
-**Status:** PREPARED — NOT IMPORTED, NOT ACTIVATED. Activation only after publication approval (mission Phase 4).
+**Status:** **ACTIVE since 2026-08-17 (publication date).** Import-ready: load the 20 prompts from `marketing/content-sprint-01-prompts.csv` into Goodie, in article order (cs01-p-001 … cs01-p-020).
 **Source CSV:** `marketing/content-sprint-01-prompts.csv` (20 prompts; this pack maps them to the article's answer components)
 **Rule:** no PII, no scan answers, no lead data is ever sent to Goodie.
 
