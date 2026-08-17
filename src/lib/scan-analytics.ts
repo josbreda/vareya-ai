@@ -17,7 +17,7 @@ function push(event: string, payload: Record<string, unknown> = {}) {
 }
 
 export function trackRateScanView() {
-  push("rate_scan_view", { scan_page: "/fulfilment-scan/" });
+  push("rate_scan_view", { scan_page: "/free-rate-scan/" });
 }
 
 export function trackRateScanStart() {

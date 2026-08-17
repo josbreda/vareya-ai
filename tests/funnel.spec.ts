@@ -5,7 +5,7 @@ import { test, expect } from "@playwright/test";
 
 test.describe("Fulfilment Scan", () => {
   test("desktop: complete scan flow", async ({ page }) => {
-    await page.goto("/fulfilment-scan/");
+    await page.goto("/free-rate-scan/");
 
     // Step 1: Volume
     await expect(page.locator("h1")).toContainText("Check your EU fulfilment fit");
@@ -42,13 +42,13 @@ test.describe("Fulfilment Scan", () => {
 
   test("mobile: scan form visible at 360px", async ({ page }) => {
     await page.setViewportSize({ width: 360, height: 800 });
-    await page.goto("/fulfilment-scan/");
+    await page.goto("/free-rate-scan/");
     await expect(page.locator("h1")).toBeVisible();
     await expect(page.locator("select").first()).toBeVisible();
   });
 
   test("scan: validation shows errors", async ({ page }) => {
-    await page.goto("/fulfilment-scan/");
+    await page.goto("/free-rate-scan/");
     // Click Continue without selecting — should show error
     await page.click("text=Continue");
     await expect(page.locator("text=Please select an option")).toBeVisible();

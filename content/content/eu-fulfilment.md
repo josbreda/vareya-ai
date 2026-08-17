@@ -6,7 +6,7 @@ seoTitle: "EU Fulfilment from the Netherlands | Vareya"
 metaDescription: "How Vareya uses a warehouse in Breda, the Netherlands, to fulfil ecommerce orders across Europe, covering shipping, returns and onboarding."
 h1: "Using the Netherlands as your EU fulfilment base"
 primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
+primaryCtaRoute: "/free-rate-scan/"
 secondaryCtaLabel: "Request a fulfilment quote"
 secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: false
@@ -18,7 +18,7 @@ requiresRaymondApproval: false
 
 Many international ecommerce brands use the Netherlands as a base for shipping into Europe. Vareya fulfils orders from a warehouse in Breda, handling shipping, returns and onboarding for brands that are generally shipping 500 or more orders per month.
 
-Primary CTA: Check your EU fulfilment fit → /fulfilment-scan/
+Primary CTA: Check your EU fulfilment fit → /free-rate-scan/
 Secondary CTA: Request a fulfilment quote → /request-fulfilment-quote/
 
 ## Quick answer
@@ -73,11 +73,11 @@ Does Vareya offer support for customs when shipping into or out of Europe? Yes. 
 
 ## Final CTA block
 
-Check your EU fulfilment fit → /fulfilment-scan/. Request a fulfilment quote → /request-fulfilment-quote/.
+Check your EU fulfilment fit → /free-rate-scan/. Request a fulfilment quote → /request-fulfilment-quote/.
 
 ## Internal links
 
-/, /shopify-fulfilment-europe/, /eu-fulfilment-us-brands/, /eu-fulfilment-uk-brands/, /cosmetics-supplements-fulfilment-europe/, /fulfilment-scan/, /request-fulfilment-quote/
+/, /shopify-fulfilment-europe/, /eu-fulfilment-us-brands/, /eu-fulfilment-uk-brands/, /cosmetics-supplements-fulfilment-europe/, /free-rate-scan/, /request-fulfilment-quote/
 
 ## Image recommendation
 

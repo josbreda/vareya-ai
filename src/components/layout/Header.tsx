@@ -37,7 +37,7 @@ export function Header() {
             </Link>
           ))}
           <Link
-            href="/fulfilment-scan/"
+            href="/free-rate-scan/"
             className="inline-flex items-center px-4 py-2 text-sm font-semibold text-white bg-accent rounded-lg hover:bg-accent-light transition-colors"
           >
             Check your fit
@@ -76,7 +76,7 @@ export function Header() {
               </Link>
             ))}
             <Link
-              href="/fulfilment-scan/"
+              href="/free-rate-scan/"
               className="inline-flex items-center justify-center px-4 py-3 text-base font-semibold text-white bg-accent rounded-lg hover:bg-accent-light transition-colors"
               onClick={() => setMobileOpen(false)}
             >

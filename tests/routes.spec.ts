@@ -10,7 +10,7 @@ const ROUTES = [
   { path: "/eu-fulfilment-us-brands/", name: "US Brands" },
   { path: "/eu-fulfilment-uk-brands/", name: "UK Brands" },
   { path: "/cosmetics-supplements-fulfilment-europe/", name: "Cosmetics" },
-  { path: "/fulfilment-scan/", name: "Scan Form" },
+  { path: "/free-rate-scan/", name: "Scan Form" },
   { path: "/request-fulfilment-quote/", name: "Quote Form" },
   { path: "/contact/", name: "Contact" },
   { path: "/privacy/", name: "Privacy" },

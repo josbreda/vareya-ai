@@ -6,7 +6,7 @@ seoTitle: "Cosmetics and Supplements Fulfilment in Europe | Vareya"
 metaDescription: "Vareya specialises in fulfilling cosmetics and supplements orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond."
 h1: "Cosmetics and supplements fulfilment from the Netherlands"
 primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
+primaryCtaRoute: "/free-rate-scan/"
 secondaryCtaLabel: "Request a fulfilment quote"
 secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: false
@@ -18,7 +18,7 @@ requiresRaymondApproval: false
 
 Vareya specialises in fulfilment for cosmetics, supplements, phone cases, accessories and other smaller parcel products, operating from a warehouse in Breda, the Netherlands. Vareya is generally best suited to brands shipping 500 or more orders per month.
 
-Primary CTA: Check your EU fulfilment fit → /fulfilment-scan/
+Primary CTA: Check your EU fulfilment fit → /free-rate-scan/
 Secondary CTA: Request a fulfilment quote → /request-fulfilment-quote/
 
 ## Quick answer
@@ -71,11 +71,11 @@ What parcel sizes are suitable? Combined dimensions below 900 mm and a maximum l
 
 ## Final CTA block
 
-Check your EU fulfilment fit → /fulfilment-scan/. Request a fulfilment quote → /request-fulfilment-quote/.
+Check your EU fulfilment fit → /free-rate-scan/. Request a fulfilment quote → /request-fulfilment-quote/.
 
 ## Internal links
 
-/, /eu-fulfilment/, /shopify-fulfilment-europe/, /eu-fulfilment-us-brands/, /eu-fulfilment-uk-brands/, /fulfilment-scan/, /request-fulfilment-quote/
+/, /eu-fulfilment/, /shopify-fulfilment-europe/, /eu-fulfilment-us-brands/, /eu-fulfilment-uk-brands/, /free-rate-scan/, /request-fulfilment-quote/
 
 ## Image recommendation
 

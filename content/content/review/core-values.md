@@ -22,7 +22,7 @@ Our moral compass sets the direction and runs through every part of how we work 
 9. **Flexibility** — No client is the same, so we adapt our processes to the brand, not the other way around.
 10. **Together We Win** — Success comes from collaboration — with our clients, employees, carriers and partners.
 
-Check your EU fulfilment fit → /fulfilment-scan/
+Check your EU fulfilment fit → /free-rate-scan/
 
 ---
 

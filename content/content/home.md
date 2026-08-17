@@ -6,7 +6,7 @@ seoTitle: "EU Ecommerce Fulfilment from the Netherlands | Vareya"
 metaDescription: "Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Check your fulfilment fit in minutes."
 h1: "Ecommerce fulfilment in Europe, run from the Netherlands"
 primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
+primaryCtaRoute: "/free-rate-scan/"
 secondaryCtaLabel: "Request a fulfilment quote"
 secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: false
@@ -18,7 +18,7 @@ requiresRaymondApproval: false
 
 Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe, the United Kingdom and further afield. Vareya works with Shopify and Amazon FBM sellers in cosmetics, supplements, phone cases, accessories and other smaller parcel products. Vareya is generally best suited to brands shipping 500 or more orders per month. Check whether your operation fits before you talk to anyone.
 
-Primary CTA: Check your EU fulfilment fit → /fulfilment-scan/
+Primary CTA: Check your EU fulfilment fit → /free-rate-scan/
 Secondary CTA: Request a fulfilment quote → /request-fulfilment-quote/
 
 ## Quick answer
@@ -41,7 +41,7 @@ We help online shoppers receive their parcels through the most efficient journey
 
 Together with ecommerce businesses, online brands and webshops, we run the entire operational journey from the moment an order is placed to the moment it lands on someone's doorstep.
 
-Check your EU fulfilment fit → /fulfilment-scan/
+Check your EU fulfilment fit → /free-rate-scan/
 
 ## Problems Vareya helps solve
 
@@ -93,7 +93,7 @@ Cosmetics and supplements: fulfilment for smaller-parcel product categories. Lin
 
 ## Fulfilment-scan CTA
 
-Check whether your current volume, product category, sales channels and target markets may fit Vareya's fulfilment setup. Check your EU fulfilment fit → /fulfilment-scan/
+Check whether your current volume, product category, sales channels and target markets may fit Vareya's fulfilment setup. Check your EU fulfilment fit → /free-rate-scan/
 
 ## FAQ
 
@@ -115,11 +115,11 @@ Do I get a dedicated point of contact? Yes. Every client is paired with a dedica
 
 ## Footer CTA
 
-See whether your fulfilment needs match Vareya's setup. Check your EU fulfilment fit → /fulfilment-scan/, or request a fulfilment quote → /request-fulfilment-quote/.
+See whether your fulfilment needs match Vareya's setup. Check your EU fulfilment fit → /free-rate-scan/, or request a fulfilment quote → /request-fulfilment-quote/.
 
 ## Internal links
 
-/eu-fulfilment/, /shopify-fulfilment-europe/, /eu-fulfilment-us-brands/, /eu-fulfilment-uk-brands/, /cosmetics-supplements-fulfilment-europe/, /fulfilment-scan/, /request-fulfilment-quote/, /contact/
+/eu-fulfilment/, /shopify-fulfilment-europe/, /eu-fulfilment-us-brands/, /eu-fulfilment-uk-brands/, /cosmetics-supplements-fulfilment-europe/, /free-rate-scan/, /request-fulfilment-quote/, /contact/
 
 ## Image recommendation
 

@@ -50,6 +50,12 @@ const nextConfig: NextConfig = {
         destination: "https://vareya.ai/:path*",
         permanent: true,
       },
+      // Legacy scan route → canonical Free Rate Scan (permanent, preserves query/UTM)
+      {
+        source: "/fulfilment-scan/:path*",
+        destination: "/free-rate-scan/:path*",
+        permanent: true,
+      },
     ];
   },
 };

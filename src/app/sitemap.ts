@@ -19,11 +19,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
   }
 
-  // Knowledge articles
+  // Knowledge articles (indexable only — review drafts stay out)
   for (const article of KNOWLEDGE_ARTICLES) {
+    if (article.indexable === false) continue;
     entries.push({
       url: `https://vareya.ai/knowledge/${article.slug}/`,
-      lastModified: new Date(article.publishedAt),
+      lastModified: new Date(article.publishedAt ?? article.reviewedAt ?? Date.now()),
       changeFrequency: "monthly",
       priority: 0.7,
     });

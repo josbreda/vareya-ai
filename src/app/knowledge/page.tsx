@@ -113,8 +113,8 @@ export default function KnowledgePage() {
                     <span className="font-semibold uppercase tracking-[0.12em] text-primary">
                       {article.topic}
                     </span>
-                    <time dateTime={article.publishedAt} className="text-muted">
-                      {article.publishedLabel}
+                    <time dateTime={article.publishedAt ?? undefined} className="text-muted">
+                      {article.publishedLabel ?? "Review draft"}
                     </time>
                   </div>
                   <h3 className="mt-4 text-xl font-semibold leading-7 text-ink">
@@ -169,7 +169,7 @@ export default function KnowledgePage() {
             can assess the proposed fulfilment setup.
           </p>
           <Link
-            href="/fulfilment-scan/"
+            href="/free-rate-scan/"
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-slate-100"
           >
             {CLAIM_PRIMARY_CTA}

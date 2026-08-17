@@ -31,7 +31,7 @@ export default function QuoteThankYou() {
             Back to home
           </Link>
           <Link
-            href="/fulfilment-scan/"
+            href="/free-rate-scan/"
             className="inline-flex items-center px-6 py-3 text-base font-medium text-primary hover:text-primary-dark transition-colors"
           >
             Take the fulfilment scan

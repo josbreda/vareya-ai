@@ -16,7 +16,7 @@ We help online shoppers receive their parcels through the most efficient journey
 
 Together with ecommerce businesses, online brands and webshops, we run the entire operational journey from the moment an order is placed to the moment it lands on someone's doorstep.
 
-Check your EU fulfilment fit → /fulfilment-scan/
+Check your EU fulfilment fit → /free-rate-scan/
 
 ---
 
