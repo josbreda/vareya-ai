@@ -6,7 +6,7 @@ seoTitle: "Shopify Fulfilment in Europe | Vareya"
 metaDescription: "Vareya offers Shopify integration for ecommerce fulfilment from a warehouse in Breda, the Netherlands, shipping across Europe and beyond."
 h1: "Shopify fulfilment from a Netherlands warehouse"
 primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
+primaryCtaRoute: "/free-rate-scan/"
 secondaryCtaLabel: "Request a fulfilment quote"
 secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: false
@@ -18,7 +18,7 @@ requiresRaymondApproval: false
 
 Shopify integration is available with Vareya's fulfilment setup, based in Breda, the Netherlands. Orders are fulfilled and shipped across Europe and to a range of other international markets. Vareya is generally best suited to Shopify brands shipping 500 or more orders per month.
 
-Primary CTA: Check your EU fulfilment fit → /fulfilment-scan/
+Primary CTA: Check your EU fulfilment fit → /free-rate-scan/
 Secondary CTA: Request a fulfilment quote → /request-fulfilment-quote/
 
 ## Quick answer
@@ -67,11 +67,11 @@ What Shopify order volume does Vareya work with? Vareya is generally best suited
 
 ## Final CTA block
 
-Check your EU fulfilment fit → /fulfilment-scan/. Request a fulfilment quote → /request-fulfilment-quote/.
+Check your EU fulfilment fit → /free-rate-scan/. Request a fulfilment quote → /request-fulfilment-quote/.
 
 ## Internal links
 
-/, /eu-fulfilment/, /eu-fulfilment-us-brands/, /eu-fulfilment-uk-brands/, /cosmetics-supplements-fulfilment-europe/, /fulfilment-scan/, /request-fulfilment-quote/
+/, /eu-fulfilment/, /eu-fulfilment-us-brands/, /eu-fulfilment-uk-brands/, /cosmetics-supplements-fulfilment-europe/, /free-rate-scan/, /request-fulfilment-quote/
 
 ## Image recommendation
 

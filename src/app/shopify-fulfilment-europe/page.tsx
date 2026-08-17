@@ -95,7 +95,7 @@ export default function ShopifyFulfilmentPage() {
               <p>{CAPABILITIES.volume}</p>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="/fulfilment-scan/" className="rounded-lg bg-white px-6 py-3 text-center font-semibold text-primary hover:bg-slate-100">
+              <Link href="/free-rate-scan/" className="rounded-lg bg-white px-6 py-3 text-center font-semibold text-primary hover:bg-slate-100">
                 Check your EU fulfilment fit
               </Link>
               <Link href="/request-fulfilment-quote/" className="rounded-lg border border-white/30 px-6 py-3 text-center font-medium hover:bg-white/10">
@@ -200,7 +200,7 @@ export default function ShopifyFulfilmentPage() {
         <div className="container-site text-center">
           <h2 className="mb-4 text-2xl font-bold sm:text-3xl">Assess your Shopify fulfilment setup</h2>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/fulfilment-scan/" className="rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
+            <Link href="/free-rate-scan/" className="rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
               Check your EU fulfilment fit
             </Link>
             <Link href="/request-fulfilment-quote/" className="rounded-lg border border-white/30 px-6 py-3 font-medium hover:bg-white/10">

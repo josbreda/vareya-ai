@@ -102,7 +102,7 @@ export default function AboutPage() {
             Take our quick fulfilment scan — it takes under 3 minutes.
           </p>
           <Link
-            href="/fulfilment-scan/"
+            href="/free-rate-scan/"
             className="inline-flex items-center px-6 py-3 bg-accent text-ink font-semibold rounded-[10px] hover:bg-[#FF8A3D] transition-colors"
           >
             Check your fit →

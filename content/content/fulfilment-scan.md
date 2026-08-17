@@ -1,12 +1,12 @@
 ---
-route: "/fulfilment-scan/"
+route: "/free-rate-scan/"
 pageType: "form"
 status: "approved-draft"
 seoTitle: "Check Your EU Fulfilment Fit | Vareya"
 metaDescription: "Check whether your volume, product category, sales channels and target markets may fit Vareya's fulfilment setup."
 h1: "Check your EU fulfilment fit"
 primaryCtaLabel: "Start the scan"
-primaryCtaRoute: "/fulfilment-scan/"
+primaryCtaRoute: "/free-rate-scan/"
 secondaryCtaLabel: "Request a fulfilment quote"
 secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: false

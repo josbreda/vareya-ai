@@ -126,7 +126,7 @@ export default function NlFulfilmentBrabantPage() {
             <p className="mt-4 leading-7 text-white/75">{CLAIM_VOLUME}</p>
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <Link
-                href="/fulfilment-scan/"
+                href="/free-rate-scan/"
                 className="inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-slate-100"
               >
                 {CLAIM_PRIMARY_CTA}
@@ -296,7 +296,7 @@ export default function NlFulfilmentBrabantPage() {
             voor een eerste fit-review. Product fit wordt bevestigd tijdens de kwalificatie.
           </p>
           <Link
-            href="/fulfilment-scan/"
+            href="/free-rate-scan/"
             className="mt-8 inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-slate-100"
           >
             {CLAIM_PRIMARY_CTA}

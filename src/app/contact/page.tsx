@@ -59,7 +59,7 @@ export default function ContactPage() {
               <h2 className="text-xl font-semibold mb-6">Quick actions</h2>
               <div className="flex flex-col gap-3">
                 <QuickLink
-                  href="/fulfilment-scan/"
+                  href="/free-rate-scan/"
                   title="Fulfilment scan"
                   desc="Check if Vareya is right for your brand in under 3 minutes."
                 />

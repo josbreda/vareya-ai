@@ -6,7 +6,7 @@ seoTitle: "EU Fulfilment for UK Ecommerce Brands | Vareya"
 metaDescription: "How UK ecommerce brands can assess EU-based fulfilment from a Netherlands warehouse for shipping to European customers."
 h1: "EU fulfilment for UK ecommerce brands"
 primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
+primaryCtaRoute: "/free-rate-scan/"
 secondaryCtaLabel: "Request a fulfilment quote"
 secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: false
@@ -18,7 +18,7 @@ requiresRaymondApproval: false
 
 For UK brands shipping to EU customers, holding inventory within the EU is one operational option worth assessing. Vareya fulfils orders from a warehouse in Breda, the Netherlands, shipping across Europe and to other international markets, and is generally best suited to brands shipping 500 or more orders per month.
 
-Primary CTA: Check your EU fulfilment fit → /fulfilment-scan/
+Primary CTA: Check your EU fulfilment fit → /free-rate-scan/
 Secondary CTA: Request a fulfilment quote → /request-fulfilment-quote/
 
 ## Quick answer
@@ -73,11 +73,11 @@ Can Vareya handle EU returns for a UK brand? Returns handling is available. Cont
 
 ## Final CTA block
 
-Check your EU fulfilment fit → /fulfilment-scan/. Request a fulfilment quote → /request-fulfilment-quote/.
+Check your EU fulfilment fit → /free-rate-scan/. Request a fulfilment quote → /request-fulfilment-quote/.
 
 ## Internal links
 
-/, /eu-fulfilment/, /shopify-fulfilment-europe/, /eu-fulfilment-us-brands/, /cosmetics-supplements-fulfilment-europe/, /fulfilment-scan/, /request-fulfilment-quote/
+/, /eu-fulfilment/, /shopify-fulfilment-europe/, /eu-fulfilment-us-brands/, /cosmetics-supplements-fulfilment-europe/, /free-rate-scan/, /request-fulfilment-quote/
 
 ## Image recommendation
 

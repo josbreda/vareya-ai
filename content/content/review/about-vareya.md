@@ -33,7 +33,7 @@ Product fit is confirmed during qualification.
 
 We're working toward a future where every webshop — regardless of size or revenue — has access to the same logistics quality, technology and service as the biggest international brands. That's an ambition we're building towards, not a description of what every brand can access today.
 
-Check your EU fulfilment fit → /fulfilment-scan/
+Check your EU fulfilment fit → /free-rate-scan/
 
 ---
 
