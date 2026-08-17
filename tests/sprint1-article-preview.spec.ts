@@ -58,8 +58,8 @@ test.describe("Content Sprint 01 — article preview", () => {
     const sources = page.locator("ol a");
     await expect(sources.filter({ hasText: "Shopify" })).toBeVisible();
 
-    // Review note — no literal placeholders
-    await expect(page.getByText("Human review pending")).toBeVisible();
+    // Review block — named reviewer + date, no literal placeholders
+    await expect(page.getByText("Reviewed by Jos on 2026-08-17")).toBeVisible();
     await expect(page.getByText("[REVIEWER NAME]")).toHaveCount(0);
 
     // CTAs

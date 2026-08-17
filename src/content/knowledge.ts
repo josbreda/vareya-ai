@@ -193,8 +193,8 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     publishedLabel: null,
     topic: "Quotation",
     indexable: false,
-    reviewer: null,
-    reviewedAt: null,
+    reviewer: "Jos",
+    reviewedAt: "2026-08-17",
     primaryCta: { label: "Start your Free Rate Scan", route: "/free-rate-scan/" },
     secondaryCta: {
       label: "Request a fulfilment quote",
@@ -596,7 +596,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
           "This review draft combines approved Vareya claims, source research and operational input supplied by Raymond and Jos on 17 August 2026. The examples are composite and anonymised. Identifiable lead information is not included.",
         ],
         reviewNote:
-          "Human review pending. Publication requires a named reviewer, review date, rendered Agent 4 audit and explicit release approval.",
+          "Publication requires explicit release approval. This review draft remains unindexed until then.",
       },
     ],
   },

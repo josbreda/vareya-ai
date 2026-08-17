@@ -299,12 +299,12 @@ export default async function KnowledgeArticlePage({
                   {section.reviewNote && (
                     <div className="mt-6 rounded-2xl border border-amber-400/40 bg-amber-400/5 p-6">
                       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-amber-700">
-                        Human contribution and review
+                        {article.reviewer && article.reviewedAt
+                          ? `Reviewed by ${article.reviewer} on ${article.reviewedAt}`
+                          : "Human contribution and review"}
                       </p>
                       <p className="mt-2 text-sm leading-6 text-muted">
-                        {article.reviewer && article.reviewedAt
-                          ? `Reviewed by ${article.reviewer} on ${article.reviewedAt}.`
-                          : section.reviewNote}
+                        {section.reviewNote}
                       </p>
                     </div>
                   )}
