@@ -1,39 +1,38 @@
-# Content Sprint 01 — Publication Decision
-**Date:** 17 August 2026
-**Decision:** NOT AUTHORISED — publication remains blocked.
-**Decision owner:** Jos
+# PUBLICATION-DECISION — Content Sprint 01
 
----
+**Article:** What information does a 3PL need to prepare a fulfilment quotation?
+**Route:** https://vareya.ai/knowledge/fulfilment-quotation-requirements/
+**Decision:** **AUTHORISED — PUBLISHED**
+**Authorised by:** Jos (owner) — "publiceer", 17 August 2026
+**Reviewer:** Jos, reviewedAt 2026-08-17
 
-## Status summary
+## Decision history
 
-| Gate | Status |
-|---|---|
-| Jos A2–A5 | ✅ PASS |
-| Human input | ✅ PASS |
-| Unique Vareya insight | ✅ PASS |
-| Claude final revision | ⏳ reported COMPLETE externally — final text NOT delivered to this workspace |
-| Claims self-audit | ⏳ reported PASS externally — independent Agent 4 audit not yet possible |
-| Preview implementation | ⛔ BLOCKED — article text missing |
-| Rendered claims audit | ⛔ NOT EXECUTED |
-| Anonymisation verification | ⛔ NOT EXECUTED |
-| Free Rate Scan CTA verification | ⛔ NOT EXECUTED |
-| noindex preview | ⛔ NOT CREATED |
-| Publication | ⛔ NOT AUTHORISED |
+| Date | Status | Notes |
+|---|---|---|
+| 2026-08-17 (midday) | NOT AUTHORISED | Preview phase — implementation in progress on review branch |
+| 2026-08-17 (late afternoon) | MERGED TO MAIN | GitHub PR #1 merged (a8a8837); manual Production deploy via Vercel dashboard (GitHub integration outage). Live at vareya.ai with noindex. |
+| 2026-08-17 (evening) | **PUBLISHED** | Jos: "publiceer". Production commit: indexable=true, publishedAt 2026-08-17, sitemap inclusion, Goodie pack ACTIVE. |
 
-## Conditions for publication (all required)
+## Publication gate — all conditions met
 
-1. Final article text delivered to this repo (article + HERMES-IMPLEMENTATION-HANDOFF.md + FINAL-EDITORIAL-CHANGELOG.md).
-2. Article implemented on noindex preview at /knowledge/fulfilment-quotation-requirements/ (status: review, indexable: false).
-3. Agent 4 rendered audit PASS on areas A–F and I (see AGENT-4-RENDERED-AUDIT.md).
-4. Anonymisation PASS — neither case identifies a company, person, email or domain.
-5. Legacy /fulfilment-scan/ → /free-rate-scan/ permanent redirect live with UTM preservation.
-6. Analytics events verified PII-free (Phase 5 checklist).
-7. Named human reviewer + review date set; preview reviewer block shows real name/date (or is hidden), never literal placeholders.
-8. Jos final review: YES.
+- [x] Jos final review (reviewer: Jos, reviewedAt: 2026-08-17)
+- [x] Rendered Agent 4 audit — PASS (claims, anonymisation, CTA, SEO/GEO, analytics privacy)
+- [x] Claims Register audit — PASS (all required claims verbatim; no prohibited claims)
+- [x] Anonymisation control — PASS (composite cases, no PII, no source IDs)
+- [x] Source verification — 6 external sources live, retrieved 17 August 2026
+- [x] Free Rate Scan CTA working — /free-rate-scan/ 200, legacy 308 redirect preserves UTM
+- [x] Measurement events live — knowledge_article_view, quotation_checklist_view, free_rate_scan_cta_click (PII-free)
 
-## Explicitly NOT authorised
+## Production evidence (17 August 2026)
 
-- Production deploy of the article or route change before all conditions above are met.
-- Activation/import of the Goodie prompt pack.
-- Removing noindex before approval.
+- Article live, indexable: https://vareya.ai/knowledge/fulfilment-quotation-requirements/
+- robots: indexable (no noindex), canonical https://vareya.ai/knowledge/fulfilment-quotation-requirements/
+- sitemap.xml contains the article URL
+- FAQPage / Article / BreadcrumbList structured data valid
+- /free-rate-scan/ live; /fulfilment-scan/ 308 → /free-rate-scan/ with UTM preserved
+- Tests: 102 pass, 4 pre-existing sprint2 failures (identical on clean main before this sprint)
+
+## Rollback
+
+`docs/content-sprint-01/ROLLBACK.md` — revert path: set indexable=false again, keep route redirect. No destructive action required.
