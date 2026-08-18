@@ -48,10 +48,15 @@ export async function POST(request: NextRequest) {
 
     // 2. Validate Turnstile
     const turnstileToken = (raw.turnstile_token as string) || "";
-    const turnstileValid = await validateTurnstile(turnstileToken);
-    if (!turnstileValid) {
+    const turnstileResult = await validateTurnstile(turnstileToken);
+    if (!turnstileResult.valid) {
+      const codes = turnstileResult.codes.length
+        ? turnstileResult.codes.join(", ")
+        : "unknown";
       return NextResponse.json(
-        { error: "Security check failed. Please refresh and try again." },
+        {
+          error: `Security check failed (${codes}). Please refresh and try again.`,
+        },
         { status: 400 }
       );
     }
