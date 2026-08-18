@@ -1,186 +1,134 @@
 # Content Sprint 01 — Final Editorial Changelog
 
+> **Documentation correction (17 August 2026, post-publication):** an earlier revision of this file
+> (commit `ab3b5af`) described a review state that the code and production no longer had. This
+> revision aligns the changelog with reality: the article is **published and indexable** since
+> 17 August 2026 (owner GO "publiceer"). No code was changed by this correction.
+
 ## Purpose
 
-This changelog records the consolidation of the original Claude first-pass review draft and the subsequent Raymond/Jos human-input and claims-governance decisions into one implementation-ready **review** article.
+This changelog records (a) the editorial consolidation of the Claude review draft with the
+Raymond/Jos human inputs and claims-governance decisions, and (b) the implementation and
+publication timeline that followed.
 
-The page remains noindex and is not approved for publication.
-
-## Governing updates
-
-- Claims Register reference updated from v1.2 to v1.3.
-- Primary route changed from `/fulfilment-scan/` to `/free-rate-scan/`.
-- `/fulfilment-scan/` retained only as a permanent legacy redirect with query/UTM preservation.
-- Human inputs A2–A5 marked processed.
-- No unresolved `[JOS REVIEW REQUIRED]` markers remain.
-
-## Article changes
+## Editorial changes applied before implementation
 
 ### 1. Frontmatter and release state
 
-- Replaced the old review-status sentence with machine-readable `status: review`.
-- Added `indexable: false` and `robots: noindex,nofollow`.
-- Removed the live `publishedAt` date for the unapproved revision.
-- Removed visible reviewer placeholders.
-- Added a controlled editorial note in frontmatter only.
+- Review phase: `status: review`, `indexable: false`, `robots: noindex,nofollow`, no live
+  `publishedAt`, no visible reviewer placeholder.
+- Publication phase (owner GO, 17 August 2026): `status: published`, `indexable: true`,
+  `publishedAt: 2026-08-17`, `reviewer: Jos`, `reviewedAt: 2026-08-17`. Noindex removed.
 
 ### 2. CTA migration
 
-- Primary CTA label changed to `Start your Free Rate Scan`.
-- Primary CTA route changed to `/free-rate-scan/`.
-- Old `/fulfilment-scan/` references removed from the article.
-- Secondary quote route retained.
+- Primary CTA label `Start your Free Rate Scan`, route `/free-rate-scan/`.
+- Secondary CTA `Request a fulfilment quote` → `/request-fulfilment-quote/`.
+- Legacy `/fulfilment-scan/` kept only as a permanent 308 redirect that preserves all query and
+  UTM parameters. No redirect loop (verified with the sprint test).
 
 ### 3. Direct answer
 
-Old concept:
-
-- unknown values described as unusable.
-
-New concept:
-
-- exact values are ideal;
-- estimates are useful;
-- unknown values are valid but may require follow-up before a final quotation.
+- exact values are ideal; estimates are useful; unknown values are valid but may require
+  follow-up before a final quotation.
 
 ### 4. General 3PL language
 
-- Removed the absolute statement that a provider quoting without all information is inefficient or guessing.
-- Replaced with conditional, evidence-based wording about visible assumptions.
-- Replaced “any 3PL needs this exact list” with “most providers request much of this information; requirements vary”.
+- No absolute statement that a provider quoting without all information is inefficient or
+  guessing; conditional, evidence-based wording about visible assumptions.
+- "Most providers request much of this information; requirements vary" — no universal exact-list
+  claim.
 
 ### 5. Legal and tax wording
 
-- Removed universal claims that the business country always determines VAT setup or jurisdiction.
-- Reframed contracting, invoicing, inbound, tax and customs implications as setup-dependent.
-- Added a clear non-advisory boundary.
+- Contracting, invoicing, inbound, tax and customs implications are setup-dependent
+  ("may affect", "depending on the proposed setup"); explicit non-advisory boundary; no
+  universal jurisdiction statements.
 
 ### 6. Destination-data evidence basis
 
-Added the Jos A2 hierarchy:
-
-- historic shipping report;
-- carrier invoice/report;
-- current-sales forecast;
-- launch forecast;
-- unknown.
-
-Forecasts must be labelled as forecasts and must not be described as historic data.
+Jos A2 hierarchy: historic shipping report → carrier invoice/report → current-sales forecast →
+launch forecast → unknown. Forecasts are labelled forecasts, never historic data.
 
 ### 7. Start-up and forecast profiles
 
-- Removed the implication that absent historic volume means there is no quotation route.
-- Added scenario-based assessment using clearly stated assumptions.
-- Retained the approved preferred-volume wording for Vareya.
+- No implication that absent historic volume means no quotation route.
+- Scenario-based assessment with clearly stated assumptions; approved preferred-volume wording
+  retained verbatim (register).
 
 ### 8. SKU and order-composition accuracy
 
-Maintained explicit separation between:
-
-- total SKUs;
-- items per order;
-- order lines;
-- pick actions;
-- batch-picking suitability.
-
-The prohibited inference “more SKUs automatically means more items in every order” remains excluded.
+Explicit separation: total SKUs / items per order / order lines / pick actions / batch-picking
+suitability. The prohibited inference "more SKUs = automatically more items per order" remains
+excluded.
 
 ### 9. Cases and privacy
 
-- Replaced the two original profiles with composite anonymised examples.
-- Removed country, exact company identifiers, domains, names and exact distinctive figures where these could increase re-identification risk.
-- Preserved only the operational lessons.
+- Two composite anonymised examples (CASE-INCOMPLETE-001, CASE-STRONG-PROFILE-001); no country,
+  company identifier, domain, name or exact distinctive figure; only operational lessons kept.
 
 ### 10. Quotation readiness
 
-Added:
-
-- data-confidence labels;
-- quotation assumptions;
-- missing-information logic;
-- start-up/forecast handling;
-- manual review for complex, specialist or high-value profiles.
-
-No internal score, weighting or acceptance threshold is exposed.
+Data-confidence labels, quotation assumptions, missing-information logic, start-up/forecast
+handling, manual review for complex/specialist/high-value profiles. No internal score, weighting
+or acceptance threshold is exposed.
 
 ### 11. First response after the scan
 
-The CTA and FAQ now explain that the first response may cover:
-
-- profile summary;
-- apparent fit;
-- confidence of the submitted information;
-- missing information;
-- quotation readiness;
-- important assumptions;
-- next step.
-
-No automatic or guaranteed final quotation is promised.
+First response may cover: profile summary, apparent fit, confidence of submitted information,
+missing information, quotation readiness, important assumptions, next step. No automatic or
+guaranteed final quotation.
 
 ### 12. Scan-first and email-first
 
-- Removed meeting-first and “direct conversation” defaults.
-- Brands below the preferred volume may submit actual figures or a forecast.
-- Vareya confirms the appropriate route by email.
+No meeting-first or direct-conversation default. Brands below the preferred volume may submit
+actual figures or a labelled forecast; Vareya confirms the appropriate route by email.
 
-### 13. Blocked claims
+### 13. Blocked claims (excluded)
 
-The following remain excluded:
-
-- sharpest/lowest rates below 2 kg;
-- automatic destination discounts;
-- AI-generated cost savings;
-- up to 30% savings;
-- everyone paying the same parcel price;
-- automatic or guaranteed quotation;
-- guaranteed acceptance;
-- always-a-match language;
-- guaranteed suitable quotation for every start-up.
+Sharpest/lowest rates below 2 kg · automatic destination discounts · AI-generated cost savings ·
+"up to 30% savings" · everyone paying the same parcel price · automatic or guaranteed quotation ·
+guaranteed acceptance · always-a-match language · guaranteed suitable quotation for every
+start-up.
 
 ### 14. All-in wording
 
-- Retained the exact all-in statement supplied by the governing claims process.
-- Added scope clarity: included items, assumptions and exclusions must be visible in the quotation/agreement.
+Exact all-in statement from the Claims Register (verbatim), plus scope clarity: included items,
+assumptions and exclusions must be visible in the quotation/agreement.
 
 ### 15. Sources and human review
 
-- Retained the external source list.
-- Updated the human-contribution statement to reflect both Raymond and Jos input.
-- Removed obsolete text saying A2–A5 remain open.
-- Kept publication dependent on rendered Agent 4 audit and named human approval.
+Six external sources (Shopify, WooCommerce/Automattic, European Commission VAT OSS, UKWA, FedEx,
+UPS), retrieved 17 August 2026; human-contribution statement reflects both Raymond and Jos input.
 
-## Marketing assets still requiring a route-only update
+## Implementation and publication timeline
 
-Before release, update:
+| Step | State | Evidence |
+|---|---|---|
+| Final article delivered + handoff + changelog | done | `content/review/what-information-does-a-3pl-need-for-a-fulfilment-quotation.md` |
+| Implementation on preview branch | done | `content-sprint-01-preview`, commits `10ffe22` → `1b45a96` |
+| Noindex preview + rendered Agent 4 audit | done | `AGENT-4-RENDERED-AUDIT.md` — all areas PASS |
+| Tests (sprint1 10/10; suite 102 pass / 4 pre-existing sprint2) | done | `PREVIEW-TEST-REPORT.md` |
+| Human gate (reviewer Jos, reviewedAt 2026-08-17) | done | commit `1b45a96` |
+| Merge to main + production deploy | done | PR #1, merge `a8a8837`; Vercel Production deployment |
+| Publication (owner GO "publiceer") | done | PR #2, merge `c2ffaee`; indexable + sitemap live |
+| Live verification | done | noindex gone, sitemap contains URL, 308 redirect + UTM preserved |
 
-- `marketing/content-sprint-01-linkedin-pack.md`
-- `marketing/content-sprint-01-outreach-angles.md`
+## Marketing assets
 
-Replace article/scan links that still use `/fulfilment-scan/` with the approved `/free-rate-scan/` destination where appropriate.
-
-Marketing assets remain blocked until the article itself is live.
+- `marketing/content-sprint-01-linkedin-pack.md` and `content-sprint-01-outreach-angles.md`
+  route-updated to `/free-rate-scan/`.
+- Assets remain **blocked**: not published, not sent. (Owner release required before any use.)
 
 ## Publication status
 
 ```text
-HUMAN INPUT:
-PASS
-
-CLAUDE/EDITORIAL CONSOLIDATION:
-COMPLETE
-
-CLAIMS SELF-AUDIT:
-PASS AT SOURCE LEVEL
-
-HERMES PREVIEW:
-PENDING
-
-AGENT 4 RENDERED AUDIT:
-PENDING
-
-JOS FINAL REVIEW:
-PENDING
-
-READY FOR PUBLICATION:
-NO
+HUMAN INPUT:               PASS
+EDITORIAL CONSOLIDATION:   COMPLETE
+CLAIMS AUDIT (RENDERED):   PASS
+HERMES PREVIEW:            DONE
+AGENT 4 RENDERED AUDIT:    PASS
+JOS FINAL REVIEW:          DONE (reviewer: Jos, 2026-08-17)
+READY FOR PUBLICATION:     YES
+PUBLISHED:                 2026-08-17 (owner GO "publiceer")
 ```
