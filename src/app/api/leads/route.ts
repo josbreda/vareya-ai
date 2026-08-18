@@ -65,7 +65,8 @@ export async function POST(request: NextRequest) {
     const submissionId = generateSubmissionId();
     const clean = sanitiseLeadData({ ...raw, submission_id: submissionId });
 
-    // 4. Insert into Supabase
+    // 4. Insert into Supabase — best effort. Email + HubSpot are the lead
+    //    channels; a storage outage must never cost a lead.
     let leadId: string | null = null;
     const supabaseConfigured = SERVER_ENV.supabaseUrl && SERVER_ENV.supabaseServiceRoleKey;
 
@@ -113,72 +114,28 @@ export async function POST(request: NextRequest) {
           .single();
 
         if (insertError) {
-          console.error("[api/leads] Supabase insert error:", insertError);
-          // Don't expose internal error details
-          return NextResponse.json(
-            { error: "Unable to process your submission. Please try again." },
-            { status: 500 }
-          );
-        }
+          console.error("[api/leads] Supabase insert error — continuing email-only:", insertError);
+        } else {
+          leadId = lead?.id || null;
 
-        leadId = lead?.id || null;
-
-        // Log lead event
-        await supabase.from("lead_events").insert({
-          lead_id: leadId,
-          event_name: "lead_created",
-          metadata: {
-            form_type: clean.form_type,
-            submission_id: submissionId,
-            company: clean.company,
-            processing_time_ms: Date.now() - startTime,
-          },
-        });
-
-        // 4.5 Sync to HubSpot (non-blocking, downstream from Supabase)
-        if (process.env.HUBSPOT_ACCESS_TOKEN) {
+          // Log lead event (best effort — never blocks the lead)
           try {
-            const { syncLead } = await import("@/lib/hubspot");
-            syncLead({
-              name: String(clean.name || ""),
-              company: String(clean.company || ""),
-              work_email: String(clean.work_email || ""),
-              phone_number: clean.phone ? String(clean.phone) : undefined,
-              company_country: clean.company_country ? String(clean.company_country) : undefined,
-              ecommerce_platform: clean.ecommerce_platform ? String(clean.ecommerce_platform) : undefined,
-              monthly_order_volume: clean.monthly_order_volume ? String(clean.monthly_order_volume) : undefined,
-              target_markets: Array.isArray(clean.target_markets) ? clean.target_markets : undefined,
-              landing_page: clean.landing_page ? String(clean.landing_page) : undefined,
-              device: clean.device ? String(clean.device) : undefined,
-              utm_source: clean.utm_source ? String(clean.utm_source) : undefined,
-              utm_medium: clean.utm_medium ? String(clean.utm_medium) : undefined,
-              utm_campaign: clean.utm_campaign ? String(clean.utm_campaign) : undefined,
-              utm_content: clean.utm_content ? String(clean.utm_content) : undefined,
-              submission_id: submissionId,
-              form_type: String(clean.form_type || "unknown"),
-            }).then((hsResult) => {
-              if (hsResult.error) {
-                console.error("[api/leads] HubSpot sync error:", hsResult.error);
-              } else {
-                console.log("[api/leads] HubSpot synced:", {
-                  contactId: hsResult.contactId,
-                  companyId: hsResult.companyId,
-                  taskId: hsResult.taskId,
-                });
-              }
-            }).catch((hsErr) => {
-              console.error("[api/leads] HubSpot sync failed:", hsErr);
+            await supabase.from("lead_events").insert({
+              lead_id: leadId,
+              event_name: "lead_created",
+              metadata: {
+                form_type: clean.form_type,
+                submission_id: submissionId,
+                company: clean.company,
+                processing_time_ms: Date.now() - startTime,
+              },
             });
-          } catch (importErr) {
-            console.error("[api/leads] HubSpot module load failed:", importErr);
+          } catch (eventErr) {
+            console.error("[api/leads] lead_events insert failed:", eventErr);
           }
         }
       } catch (err) {
-        console.error("[api/leads] Supabase error:", err);
-        return NextResponse.json(
-          { error: "Unable to process your submission. Please try again." },
-          { status: 500 }
-        );
+        console.error("[api/leads] Supabase unavailable — continuing email-only:", err);
       }
     } else {
       // Supabase not configured — log and continue with mock
@@ -189,6 +146,45 @@ export async function POST(request: NextRequest) {
         name: clean.name,
         processing_time_ms: Date.now() - startTime,
       });
+    }
+
+    // 4.5 Sync to HubSpot (non-blocking, independent of Supabase)
+    if (process.env.HUBSPOT_ACCESS_TOKEN) {
+      try {
+        const { syncLead } = await import("@/lib/hubspot");
+        syncLead({
+          name: String(clean.name || ""),
+          company: String(clean.company || ""),
+          work_email: String(clean.work_email || ""),
+          phone_number: clean.phone ? String(clean.phone) : undefined,
+          company_country: clean.company_country ? String(clean.company_country) : undefined,
+          ecommerce_platform: clean.ecommerce_platform ? String(clean.ecommerce_platform) : undefined,
+          monthly_order_volume: clean.monthly_order_volume ? String(clean.monthly_order_volume) : undefined,
+          target_markets: Array.isArray(clean.target_markets) ? clean.target_markets : undefined,
+          landing_page: clean.landing_page ? String(clean.landing_page) : undefined,
+          device: clean.device ? String(clean.device) : undefined,
+          utm_source: clean.utm_source ? String(clean.utm_source) : undefined,
+          utm_medium: clean.utm_medium ? String(clean.utm_medium) : undefined,
+          utm_campaign: clean.utm_campaign ? String(clean.utm_campaign) : undefined,
+          utm_content: clean.utm_content ? String(clean.utm_content) : undefined,
+          submission_id: submissionId,
+          form_type: String(clean.form_type || "unknown"),
+        }).then((hsResult) => {
+          if (hsResult.error) {
+            console.error("[api/leads] HubSpot sync error:", hsResult.error);
+          } else {
+            console.log("[api/leads] HubSpot synced:", {
+              contactId: hsResult.contactId,
+              companyId: hsResult.companyId,
+              taskId: hsResult.taskId,
+            });
+          }
+        }).catch((hsErr) => {
+          console.error("[api/leads] HubSpot sync failed:", hsErr);
+        });
+      } catch (importErr) {
+        console.error("[api/leads] HubSpot module load failed:", importErr);
+      }
     }
 
     // 5. Send internal notification (non-blocking)
