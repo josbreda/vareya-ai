@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import {
@@ -11,6 +11,7 @@ import {
   trackRateScanValidationError,
   trackRateScanView,
 } from "@/lib/scan-analytics";
+import { TurnstileWidget } from "@/components/forms/TurnstileWidget";
 
 /* ── Step definitions ── */
 const STEPS = [
@@ -158,8 +159,6 @@ export default function FulfilmentScanPage() {
 /* ── Multi-step form ── */
 function ScanForm() {
   const router = useRouter();
-  const turnstileRef = useRef<string | null>(null);
-  const turnstileContainerRef = useRef<HTMLDivElement>(null);
 
   const [step, setStep] = useState(0);
   const [data, setData] = useState<ScanFormData>(INITIAL);
@@ -167,6 +166,8 @@ function ScanForm() {
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState("");
   const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileKey, setTurnstileKey] = useState(0);
 
   const current = STEPS[step];
   const isLast = step === TOTAL_STEPS - 1;
@@ -181,26 +182,6 @@ function ScanForm() {
   useEffect(() => {
     if (step > 0) trackRateScanStep(step, current.id);
   }, [step, current.id]);
-
-  // Render Turnstile widget on contact step
-  useEffect(() => {
-    if (current.type === "contact" && turnstileContainerRef.current && !turnstileRef.current) {
-      const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
-      if (siteKey && (window as any).turnstile) {
-        turnstileRef.current = (window as any).turnstile.render(turnstileContainerRef.current, {
-          sitekey: siteKey,
-          theme: "light",
-          size: "normal",
-        });
-      }
-    }
-    return () => {
-      if (turnstileRef.current && (window as any).turnstile) {
-        (window as any).turnstile.remove(turnstileRef.current);
-        turnstileRef.current = null;
-      }
-    };
-  }, [current.type]);
 
   const update = useCallback(
     (field: keyof ScanFormData, value: string | string[]) => {
@@ -259,6 +240,14 @@ function ScanForm() {
     if (!validateStep()) return;
     if (honeypot) return; // bot detected, silently "succeed"
 
+    // Security check must have produced a token before we submit
+    if (!turnstileToken) {
+      setServerError(
+        "The security check has not completed yet. Wait a moment for it to finish, then try again. If it does not appear, check whether a browser extension is blocking it.",
+      );
+      return;
+    }
+
     setSubmitting(true);
     setServerError("");
 
@@ -275,7 +264,7 @@ function ScanForm() {
         utm_campaign: params.get("utm_campaign") || "",
         utm_content: params.get("utm_content") || "",
         device: /Mobi|Android/i.test(navigator.userAgent) ? "mobile" : "desktop",
-        turnstile_token: (window as any).turnstile?.getResponse?.(turnstileRef.current) || "",
+        turnstile_token: turnstileToken,
       };
 
       const res = await fetch("/api/leads", {
@@ -286,6 +275,9 @@ function ScanForm() {
 
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
+        // Remount the widget so the next attempt gets a fresh token
+        setTurnstileToken("");
+        setTurnstileKey((k) => k + 1);
         throw new Error(body.error || "Something went wrong. Please try again.");
       }
 
@@ -379,7 +371,7 @@ function ScanForm() {
               value={data.phone}
               onChange={(v) => update("phone", v)}
             />
-            <div ref={turnstileContainerRef} className="mt-3 flex justify-center" />
+            <TurnstileWidget key={turnstileKey} onToken={setTurnstileToken} />
           </div>
         )}
 
