@@ -1,5 +1,8 @@
 import type { NextConfig } from "next";
 
+const isSelfHostedStandaloneBuild =
+  process.env.VAREYA_SELF_HOSTED_STANDALONE_BUILD === "1";
+
 const nextConfig: NextConfig = {
   // Keep trailing slashes consistent with site-wide canonicals
   trailingSlash: true,
@@ -58,6 +61,9 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  ...(isSelfHostedStandaloneBuild
+    ? { output: "standalone" as const }
+    : {}),
 };
 
 export default nextConfig;

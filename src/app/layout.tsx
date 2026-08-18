@@ -47,7 +47,6 @@ export default function RootLayout({
     <html lang="en-GB" className={`${inter.variable} h-full`}>
       <head>
         <GTM />
-        <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

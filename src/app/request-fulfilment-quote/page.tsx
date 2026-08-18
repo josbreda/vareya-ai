@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { TurnstileWidget } from "@/components/forms/TurnstileWidget";
 
 interface QuoteFormData {
   name: string;
@@ -70,6 +71,8 @@ function QuoteForm() {
   const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState("");
   const [honeypot, setHoneypot] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const [turnstileKey, setTurnstileKey] = useState(0);
 
   const update = (field: keyof QuoteFormData, value: string | boolean | string[]) => {
     setData((prev) => ({ ...prev, [field]: value }));
@@ -106,6 +109,14 @@ function QuoteForm() {
     if (!validate()) return;
     if (honeypot) return;
 
+    // Security check must have produced a token before we submit
+    if (!turnstileToken) {
+      setServerError(
+        "The security check has not completed yet. Wait a moment for it to finish, then try again. If it does not appear, check whether a browser extension is blocking it.",
+      );
+      return;
+    }
+
     setSubmitting(true);
     setServerError("");
 
@@ -121,7 +132,7 @@ function QuoteForm() {
         utm_campaign: params.get("utm_campaign") || "",
         utm_content: params.get("utm_content") || "",
         device: /Mobi|Android/i.test(navigator.userAgent) ? "mobile" : "desktop",
-        turnstile_token: "",
+        turnstile_token: turnstileToken,
       };
 
       const res = await fetch("/api/leads", {
@@ -132,6 +143,9 @@ function QuoteForm() {
 
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
+        // Remount the widget so the next attempt gets a fresh token
+        setTurnstileToken("");
+        setTurnstileKey((k) => k + 1);
         throw new Error(body.error || "Something went wrong. Please try again.");
       }
 
@@ -369,6 +383,9 @@ function QuoteForm() {
             {serverError}
           </p>
         )}
+
+        {/* Security check */}
+        <TurnstileWidget key={turnstileKey} onToken={setTurnstileToken} />
 
         {/* Submit */}
         <button
