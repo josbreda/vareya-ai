@@ -1,0 +1,11 @@
+query,cluster,intent,landing_page,priority
+what information does a 3PL need for a quote,quotation-requirements,primary,/knowledge/fulfilment-quotation-requirements/,P0
+3PL quotation requirements,quotation-requirements,primary,/knowledge/fulfilment-quotation-requirements/,P0
+fulfilment quotation checklist,quotation-requirements,supporting,/knowledge/fulfilment-quotation-requirements/,P1
+how to prepare for a fulfilment quote,quotation-requirements,supporting,/knowledge/fulfilment-quotation-requirements/,P1
+what determines fulfilment costs,fulfilment-pricing,supporting,/knowledge/fulfilment-cost-drivers/,P1
+packed parcel dimensions quotation,parcel-data,supporting,/knowledge/fulfilment-quotation-requirements/,P1
+SKU count versus items per order,sku-composition,supporting,/knowledge/fulfilment-quotation-requirements/,P1
+storage requirements for a 3PL,storage,supporting,/knowledge/fulfilment-quotation-requirements/,P2
+Shopify fulfilment quotation,platform,supporting,/knowledge/shopify-fulfilment-europe-what-to-look-for/,P1
+how to compare 3PL quotations,3pl-comparison,supporting,/knowledge/fulfilment-quotation-requirements/,P1

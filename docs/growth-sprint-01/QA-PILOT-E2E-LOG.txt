@@ -1,0 +1,14 @@
+landed: https://vareya.ai/free-rate-scan/?utm_source=outbound&utm_medium=email&utm_campaign=content_sprint_01&utm_content=qa_pilot_test
+continue clicked; step heading now: What do you sell?
+continue clicked; step heading now: Where are your customers?
+market toggled: Netherlands
+market toggled: Germany
+continue clicked; step heading now: Which e-commerce platform do you use?
+continue clicked; step heading now: What services do you need?
+service toggled: Pick & pack
+service toggled: Storage
+continue clicked; step heading now: Where should we send your results?
+contact fields filled
+CONSOLE ERR: %c%d font-size:0;color:transparent NaN
+CONSOLE ERR: %c%d font-size:0;color:transparent NaN
+turnstile token acquired: NO — challenge not auto-passed
