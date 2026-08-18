@@ -1,36 +1,186 @@
 # Content Sprint 01 — Final Editorial Changelog
-**Article:** What information does a 3PL need to prepare a fulfilment quotation?
-**Revision source:** Claude final revision (ChatGPT project), delivered 17 August 2026
-**Implemented by:** Hermes, 17 August 2026 — without creative rewriting
 
----
+## Purpose
 
-## Delivered content
+This changelog records the consolidation of the original Claude first-pass review draft and the subsequent Raymond/Jos human-input and claims-governance decisions into one implementation-ready **review** article.
 
-- Final article: `content/review/what-information-does-a-3pl-need-for-a-fulfilment-quotation.md` (YAML frontmatter + full article body).
-- Implementation handoff: `docs/content-sprint-01/HERMES-IMPLEMENTATION-HANDOFF.md`.
+The page remains noindex and is not approved for publication.
 
-## Editorial changes applied in the final revision (vs review draft)
+## Governing updates
 
-1. Direct Answer corrected: unknown values are valid inputs requiring follow-up (not "unusable").
-2. Absolute generic 3PL statements replaced with conditional phrasing.
-3. Tax/legal effects conditional ("may affect", "depending on the proposed setup"); no tax or legal advice.
-4. Scan-first, email-first follow-up preserved; no meeting-first CTA.
-5. CASE-STRONG-PROFILE-001 generalised further (composite, indicative ranges, no market-list detail that could identify).
-6. CASE-INCOMPLETE-001 kept composite with the public lesson.
-7. Primary CTA route `/free-rate-scan/`; legacy `/fulfilment-scan/` redirect.
-8. Preview metadata: status review, indexable false, robots noindex,nofollow, publishedAt null.
+- Claims Register reference updated from v1.2 to v1.3.
+- Primary route changed from `/fulfilment-scan/` to `/free-rate-scan/`.
+- `/fulfilment-scan/` retained only as a permanent legacy redirect with query/UTM preservation.
+- Human inputs A2–A5 marked processed.
+- No unresolved `[JOS REVIEW REQUIRED]` markers remain.
 
-## Technical implementation edits (recorded per handoff rule — rendering/framework compatibility)
+## Article changes
 
-| # | Edit | Reason |
-|---|---|---|
-| T1 | Claim wording aligned to register constants verbatim: CLAIM_ALL_IN ("…per agreement — no hidden costs…"), CLAIM_POST_SUBMISSION, CLAIM_RETURNS, CLAIM_VOLUME, APPROVED_FACTS.shopify/amazonFbm | Register requires exact wording; the draft's typographic variants (em-dash spacing, paraphrased commitment) were replaced by the approved constants. Content meaning unchanged. |
-| T2 | Article body structured into typed sections (paragraphs/bullets/table/checklist/faq/sources/reviewNote) for the KnowledgeArticle renderer | Framework compatibility; text preserved verbatim |
-| T3 | Article "Start your Free Rate Scan" body section rendered as "About the Free Rate Scan" (text unchanged) with the interactive CTA buttons rendered by the page CTA section | Renderer architecture; links preserved |
-| T4 | FAQ rendered with visible Q/A and FAQPage JSON-LD generated from the same visible content | Accurate structured data requirement |
-| T5 | No images added | Handoff marks images optional; skipped to avoid unverified facility/tech imagery |
+### 1. Frontmatter and release state
 
-## Human publication gate (unchanged)
+- Replaced the old review-status sentence with machine-readable `status: review`.
+- Added `indexable: false` and `robots: noindex,nofollow`.
+- Removed the live `publishedAt` date for the unapproved revision.
+- Removed visible reviewer placeholders.
+- Added a controlled editorial note in frontmatter only.
 
-Reviewer: null · ReviewedAt: null · status: review · indexable: false — until explicit owner approval.
+### 2. CTA migration
+
+- Primary CTA label changed to `Start your Free Rate Scan`.
+- Primary CTA route changed to `/free-rate-scan/`.
+- Old `/fulfilment-scan/` references removed from the article.
+- Secondary quote route retained.
+
+### 3. Direct answer
+
+Old concept:
+
+- unknown values described as unusable.
+
+New concept:
+
+- exact values are ideal;
+- estimates are useful;
+- unknown values are valid but may require follow-up before a final quotation.
+
+### 4. General 3PL language
+
+- Removed the absolute statement that a provider quoting without all information is inefficient or guessing.
+- Replaced with conditional, evidence-based wording about visible assumptions.
+- Replaced “any 3PL needs this exact list” with “most providers request much of this information; requirements vary”.
+
+### 5. Legal and tax wording
+
+- Removed universal claims that the business country always determines VAT setup or jurisdiction.
+- Reframed contracting, invoicing, inbound, tax and customs implications as setup-dependent.
+- Added a clear non-advisory boundary.
+
+### 6. Destination-data evidence basis
+
+Added the Jos A2 hierarchy:
+
+- historic shipping report;
+- carrier invoice/report;
+- current-sales forecast;
+- launch forecast;
+- unknown.
+
+Forecasts must be labelled as forecasts and must not be described as historic data.
+
+### 7. Start-up and forecast profiles
+
+- Removed the implication that absent historic volume means there is no quotation route.
+- Added scenario-based assessment using clearly stated assumptions.
+- Retained the approved preferred-volume wording for Vareya.
+
+### 8. SKU and order-composition accuracy
+
+Maintained explicit separation between:
+
+- total SKUs;
+- items per order;
+- order lines;
+- pick actions;
+- batch-picking suitability.
+
+The prohibited inference “more SKUs automatically means more items in every order” remains excluded.
+
+### 9. Cases and privacy
+
+- Replaced the two original profiles with composite anonymised examples.
+- Removed country, exact company identifiers, domains, names and exact distinctive figures where these could increase re-identification risk.
+- Preserved only the operational lessons.
+
+### 10. Quotation readiness
+
+Added:
+
+- data-confidence labels;
+- quotation assumptions;
+- missing-information logic;
+- start-up/forecast handling;
+- manual review for complex, specialist or high-value profiles.
+
+No internal score, weighting or acceptance threshold is exposed.
+
+### 11. First response after the scan
+
+The CTA and FAQ now explain that the first response may cover:
+
+- profile summary;
+- apparent fit;
+- confidence of the submitted information;
+- missing information;
+- quotation readiness;
+- important assumptions;
+- next step.
+
+No automatic or guaranteed final quotation is promised.
+
+### 12. Scan-first and email-first
+
+- Removed meeting-first and “direct conversation” defaults.
+- Brands below the preferred volume may submit actual figures or a forecast.
+- Vareya confirms the appropriate route by email.
+
+### 13. Blocked claims
+
+The following remain excluded:
+
+- sharpest/lowest rates below 2 kg;
+- automatic destination discounts;
+- AI-generated cost savings;
+- up to 30% savings;
+- everyone paying the same parcel price;
+- automatic or guaranteed quotation;
+- guaranteed acceptance;
+- always-a-match language;
+- guaranteed suitable quotation for every start-up.
+
+### 14. All-in wording
+
+- Retained the exact all-in statement supplied by the governing claims process.
+- Added scope clarity: included items, assumptions and exclusions must be visible in the quotation/agreement.
+
+### 15. Sources and human review
+
+- Retained the external source list.
+- Updated the human-contribution statement to reflect both Raymond and Jos input.
+- Removed obsolete text saying A2–A5 remain open.
+- Kept publication dependent on rendered Agent 4 audit and named human approval.
+
+## Marketing assets still requiring a route-only update
+
+Before release, update:
+
+- `marketing/content-sprint-01-linkedin-pack.md`
+- `marketing/content-sprint-01-outreach-angles.md`
+
+Replace article/scan links that still use `/fulfilment-scan/` with the approved `/free-rate-scan/` destination where appropriate.
+
+Marketing assets remain blocked until the article itself is live.
+
+## Publication status
+
+```text
+HUMAN INPUT:
+PASS
+
+CLAUDE/EDITORIAL CONSOLIDATION:
+COMPLETE
+
+CLAIMS SELF-AUDIT:
+PASS AT SOURCE LEVEL
+
+HERMES PREVIEW:
+PENDING
+
+AGENT 4 RENDERED AUDIT:
+PENDING
+
+JOS FINAL REVIEW:
+PENDING
+
+READY FOR PUBLICATION:
+NO
+```
