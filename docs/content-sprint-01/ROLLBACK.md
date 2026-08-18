@@ -1,17 +1,22 @@
 # Content Sprint 01 — Rollback Procedure
 **Owner:** Hermes (implementation) / Jos (production authority)
-**Scope:** preview implementation + production route change + article publication
-**Date:** 17 August 2026
+**Scope:** article publication + production route change (both LIVE since 17 August 2026)
+**Date:** 17 August 2026 (updated post-publication)
+
+> **Current state:** the article is PUBLISHED and indexable on production
+> (https://vareya.ai/knowledge/fulfilment-quotation-requirements/) and the scan route is
+> `/free-rate-scan/` with the legacy 308 redirect. Rollback below applies from this state —
+> **it was not executed** (owner decision 17-08-2026: "niets terugdraaien").
 
 ---
 
-## 1. Preview rollback (branch not deployed)
+## 1. Article un-publish (indexability revert)
 
-The preview is implemented on a feature branch; production is untouched.
-
-1. Revert or drop the branch: `git checkout main && git branch -D content-sprint-01-preview` (or revert the PR).
-2. Verify `git status` clean on main and that `src/content/knowledge.ts`, `src/app/knowledge/`, `src/app/fulfilment-scan/` match the last released commit.
-3. Confirm noindex flag removed from the branch only — nothing to remove on main.
+1. Set `indexable: false` in `src/content/knowledge.ts` (article `fulfilment-quotation-requirements`).
+2. Optionally clear `publishedAt`/`publishedLabel` and restore `reviewer`/`reviewedAt` to null.
+3. Deploy (Vercel auto-deploy or manual "Create Deployment" in the dashboard).
+4. Verify live: `noindex` present again, URL removed from `sitemap.xml`.
+5. No Supabase/HubSpot data is touched by content rollback.
 
 ## 2. Route-change rollback (if /fulfilment-scan/ → /free-rate-scan/ goes live and must be reverted)
 

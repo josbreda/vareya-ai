@@ -2,12 +2,11 @@
 title: "What information does a 3PL need to prepare a fulfilment quotation?"
 slug: fulfilment-quotation-requirements
 route: /knowledge/fulfilment-quotation-requirements/
-status: review
-indexable: false
-robots: noindex,nofollow
-publishedAt: null
-reviewedAt: null
-reviewer: null
+status: published
+indexable: true
+publishedAt: 2026-08-17
+reviewedAt: 2026-08-17
+reviewer: Jos
 primaryQuery: "what information does a 3PL need for a fulfilment quotation"
 secondaryQueries:
   - "3PL quotation requirements"
