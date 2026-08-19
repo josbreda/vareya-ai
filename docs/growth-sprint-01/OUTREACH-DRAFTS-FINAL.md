@@ -1,7 +1,8 @@
 # Growth Sprint 01 — Outreach Drafts FINAL (pilot goedgekeurd)
 **Date:** 18 August 2026 · **Approved by:** Jos — "Queue approved for a controlled five-lead pilot"
 **Send order (Jos):** 1 Mystery Jersey King · 2 Thrifted.com · 3 FROMTHEFIRST · 4 All Jigsaw Puzzles · 5 BANJAARA
-**Status:** READY TO SEND — Jos stuurt handmatig, één voor één. Geen automatische verzending.
+**Release status (post-P0 verification, 19-08-2026):** 1–2 = READY TO SEND · 3–5 = HOLD (staged release — later batch)
+**Status:** Jos stuurt handmatig, één voor één. Geen automatische verzending.
 **Regels toegepast:** scan/article-first · geen meeting-CTA · geen besparings-% · geen volume-belofte van Vareya-zijde · geen gegarandeerde quote · personalisatie = alleen het publieke feit van de prospect zelf · verzender = Jos.
 
 ---
@@ -14,12 +15,12 @@ Your shipping page explains that Mystery Jersey King sends tracked orders to 150
 
 We've written up the nine inputs a 3PL needs before it can prepare a meaningful quotation, and built a free scan that collects exactly those inputs — including the exact/estimate/unknown split.
 
-If you'd like a fit assessment for the EU flow, start here: https://vareya.ai/free-rate-scan/?utm_source=outbound&utm_medium=email&utm_campaign=content_sprint_01&utm_content=mystery-jersey-king
+If you'd like a fit assessment for the EU flow, start here: https://vareya.ai/free-rate-scan/?utm_source=outbound&utm_medium=email&utm_campaign=uk_ecommerce_pilot_01&utm_content=mystery_jersey_king
 
 Best,
 Jos — Vareya (Breda, NL)
 
-**Claims check:** ✅ geen rate/savings/quote-belofte; feit = hun eigen publieke pagina. **Status: NOT SENT.**
+**Claims check:** ✅ geen rate/savings/quote-belofte; feit = hun eigen publieke pagina ("ship to over 150 countries", IOSS, UK dispatch — geverifieerd 19-08-2026). **Status: READY TO SEND.**
 
 ---
 
@@ -30,12 +31,12 @@ Hi Jonny,
 Thrifted ships from its own London warehouse, offers EU delivery and collects VAT through IOSS for EU orders under €150. When operations get compared against alternatives, the comparison is only as good as the profile behind it — that's what our new checklist is about.
 
 "What information does a 3PL need to prepare a fulfilment quotation?" covers the nine inputs, the common mistakes and the questions worth asking any provider — useful whether or not you ever change your setup:
-https://vareya.ai/knowledge/fulfilment-quotation-requirements/?utm_source=outbound&utm_medium=email&utm_campaign=content_sprint_01&utm_content=thrifted
+https://vareya.ai/knowledge/fulfilment-quotation-requirements/?utm_source=outbound&utm_medium=email&utm_campaign=uk_ecommerce_pilot_01&utm_content=thrifted
 
 Best,
 Jos — Vareya (Breda, NL)
 
-**Claims check:** ✅ provider-neutraal, geen push, geen claim over hun operatie buiten hun publieke feit. **Status: NOT SENT.**
+**Claims check:** ✅ provider-neutraal, geen push, geen claim over hun operatie buiten hun publieke feit. **Status: READY TO SEND.**
 
 ---
 
@@ -51,7 +52,7 @@ https://vareya.ai/knowledge/fulfilment-quotation-requirements/?utm_source=outbou
 Best,
 Jos — Vareya (Breda, NL)
 
-**Claims check:** ✅ neutraal feit; bewust géén verwijzing naar hun duty-banner-verschil (gevoelig). **Status: NOT SENT.**
+**Claims check:** ✅ neutraal feit; bewust géén verwijzing naar hun duty-banner-verschil (gevoelig). Geen parcel-inferentie uit footwear — artikel/scan kwalificeren de echte mix. **Status: HOLD.**
 
 ---
 
@@ -67,7 +68,7 @@ https://vareya.ai/knowledge/fulfilment-quotation-requirements/?utm_source=outbou
 Best,
 Jos — Vareya (Breda, NL)
 
-**Claims check:** ✅ split-stock/persoonlijk onderscheid is generiek en uit hun publieke aanbod afleidbaar; geen feit toegevoegd. **Status: NOT SENT.**
+**Claims check:** ✅ split-stock/persoonlijk onderscheid blijft gescheiden — geen implicatie dat Vareya het gepersonaliseerde productieproces fulfilmt; geen feit toegevoegd. **Status: HOLD.**
 
 ---
 
@@ -83,7 +84,7 @@ https://vareya.ai/knowledge/fulfilment-quotation-requirements/?utm_source=outbou
 Best,
 Jos — Vareya (Breda, NL)
 
-**Claims check:** ✅ bewust geen volume-uitspraak, geen scan-push — kwalificatie eerst (tier B). **Status: NOT SENT.**
+**Claims check:** ✅ bewust geen volume-uitspraak, geen scan-push — kwalificatie eerst (tier B). **Status: HOLD.**
 
 ---
 
