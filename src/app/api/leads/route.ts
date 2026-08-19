@@ -230,8 +230,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 6. Prospect confirmation — awaited with timeout (best-effort)
-    if (clean.work_email) {
+    // 6. Prospect confirmation — post-response via after() (best-effort).
+    //    No visitor-facing latency; tracked by the function lifecycle.
+    after(async () => {
       const confirmationSent = await withTimeout(
         sendProspectConfirmation(
           clean.work_email as string,
@@ -244,7 +245,7 @@ export async function POST(request: NextRequest) {
       if (!confirmationSent) {
         console.error(`[api/leads] Prospect confirmation failed/timed out for ${submissionId}`);
       }
-    }
+    });
 
     // 6.5 Lead-dashboard webhook — ADDITIVE, best-effort, never blocks the lead.
     //     Scheduled via next/server after(): tracked by the Vercel function

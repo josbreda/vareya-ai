@@ -236,14 +236,18 @@ test("15. webhook wordt via next/server after() gepland — geen untracked fire-
     "utf8",
   );
   assert.ok(route.includes('import { after, NextRequest, NextResponse } from "next/server"'));
-  const afterBlock = route.slice(route.indexOf("after(async () => {"));
-  assert.ok(afterBlock.length > 0, "after() moet worden gebruikt");
-  assert.ok(
-    afterBlock.slice(0, afterBlock.indexOf("});")).includes("notifyLeadDashboard"),
-    "webhook-aanroep moet binnen after() zitten",
-  );
+  const webhookIdx = route.indexOf("notifyLeadDashboard(");
+  assert.ok(webhookIdx > 0, "notifyLeadDashboard moet aangeroepen worden");
+  const before = route.lastIndexOf("after(async () => {", webhookIdx);
+  assert.ok(before > 0, "webhook-aanroep moet binnen after() zitten");
+  const blockEnd = route.indexOf("});", webhookIdx);
+  assert.ok(webhookIdx > before && webhookIdx < blockEnd, "aanroep staat in het after()-blok");
   assert.ok(!route.includes("void notifyLeadDashboard"), "geen untracked promise");
-  assert.ok(!route.includes("notifyLeadDashboard(") || afterBlock.includes("notifyLeadDashboard("), "enige aanroep is de after()-aanroep");
+  // Bevestigingsmail mag de bezoeker niet blokkeren — ook via after()
+  const afterCalls = route.match(/after\(async \(\) => \{/g)?.length ?? 0;
+  assert.ok(afterCalls >= 2, "zowel bevestiging als webhook via after()");
+  const confirmIdx = route.lastIndexOf("sendProspectConfirmation(");
+  assert.ok(confirmIdx > route.indexOf("// 6. Prospect confirmation"), "bevestiging zit in het after()-blok");
 });
 
 test("16. env-var-naam is exact LEAD_DASHBOARD_FREE_RATE_SCAN_API_KEY (server-side)", () => {
