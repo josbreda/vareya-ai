@@ -230,6 +230,32 @@ test("13. credential zit niet in client-bundel: scanpagina importeert module nie
   assert.ok(!quotePage.includes("lead-dashboard"));
 });
 
+test("15. webhook wordt via next/server after() gepland — geen untracked fire-and-forget", () => {
+  const route = readFileSync(
+    join(process.cwd(), "src", "app", "api", "leads", "route.ts"),
+    "utf8",
+  );
+  assert.ok(route.includes('import { after, NextRequest, NextResponse } from "next/server"'));
+  const afterBlock = route.slice(route.indexOf("after(async () => {"));
+  assert.ok(afterBlock.length > 0, "after() moet worden gebruikt");
+  assert.ok(
+    afterBlock.slice(0, afterBlock.indexOf("});")).includes("notifyLeadDashboard"),
+    "webhook-aanroep moet binnen after() zitten",
+  );
+  assert.ok(!route.includes("void notifyLeadDashboard"), "geen untracked promise");
+  assert.ok(!route.includes("notifyLeadDashboard(") || afterBlock.includes("notifyLeadDashboard("), "enige aanroep is de after()-aanroep");
+});
+
+test("16. env-var-naam is exact LEAD_DASHBOARD_FREE_RATE_SCAN_API_KEY (server-side)", () => {
+  const mod = readFileSync(
+    join(process.cwd(), "src", "lib", "lead-dashboard.ts"),
+    "utf8",
+  );
+  assert.ok(mod.includes("process.env.LEAD_DASHBOARD_FREE_RATE_SCAN_API_KEY"));
+  assert.ok(!/process\.env\.NEXT_PUBLIC_/.test(mod), "geen NEXT_PUBLIC_ env-gebruik");
+  assert.ok(!/\bSCAN_API_KEY\b/.test(mod.replace("LEAD_DASHBOARD_FREE_RATE_SCAN_API_KEY", "")));
+});
+
 test("14. geen secret in logs", async () => {
   process.env.LEAD_DASHBOARD_FREE_RATE_SCAN_API_KEY = SENTINEL;
   const logs: string[] = [];

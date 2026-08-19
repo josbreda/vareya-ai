@@ -12,7 +12,7 @@
  * - No PII in responses
  */
 
-import { NextRequest, NextResponse } from "next/server";
+import { after, NextRequest, NextResponse } from "next/server";
 import { generateSubmissionId, sanitiseLeadData, validateLeadInput } from "@/lib/leads";
 import { validateTurnstile } from "@/lib/turnstile";
 import { sendInternalNotification, sendProspectConfirmation } from "@/lib/email";
@@ -247,17 +247,20 @@ export async function POST(request: NextRequest) {
     }
 
     // 6.5 Lead-dashboard webhook — ADDITIVE, best-effort, never blocks the lead.
-    //     The existing minimum-delivery condition has already passed above.
-    const dashboardStatus = await withTimeout(
-      notifyLeadDashboard(
+    //     Scheduled via next/server after(): tracked by the Vercel function
+    //     lifecycle (runs after the response is flushed, within maxDuration),
+    //     NOT an untracked fire-and-forget promise.
+    after(async () => {
+      const dashboardStatus = await notifyLeadDashboard(
         buildLeadDashboardPayload(clean, submissionId),
         4000
-      ),
-      6000
-    );
-    if (!dashboardStatus) {
-      console.error(`[api/leads] Lead dashboard webhook did not complete for ${submissionId}`);
-    }
+      );
+      if (!dashboardStatus || dashboardStatus !== "sent") {
+        console.error(
+          `[api/leads] Lead dashboard webhook ${dashboardStatus || "incomplete"} for ${submissionId}`
+        );
+      }
+    });
 
     // 7. Return success
     return NextResponse.json({
