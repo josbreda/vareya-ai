@@ -16,6 +16,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { generateSubmissionId, sanitiseLeadData, validateLeadInput } from "@/lib/leads";
 import { validateTurnstile } from "@/lib/turnstile";
 import { sendInternalNotification, sendProspectConfirmation } from "@/lib/email";
+import { buildLeadDashboardPayload, notifyLeadDashboard } from "@/lib/lead-dashboard";
 import { SERVER_ENV } from "@/lib/leads/config";
 
 export const maxDuration = 30;
@@ -243,6 +244,19 @@ export async function POST(request: NextRequest) {
       if (!confirmationSent) {
         console.error(`[api/leads] Prospect confirmation failed/timed out for ${submissionId}`);
       }
+    }
+
+    // 6.5 Lead-dashboard webhook — ADDITIVE, best-effort, never blocks the lead.
+    //     The existing minimum-delivery condition has already passed above.
+    const dashboardStatus = await withTimeout(
+      notifyLeadDashboard(
+        buildLeadDashboardPayload(clean, submissionId),
+        4000
+      ),
+      6000
+    );
+    if (!dashboardStatus) {
+      console.error(`[api/leads] Lead dashboard webhook did not complete for ${submissionId}`);
     }
 
     // 7. Return success
