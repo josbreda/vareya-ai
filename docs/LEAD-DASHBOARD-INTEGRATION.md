@@ -58,12 +58,13 @@ Optional fields are omitted when absent.
 - Dashboard-side behaviour (new→HOT, existing→promote HOT, dedup, attribution)
   was production-verified by the dashboard team: 141/141 tests.
 
-## Production activation (owner step — requires Vercel access)
-1. Read the key from `/opt/aos/secrets/vareya-free-rate-scan-api-key.md` (VPS).
-2. Vercel → vareya-website → Settings → Environment Variables → Production:
-   `LEAD_DASHBOARD_FREE_RATE_SCAN_API_KEY` = the key (never paste it into chat).
-3. Redeploy the latest deployment.
-Until then the deployed code no-ops safely (logs "not set — webhook skipped").
+## Production activation — DONE (19-08-2026)
+1. ✅ `LEAD_DASHBOARD_FREE_RATE_SCAN_API_KEY` gezet in Vercel Production (project
+   vareya-website, scope vareya) via de Vercel CLI met de waarde direct uit
+   `/opt/aos/secrets/vareya-free-rate-scan-api-key.md` (waarde nooit via chat/stdout).
+2. ✅ Production redeployed (deployment gealiased naar https://vareya.ai).
+3. De webhook is nu actief voor iedere geldige scan-submission. De eerste echte
+   inbound lead bewijst de volledige productieketen.
 
 ## Rollback
 Remove the env var (or redeploy the previous commit) — the module is additive
