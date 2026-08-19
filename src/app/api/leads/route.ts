@@ -238,7 +238,7 @@ export async function POST(request: NextRequest) {
           (clean.form_type as string) || "unknown",
           submissionId
         ),
-        4000
+        8000
       );
       if (!confirmationSent) {
         console.error(`[api/leads] Prospect confirmation failed/timed out for ${submissionId}`);
