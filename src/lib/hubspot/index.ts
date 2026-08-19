@@ -82,16 +82,25 @@ export async function syncLead(lead: LeadData): Promise<SyncResult> {
     // 4. Score & task
     const w = scoreWarmth(lead);
     result.fitScore = w.totalScore;
-    const taskBody = {
-      properties: {
-        hs_task_subject: `[${w.status}] ${lead.company} — ${lead.name}`,
-        hs_task_body: `WARMTH: ${w.totalScore}/100 (${w.status}) | FIT: ${w.fitScore}/50 | INTENT: ${w.intentScore}/50\n\nSubmission: ${lead.submission_id}\nForm: ${lead.form_type}\nPlatform: ${lead.ecommerce_platform||"N/A"}\nVolume: ${lead.monthly_order_volume||"N/A"}\nMarkets: ${(lead.target_markets||[]).join(", ")||"N/A"}\nLanding: ${lead.landing_page||"N/A"}\nDevice: ${lead.device||"N/A"}\n\nREVIEW: Check platform compatibility, volume threshold (500+/mo), product fit, market coverage within 1 working day.`,
-        hs_task_status: "NOT_STARTED", hs_task_priority: w.totalScore >= 40 ? "HIGH" : "MEDIUM",
-        hs_timestamp: new Date().toISOString(),
-      },
+    const taskProps: Record<string, string> = {
+      hs_task_subject: `[${w.status}] ${lead.company} — ${lead.name}`,
+      hs_task_body: `WARMTH: ${w.totalScore}/100 (${w.status}) | FIT: ${w.fitScore}/50 | INTENT: ${w.intentScore}/50\n\nSubmission: ${lead.submission_id}\nForm: ${lead.form_type}\nPlatform: ${lead.ecommerce_platform||"N/A"}\nVolume: ${lead.monthly_order_volume||"N/A"}\nMarkets: ${(lead.target_markets||[]).join(", ")||"N/A"}\nLanding: ${lead.landing_page||"N/A"}\nDevice: ${lead.device||"N/A"}\nAttribution: utm_source=${lead.utm_source||"—"} · utm_medium=${lead.utm_medium||"—"} · utm_campaign=${lead.utm_campaign||"—"} · utm_content=${lead.utm_content||"—"}\n\nREVIEW: Check platform compatibility, volume threshold (500+/mo), product fit, market coverage within 1 working day.`,
+      hs_task_status: "NOT_STARTED", hs_task_priority: w.totalScore >= 40 ? "HIGH" : "MEDIUM",
+      hs_timestamp: new Date().toISOString(),
     };
-    const tr = await hs("POST","/crm/v3/objects/tasks",taskBody);
+    // Assign owner when configured (portal default otherwise)
+    if (process.env.HUBSPOT_OWNER_ID) {
+      taskProps.hubspot_owner_id = process.env.HUBSPOT_OWNER_ID;
+    }
+    const tr = await hs("POST", "/crm/v3/objects/tasks", { properties: taskProps });
     result.taskId = tr.id;
+    // Associate the follow-up task with the contact so it shows on the lead
+    // record (best-effort — sync must not fail when association is blocked)
+    try {
+      await hs("PUT", `/crm/v3/objects/tasks/${tr.id}/associations/contacts/${contactId}/task_to_contact`);
+    } catch (e) {
+      console.error("[hubspot] Task association to contact failed:", e instanceof Error ? e.message : e);
+    }
     result.status = "synced";
   } catch(e) { result.status = "retry_pending"; result.error = e instanceof Error ? e.message.slice(0,255) : "Unknown"; }
   return result;

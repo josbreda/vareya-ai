@@ -18,6 +18,16 @@ import { validateTurnstile } from "@/lib/turnstile";
 import { sendInternalNotification, sendProspectConfirmation } from "@/lib/email";
 import { SERVER_ENV } from "@/lib/leads/config";
 
+export const maxDuration = 30;
+
+/** Bounded await — downstream services may be slow but must never hang the request. */
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T | undefined> {
+  return Promise.race([
+    promise,
+    new Promise<undefined>((resolve) => setTimeout(() => resolve(undefined), ms)),
+  ]);
+}
+
 export async function POST(request: NextRequest) {
   const startTime = Date.now();
 
@@ -148,66 +158,91 @@ export async function POST(request: NextRequest) {
       });
     }
 
-    // 4.5 Sync to HubSpot (non-blocking, independent of Supabase)
+    // 4.5 Sync to HubSpot — awaited with timeout (secondary channel, tolerant)
     if (process.env.HUBSPOT_ACCESS_TOKEN) {
       try {
         const { syncLead } = await import("@/lib/hubspot");
-        syncLead({
-          name: String(clean.name || ""),
-          company: String(clean.company || ""),
-          work_email: String(clean.work_email || ""),
-          phone_number: clean.phone ? String(clean.phone) : undefined,
-          company_country: clean.company_country ? String(clean.company_country) : undefined,
-          ecommerce_platform: clean.ecommerce_platform ? String(clean.ecommerce_platform) : undefined,
-          monthly_order_volume: clean.monthly_order_volume ? String(clean.monthly_order_volume) : undefined,
-          target_markets: Array.isArray(clean.target_markets) ? clean.target_markets : undefined,
-          landing_page: clean.landing_page ? String(clean.landing_page) : undefined,
-          device: clean.device ? String(clean.device) : undefined,
-          utm_source: clean.utm_source ? String(clean.utm_source) : undefined,
-          utm_medium: clean.utm_medium ? String(clean.utm_medium) : undefined,
-          utm_campaign: clean.utm_campaign ? String(clean.utm_campaign) : undefined,
-          utm_content: clean.utm_content ? String(clean.utm_content) : undefined,
-          submission_id: submissionId,
-          form_type: String(clean.form_type || "unknown"),
-        }).then((hsResult) => {
-          if (hsResult.error) {
-            console.error("[api/leads] HubSpot sync error:", hsResult.error);
-          } else {
-            console.log("[api/leads] HubSpot synced:", {
-              contactId: hsResult.contactId,
-              companyId: hsResult.companyId,
-              taskId: hsResult.taskId,
-            });
-          }
-        }).catch((hsErr) => {
-          console.error("[api/leads] HubSpot sync failed:", hsErr);
-        });
+        const hsResult = await withTimeout(
+          syncLead({
+            name: String(clean.name || ""),
+            company: String(clean.company || ""),
+            work_email: String(clean.work_email || ""),
+            phone_number: clean.phone ? String(clean.phone) : undefined,
+            company_country: clean.company_country ? String(clean.company_country) : undefined,
+            ecommerce_platform: clean.ecommerce_platform ? String(clean.ecommerce_platform) : undefined,
+            monthly_order_volume: clean.monthly_order_volume ? String(clean.monthly_order_volume) : undefined,
+            target_markets: Array.isArray(clean.target_markets) ? clean.target_markets : undefined,
+            landing_page: clean.landing_page ? String(clean.landing_page) : undefined,
+            device: clean.device ? String(clean.device) : undefined,
+            utm_source: clean.utm_source ? String(clean.utm_source) : undefined,
+            utm_medium: clean.utm_medium ? String(clean.utm_medium) : undefined,
+            utm_campaign: clean.utm_campaign ? String(clean.utm_campaign) : undefined,
+            utm_content: clean.utm_content ? String(clean.utm_content) : undefined,
+            submission_id: submissionId,
+            form_type: String(clean.form_type || "unknown"),
+          }),
+          6000
+        );
+        if (!hsResult) {
+          console.error("[api/leads] HubSpot sync timed out");
+        } else if (hsResult.status === "synced") {
+          console.log("[api/leads] HubSpot synced:", {
+            contactId: hsResult.contactId,
+            companyId: hsResult.companyId,
+            taskId: hsResult.taskId,
+          });
+        } else {
+          console.error("[api/leads] HubSpot sync error:", hsResult.error ?? hsResult.status);
+        }
       } catch (importErr) {
         console.error("[api/leads] HubSpot module load failed:", importErr);
       }
     }
 
-    // 5. Send internal notification (non-blocking)
-    // Fire-and-forget — email failure must not roll back lead
-    sendInternalNotification(
+    // 5. Internal notification — REQUIRED minimum delivery condition.
+    //    A 2xx/thank-you is only returned when the lead has reached the
+    //    owner's inbox. Everything else is secondary or best-effort.
+    const internalDelivered = await sendInternalNotification(
       submissionId,
       (clean.form_type as string) || "unknown",
       (clean.company as string) || "Unknown",
-      (clean.name as string) || "Unknown"
-    ).catch((err) => {
-      console.error("[api/leads] Internal notification failed:", err);
-    });
+      (clean.name as string) || "Unknown",
+      {
+        utm_source: clean.utm_source ? String(clean.utm_source) : undefined,
+        utm_medium: clean.utm_medium ? String(clean.utm_medium) : undefined,
+        utm_campaign: clean.utm_campaign ? String(clean.utm_campaign) : undefined,
+        utm_content: clean.utm_content ? String(clean.utm_content) : undefined,
+        landing_page: clean.landing_page ? String(clean.landing_page) : undefined,
+        platform: clean.ecommerce_platform ? String(clean.ecommerce_platform) : undefined,
+        volume: clean.monthly_order_volume ? String(clean.monthly_order_volume) : undefined,
+        markets: Array.isArray(clean.target_markets) ? clean.target_markets : undefined,
+      }
+    );
 
-    // 6. Send prospect confirmation (non-blocking)
+    if (!internalDelivered) {
+      console.error(
+        `[api/leads] Minimum delivery condition FAILED — internal notification not delivered for ${submissionId}`
+      );
+      return NextResponse.json(
+        { error: "We couldn't process your submission right now. Please try again in a moment." },
+        { status: 502 }
+      );
+    }
+
+    // 6. Prospect confirmation — awaited with timeout (best-effort)
     if (clean.work_email) {
-      sendProspectConfirmation(
-        clean.work_email as string,
-        (clean.name as string) || "there",
-        (clean.form_type as string) || "unknown",
-        submissionId
-      ).catch((err) => {
-        console.error("[api/leads] Prospect confirmation failed:", err);
-      });
+      const confirmationSent = await withTimeout(
+        sendProspectConfirmation(
+          clean.work_email as string,
+          (clean.name as string) || "there",
+          (clean.form_type as string) || "unknown",
+          submissionId
+        ),
+        4000
+      );
+      if (!confirmationSent) {
+        console.error(`[api/leads] Prospect confirmation failed/timed out for ${submissionId}`);
+      }
     }
 
     // 7. Return success
