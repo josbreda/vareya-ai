@@ -54,6 +54,13 @@ export function organizationSchema() {
       addressLocality: "Breda",
       addressCountry: "NL",
     },
+    sameAs: [
+      "https://nl.linkedin.com/company/vareya",
+      "https://www.fulfilmentshortlist.com/partijen/vareya",
+      "https://www.findforwarders.com/netherlands/breda/freight-forwarders/vareya-b-v-fulfilment-center",
+      "https://www.crunchbase.com/organization/vareya",
+      "https://www.creditsafe.com/business-index/en-gb/company/vareya-bv-nl04232551",
+    ],
   };
 }
 

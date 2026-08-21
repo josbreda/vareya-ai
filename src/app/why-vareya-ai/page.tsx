@@ -9,12 +9,12 @@ import { APPROVED_FACTS } from "@/content/claims";
 import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Why Vareya.ai: A Cooperative Fulfilment Vision",
+  title: "Why Vareya.ai: A Cooperative Fulfilment Vision | Vareya",
   description:
     "Raymond's vision for cooperative fulfilment: developing democratic member ownership, shared scale and rules for returning eligible surplus to members.",
   alternates: { canonical: "https://vareya.ai/why-vareya-ai/" },
   openGraph: {
-    title: "Why Vareya.ai: A Cooperative Fulfilment Vision",
+    title: "Why Vareya.ai: A Cooperative Fulfilment Vision | Vareya",
     description:
       "A developing member-owned model for organising European e-commerce fulfilment together.",
     url: "https://vareya.ai/why-vareya-ai/",
@@ -206,6 +206,38 @@ export default function WhyVareyaPage() {
                 and membership documents before they become final member commitments.
               </p>
             </article>
+          </div>
+
+          <div className="mx-auto mt-12 max-w-3xl">
+            <p className="mb-3 text-center text-sm font-semibold uppercase tracking-[0.16em] text-primary">
+              Published about Vareya
+            </p>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <a
+                href="https://www.shiphero.com/case-studies/vareya-fulfillment"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl border border-border bg-white p-6 transition-colors hover:border-primary/40"
+              >
+                <h3 className="text-lg font-semibold text-ink">ShipHero case study</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">
+                  ShipHero, Vareya&apos;s warehouse management system, has published a case study
+                  describing how Vareya onboards its clients.
+                </p>
+              </a>
+              <a
+                href="https://help.digistore24.com/hc/en-us/articles/23713793720721-Connect-Vareya-to-Digistore24"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-2xl border border-border bg-white p-6 transition-colors hover:border-primary/40"
+              >
+                <h3 className="text-lg font-semibold text-ink">Digistore24 documentation</h3>
+                <p className="mt-2 text-sm leading-6 text-muted">
+                  The Digistore24 Help Center documents how sellers connect Vareya as their
+                  fulfilment partner.
+                </p>
+              </a>
+            </div>
           </div>
         </div>
       </section>

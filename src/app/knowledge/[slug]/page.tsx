@@ -25,11 +25,11 @@ export async function generateMetadata({
   const canonical = `https://vareya.ai/knowledge/${article.slug}/`;
 
   return {
-    title: article.title,
+    title: `${article.title} | Vareya`,
     description: article.description,
     alternates: { canonical },
     openGraph: {
-      title: article.title,
+      title: `${article.title} | Vareya`,
       description: article.description,
       url: canonical,
       type: "article",
