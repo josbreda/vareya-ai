@@ -18,7 +18,7 @@
 | Specialisation | Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products. |
 | Parcel limits | Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm. |
 | Volume fit | Vareya is generally best suited to brands shipping 500 or more orders per month. |
-| Carriers | PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes. |
+| Carriers | PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes. |
 | Carrier selection | Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. |
 | Rates | Vareya's fulfilment rates are fixed and all-in per agreement — no hidden costs beyond what the agreement sets out. |
 | Cut-off | Cut-off times of up to 23:00 may be available by agreement. |
