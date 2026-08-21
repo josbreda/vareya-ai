@@ -103,8 +103,8 @@ export default function CookiesPage() {
           <Section title="6. Contact">
             <p>
               For questions about our use of cookies, contact us at{" "}
-              <a href="mailto:info@vareya.nl" className="text-primary hover:underline">
-                info@vareya.nl
+              <a href="mailto:info@vareya.ai" className="text-primary hover:underline">
+                info@vareya.ai
               </a>
               .
             </p>

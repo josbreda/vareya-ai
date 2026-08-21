@@ -5,12 +5,12 @@ import { KNOWLEDGE_ARTICLES } from "@/content/knowledge";
 import { breadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "European Fulfilment Knowledge",
+  title: "European Fulfilment Knowledge | Vareya",
   description:
     "Practical guides for evaluating European e-commerce fulfilment, cooperative ownership and Shopify operations.",
   alternates: { canonical: "https://vareya.ai/knowledge/" },
   openGraph: {
-    title: "European Fulfilment Knowledge",
+    title: "European Fulfilment Knowledge | Vareya",
     description:
       "Decision-focused guides about European fulfilment, cooperative ownership and Shopify operations.",
     url: "https://vareya.ai/knowledge/",

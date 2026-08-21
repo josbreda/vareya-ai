@@ -74,7 +74,7 @@ export default function NlFulfilmentBrabantPage() {
       "Fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops, gespecialiseerd in cosmetics, supplements en andere kleinere pakketten.",
     url: "https://vareya.ai/",
     telephone: "+31 6 19 12 34 72",
-    email: "info@vareya.nl",
+    email: "info@vareya.ai",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Bagven Park 6",
@@ -170,7 +170,7 @@ export default function NlFulfilmentBrabantPage() {
               <p className="mt-3 text-muted">
                 <a href="tel:+31619123472" className="hover:text-primary">+31 6 19 12 34 72</a>
                 {" · "}
-                <a href="mailto:info@vareya.nl" className="hover:text-primary">info@vareya.nl</a>
+                <a href="mailto:info@vareya.ai" className="hover:text-primary">info@vareya.ai</a>
               </p>
             </address>
           </div>

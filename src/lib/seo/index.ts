@@ -45,7 +45,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: "Vareya BV",
     url: "https://vareya.ai",
-    email: "info@vareya.nl",
+    email: "info@vareya.ai",
     telephone: "+31 6 19 12 34 72",
     address: {
       "@type": "PostalAddress",
@@ -54,6 +54,13 @@ export function organizationSchema() {
       addressLocality: "Breda",
       addressCountry: "NL",
     },
+    sameAs: [
+      "https://nl.linkedin.com/company/vareya",
+      "https://www.fulfilmentshortlist.com/partijen/vareya",
+      "https://www.findforwarders.com/netherlands/breda/freight-forwarders/vareya-b-v-fulfilment-center",
+      "https://www.crunchbase.com/organization/vareya",
+      "https://www.creditsafe.com/business-index/en-gb/company/vareya-bv-nl04232551",
+    ],
   };
 }
 

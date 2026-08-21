@@ -31,14 +31,14 @@ export async function generateMetadata({
   const reviewDraft = article.indexable === false;
 
   return {
-    title: article.title,
+    title: `${article.title} | Vareya`,
     description: article.description,
     alternates: { canonical },
     robots: reviewDraft
       ? { index: false, follow: false, nocache: true }
       : undefined,
     openGraph: {
-      title: article.title,
+      title: `${article.title} | Vareya`,
       description: article.description,
       url: canonical,
       type: "article",

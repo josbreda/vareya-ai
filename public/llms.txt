@@ -1,0 +1,46 @@
+# Vareya
+
+> Vareya BV is a fulfilment company based in Breda, the Netherlands, that fulfils ecommerce orders for brands shipping 500 or more orders per month. Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products (combined dimensions below 900 mm, maximum length 600 mm). All facts below are approved for public use and are stated verbatim on this website.
+
+## Company
+
+- Legal name: Vareya BV
+- Address: Bagven Park 6, 4838 EH Breda, The Netherlands
+- Phone: +31 6 19 12 34 72
+- Email: info@vareya.ai
+- KVK: 65877535
+- VAT: NL856299790B02
+- Website: https://vareya.ai
+
+## Services
+
+- [Ecommerce fulfilment from the Netherlands](https://vareya.ai/eu-fulfilment/)
+- [Shopify fulfilment in Europe](https://vareya.ai/shopify-fulfilment-europe/)
+- [EU fulfilment for US ecommerce brands](https://vareya.ai/eu-fulfilment-us-brands/)
+- [EU fulfilment for UK ecommerce brands](https://vareya.ai/eu-fulfilment-uk-brands/)
+- [Cosmetics and supplements fulfilment](https://vareya.ai/cosmetics-supplements-fulfilment-europe/)
+- [Check your EU fulfilment fit (scan)](https://vareya.ai/fulfilment-scan/)
+- [Request a fulfilment quote](https://vareya.ai/request-fulfilment-quote/)
+
+## Approved facts
+
+- Vareya is generally best suited to brands shipping 500 or more orders per month.
+- Shopify integration is available. Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.
+- Amazon FBM fulfilment is available.
+- Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail. PostNL is Vareya's main carrier for shipments within the Netherlands.
+- Cut-off times of up to 23:00 may be available by agreement.
+- Weekend fulfilment (Saturday and Sunday order processing) is available on a structural basis.
+- Returns handling is available. Contact Vareya to discuss the required returns process.
+- Customs clearance support is available for shipments into and out of Europe. Contact Vareya to discuss specific requirements.
+- Vareya's fulfilment rates are fixed and all-in per agreement — no hidden costs beyond what the agreement sets out.
+- Customer support is included at no additional charge.
+- Vareya ships to 42 approved destinations across Europe and worldwide; the full list is published on the service pages.
+
+## Knowledge
+
+- [E-commerce fulfilment from the Netherlands: a practical guide](https://vareya.ai/knowledge/ecommerce-fulfilment-netherlands-guide/)
+- [Shopify fulfilment in Europe: what to look for](https://vareya.ai/knowledge/shopify-fulfilment-europe-what-to-look-for/)
+- [What determines ecommerce fulfilment and shipping costs?](https://vareya.ai/knowledge/fulfilment-cost-drivers/)
+- [What information does a 3PL need to prepare a fulfilment quotation?](https://vareya.ai/knowledge/fulfilment-quotation-requirements/)
+- [Shipping software, carrier contract or fulfilment partner: what is the difference?](https://vareya.ai/knowledge/compare-fulfilment-partners/)
+- [What is cooperative fulfilment?](https://vareya.ai/knowledge/what-is-cooperative-fulfilment/)

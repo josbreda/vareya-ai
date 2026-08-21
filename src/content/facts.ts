@@ -12,7 +12,7 @@ export const COMPANY = {
   country: "The Netherlands",
   countryCode: "NL",
   phone: "+31 6 19 12 34 72",
-  email: "info@vareya.nl",
+  email: "info@vareya.ai",
   domain: "vareya.ai",
 } as const;
 

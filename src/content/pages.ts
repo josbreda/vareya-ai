@@ -64,7 +64,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/contact/": {
     title: "Contact Vareya | European Fulfilment",
     description:
-      "Get in touch with Vareya. Bagven Park 6, 4838 EH Breda, the Netherlands. Call +31 6 19 12 34 72 or email info@vareya.nl.",
+      "Get in touch with Vareya. Bagven Park 6, 4838 EH Breda, the Netherlands. Call +31 6 19 12 34 72 or email info@vareya.ai.",
     canonical: `${BASE}/contact/`,
   },
   "/privacy/": {

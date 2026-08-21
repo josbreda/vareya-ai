@@ -14,10 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Vareya | European Fulfilment for E-Commerce Brands",
-    template: "%s | Vareya",
-  },
+  title: "Vareya | European Fulfilment for E-Commerce Brands",
   description:
     "Reliable order fulfilment from Breda, the Netherlands. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling available.",
   metadataBase: new URL("https://vareya.ai"),

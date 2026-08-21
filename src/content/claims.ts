@@ -122,7 +122,7 @@ export const APPROVED_FACTS = {
   company: "Vareya BV",
   address: "Bagven Park 6, 4838 EH Breda, The Netherlands",
   phone: "+31 6 19 12 34 72",
-  email: "info@vareya.nl",
+  email: "info@vareya.ai",
   shopify: "Shopify integration is available.",
   amazonFbm: "Amazon FBM fulfilment is available.",
   carriers: "Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail.",

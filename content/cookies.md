@@ -53,4 +53,4 @@ We may update this policy to reflect changes in the cookies or third-party servi
 
 ## Contact
 
-For questions about this cookie policy, contact: **info@vareya.nl**
+For questions about this cookie policy, contact: **info@vareya.ai**
