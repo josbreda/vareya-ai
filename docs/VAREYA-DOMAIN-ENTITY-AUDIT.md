@@ -1,5 +1,5 @@
 # Vareya — Domain & Entity Audit (P0 bevindingen)
-**Datum:** 10 augustus 2026
+**Datum:** 10 augustus 2026 · **Update:** 21 augustus 2026 — consolidatie-scope goedgekeurd door Raymond
 **Auditor:** Agent 2 (Domain, Entity & Technical Local SEO)
 
 ---
@@ -30,6 +30,10 @@
 ### P0-2: go.vareya.com (oud statisch archief) nog live
 - Title: "European Fulfilment Knowledge Center | VareYa"
 - Oude content, oude merknaam-spelling "VareYa"
+
+## GOEDKEURING 21-08-2026 (Raymond)
+
+Consolidatie-scope formeel goedgekeurd: **vareya.nl, vareya.com, go.vareya.com** worden als controlled domains behandeld en moeten 301'en naar https://vareya.ai (go.vareya.com → /knowledge/). Zie docs/RAYMOND-AI-DECISIONS.md en docs/ENTITY-SUBMISSION-PACK.md. Uitvoering vereist Hostinger-FTP/GoDaddy-toegang (manual action).
 
 ## BESLUIT — CANONICAL DOMAIN
 
