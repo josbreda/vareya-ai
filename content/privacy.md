@@ -17,7 +17,7 @@ requiresRaymondApproval: true
 This website (vareya.ai) is operated by **Vareya BV**, a company registered in the Netherlands.
 
 - Address: Bagven Park 6, 4838 EH Breda, The Netherlands
-- Email: info@vareya.nl
+- Email: info@vareya.ai
 - Phone: +31 6 19 12 34 72
 - KVK: 65877535
 - VAT: NL856299790B02
@@ -70,7 +70,7 @@ Under the GDPR, you have the right to:
 - Data portability
 - Lodge a complaint with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens)
 
-To exercise any of these rights, contact us at **info@vareya.nl**.
+To exercise any of these rights, contact us at **info@vareya.ai**.
 
 ## Cookies and tracking
 
@@ -78,7 +78,7 @@ We use cookies for security (Cloudflare Turnstile) and analytics (Google Analyti
 
 ## Data protection contact
 
-For data protection enquiries, contact: **info@vareya.nl**
+For data protection enquiries, contact: **info@vareya.ai**
 
 ## Changes to this policy
 

@@ -1,9 +1,9 @@
 Document: Vareya.ai Claims Register
-Version: 1.3
+Version: 1.4
 Status: Approved for implementation
 Commercial approval: Raymond
 Operational owner: Jos
-Last updated: 17 August 2026
+Last updated: 21 August 2026
 
 # Claims Register
 
@@ -12,7 +12,10 @@ Last updated: 17 August 2026
 - Company: Vareya BV
 - Warehouse and address: Bagven Park 6, 4838 EH Breda, The Netherlands
 - Telephone: +31 6 19 12 34 72
-- Email: info@vareya.nl
+- Email: info@vareya.ai (changed from info@vareya.nl — owner-confirmed 21 August 2026)
+- Company registration: KVK 65877535
+- VAT: NL856299790B02
+- Primary domain: https://vareya.ai (owner-confirmed)
 - Shopify integration is available.
 - Amazon FBM fulfilment is available.
 - Returns handling is available.
@@ -22,7 +25,7 @@ Last updated: 17 August 2026
 - Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products.
 - Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.
 - Product fit is confirmed during qualification.
-- PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.
+- PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes. (The earlier "strategic partner of PostNL" wording is SUSPENDED as a canonical claim pending review of available email evidence and establishment of the strongest supportable wording — owner instruction 21 August 2026. Do not reintroduce "strategic partner" until this review is concluded.)
 - Customer support is included at no additional charge.
 - Clients can agree customised SLAs with Vareya, within boundaries confirmed during qualification.
 - Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.
@@ -34,6 +37,14 @@ Last updated: 17 August 2026
 - Weekend fulfilment (Saturday and Sunday order processing) is available on a structural basis.
 
 Approved 9 August 2026 by Raymond (commercial approval) — see `DECISIONS_FOR_RAYMOND.md` point 9 and `ASSUMPTIONS.md` A-009–A-018. The percentage of clients using Shopify is not published until dated source data is available (see A-012); only the ShipHero/Shopify integration fact itself is approved.
+
+## Entity decisions approved 21 August 2026 (Raymond)
+
+- Email changes to info@vareya.ai; primary domain is https://vareya.ai. Both owner-confirmed.
+- Publication of company registration details (KVK 65877535, VAT NL856299790B02) on the website is approved.
+- Directory submissions and listing corrections are approved (no spam, no purchased reviews — existing rule).
+- Domain-consolidation scope (controlled domains to be brought into line with the vareya.ai entity): vareya.nl, vareya.com, go.vareya (go.vareya.com). Execution plan: docs/VAREYA-DOMAIN-ENTITY-AUDIT.md + docs/MANUAL-ACTIONS-RAYMOND-JOS.md.
+- PostNL "strategic partner" claim suspended as canonical wording pending evidence review (see approved facts above).
 
 ## Required exact wording
 
@@ -93,24 +104,17 @@ Jos is the internal lead owner of this response. Public website copy must refer 
 
 ## Open items requiring Raymond's approval
 
-1. Privacy policy (content/privacy.md) contains placeholders for the company registration number, VAT number, data retention periods and data protection contact. Final wording must match the legal entity details and processors actually used by the production website.
+1. ~~Privacy policy (content/privacy.md) contains placeholders for the company registration number, VAT number, data retention periods and data protection contact.~~ Registration numbers approved and published 21 August 2026 (KVK 65877535, VAT NL856299790B02). Remaining: data retention periods and data protection contact details.
 2. Cookies policy (content/cookies.md) contains placeholders for the specific cookies, categories and third-party tools actually in use. Final wording must match the live implementation.
 3. The fulfilment scan describes its own length as "a few minutes" rather than a specific time, pending an actual timed measurement of the five-step form.
+4. PostNL wording: strongest supportable carrier wording to be established after review of available email evidence (owner instruction 21 August 2026). Current canonical wording is the downgraded "main carrier" sentence; "strategic partner" remains suspended.
 
-## Implementation notes — page-copy updates applied
+## Implementation notes
 
-The following page files were written under the prior version of this register and have now been brought into line with it:
+1. 21 August 2026 (v1.4): email updated site-wide from info@vareya.nl to info@vareya.ai (owner-confirmed); KVK/VAT recorded as approved published facts; PostNL wording downgraded from "strategic partner and main carrier" to "main carrier" pending evidence review; domain-consolidation scope recorded (vareya.nl, vareya.com, go.vareya); directory submissions approved. See docs/RAYMOND-AI-DECISIONS.md.
 
-1. content/eu-fulfilment-us-brands.md, content/eu-fulfilment-uk-brands.md and content/cosmetics-supplements-fulfilment-europe.md: the retired line "No specific capability is claimed on this page." has been replaced with the approved public-facing fallback throughout, including their target-market copy on the US and UK pages, which now uses the full approved destination list.
-2. content/fulfilment-scan.md: confirmation copy no longer names Jos; it now uses the approved post-submission commitment referring to Vareya. Its target-markets field now lists the full approved destination list plus "Other destination".
-3. content/request-fulfilment-quote.md: its target-markets field now lists the full approved destination list plus "Other destination".
+2. 9 August 2026 (v1.2): the destination list in content/shopify-fulfilment-europe.md, content/home.md, content/fulfilment-scan.md, content/eu-fulfilment-us-brands.md, content/eu-fulfilment.md, content/request-fulfilment-quote.md and content/eu-fulfilment-uk-brands.md was updated in place to add Saudi Arabia, South Korea, Turkey and United Arab Emirates, matching the approved shipping destinations list above. No other copy on these pages was changed.
 
-4. content/home.md, content/eu-fulfilment.md and content/shopify-fulfilment-europe.md: the earlier shorthand destination phrasing has been replaced with the full approved destination list throughout.
-
-All page files are now aligned with this version of the register.
-
-5. 9 August 2026 (v1.2): the destination list in content/shopify-fulfilment-europe.md, content/home.md, content/fulfilment-scan.md, content/eu-fulfilment-us-brands.md, content/eu-fulfilment.md, content/request-fulfilment-quote.md and content/eu-fulfilment-uk-brands.md was updated in place to add Saudi Arabia, South Korea, Turkey and United Arab Emirates, matching the approved shipping destinations list above. No other copy on these pages was changed.
-
-6. 10 August 2026: the nine newly approved facts (A-008–A-018, approved 9 August 2026) were integrated into live page copy for the first time — previously they existed only in this register and in ASSUMPTIONS.md, not yet reflected in the actual pages. Updated: content/home.md (capability strip, relevant capabilities, new "How you're supported" section, international shipping, three new FAQ entries), content/eu-fulfilment.md (capability block, shipping/destinations, one new FAQ entry), content/eu-fulfilment-us-brands.md (hero, capability block, Requirements to confirm, customs FAQ answer rewritten to state the approved positive claim instead of the neutral deflection — import/VAT/duties remain correctly unclaimed), content/eu-fulfilment-uk-brands.md (same customs correction, plus Royal Mail direct-entry fact added, one new FAQ entry), content/shopify-fulfilment-europe.md (ShipHero named in capability block and FAQ, carrier sentence updated), content/cosmetics-supplements-fulfilment-europe.md (capability block, Requirements to confirm and three FAQ answers rewritten to remove customs from the still-unconfirmed list — temperature/batch/certification remain correctly unclaimed, using the approved fallback phrasing rather than the retired line), content/request-fulfilment-quote.md and content/contact.md (light touch: all-in rates and free support mentioned). All carrier-list sentences sitewide were updated from the flat "Carriers include..." framing to the approved PostNL-as-main-carrier framing. No unapproved claim was introduced; A-012's Shopify-usage percentage remains unpublished per its standing stop rule.
+3. 10 August 2026: the nine newly approved facts (A-008–A-018, approved 9 August 2026) were integrated into live page copy for the first time — previously they existed only in this register and in ASSUMPTIONS.md, not yet reflected in the actual pages. Updated: content/home.md (capability strip, relevant capabilities, new "How you're supported" section, international shipping, three new FAQ entries), content/eu-fulfilment.md (capability block, shipping/destinations, one new FAQ entry), content/eu-fulfilment-us-brands.md (hero, capability block, Requirements to confirm, customs FAQ answer rewritten to state the approved positive claim instead of the neutral deflection — import/VAT/duties remain correctly unclaimed), content/eu-fulfilment-uk-brands.md (same customs correction, plus Royal Mail direct-entry fact added, one new FAQ entry), content/shopify-fulfilment-europe.md (ShipHero named in capability block and FAQ, carrier sentence updated), content/cosmetics-supplements-fulfilment-europe.md (capability block, Requirements to confirm and three FAQ answers rewritten to remove customs from the still-unconfirmed list — temperature/batch/certification remain correctly unclaimed, using the approved fallback phrasing rather than the retired line), content/request-fulfilment-quote.md and content/contact.md (light touch: all-in rates and free support mentioned). All carrier-list sentences sitewide were updated from the flat "Carriers include..." framing to the approved PostNL-as-main-carrier framing. No unapproved claim was introduced; A-012's Shopify-usage percentage remains unpublished per its standing stop rule.
 
 7. 17 August 2026 (v1.3): the conversion-rule route was updated from /fulfilment-scan/ to /free-rate-scan/ (owner-directed, Content Sprint 01 implementation preparation). /fulfilment-scan/ is documented as a legacy permanent redirect that preserves query and UTM parameters. No claim wording, fact, superlative rule, destination list or capability statement was changed in this version.

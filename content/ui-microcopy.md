@@ -45,7 +45,7 @@ Step 5 of 5: Contact.
 
 ## Footer text
 
-Vareya BV. Bagven Park 6, 4838 EH Breda, The Netherlands. +31 6 19 12 34 72. info@vareya.nl.
+Vareya BV. Bagven Park 6, 4838 EH Breda, The Netherlands. +31 6 19 12 34 72. info@vareya.ai.
 
 Check your EU fulfilment fit, links to Fulfilment Scan.
 

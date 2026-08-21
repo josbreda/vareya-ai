@@ -7,7 +7,9 @@
 - Legal name: Vareya BV
 - Address: Bagven Park 6, 4838 EH Breda, The Netherlands
 - Phone: +31 6 19 12 34 72
-- Email: info@vareya.nl
+- Email: info@vareya.ai
+- KVK: 65877535
+- VAT: NL856299790B02
 - Website: https://vareya.ai
 
 ## Services
@@ -25,7 +27,7 @@
 - Vareya is generally best suited to brands shipping 500 or more orders per month.
 - Shopify integration is available. Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.
 - Amazon FBM fulfilment is available.
-- Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail. PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands.
+- Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail. PostNL is Vareya's main carrier for shipments within the Netherlands.
 - Cut-off times of up to 23:00 may be available by agreement.
 - Weekend fulfilment (Saturday and Sunday order processing) is available on a structural basis.
 - Returns handling is available. Contact Vareya to discuss the required returns process.

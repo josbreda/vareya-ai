@@ -45,7 +45,7 @@ export function organizationSchema() {
     "@type": "Organization",
     name: "Vareya BV",
     url: "https://vareya.ai",
-    email: "info@vareya.nl",
+    email: "info@vareya.ai",
     telephone: "+31 6 19 12 34 72",
     address: {
       "@type": "PostalAddress",

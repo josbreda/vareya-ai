@@ -4,7 +4,7 @@ import { COMPANY, WAREHOUSE } from "@/content/facts";
 export const metadata: Metadata = {
   title: "Contact Vareya | European Fulfilment",
   description:
-    "Get in touch with Vareya. Bagven Park 6, 4838 EH Breda, the Netherlands. Call +31 6 19 12 34 72 or email info@vareya.nl.",
+    "Get in touch with Vareya. Bagven Park 6, 4838 EH Breda, the Netherlands. Call +31 6 19 12 34 72 or email info@vareya.ai.",
   alternates: {
     canonical: "https://vareya.ai/contact/",
   },

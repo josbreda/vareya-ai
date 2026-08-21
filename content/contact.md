@@ -26,7 +26,7 @@ Address: Bagven Park 6, 4838 EH Breda, The Netherlands
 
 Telephone: +31 6 19 12 34 72
 
-Email: info@vareya.nl
+Email: info@vareya.ai
 
 ## Secondary CTAs on this page
 

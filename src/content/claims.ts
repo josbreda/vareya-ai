@@ -21,7 +21,7 @@ export const CLAIM_RETURNS =
 // ============================================================================
 
 export const CLAIM_POSTNL =
-  "PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.";
+  "PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.";
 
 export const CLAIM_SUPPORT =
   "Customer support is included at no additional charge.";
@@ -122,7 +122,7 @@ export const APPROVED_FACTS = {
   company: "Vareya BV",
   address: "Bagven Park 6, 4838 EH Breda, The Netherlands",
   phone: "+31 6 19 12 34 72",
-  email: "info@vareya.nl",
+  email: "info@vareya.ai",
   shopify: "Shopify integration is available.",
   amazonFbm: "Amazon FBM fulfilment is available.",
   carriers: "Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail.",
