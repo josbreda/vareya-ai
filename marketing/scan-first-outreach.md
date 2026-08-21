@@ -15,7 +15,7 @@ I run fulfilment operations at Vareya, a fulfilment partner based in Breda, the 
 
 If EU fulfilment is on your roadmap this year, our free fit scan takes a few minutes and asks only the practical questions a quotation needs — volume, destinations, parcel profile and priorities. No call required, no commitment.
 
-You can run it here: https://vareya.ai/fulfilment-scan/
+You can run it here: https://vareya.ai/free-rate-scan/
 
 Best,
 Jos — Vareya
@@ -30,7 +30,7 @@ Hi [name],
 
 Scaling skincare into Europe usually raises the same questions: destination mix, parcel profile, customs and returns. Vareya built a short scan around exactly those inputs — it mirrors what our qualification team asks before any quotation.
 
-If your team is evaluating EU fulfilment options, this check takes under 3 minutes: https://vareya.ai/fulfilment-scan/
+If your team is evaluating EU fulfilment options, this check takes under 3 minutes: https://vareya.ai/free-rate-scan/
 
 Best,
 Jos — Vareya
@@ -47,7 +47,7 @@ UK brands serving EU customers face a practical logistics question since Brexit:
 
 Vareya operates a fulfilment warehouse in Breda, the Netherlands, with customs clearance support and a Royal Mail direct-entry route for UK shipments. Our free scan checks whether your order profile fits — no call, no commitment:
 
-https://vareya.ai/fulfilment-scan/
+https://vareya.ai/free-rate-scan/
 
 Best,
 Jos — Vareya
@@ -64,7 +64,7 @@ A quick one: we built a free fulfilment fit scan at Vareya that asks the five qu
 
 Farmacy's product profile looks like a natural fit for our Breda operation (small parcels, cosmetics, Shopify). If EU expansion is relevant, the scan is the fastest way to check:
 
-https://vareya.ai/fulfilment-scan/
+https://vareya.ai/free-rate-scan/
 
 Best,
 Jos — Vareya
@@ -81,7 +81,7 @@ Vareya specialises in supplements and cosmetics fulfilment from Breda, the Nethe
 
 If European fulfilment is on your roadmap, our free scan checks volume, destinations and parcel profile against our setup, and we reply with an initial fit response within one working day:
 
-https://vareya.ai/fulfilment-scan/
+https://vareya.ai/free-rate-scan/
 
 Best,
 Jos — Vareya

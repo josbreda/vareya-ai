@@ -16,7 +16,7 @@ That is the practical version of cooperation: define the boundaries, agree the s
 
 If you are assessing European fulfilment, start with fit rather than a sales call.
 
-Check your EU fulfilment fit: https://vareya.ai/fulfilment-scan/
+Check your EU fulfilment fit: https://vareya.ai/free-rate-scan/
 
 #EUFulfilment #EcommerceOperations #DTC
 
@@ -35,7 +35,7 @@ Vareya's shipping system can automatically select an appropriate carrier for eac
 
 A hub is useful when the operating choices behind it are clear.
 
-Check your EU fulfilment fit: https://vareya.ai/fulfilment-scan/
+Check your EU fulfilment fit: https://vareya.ai/free-rate-scan/
 
 #Netherlands #EUFulfilment #CrossBorderCommerce
 
@@ -56,7 +56,7 @@ Have customs, tax or specialist handling requirements? Include them in the fulfi
 
 Vareya will review your answers and send an initial fit response by email within one working day.
 
-Check your EU fulfilment fit: https://vareya.ai/fulfilment-scan/
+Check your EU fulfilment fit: https://vareya.ai/free-rate-scan/
 
 #Fulfilment #Operations #Ecommerce
 

@@ -10,7 +10,7 @@ const INDEXABLE_ROUTES = [
   "/eu-fulfilment-us-brands/",
   "/eu-fulfilment-uk-brands/",
   "/cosmetics-supplements-fulfilment-europe/",
-  "/fulfilment-scan/",
+  "/free-rate-scan/",
   "/request-fulfilment-quote/",
   "/contact/",
   "/privacy/",
@@ -114,7 +114,7 @@ test.describe("Accessibility", () => {
   });
 
   test("scan form: keyboard navigable", async ({ page }) => {
-    await page.goto("/fulfilment-scan/");
+    await page.goto("/free-rate-scan/");
     // Tab to select
     await page.keyboard.press("Tab");
     await page.keyboard.press("Tab");

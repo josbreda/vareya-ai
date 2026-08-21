@@ -15,7 +15,7 @@ When smaller webshops and new brands can't get access to the same logistics qual
 
 By giving growing ecommerce brands access to the same operational quality that large international brands take for granted, we're working to keep that playing field open — so new and ambitious webshops can compete on their product and their brand, not on logistics they can't yet afford to build themselves.
 
-Check your EU fulfilment fit → /fulfilment-scan/
+Check your EU fulfilment fit → /free-rate-scan/
 
 ---
 

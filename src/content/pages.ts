@@ -49,11 +49,11 @@ export const PAGE_META: Record<string, PageMeta> = {
       "Specialist fulfilment for cosmetics and supplement brands. Product-fit review, careful handling, and multi-carrier European delivery.",
     canonical: `${BASE}/cosmetics-supplements-fulfilment-europe/`,
   },
-  "/fulfilment-scan/": {
+  "/free-rate-scan/": {
     title: "Check Your EU Fulfilment Fit | Vareya",
     description:
       "Quick self-assessment to see if Vareya fulfilment is right for your e-commerce brand. Takes under 3 minutes.",
-    canonical: `${BASE}/fulfilment-scan/`,
+    canonical: `${BASE}/free-rate-scan/`,
   },
   "/request-fulfilment-quote/": {
     title: "Request a Fulfilment Quote | Vareya",

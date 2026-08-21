@@ -67,7 +67,7 @@ export default function NlKiezenPage() {
           een eerste fit-review — zonder verkoopgesprek als eerste stap.
         </p>
         <Link
-          href="/fulfilment-scan/"
+          href="/free-rate-scan/"
           className="mt-6 inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-slate-100"
         >
           {CLAIM_PRIMARY_CTA}

@@ -12,7 +12,7 @@ const FOOTER_LINKS = {
   ],
   Company: [
     { label: "Contact", href: "/contact/" },
-    { label: "Fulfilment Scan", href: "/fulfilment-scan/" },
+    { label: "Fulfilment Scan", href: "/free-rate-scan/" },
     { label: "Request Quote", href: "/request-fulfilment-quote/" },
   ],
   Legal: [

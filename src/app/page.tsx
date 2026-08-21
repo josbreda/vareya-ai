@@ -92,7 +92,7 @@ export default function HomePage() {
         badge="European Fulfilment — Breda, NL"
         title="Ecommerce fulfilment in Europe, run from the Netherlands"
         description="Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling included."
-        primaryCTA={{ label: "Check your EU fulfilment fit", href: "/fulfilment-scan/" }}
+        primaryCTA={{ label: "Check your EU fulfilment fit", href: "/free-rate-scan/" }}
         secondaryCTA={{ label: "Request a fulfilment quote", href: "/request-fulfilment-quote/" }}
         proofItems={["Breda, NL", "Shopify-ready", "5 carriers", "Returns included"]}
       >
@@ -309,7 +309,7 @@ export default function HomePage() {
             target markets may fit Vareya&apos;s fulfilment setup.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/fulfilment-scan/" className="rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
+            <Link href="/free-rate-scan/" className="rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
               Check your EU fulfilment fit
             </Link>
             <Link href="/request-fulfilment-quote/" className="rounded-lg border border-white/30 px-6 py-3 font-medium hover:bg-white/10">

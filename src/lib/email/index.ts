@@ -50,13 +50,37 @@ export async function sendEmail(payload: EmailPayload): Promise<
 
 /**
  * Sends internal notification to LEAD_OWNER_EMAIL.
+ * Returns true when the email was accepted by Resend, false otherwise.
+ * This is the minimum delivery condition for a lead — callers must await it.
  */
 export async function sendInternalNotification(
   submissionId: string,
   formType: string,
   company: string,
-  name: string
-): Promise<void> {
+  name: string,
+  attribution?: {
+    utm_source?: string;
+    utm_medium?: string;
+    utm_campaign?: string;
+    utm_content?: string;
+    landing_page?: string;
+    platform?: string;
+    volume?: string;
+    markets?: string[];
+  }
+): Promise<boolean> {
+  const att = attribution ?? {};
+  const attLines =
+    att.utm_source || att.utm_medium || att.utm_campaign || att.utm_content || att.landing_page
+      ? `
+      <hr />
+      <p><strong>Attribution:</strong><br />
+      Landing: ${att.landing_page || "N/A"}<br />
+      UTM source: ${att.utm_source || "—"}<br />
+      UTM medium: ${att.utm_medium || "—"}<br />
+      UTM campaign: ${att.utm_campaign || "—"}<br />
+      UTM content: ${att.utm_content || "—"}</p>`
+      : "";
   const result = await sendEmail({
     to: SERVER_ENV.leadOwnerEmail,
     subject: `New ${formType} lead: ${company}`,
@@ -66,13 +90,15 @@ export async function sendInternalNotification(
       <p><strong>Company:</strong> ${company}</p>
       <p><strong>Name:</strong> ${name}</p>
       <p><strong>Submission ID:</strong> ${submissionId}</p>
-      <p><a href="https://vareya.ai/admin">View in dashboard</a></p>
+      <p><strong>Platform:</strong> ${att.platform || "N/A"} · <strong>Volume:</strong> ${att.volume || "N/A"} · <strong>Markets:</strong> ${(att.markets ?? []).join(", ") || "N/A"}</p>
+      ${attLines}
     `,
   });
 
   if (!result.success) {
     console.error(`[email] Failed to send internal notification for ${submissionId}: ${result.error}`);
   }
+  return result.success;
 }
 
 /**

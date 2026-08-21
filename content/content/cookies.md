@@ -6,7 +6,7 @@ seoTitle: "Cookie Policy | Vareya"
 metaDescription: "How Vareya BV uses cookies and similar technologies on this website."
 h1: "Cookie Policy"
 primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
+primaryCtaRoute: "/free-rate-scan/"
 secondaryCtaLabel: "Request a fulfilment quote"
 secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: true

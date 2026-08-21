@@ -8,7 +8,7 @@ h1: "Request a fulfilment quote"
 primaryCtaLabel: "Submit quote request"
 primaryCtaRoute: "/request-fulfilment-quote/"
 secondaryCtaLabel: "Check your EU fulfilment fit"
-secondaryCtaRoute: "/fulfilment-scan/"
+secondaryCtaRoute: "/free-rate-scan/"
 requiresRaymondApproval: false
 ---
 
@@ -56,4 +56,4 @@ Body: Vareya will review your details and follow up by email with next steps.
 
 ## Internal links
 
-/fulfilment-scan/, /eu-fulfilment/, /contact/
+/free-rate-scan/, /eu-fulfilment/, /contact/

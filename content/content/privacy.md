@@ -6,7 +6,7 @@ seoTitle: "Privacy Policy | Vareya"
 metaDescription: "How Vareya BV collects, uses and protects personal data submitted through this website."
 h1: "Privacy Policy"
 primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
+primaryCtaRoute: "/free-rate-scan/"
 secondaryCtaLabel: "Request a fulfilment quote"
 secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: true

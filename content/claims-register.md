@@ -1,9 +1,9 @@
 Document: Vareya.ai Claims Register
-Version: 1.2
+Version: 1.3
 Status: Approved for implementation
 Commercial approval: Raymond
 Operational owner: Jos
-Last updated: 9 August 2026
+Last updated: 17 August 2026
 
 # Claims Register
 
@@ -81,7 +81,7 @@ Customer names, customer logos, testimonials, customer cases, customer results, 
 
 ## Conversion rules
 
-The primary call to action on every commercial page is "Check your EU fulfilment fit", routing to /fulfilment-scan/. No commercial page requests a meeting or telephone call as its first action. Every commercial page links to /fulfilment-scan/.
+The primary call to action on every commercial page is "Check your EU fulfilment fit", routing to /free-rate-scan/. The route /fulfilment-scan/ is preserved as a permanent redirect to /free-rate-scan/, including query and UTM parameters. No commercial page requests a meeting or telephone call as its first action. Every commercial page links to the scan route.
 
 Privacy and cookies are not commercial pages. They need only normal footer navigation and are not required to carry the fulfilment-scan conversion path in their body copy.
 
@@ -112,3 +112,5 @@ All page files are now aligned with this version of the register.
 5. 9 August 2026 (v1.2): the destination list in content/shopify-fulfilment-europe.md, content/home.md, content/fulfilment-scan.md, content/eu-fulfilment-us-brands.md, content/eu-fulfilment.md, content/request-fulfilment-quote.md and content/eu-fulfilment-uk-brands.md was updated in place to add Saudi Arabia, South Korea, Turkey and United Arab Emirates, matching the approved shipping destinations list above. No other copy on these pages was changed.
 
 6. 10 August 2026: the nine newly approved facts (A-008–A-018, approved 9 August 2026) were integrated into live page copy for the first time — previously they existed only in this register and in ASSUMPTIONS.md, not yet reflected in the actual pages. Updated: content/home.md (capability strip, relevant capabilities, new "How you're supported" section, international shipping, three new FAQ entries), content/eu-fulfilment.md (capability block, shipping/destinations, one new FAQ entry), content/eu-fulfilment-us-brands.md (hero, capability block, Requirements to confirm, customs FAQ answer rewritten to state the approved positive claim instead of the neutral deflection — import/VAT/duties remain correctly unclaimed), content/eu-fulfilment-uk-brands.md (same customs correction, plus Royal Mail direct-entry fact added, one new FAQ entry), content/shopify-fulfilment-europe.md (ShipHero named in capability block and FAQ, carrier sentence updated), content/cosmetics-supplements-fulfilment-europe.md (capability block, Requirements to confirm and three FAQ answers rewritten to remove customs from the still-unconfirmed list — temperature/batch/certification remain correctly unclaimed, using the approved fallback phrasing rather than the retired line), content/request-fulfilment-quote.md and content/contact.md (light touch: all-in rates and free support mentioned). All carrier-list sentences sitewide were updated from the flat "Carriers include..." framing to the approved PostNL-as-main-carrier framing. No unapproved claim was introduced; A-012's Shopify-usage percentage remains unpublished per its standing stop rule.
+
+7. 17 August 2026 (v1.3): the conversion-rule route was updated from /fulfilment-scan/ to /free-rate-scan/ (owner-directed, Content Sprint 01 implementation preparation). /fulfilment-scan/ is documented as a legacy permanent redirect that preserves query and UTM parameters. No claim wording, fact, superlative rule, destination list or capability statement was changed in this version.

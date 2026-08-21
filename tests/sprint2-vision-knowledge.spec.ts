@@ -29,7 +29,7 @@ test.describe("Sprint 2 vision and knowledge pages", () => {
     await expect(page.getByText(/being developed/i)).toBeVisible();
     await expect(
       page.getByRole("link", { name: "Check your EU fulfilment fit" }).first(),
-    ).toHaveAttribute("href", "/fulfilment-scan/");
+    ).toHaveAttribute("href", "/free-rate-scan/");
   });
 
   test("the knowledge hub only links to published, working articles", async ({ page }) => {

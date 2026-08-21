@@ -6,7 +6,7 @@ seoTitle: "Contact Vareya | EU Ecommerce Fulfilment"
 metaDescription: "Contact Vareya BV, based in Breda, the Netherlands, for ecommerce fulfilment enquiries across Europe and beyond."
 h1: "Contact Vareya"
 primaryCtaLabel: "Check your EU fulfilment fit"
-primaryCtaRoute: "/fulfilment-scan/"
+primaryCtaRoute: "/free-rate-scan/"
 secondaryCtaLabel: "Request a fulfilment quote"
 secondaryCtaRoute: "/request-fulfilment-quote/"
 requiresRaymondApproval: false
@@ -30,10 +30,10 @@ Email: info@vareya.nl
 
 ## Secondary CTAs on this page
 
-Check your EU fulfilment fit → /fulfilment-scan/
+Check your EU fulfilment fit → /free-rate-scan/
 
 Request a fulfilment quote → /request-fulfilment-quote/
 
 ## Internal links
 
-/fulfilment-scan/, /request-fulfilment-quote/, /
+/free-rate-scan/, /request-fulfilment-quote/, /

@@ -100,7 +100,7 @@ export default function WhyVareyaPage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/fulfilment-scan/"
+                href="/free-rate-scan/"
                 className="inline-flex min-h-12 items-center justify-center rounded-lg bg-accent px-6 py-3 font-semibold text-ink transition-colors hover:bg-accent-light"
               >
                 {CLAIM_PRIMARY_CTA}
@@ -285,7 +285,7 @@ export default function WhyVareyaPage() {
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link
-              href="/fulfilment-scan/"
+              href="/free-rate-scan/"
               className="inline-flex min-h-12 items-center justify-center rounded-lg bg-white px-6 py-3 font-semibold text-primary transition-colors hover:bg-slate-100"
             >
               {CLAIM_PRIMARY_CTA}
