@@ -49,7 +49,7 @@ export const CAPABILITIES = {
   parcelLimits: { combinedDimensionsMm: 900, maxLengthMm: 600 },
   productFit: "Product fit is confirmed during qualification.",
   // v1.2 additions
-  postNL: "PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.",
+  postNL: "PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.",
   support: "Customer support is included at no additional charge.",
   slas: "Clients can agree customised SLAs with Vareya, within boundaries confirmed during qualification.",
   shipHero: "Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.",

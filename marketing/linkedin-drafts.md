@@ -29,7 +29,7 @@ Check your EU fulfilment fit: https://vareya.ai/free-rate-scan/
 
 Calling the Netherlands an EU fulfilment hub is easy. The useful question is how the warehouse, customs support and carrier network work together.
 
-Vareya operates from Bagven Park 6 in Breda. PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes. Customs clearance support is available for shipments into and out of Europe. Contact Vareya to discuss specific requirements.
+Vareya operates from Bagven Park 6 in Breda. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes. Customs clearance support is available for shipments into and out of Europe. Contact Vareya to discuss specific requirements.
 
 Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics.
 
@@ -40,7 +40,7 @@ Check your EU fulfilment fit: https://vareya.ai/free-rate-scan/
 #Netherlands #EUFulfilment #CrossBorderCommerce
 
 **Word count:** 116  
-**Claim basis — internal:** Breda warehouse address; PostNL strategic-partner/main-carrier scope; named wider carrier network; approved customs wording; approved automatic carrier-selection wording. No speed, cost, coverage or geographic-superiority claim is made.
+**Claim basis — internal:** Breda warehouse address; PostNL main-carrier scope; named wider carrier network; approved customs wording; approved automatic carrier-selection wording. No speed, cost, coverage or geographic-superiority claim is made.
 
 ---
 

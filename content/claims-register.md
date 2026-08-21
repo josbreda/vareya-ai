@@ -22,7 +22,7 @@ Last updated: 17 August 2026
 - Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products.
 - Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.
 - Product fit is confirmed during qualification.
-- PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.
+- PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.
 - Customer support is included at no additional charge.
 - Clients can agree customised SLAs with Vareya, within boundaries confirmed during qualification.
 - Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.

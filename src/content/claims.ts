@@ -21,7 +21,7 @@ export const CLAIM_RETURNS =
 // ============================================================================
 
 export const CLAIM_POSTNL =
-  "PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.";
+  "PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.";
 
 export const CLAIM_SUPPORT =
   "Customer support is included at no additional charge.";

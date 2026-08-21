@@ -39,7 +39,7 @@
 
 Design a 50/50 A/B test on the first step of the fulfilment scan. The control keeps the current step unchanged. The variant adds a compact, text-only trust strip using three approved operational facts:
 
-- **PostNL strategic partner**
+- **PostNL main carrier (NL)**
 - **ShipHero WMS, fully integrated with Shopify**
 - **5-carrier network:** PostNL, DHL, Asendia, FedEx and Royal Mail
 
