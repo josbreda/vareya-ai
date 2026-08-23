@@ -17,12 +17,18 @@ import { breadcrumbSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Fulfilmentcentrum Brabant | Vareya in Breda",
   description:
-    "Vareya is een fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops vanaf 500 orders per maand, met PostNL als strategische partner. Check je fulfilment fit.",
-  alternates: { canonical: "https://vareya.ai/nl/fulfilment-noord-brabant/" },
+    "Vareya is een fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops vanaf 500 orders per maand, met PostNL als hoofdvervoerder binnen Nederland. Check je fulfilment fit.",
+  alternates: {
+    canonical: "https://vareya.ai/nl/fulfilment-noord-brabant/",
+    languages: {
+      "nl-NL": "https://vareya.ai/nl/fulfilment-noord-brabant/",
+      "en-GB": "https://vareya.ai/eu-fulfilment/",
+    },
+  },
   openGraph: {
     title: "Fulfilmentcentrum Brabant | Vareya in Breda",
     description:
-      "Fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops met PostNL als strategische partner.",
+      "Fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops met PostNL als hoofdvervoerder binnen Nederland.",
     url: "https://vareya.ai/nl/fulfilment-noord-brabant/",
     type: "website",
     locale: "nl_NL",

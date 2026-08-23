@@ -7,7 +7,13 @@ export const metadata: Metadata = {
   title: "EU Fulfilment from the Netherlands | Vareya",
   description:
     "How Vareya uses a warehouse in Breda, the Netherlands, to fulfil ecommerce orders across Europe, covering shipping, returns and onboarding.",
-  alternates: { canonical: "https://vareya.ai/eu-fulfilment/" },
+  alternates: {
+    canonical: "https://vareya.ai/eu-fulfilment/",
+    languages: {
+      "en-GB": "https://vareya.ai/eu-fulfilment/",
+      "nl-NL": "https://vareya.ai/nl/fulfilment-noord-brabant/",
+    },
+  },
 };
 
 const destinationList = APPROVED_DESTINATIONS.join(", ");

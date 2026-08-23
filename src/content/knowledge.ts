@@ -680,6 +680,114 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
       },
     ],
   },
+  {
+    slug: "switching-fulfilment-providers-europe",
+    title: "How to switch fulfilment providers without disrupting your ecommerce operation",
+    description:
+      "A practical migration guide for ecommerce brands changing 3PL in Europe: when to switch, what to prepare, how to handle inventory, integrations, carriers and returns, and how to run a safe cutover.",
+    summary:
+      "Changing fulfilment provider is a process, not an event. A checklist-based guide to doing it without interrupting orders.",
+    publishedAt: "2026-08-21",
+    publishedLabel: "21 August 2026",
+    topic: "Operations",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/fulfilment-scan/" },
+    sections: [
+      {
+        heading: "When switching makes sense",
+        paragraphs: [
+          "Brands typically re-evaluate their fulfilment provider when something structural changes: volume has outgrown the current setup, costs have become unpredictable, support no longer matches the size of the operation, or the destination mix has shifted (for example, selling more into Europe from outside it).",
+          "A switch is also the natural moment to check whether the current provider still matches the operation on paper — not just in habit. If the problems are recurring and structural rather than incidental, changing providers is usually more effective than negotiating around them.",
+        ],
+      },
+      {
+        heading: "Before you commit: prepare the migration pack",
+        paragraphs: [
+          "Almost every migration problem traces back to incomplete data. Before contacting a new provider, assemble the pack they will need. The same pack also protects you in the exit conversation with the current provider.",
+        ],
+        checklist: [
+          "Order history: monthly volume by destination country for the last 6–12 months.",
+          "Parcel profile: typical dimensions, weights and items per order.",
+          "SKU list: number of SKUs, storage footprint, any special handling needs.",
+          "Platform details: sales channels (Shopify, Amazon, marketplaces), integrations and how orders flow today.",
+          "Returns data: return rate, where returns land today, and the required returns process.",
+          "Carrier usage: which carriers are used, for which destinations, and at what cut-off times.",
+          "Contract facts: notice period, exit terms and any stock-removal conditions with the current provider.",
+        ],
+      },
+      {
+        heading: "Inventory migration",
+        paragraphs: [
+          "Inventory is the physical risk of any switch. Plan the movement around your own sales rhythm: pick a quieter period if possible, prepare accurate stock counts before the move, and agree with both providers who organises transport.",
+          "A parallel strategy helps: keep enough stock at the old provider to cover orders during the move, while the new provider receives, counts and books in the bulk. Once the new warehouse is picking correctly, let the old stock run down and close out.",
+        ],
+      },
+      {
+        heading: "Integration and carrier migration",
+        paragraphs: [
+          "Connect the new provider to your sales channels before the stock arrives, not after. Test the order flow end-to-end with real order data in a test mode where available: order placed, order received, tracking returned to the channel.",
+          "Carriers change with the provider. Ask the new provider which carriers it uses for your destinations, what cut-off times apply, and how tracking is returned to your shop. Delivery times depend on the agreed shipping method — confirm them explicitly instead of assuming the current service levels carry over.",
+        ],
+      },
+      {
+        heading: "Returns during a switch",
+        paragraphs: [
+          "Returns are where switches leak. Decide where returns land during the transition and where they land afterwards. A customer returning an order shipped from the old warehouse should not meet a closed returns process.",
+          CLAIM_RETURNS,
+        ],
+      },
+      {
+        heading: "Cutover: run both in parallel, then close out",
+        paragraphs: [
+          "The safest cutover is a deliberate parallel run: the new provider starts with a subset of SKUs or channels, you verify picking accuracy and tracking flow, then you move the remaining volume. Only close the old provider after every order in its pipeline is delivered and returns have a destination.",
+          "A checklist-driven cutover also makes the exit conversation factual: agreed stock counts, agreed transport, agreed close-out date.",
+        ],
+      },
+      {
+        heading: "Questions to ask a new 3PL",
+        paragraphs: [
+          "Use these questions with any provider — including Vareya — to compare offers on equal terms.",
+        ],
+        bullets: [
+          "What is your minimum order volume, and what is the ideal volume band?",
+          "Which platforms do you integrate with, and how is tracking returned?",
+          "Which carriers do you use, and what are the cut-off times?",
+          "How are returns handled, and what is the required returns process?",
+          "Which costs are included, and which costs can arise outside the agreement?",
+          "What happens in peak season — how are capacity and SLAs handled?",
+          "How long does onboarding take, and what do you need from us to start?",
+        ],
+      },
+      {
+        heading: "Where Vareya fits",
+        paragraphs: [
+          CLAIM_VOLUME,
+          CLAIM_ALL_IN,
+          "Vareya operates from Breda in the Netherlands, uses ShipHero as its warehouse management system fully integrated with Shopify, and supports Amazon FBM fulfilment. The fulfilment scan collects the same information a migration plan needs, so the fit review starts from your actual operation.",
+        ],
+      },
+      {
+        heading: "Frequently asked questions",
+        faq: [
+          {
+            q: "How long does a 3PL switch take?",
+            a: "It depends on data readiness, stock volumes and integration complexity. Most switches take weeks, not days. A parallel run adds safety and time. Vareya confirms onboarding specifics during qualification.",
+          },
+          {
+            q: "Can we move inventory directly from our current 3PL?",
+            a: "Usually yes, through a coordinated stock transfer. The transport, counts and booking-in are agreed between both providers and you, before the move starts.",
+          },
+          {
+            q: "What happens to orders placed during the switch?",
+            a: "With a parallel run, existing stock keeps fulfilling orders until the new warehouse takes over. The aim is that no order is missed: every order in the pipeline has a warehouse responsible for it at all times.",
+          },
+          {
+            q: "Does Vareya help with switching from another provider?",
+            a: "Vareya's onboarding covers connecting your channels and agreeing stock intake. The migration steps on this page apply to any switch; Vareya confirms the specifics during qualification.",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export type KnowledgeSlug = (typeof KNOWLEDGE_ARTICLES)[number]["slug"];

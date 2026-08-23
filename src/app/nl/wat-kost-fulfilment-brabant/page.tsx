@@ -6,7 +6,13 @@ export const metadata: Metadata = {
   title: "Wat kost fulfilment in Brabant? | Vareya",
   description:
     "De kostenfactoren van fulfilment in Brabant: orderaantal, pakketprofiel, bestemmingen, opslag, integraties en serviceniveaus. Zonder gegarandeerde tarieven.",
-  alternates: { canonical: "https://vareya.ai/nl/wat-kost-fulfilment-brabant/" },
+  alternates: {
+    canonical: "https://vareya.ai/nl/wat-kost-fulfilment-brabant/",
+    languages: {
+      "nl-NL": "https://vareya.ai/nl/wat-kost-fulfilment-brabant/",
+      "en-GB": "https://vareya.ai/knowledge/fulfilment-cost-drivers/",
+    },
+  },
 };
 
 export default function NlKostenPage() {
@@ -32,7 +38,7 @@ export default function NlKostenPage() {
           ["2", "Pakketprofiel",
             "Afmetingen en gewicht bepalen handling en vervoerskosten. " + APPROVED_FACTS.parcelSize],
           ["3", "Bestemmingen",
-            "De verdeling van orders over landen bepaalt vervoerskeuzes en -kosten. Vareya verzendt binnen Nederland met PostNL als strategische partner en hoofdvervoerder; DHL, Asendia, FedEx en Royal Mail verzorgen andere routes."],
+            "De verdeling van orders over landen bepaalt vervoerskeuzes en -kosten. Vareya verzendt binnen Nederland met PostNL als hoofdvervoerder; DHL, Asendia, FedEx en Royal Mail verzorgen andere routes."],
           ["4", "Opslag",
             "Het aantal pallets, het SKU-aantal en het aanvulritme bepalen de benodigde magazijnruimte in Breda."],
           ["5", "Integraties",

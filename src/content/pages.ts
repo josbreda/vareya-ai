@@ -49,6 +49,18 @@ export const PAGE_META: Record<string, PageMeta> = {
       "Specialist fulfilment for cosmetics and supplement brands. Product-fit review, careful handling, and multi-carrier European delivery.",
     canonical: `${BASE}/cosmetics-supplements-fulfilment-europe/`,
   },
+  "/amazon-fbm-fulfilment/": {
+    title: "Amazon FBM Fulfilment from the Netherlands | Vareya",
+    description:
+      "What Amazon FBM means for European sellers, when a 3PL adds value, FBM vs FBA trade-offs, and how Vareya supports Amazon FBM alongside Shopify from a warehouse in Breda, the Netherlands.",
+    canonical: `${BASE}/amazon-fbm-fulfilment/`,
+  },
+  "/shipbob-alternative-europe/": {
+    title: "ShipBob Alternatives for European Fulfilment | Vareya",
+    description:
+      "What DTC brands should compare when evaluating European alternatives to ShipBob: EU warehouse footprint, support structure, carrier setup and volume fit. Includes Vareya's fit for 500+ orders per month.",
+    canonical: `${BASE}/shipbob-alternative-europe/`,
+  },
   "/free-rate-scan/": {
     title: "Check Your EU Fulfilment Fit | Vareya",
     description:

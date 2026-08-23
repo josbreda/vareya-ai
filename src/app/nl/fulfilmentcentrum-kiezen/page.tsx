@@ -6,7 +6,13 @@ export const metadata: Metadata = {
   title: "Hoe kies je een fulfilmentcentrum in Noord-Brabant? | Vareya",
   description:
     "Een praktisch stappenplan voor webshops die een fulfilmentcentrum in Noord-Brabant willen kiezen: locatie, integraties, vervoerders, tarieven en retouren.",
-  alternates: { canonical: "https://vareya.ai/nl/fulfilmentcentrum-kiezen/" },
+  alternates: {
+    canonical: "https://vareya.ai/nl/fulfilmentcentrum-kiezen/",
+    languages: {
+      "nl-NL": "https://vareya.ai/nl/fulfilmentcentrum-kiezen/",
+      "en-GB": "https://vareya.ai/knowledge/ecommerce-fulfilment-netherlands-guide/",
+    },
+  },
 };
 
 export default function NlKiezenPage() {
@@ -32,7 +38,7 @@ export default function NlKiezenPage() {
           ["2", "Vergelijk de webshop-integraties",
             "Koppelt het fulfilmentcentrum met jouw platform? Vareya biedt een Shopify-integratie en Amazon FBM-fulfilment, en gebruikt ShipHero als warehouse management systeem, volledig geïntegreerd met Shopify."],
           ["3", "Check vervoerders en bestemmingen",
-            "Welke vervoerders gebruikt het centrum en naar welke landen wordt verzonden? Vareya werkt met PostNL als strategische partner en hoofdvervoerder binnen Nederland, met DHL, Asendia, FedEx en Royal Mail voor andere routes. Het verzendsysteem kan automatisch een passende vervoerder selecteren op basis van bestemming en pakketkenmerken."],
+            "Welke vervoerders gebruikt het centrum en naar welke landen wordt verzonden? Vareya werkt met PostNL als hoofdvervoerder binnen Nederland, met DHL, Asendia, FedEx en Royal Mail voor andere routes. Het verzendsysteem kan automatisch een passende vervoerder selecteren op basis van bestemming en pakketkenmerken."],
           ["4", "Lees de tariefopbouw",
             "Zijn de tarieven all-in of komen er verborgen kosten bij? De fulfilmenttarieven van Vareya zijn vast en all-in per overeenkomst — geen verborgen kosten bovenop wat de overeenkomst vastlegt."],
           ["5", "Vraag naar retouren",
