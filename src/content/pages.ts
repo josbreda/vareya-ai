@@ -67,6 +67,13 @@ export const PAGE_META: Record<string, PageMeta> = {
     canonical: `${BASE}/shipbob-alternative-europe/`,
     updatedAt: "2026-08-21",
   },
+  "/returns-fulfilment-europe/": {
+    title: "Ecommerce Returns Handling for European Fulfilment | Vareya",
+    description:
+      "A decision framework for European ecommerce returns: where returns should land, what a 3PL needs from you, and what Vareya does and does not claim for returns handling from Breda, the Netherlands.",
+    canonical: `${BASE}/returns-fulfilment-europe/`,
+    updatedAt: "2026-08-21",
+  },
   "/free-rate-scan/": {
     title: "Check Your EU Fulfilment Fit | Vareya",
     description:
