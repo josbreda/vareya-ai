@@ -8,6 +8,8 @@ export interface PageMeta {
   description: string;
   canonical: string;
   noIndex?: boolean;
+  /** ISO date of last meaningful content change; sitemap lastmod source. Omit when unknown (never fabricate). */
+  updatedAt?: string | null;
 }
 
 const BASE = "https://vareya.ai";
@@ -24,6 +26,7 @@ export const PAGE_META: Record<string, PageMeta> = {
     description:
       "European fulfilment for growing e-commerce brands. Warehouse in Breda, Netherlands with DHL, PostNL, Asendia, FedEx, and Royal Mail delivery.",
     canonical: `${BASE}/eu-fulfilment/`,
+    updatedAt: "2026-08-21",
   },
   "/shopify-fulfilment-europe/": {
     title: "Shopify Fulfilment Europe | Vareya",
@@ -48,18 +51,21 @@ export const PAGE_META: Record<string, PageMeta> = {
     description:
       "Specialist fulfilment for cosmetics and supplement brands. Product-fit review, careful handling, and multi-carrier European delivery.",
     canonical: `${BASE}/cosmetics-supplements-fulfilment-europe/`,
+    updatedAt: "2026-08-21",
   },
   "/amazon-fbm-fulfilment/": {
     title: "Amazon FBM Fulfilment from the Netherlands | Vareya",
     description:
       "What Amazon FBM means for European sellers, when a 3PL adds value, FBM vs FBA trade-offs, and how Vareya supports Amazon FBM alongside Shopify from a warehouse in Breda, the Netherlands.",
     canonical: `${BASE}/amazon-fbm-fulfilment/`,
+    updatedAt: "2026-08-21",
   },
   "/shipbob-alternative-europe/": {
     title: "ShipBob Alternatives for European Fulfilment | Vareya",
     description:
       "What DTC brands should compare when evaluating European alternatives to ShipBob: EU warehouse footprint, support structure, carrier setup and volume fit. Includes Vareya's fit for 500+ orders per month.",
     canonical: `${BASE}/shipbob-alternative-europe/`,
+    updatedAt: "2026-08-21",
   },
   "/free-rate-scan/": {
     title: "Check Your EU Fulfilment Fit | Vareya",
@@ -112,24 +118,28 @@ export const PAGE_META: Record<string, PageMeta> = {
     description:
       "Vareya is een fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops vanaf 500 orders per maand, met PostNL als strategische partner.",
     canonical: `${BASE}/nl/fulfilment-noord-brabant/`,
+    updatedAt: "2026-08-21",
   },
   "/nl/fulfilmentcentrum-kiezen/": {
     title: "Hoe kies je een fulfilmentcentrum in Noord-Brabant? | Vareya",
     description:
       "Een praktisch stappenplan voor webshops die een fulfilmentcentrum in Noord-Brabant willen kiezen: locatie, integraties, vervoerders, tarieven en retouren.",
     canonical: `${BASE}/nl/fulfilmentcentrum-kiezen/`,
+    updatedAt: "2026-08-21",
   },
   "/nl/wat-kost-fulfilment-brabant/": {
     title: "Wat kost fulfilment in Brabant? | Vareya",
     description:
       "De kostenfactoren van fulfilment in Brabant: orderaantal, pakketprofiel, bestemmingen, opslag, integraties en serviceniveaus.",
     canonical: `${BASE}/nl/wat-kost-fulfilment-brabant/`,
+    updatedAt: "2026-08-21",
   },
   "/nl/fulfilment-uitbesteden-breda/": {
     title: "Fulfilment uitbesteden in Breda: stappenplan voor webshops | Vareya",
     description:
       "Stappenplan voor webshops die fulfilment willen uitbesteden in Breda: voorraad, software, pakketprofiel, onboarding en retouren.",
     canonical: `${BASE}/nl/fulfilment-uitbesteden-breda/`,
+    updatedAt: "2026-08-21",
   },
   "/thank-you/scan/": {
     title: "Thank You | Vareya",
