@@ -68,8 +68,11 @@ def submit(key, key_location, url_list):
     })
     try:
         with urllib.request.urlopen(req, timeout=60) as r:
-            return r.status, r.read().decode()[:120]
+            return r.status, r.read().decode()[:200]
     except urllib.error.HTTPError as e:
+        # NEVER auto-retry; record the status + body. 402 = paid-gateway signal:
+        # if it ever appears, the endpoint has been switched to a paid proxy —
+        # do not top up, report instead.
         return e.code, e.read().decode()[:200]
 
 
