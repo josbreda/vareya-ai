@@ -1,5 +1,5 @@
 Document: Vareya.ai Claims Register
-Version: 1.4
+Version: 1.5
 Status: Approved for implementation
 Commercial approval: Raymond
 Operational owner: Jos
@@ -25,7 +25,8 @@ Last updated: 21 August 2026
 - Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products.
 - Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.
 - Product fit is confirmed during qualification.
-- PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes. (The earlier "strategic partner of PostNL" wording is SUSPENDED as a canonical claim pending review of available email evidence and establishment of the strongest supportable wording — owner instruction 21 August 2026. Do not reintroduce "strategic partner" until this review is concluded.)
+- PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.
+- STRONGEST SUPPORTABLE POSTNL WORDING (v1.5, evidence-reviewed 24 August 2026): "Vareya ships customer orders through its own shipping agreements with PostNL and works directly with PostNL International and operational teams on day-to-day shipping and selected customer projects." Basis: direct external evidence — e-mail from Gerrit van Estrik, Senior Accountmanager PostNL International, concerning a new international agreement for 2026 and requesting a meeting with Vareya (evidence class A). Owner-supplied operational facts: Vareya is a PostNL customer with direct shipping contracts, a long-term account relationship, regular contact with several PostNL teams, case-by-case contact with the Houten fulfilment hub, and coordinated prospect/site-visit activity for selected larger commercial opportunities. "Strategic partner" remains NOT CONFERRED by this evidence and stays prohibited as a claim.
 - Customer support is included at no additional charge.
 - Clients can agree customised SLAs with Vareya, within boundaries confirmed during qualification.
 - Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.
@@ -111,7 +112,8 @@ Jos is the internal lead owner of this response. Public website copy must refer 
 
 ## Implementation notes
 
-1. 21 August 2026 (v1.4): email updated site-wide from info@vareya.nl to info@vareya.ai (owner-confirmed); KVK/VAT recorded as approved published facts; PostNL wording downgraded from "strategic partner and main carrier" to "main carrier" pending evidence review; domain-consolidation scope recorded (vareya.nl, vareya.com, go.vareya); directory submissions approved. See docs/RAYMOND-AI-DECISIONS.md.
+1. 24 August 2026 (v1.5): PostNL evidence reviewed. Direct external evidence (PostNL International account-manager e-mail, 2026 agreement + meeting request) classified as evidence class A; owner operational facts integrated. Strongest supportable wording established (own shipping agreements + direct cooperation with PostNL International and operational teams); "strategic partner" remains prohibited. ShipHero operational facts recorded as owner-confirmed (WMS environment manages inventory/fulfilment/returns; Shopify via API; carrier contracts incl. PostNL integrated for label generation; reference exchange possible; contact Daniel Lawson) — page wording unchanged until external confirmation where noted. Protected customer evidence pool created (10 customers; NO-CONTACT rule). Human-input pipeline opened for Onboarding and Direct Entry UK topics.
+2. 21 August 2026 (v1.4): email updated site-wide from info@vareya.nl to info@vareya.ai (owner-confirmed); KVK/VAT recorded as approved published facts; PostNL wording downgraded from "strategic partner and main carrier" to "main carrier" pending evidence review; domain-consolidation scope recorded (vareya.nl, vareya.com, go.vareya); directory submissions approved. See docs/RAYMOND-AI-DECISIONS.md.
 
 2. 9 August 2026 (v1.2): the destination list in content/shopify-fulfilment-europe.md, content/home.md, content/fulfilment-scan.md, content/eu-fulfilment-us-brands.md, content/eu-fulfilment.md, content/request-fulfilment-quote.md and content/eu-fulfilment-uk-brands.md was updated in place to add Saudi Arabia, South Korea, Turkey and United Arab Emirates, matching the approved shipping destinations list above. No other copy on these pages was changed.
 
