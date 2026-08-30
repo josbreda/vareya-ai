@@ -46,6 +46,13 @@ export const PAGE_META: Record<string, PageMeta> = {
       "Post-Brexit EU fulfilment for UK brands. Warehouse in Breda, Netherlands with multi-carrier European delivery.",
     canonical: `${BASE}/eu-fulfilment-uk-brands/`,
   },
+  "/eu-fulfilment-south-korean-brands/": {
+    title: "EU Fulfilment for South Korean Brands | Vareya",
+    description:
+      "A practical guide for South Korean ecommerce brands assessing fulfilment from a Netherlands warehouse for European orders. Covers preparation, customs and VAT roles, product compliance and the Free Rate Scan.",
+    canonical: `${BASE}/eu-fulfilment-south-korean-brands/`,
+    updatedAt: "2026-08-30",
+  },
   "/cosmetics-supplements-fulfilment-europe/": {
     title: "Cosmetics & Supplements Fulfilment Europe | Vareya",
     description:
