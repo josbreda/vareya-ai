@@ -977,6 +977,156 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
       },
     ],
   },
+  {
+    slug: "eu-parcel-levy-2026-what-it-means",
+    title: "The EU parcel levy: what the new rules mean for ecommerce brands",
+    description:
+      "A plain-language explainer of the EU levy on small parcels entering Europe, why it exists and what it changes for online sellers.",
+    summary:
+      "Since 1 July 2026 every small parcel entering the EU carries a levy per product category. Here is what that actually means for a shop.",
+    publishedAt: "2026-08-24",
+    publishedLabel: "24 August 2026",
+    topic: "Customs",
+    indexable: true,
+    reviewer: "Hermes (public news facts + register v1.5)",
+    reviewedAt: "2026-08-24",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "What changed",
+        paragraphs: [
+          "Since 1 July 2026, the European Union charges a levy of 3 euro per product category on every small parcel that enters the EU. The measure is aimed at slowing the enormous flow of goods from Asia.",
+          "French customs figures, reported by the French ministry of economy and quoted by Dutch business radio BNR, show the number of small parcels has fallen by 30 to 40 percent since the levy started. In 2025 almost 5.9 billion of these shipments entered the European market. That is more than 180 per second, and four times as many as in 2022.",
+          "Of those parcels, 93 percent came from China. For years, online shops could profit from an exemption on customs duties for shipments worth less than 150 euro. That exemption has ended.",
+        ],
+      },
+      {
+        heading: "Who feels it most",
+        paragraphs: [
+          "The large Asian platforms are hit hardest. French shopping app Joko, which analyses bank transactions of 1.5 million people, reports strong sales declines: Temu down 50 percent between June and July, AliExpress down 37 percent, Shein down 15 percent.",
+          "Retailers are trying to absorb the extra cost by raising average order values. The levy is now a structural cost of shipping into Europe from outside it.",
+        ],
+      },
+      {
+        heading: "What it means for smaller brands",
+        paragraphs: [
+          "The levy does not only affect the giants. Any brand shipping small parcels into the EU from outside Europe now pays more per shipment and faces more scrutiny at the border.",
+          "Customs clearance support is available for shipments into and out of Europe. If you sell into Europe from outside, customs handling is no longer a detail — it is part of your cost model and your delivery promise.",
+        ],
+      },
+      {
+        heading: "The response you can see happening",
+        paragraphs: [
+          "Shein is reported to be building a large logistics centre in Poland, near an airport. Storing goods there and shipping from inside the EU lets the company operate more like a conventional importer, and reduces its exposure to the levy.",
+          "That is the pattern to watch: when import rules tighten, stock moves closer to the customer. A warehouse inside Europe is no longer optional for brands that want stable delivery times and predictable costs.",
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "BNR Nieuwsradio — EU-heffing op Chinese pakketjes raakt Shein, Temu en AliExpress hard", url: "https://www.bnr.nl/nieuws/economie/10609311/eu-heffing-op-chinese-pakketjes-raakt-shein-temu-en-aliexpress-hard" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "from-asia-shipping-to-eu-stock",
+    title: "Shipping small parcels from Asia is changing: why brands are moving stock into Europe",
+    description:
+      "Why the EU parcel levy is pushing brands to hold stock inside Europe, and what a European warehouse changes for cost and delivery.",
+    summary:
+      "When every parcel from outside the EU carries a levy, the economics of shipping from Asia change. Stock inside Europe changes them back.",
+    publishedAt: "2026-08-24",
+    publishedLabel: "24 August 2026",
+    topic: "Cross-border",
+    indexable: true,
+    reviewer: "Hermes (public news facts + register v1.5)",
+    reviewedAt: "2026-08-24",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    secondaryCta: { label: "Explore EU fulfilment", route: "/eu-fulfilment/" },
+    sections: [
+      {
+        heading: "The old maths is gone",
+        paragraphs: [
+          "For years, the smart move for many brands was simple: produce in Asia, ship small parcels directly to customers everywhere. Low parcel costs and a 150-euro customs exemption made that attractive.",
+          "Both advantages are gone. The EU levy of 3 euro per product category on every small parcel entering the EU is now in force, and the exemption is history.",
+        ],
+      },
+      {
+        heading: "What stock inside Europe changes",
+        paragraphs: [
+          "A warehouse inside the EU changes three things at once.",
+          "First, cost: parcels dispatched from inside Europe do not enter the EU from outside it. Second, speed: the last mile is a domestic or intra-EU route instead of an intercontinental one. Third, control: returns, customer service and restocking happen close to the customer instead of across an ocean.",
+          "That is why the biggest platforms are doing exactly this. Shein is reported to be opening a large logistics centre in Poland specifically to ship from inside the EU.",
+        ],
+      },
+      {
+        heading: "How to make the move without disrupting your shop",
+        paragraphs: [
+          "The move from direct-from-Asia shipping to EU stock is a process, not an event. It starts with one inbound shipment to a European warehouse, an agreed intake, and a sales channel that connects cleanly.",
+          "Vareya operates from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Shopify integration is available, and Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.",
+          "Customs clearance support is available for shipments into and out of Europe, so the inbound leg from outside the EU is handled as part of the process rather than as a surprise.",
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "BNR Nieuwsradio — EU-heffing op Chinese pakketjes raakt Shein, Temu en AliExpress hard", url: "https://www.bnr.nl/nieuws/economie/10609311/eu-heffing-op-chinese-pakketjes-raakt-shein-temu-en-aliexpress-hard" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "eu-based-fulfilment-protects-delivery-promise",
+    title: "How EU-based fulfilment keeps your delivery promise when import rules tighten",
+    description:
+      "A practical look at what changes in delivery speed, returns and customer experience when stock moves from outside Europe to an EU warehouse.",
+    summary:
+      "Import levies are one cost. Broken delivery promises are another. Stock inside the EU protects the promise.",
+    publishedAt: "2026-08-24",
+    publishedLabel: "24 August 2026",
+    topic: "Shipping & delivery",
+    indexable: true,
+    reviewer: "Hermes (public news facts + register v1.5)",
+    reviewedAt: "2026-08-24",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "The promise your shop actually makes",
+        paragraphs: [
+          "Every shop makes a promise at checkout: your parcel will arrive, on time, and if it does not fit, you can send it back. That promise does not survive long customs delays or an unpredictable border.",
+          "The EU parcel levy is not only a cost. It adds processing to every shipment entering the EU, which adds time and adds risk to the delivery promise.",
+        ],
+      },
+      {
+        heading: "What EU stock does for delivery",
+        paragraphs: [
+          "When stock sits in a European warehouse, most orders never cross an external border. They travel the short route: from the warehouse to a carrier to the customer's door.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.",
+          "Cut-off times of up to 23:00 may be available by agreement, and weekend fulfilment is available on a structural basis. For a shop, that means orders keep moving on days when a cross-border shipment would be sitting at a border.",
+        ],
+      },
+      {
+        heading: "What it does for returns",
+        paragraphs: [
+          "Returns handling is available. A return to a warehouse inside the EU is a domestic or intra-EU route, not a re-export. That keeps the returns process simple for the customer and the shop.",
+        ],
+      },
+      {
+        heading: "The honest fit check",
+        paragraphs: [
+          "Moving stock to Europe only makes sense when your volume and products fit a European fulfilment setup. Vareya is generally best suited to brands shipping 500 or more orders per month, specialising in cosmetics, supplements, phone cases, accessories and other smaller parcel products. Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.",
+          "Product fit is confirmed during qualification. The scan is the fastest way to check it.",
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "BNR Nieuwsradio — EU-heffing op Chinese pakketjes raakt Shein, Temu en AliExpress hard", url: "https://www.bnr.nl/nieuws/economie/10609311/eu-heffing-op-chinese-pakketjes-raakt-shein-temu-en-aliexpress-hard" },
+        ],
+      },
+    ],
+  },
 ];
 
 export type KnowledgeSlug = (typeof KNOWLEDGE_ARTICLES)[number]["slug"];

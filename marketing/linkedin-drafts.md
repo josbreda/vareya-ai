@@ -68,3 +68,43 @@ Check your EU fulfilment fit: https://vareya.ai/free-rate-scan/
 ## Final v1.2 exclusions check
 
 The drafts do **not** claim guaranteed dispatch or delivery times, savings, customer results, brand counts, capacity, automation, inventory accuracy, error rates, VAT/IOSS/DDP/EORI/tax representation, temperature-controlled storage, certifications, batch/expiry management, FEFO/FIFO, or regulated-product handling. They do not use “fastest”, “cheapest”, “leading”, “number one”, standalone “best”, or “Rest of the World”.
+
+
+---
+
+## EU Parcel Levy — concept 1 (statistieken)
+Sinds 1 juli geldt in de EU een heffing van 3 euro per productcategorie op elk klein pakket dat de EU binnenkomt.
+In 2025 waren dat nog bijna 5,9 miljard zendingen - 93% uit China. Sinds de heffing is het aantal kleine pakketjes met 30-40% gedaald (Franse douanecijfers via BNR).
+Wat betekent dit voor een merk? De rekensom van direct vanuit Azië versturen is veranderd. Voorraad in Europa is geen luxe meer: het is de manier om leverbeloftes waar te maken.
+Vareya fulfilfult ecommerce orders vanuit Breda, met onder andere Shopify-integratie en customs clearance support voor zendingen in en uit Europa.
+Lees meer: https://vareya.ai/knowledge/eu-parcel-levy-2026-what-it-means/
+#EUFulfilment #CrossBorderCommerce #Customs
+
+**Word count:** 118
+**Claim basis — internal:** nieuwsfeit BNR (heffing, 5,9 mrd, 93%, 30-40% daling); Vareya-feiten uit claims-register v1.5 (Breda, Shopify-integratie, customs clearance support). Geen eigen claims over heffingsvoordeel.
+
+---
+
+## EU Parcel Levy — concept 2 (voorraad verplaatsen)
+Temu -50%, AliExpress -37%, Shein -15%: de eerste verkoopcijfers na de EU-pakketheffing (Joko-data via BNR) laten zien wat er gebeurt als elke zending van buiten de EU duurder wordt.
+Shein's antwoord? Een groot logistiek centrum in Polen - verzenden vanuit de EU.
+De les voor elk merk: wanneer importregels strenger worden, verplaatst voorraad zich richting de klant. Een warehouse in Europa betekent: geen externe grens voor de meeste orders, kortere levertijden en een simpel retoursproces.
+Vareya werkt vanuit Breda en specialiseert zich in kleinere pakketproducten - cosmetics, supplementen, phone cases en accessoires.
+Lees meer: https://vareya.ai/knowledge/from-asia-shipping-to-eu-stock/
+#EUFulfilment #Ecommerce #SupplyChain
+
+**Word count:** 120
+**Claim basis — internal:** nieuwsfeiten BNR (Joko-cijfers, Shein Polen); register v1.5 (Breda, product-specialisaties). Geen eigen claims over heffingsvoordeel.
+
+---
+
+## EU Parcel Levy — concept 3 (leverbelofte)
+Een winkel doet bij de checkout een belofte: je pakket komt aan, op tijd, en anders mag het terug.
+Lange douane-afhandeling breekt die belofte. De nieuwe EU-heffing voegt bij elke zending van buiten de EU kosten én verwerkingstijd toe.
+Voorraad in een Europees warehouse beschermt de belofte: de meeste orders steken nooit een externe grens over. Ze gaan de korte route: warehouse, carrier, klant.
+Vareya verstuurt via een carrier-netwerk met automatische carrier-selectie per zending; cut-off tot 23:00 en weekend-fulfilment zijn mogelijk op afspraak.
+Lees meer: https://vareya.ai/knowledge/eu-based-fulfilment-protects-delivery-promise/
+#EUFulfilment #DeliveryPromise #Returns
+
+**Word count:** 112
+**Claim basis — internal:** nieuwsfeit BNR (heffing); register v1.5 (carrier-netwerk, automatische selectie, cut-off 23:00, weekend-fulfilment). Geen eigen claims over levertijden.
