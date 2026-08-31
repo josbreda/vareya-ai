@@ -50,6 +50,11 @@ const FAQ_ITEMS = [
     answer:
       "This is confirmed during qualification, as it depends on your specific setup.",
   },
+  {
+    question: "How does the EU parcel levy affect my shipments?",
+    answer:
+      "The EU charges a levy on small parcels entering the EU from outside it. Parcels dispatched from stock inside the EU do not cross that border, which is why many brands are moving stock into Europe. See the article about the EU parcel levy for the background.",
+  },
 ];
 
 const INTERNAL_LINKS = [
