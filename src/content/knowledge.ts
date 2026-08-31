@@ -681,6 +681,97 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     ],
   },
   {
+    slug: "how-onboarding-works-at-vareya",
+    title: "How onboarding works at Vareya",
+    description:
+      "A step-by-step, human explanation of what happens between the first conversation and the first shipped order.",
+    summary:
+      "Qualification, onboarding, inbound stock, picking, packing, shipping and returns — told the way we actually work, without jargon.",
+    publishedAt: "2026-08-21",
+    publishedLabel: "21 August 2026",
+    topic: "Onboarding",
+    indexable: true,
+    reviewer: "Hermes (claims-checked against register v1.4)",
+    reviewedAt: "2026-08-21",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    secondaryCta: { label: "Request a fulfilment quote", route: "/request-fulfilment-quote/" },
+    sections: [
+      {
+        heading: "You talk to us first",
+        paragraphs: [
+          "Onboarding at Vareya does not start with paperwork. It starts with a conversation about your shop.",
+          "We want to know four things: what you sell, how many orders you ship each month, which sales channels you use, and which countries you send to. Product fit is confirmed during qualification.",
+          "That is it. No sales pressure, no long questionnaire before we have spoken. If your products and volumes fit our setup, we tell you honestly. If they do not, we say so.",
+        ],
+      },
+      {
+        heading: "Then we agree the basics",
+        paragraphs: [
+          "Once the fit is clear, we agree the terms of working together. Vareya's fulfilment rates are fixed and all-in per agreement. That means no hidden costs beyond what the agreement sets out.",
+          "Clients can agree customised SLAs with Vareya, within boundaries confirmed during qualification. Customer support is included at no additional charge.",
+          "You connect your sales channel to our system. Shopify integration is available, fully connected to ShipHero as our warehouse management system. If you sell through a different platform, share the details during qualification so product fit can be assessed.",
+        ],
+      },
+      {
+        heading: "Your stock arrives in Breda",
+        paragraphs: [
+          "The next step is inbound. You send your stock to our warehouse in Breda, the Netherlands. We agree the intake with you in advance, so nothing arrives unannounced.",
+          "We check the goods in and put them away. From that moment, your inventory is visible in the same system that will pick it.",
+        ],
+      },
+      {
+        heading: "We pick, pack and ship",
+        paragraphs: [
+          "Orders come in from your shop. We pick them, pack them and hand them to the relevant carrier.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.",
+          "Cut-off times of up to 23:00 may be available by agreement. Weekend fulfilment — Saturday and Sunday order processing — is available on a structural basis. That matters when your customers order on Friday evening and you want the parcel moving on Saturday.",
+        ],
+      },
+      {
+        heading: "Returns, handled together",
+        paragraphs: [
+          "Returns handling is available. We agree the required returns process with you before it starts, because every brand handles returns differently.",
+          "The goal is simple: returned goods come back to the right place, get checked, and go back into stock when they can.",
+        ],
+      },
+      {
+        heading: "What we will not promise",
+        paragraphs: [
+          "We would rather be clear than clever. Vareya is generally best suited to brands shipping 500 or more orders per month.",
+          "We specialise in cosmetics, supplements, phone cases, accessories and other smaller parcel products. Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.",
+          "If your operation fits those boundaries, we agree the practical start dates with you during onboarding. If it does not, we will tell you that too.",
+        ],
+      },
+      {
+        heading: "Questions we hear often",
+        faq: [
+          {
+            q: "How long does onboarding take?",
+            a: "That depends on your channels and stock. We agree the intake and start dates with you once the agreement is in place. We confirm the practical timing during qualification.",
+          },
+          {
+            q: "Can I keep using my own carrier account?",
+            a: "Vareya's shipping system selects an appropriate carrier for each shipment from the carrier network. We discuss routing and any specific requirements during onboarding.",
+          },
+          {
+            q: "What happens to my stock if I join?",
+            a: "You send it to Breda, we check it in and store it. Your inventory stays visible in the system we use to pick it.",
+          },
+          {
+            q: "Do I pay for support or setup extras?",
+            a: "Customer support is included at no additional charge. Fulfilment rates are fixed and all-in per agreement, with no hidden costs beyond what the agreement sets out.",
+          },
+        ],
+      },
+      {
+        heading: "Sources",
+        paragraphs: [
+          "All operational statements in this article come from the Vareya claims register (approved facts). No customer names, figures or performance promises are used.",
+        ],
+      },
+    ],
+  },
+  {
     slug: "switching-fulfilment-providers-europe",
     title: "How to switch fulfilment providers without disrupting your ecommerce operation",
     description:
@@ -690,7 +781,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     publishedAt: "2026-08-21",
     publishedLabel: "21 August 2026",
     topic: "Operations",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/fulfilment-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
     sections: [
       {
         heading: "When switching makes sense",
