@@ -879,6 +879,104 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
       },
     ],
   },
+  {
+    slug: "shopify-3pl-europe-how-to-compare",
+    title: "Shopify 3PL in Europe: how to compare providers",
+    description:
+      "A practical comparison method for Shopify brands choosing a European 3PL — shortlist, checklist, quote comparison and cutover.",
+    summary:
+      "Stop comparing websites. Compare the things that actually decide whether a Shopify shop and a European warehouse work well together.",
+    publishedAt: "2026-08-21",
+    publishedLabel: "21 August 2026",
+    topic: "Shopify",
+    indexable: true,
+    reviewer: "Hermes (claims-checked against register v1.5)",
+    reviewedAt: "2026-08-21",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    secondaryCta: { label: "Explore Shopify fulfilment in Europe", route: "/shopify-fulfilment-europe/" },
+    sections: [
+      {
+        heading: "Why most comparisons fail",
+        paragraphs: [
+          "Shopify brands usually compare 3PLs the wrong way. They compare websites, price lists and sales pitches. Those things do not tell you how the partnership will work.",
+          "A better comparison starts with your own order profile: volume, product size, destination countries, returns rate and channel mix. Once you know those, every provider can be checked against the same list.",
+        ],
+      },
+      {
+        heading: "Build a shortlist of three, not ten",
+        paragraphs: [
+          "A shortlist of three providers is enough. More than that and the quotes blur together.",
+          "Pick providers that match your actual profile. Vareya is generally best suited to brands shipping 500 or more orders per month, with smaller parcels — cosmetics, supplements, phone cases, accessories and similar products. Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.",
+          "If a provider does not fit those boundaries, that is fine — cross it off early. Product fit is confirmed during qualification.",
+        ],
+      },
+      {
+        heading: "The checklist that separates talk from logistics",
+        paragraphs: [
+          "Ask every shortlisted provider the same ten questions. Write the answers down.",
+        ],
+        checklist: [
+          "How does the Shopify connection work — orders, inventory, tracking and returns?",
+          "Which warehouse management system do they run, and is it fully integrated with Shopify?",
+          "Which carriers do they ship with, and how is the carrier chosen per shipment?",
+          "What are their cut-off times, and what is available by agreement?",
+          "Do they process orders on weekends?",
+          "How do they handle returns, and what is agreed in advance?",
+          "Do they support customs clearance for shipments into and out of Europe?",
+          "Are the rates all-in, or are there extras beyond the agreement?",
+          "Can you agree customised SLAs, and within which boundaries?",
+          "What support is included, and at what cost?",
+        ],
+      },
+      {
+        heading: "Compare the quotes like-for-like",
+        paragraphs: [
+          "When the quotes arrive, compare the same items. A low pick fee means little if storage, returns or peak surcharges sit elsewhere.",
+          "Vareya's fulfilment rates are fixed and all-in per agreement. That means no hidden costs beyond what the agreement sets out. Customer support is included at no additional charge. Clients can agree customised SLAs with Vareya, within boundaries confirmed during qualification.",
+          "For every provider, ask what is not included. The answer tells you more than the brochure.",
+        ],
+      },
+      {
+        heading: "Test the working relationship before you commit",
+        paragraphs: [
+          "Before signing, one practical step is worth more than any demo: send the provider your real order profile and ask them to explain how it would run through their operation.",
+          "A provider who answers with concrete steps — channel connection, stock intake, dispatch and returns — is working. A provider who answers with adjectives is selling.",
+          "Vareya's process is straightforward: qualification first, then connecting your sales channel and agreeing stock intake, then inbound to the Breda warehouse, then picking, packing and shipping. Returns handling is available, with the required process agreed together.",
+        ],
+      },
+      {
+        heading: "How Vareya fits a Shopify shop",
+        paragraphs: [
+          "Shopify integration is available, fully connected to ShipHero as our warehouse management system. Orders, inventory and returns flow through one setup.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.",
+          "Cut-off times of up to 23:00 may be available by agreement, and weekend fulfilment is available on a structural basis. Customs clearance support is available for shipments into and out of Europe.",
+        ],
+      },
+      {
+        heading: "Questions we hear often",
+        faq: [
+          {
+            q: "How many providers should we shortlist?",
+            a: "Three. Enough to compare, few enough to compare properly.",
+          },
+          {
+            q: "What is the first question to ask a 3PL?",
+            a: "How the Shopify connection works — orders, inventory, tracking and returns. If that answer is vague, the rest usually is too.",
+          },
+          {
+            q: "Are cheaper quotes always better?",
+            a: "Only when they compare the same items. Check what is not included before comparing what is.",
+          },
+        ],
+      },
+      {
+        heading: "Sources",
+        paragraphs: [
+          "All operational statements about Vareya in this article come from the Vareya claims register (approved facts). The comparison method is generic guidance for any Shopify brand choosing a European 3PL.",
+        ],
+      },
+    ],
+  },
 ];
 
 export type KnowledgeSlug = (typeof KNOWLEDGE_ARTICLES)[number]["slug"];
