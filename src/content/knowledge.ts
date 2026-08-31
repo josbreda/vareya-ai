@@ -1127,6 +1127,148 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
       },
     ],
   },
+  {
+    slug: "shipping-to-eu-from-us-after-parcel-levy",
+    title: "Shipping to the EU from the US: what the parcel levy changes",
+    description:
+      "What US brands selling into Europe need to know about the EU parcel levy, and why EU stock is becoming the standard answer.",
+    summary:
+      "American brands have long shipped parcels across the Atlantic. The EU parcel levy changes the maths of that route.",
+    publishedAt: "2026-08-24",
+    publishedLabel: "24 August 2026",
+    topic: "US brands",
+    indexable: true,
+    reviewer: "Hermes (public news facts + register v1.5)",
+    reviewedAt: "2026-08-24",
+    primaryCta: { label: "Assess fulfilment within Europe for US brands", route: "/eu-fulfilment-us-brands/" },
+    sections: [
+      {
+        heading: "The transatlantic route just got more expensive",
+        paragraphs: [
+          "Since 1 July 2026, every small parcel entering the EU from outside it carries a levy of 3 euro per product category. For a US brand shipping single parcels to European customers, that is a new cost on top of the existing transatlantic freight.",
+          "The levy is aimed at the flow of goods from Asia, but it applies to every parcel entering the EU from outside — including yours, if you ship from a US warehouse.",
+        ],
+      },
+      {
+        heading: "The alternative that is becoming the standard",
+        paragraphs: [
+          "Stock held inside the EU does not cross that border at parcel level. Orders ship from the warehouse to the customer on a domestic or intra-EU route.",
+          "That is why platforms operating from outside Europe are moving stock in. Shein is reported to be opening a large logistics centre in Poland specifically to ship from inside the EU.",
+          "For US brands, the same pattern applies: one inbound leg to a European warehouse, then local fulfilment for every European order.",
+        ],
+      },
+      {
+        heading: "What Vareya offers US brands",
+        paragraphs: [
+          "Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Shopify integration is available, and Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.",
+          "Customs clearance support is available for shipments into and out of Europe, so the inbound leg from the US is handled as part of the process.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands, with DHL, Asendia, FedEx and Royal Mail in the carrier network for other routes.",
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "BNR Nieuwsradio — EU-heffing op Chinese pakketjes raakt Shein, Temu en AliExpress hard", url: "https://www.bnr.nl/nieuws/economie/10609311/eu-heffing-op-chinese-pakketjes-raakt-shein-temu-en-aliexpress-hard" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "uk-brands-eu-parcel-levy",
+    title: "UK brands and the EU parcel levy: what changed again",
+    description:
+      "How the EU parcel levy stacks on top of post-Brexit customs for UK brands selling into Europe, and why EU stock solves both.",
+    summary:
+      "UK brands already cross a customs border for EU orders. The parcel levy adds another layer — unless the stock sits inside the EU.",
+    publishedAt: "2026-08-24",
+    publishedLabel: "24 August 2026",
+    topic: "UK brands",
+    indexable: true,
+    reviewer: "Hermes (public news facts + register v1.5)",
+    reviewedAt: "2026-08-24",
+    primaryCta: { label: "Shipping into the EU from a Netherlands base", route: "/eu-fulfilment-uk-brands/" },
+    sections: [
+      {
+        heading: "Two borders, two costs",
+        paragraphs: [
+          "Since Brexit, UK brands shipping into the EU already handle customs on every order. The EU parcel levy, in force since 1 July 2026, adds 3 euro per product category on small parcels entering the EU from outside it.",
+          "For a UK brand, that means every parcel to an EU customer now carries both customs handling and the levy — on top of the shipping itself.",
+        ],
+      },
+      {
+        heading: "One move removes both",
+        paragraphs: [
+          "Stock held inside the EU removes both layers at parcel level. Orders ship from the warehouse to the customer without crossing an external EU border.",
+          "The inbound leg happens once — when stock is sent to the European warehouse — instead of on every single order.",
+        ],
+      },
+      {
+        heading: "What Vareya offers UK brands",
+        paragraphs: [
+          "Vareya operates from a warehouse in Breda, the Netherlands, and ships across Europe. Shopify integration is available, fully connected to ShipHero as the warehouse management system.",
+          "Customs clearance support is available for shipments into and out of Europe, including the inbound leg from the UK.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands, with DHL, Asendia, FedEx and Royal Mail in the carrier network for other routes.",
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "BNR Nieuwsradio — EU-heffing op Chinese pakketjes raakt Shein, Temu en AliExpress hard", url: "https://www.bnr.nl/nieuws/economie/10609311/eu-heffing-op-chinese-pakketjes-raakt-shein-temu-en-aliexpress-hard" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ecommerce-returns-centre-europe",
+    title: "Ecommerce returns from Europe: how a returns centre actually works",
+    description:
+      "A practical explanation of European returns handling for online shops: the routes, the checks and what to agree with a fulfilment partner.",
+    summary:
+      "Returns are the part of ecommerce nobody sees in the sales dashboard — until they become a problem. Here is how a European returns process actually works.",
+    publishedAt: "2026-08-24",
+    publishedLabel: "24 August 2026",
+    topic: "Returns",
+    indexable: true,
+    reviewer: "Hermes (register v1.5 only — no performance claims)",
+    reviewedAt: "2026-08-24",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "Why returns decide whether European customers stay",
+        paragraphs: [
+          "A European customer who cannot return easily usually does not order again. Returns are part of the promise you make at checkout, especially when you sell across borders.",
+          "For shops selling into multiple European countries, the question is not whether returns happen. The question is where they go and what happens next.",
+        ],
+      },
+      {
+        heading: "The three routes a return can take",
+        paragraphs: [
+          "A returned parcel inside Europe usually follows one of three routes: back to the warehouse that shipped it, to a dedicated returns address, or — in the worst case — nowhere useful.",
+          "The route that protects your margins is the one where the return arrives where it can be checked, restocked or disposed of properly. That is what a returns process inside Europe is for: the parcel comes back to the right place, gets checked, and goes back into stock when it can.",
+        ],
+      },
+      {
+        heading: "What to agree with your fulfilment partner before it starts",
+        paragraphs: [
+          "Returns handling is available at Vareya, and the required returns process is agreed together before it starts. Every brand handles returns differently, so the process is set up around your rules, not a one-size-fits-all template.",
+          "Ask your fulfilment partner these questions before you sign: where do returns land, who checks them, what happens to sellable stock, and what happens to stock that cannot be resold.",
+        ],
+      },
+      {
+        heading: "Returns and the EU parcel levy",
+        paragraphs: [
+          "One practical note: with the EU parcel levy on parcels entering the EU from outside it, a return crossing into the EU from outside Europe is also an import. A returns centre inside the EU keeps the return route domestic or intra-EU, so the return does not become a customs event.",
+          "Customs clearance support is available for shipments into and out of Europe, including the cases where goods genuinely must cross the border.",
+        ],
+      },
+      {
+        heading: "How this fits a Shopify shop",
+        paragraphs: [
+          "Shopify integration is available at Vareya, and returns flow through the same system as orders and inventory. One system means the shop, the warehouse and the returns process see the same stock.",
+        ],
+      },
+    ],
+  },
 ];
 
 export type KnowledgeSlug = (typeof KNOWLEDGE_ARTICLES)[number]["slug"];
