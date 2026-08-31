@@ -71,6 +71,8 @@ How long does onboarding take? This is confirmed during qualification, as it dep
 
 Does Vareya offer support for customs when shipping into or out of Europe? Yes. Customs clearance support is available for shipments into and out of Europe. Contact Vareya to discuss specific requirements.
 
+How does the EU parcel levy affect my shipments? The EU charges a levy on small parcels entering the EU from outside it. Parcels dispatched from stock inside the EU do not cross that border, which is why many brands are moving stock into Europe. See the article about the EU parcel levy for the background.
+
 ## Final CTA block
 
 Check your EU fulfilment fit → /free-rate-scan/. Request a fulfilment quote → /request-fulfilment-quote/.
