@@ -11,7 +11,13 @@ export const metadata: Metadata = {
   title: "Fulfilment uitbesteden in Breda: stappenplan voor webshops | Vareya",
   description:
     "Stappenplan voor webshops die fulfilment willen uitbesteden in Breda: voorraad, software, pakketprofiel, onboarding en retouren.",
-  alternates: { canonical: "https://vareya.ai/nl/fulfilment-uitbesteden-breda/" },
+  alternates: {
+    canonical: "https://vareya.ai/nl/fulfilment-uitbesteden-breda/",
+    languages: {
+      "nl-NL": "https://vareya.ai/nl/fulfilment-uitbesteden-breda/",
+      "en-GB": "https://vareya.ai/knowledge/switching-fulfilment-providers-europe/",
+    },
+  },
 };
 
 export default function NlUitbestedenPage() {
@@ -38,7 +44,7 @@ export default function NlUitbestedenPage() {
           ["3", "Inbound voorraad",
             "Stuur voorraad naar het fulfilmentcentrum aan " + APPROVED_FACTS.address + ". Spreek aanlevermomenten, SKU-labels en verpakkingsinstructies af."],
           ["4", "Pick, pack en verzending",
-            "Orders worden gepickt, verpakt en overgedragen aan de relevante vervoerder. PostNL is de strategische partner en hoofdvervoerder binnen Nederland; DHL, Asendia, FedEx en Royal Mail verzorgen andere routes. " + CLAIM_RETURNS],
+            "Orders worden gepickt, verpakt en overgedragen aan de relevante vervoerder. PostNL is de hoofdvervoerder binnen Nederland; DHL, Asendia, FedEx en Royal Mail verzorgen andere routes. " + CLAIM_RETURNS],
           ["5", "Evaluatie",
             "Bekijk uitzonderingen, voorraadverschillen en retouren tegen het afgesproken proces. Verbeteringen worden bewust en traceerbaar doorgevoerd."],
         ].map(([nr, title, body]) => (

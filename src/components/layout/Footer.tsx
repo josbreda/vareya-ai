@@ -8,6 +8,7 @@ const FOOTER_LINKS = {
     { label: "Shopify Fulfilment", href: "/shopify-fulfilment-europe/" },
     { label: "US Brands", href: "/eu-fulfilment-us-brands/" },
     { label: "UK Brands", href: "/eu-fulfilment-uk-brands/" },
+    { label: "South Korean Brands", href: "/eu-fulfilment-south-korean-brands/" },
     { label: "Cosmetics & Supplements", href: "/cosmetics-supplements-fulfilment-europe/" },
   ],
   Company: [

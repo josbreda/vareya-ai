@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { FAQ } from "@/components/marketing/FAQ";
 import {
+  APPROVED_DESTINATIONS,
   CAPABILITIES,
   SPECIALIST_REQUIREMENTS_FALLBACK,
 } from "@/content/facts";
+
+const destinationList = APPROVED_DESTINATIONS.join(", ");
 
 export const metadata: Metadata = {
   title: "Cosmetics and Supplements Fulfilment in Europe | Vareya",
@@ -59,6 +62,26 @@ const FAQ_ITEMS = [
   {
     question: "What parcel sizes are suitable?",
     answer: "Combined dimensions below 900 mm and a maximum length of 600 mm.",
+  },
+  {
+    question: "Does Vareya integrate with Shopify for cosmetics and supplements orders?",
+    answer: CAPABILITIES.shipHero,
+  },
+  {
+    question: "What order volume fits Vareya?",
+    answer: CAPABILITIES.volume,
+  },
+  {
+    question: "How are returns handled?",
+    answer: CAPABILITIES.returns,
+  },
+  {
+    question: "Can Vareya process orders in the weekend?",
+    answer: CAPABILITIES.weekendFulfilment,
+  },
+  {
+    question: "Where does Vareya ship cosmetics and supplements?",
+    answer: `Vareya ships to the following destinations: ${destinationList}.`,
   },
 ];
 

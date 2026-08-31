@@ -13,7 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
     entries.push({
       url: meta.canonical,
-      lastModified: new Date(),
+      lastModified: meta.updatedAt ? new Date(meta.updatedAt) : undefined,
       changeFrequency: path === "/" ? "weekly" : "monthly",
       priority: path === "/" ? 1.0 : 0.8,
     });
