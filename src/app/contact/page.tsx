@@ -61,7 +61,7 @@ export default function ContactPage() {
                 <QuickLink
                   href="/free-rate-scan/"
                   title="Fulfilment scan"
-                  desc="Check if Vareya is right for your brand in under 3 minutes."
+                  desc="Check if Vareya is right for your brand in a few minutes."
                 />
                 <QuickLink
                   href="/request-fulfilment-quote/"

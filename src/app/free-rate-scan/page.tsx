@@ -142,7 +142,7 @@ export default function FulfilmentScanPage() {
           </h1>
           <p className="text-lg text-white/80 max-w-xl">
             Answer a few quick questions to see if Vareya is right for your
-            e-commerce brand. Takes under 3 minutes.
+            e-commerce brand. Takes a few minutes.
           </p>
         </div>
       </section>

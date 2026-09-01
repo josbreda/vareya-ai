@@ -11,9 +11,9 @@ interface CTABannerProps {
 
 export function CTABanner({
   title = "Ready to check your fulfilment fit?",
-  subtitle = "Take our quick fulfilment scan to see if Vareya is right for your brand. It takes under 3 minutes.",
+  subtitle = "Take our quick fulfilment scan to see if Vareya is right for your brand. It takes a few minutes.",
   primaryHref = "/free-rate-scan/",
-  primaryLabel = "Check your fit",
+  primaryLabel = "Check your EU fulfilment fit",
   secondaryHref = "/request-fulfilment-quote/",
   secondaryLabel = "Request a quote",
 }: CTABannerProps) {
