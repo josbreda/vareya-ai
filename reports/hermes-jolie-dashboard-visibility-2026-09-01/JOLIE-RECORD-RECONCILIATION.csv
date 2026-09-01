@@ -1,0 +1,5 @@
+entity,id,name_or_value,status,created_at,updated_at,linked_ids,notes
+organization,c3636ba0-dcc4-48d9-a150-0d8c03866def,Jolie Beauty / joliebeauty.co.uk,active,2026-09-01 22:16+02,2026-09-01 22:16+02,lead 6fca56c9…,exact 1 org (name/domain dedupe=1)
+lead,6fca56c9-308a-42f0-88ad-3d67c3be15f1,Jolie Beauty,qualified (inbound / inbound_email),2026-09-01 22:16:14+02,2026-09-01 22:16:14+02,"org c3636ba0…, primary_contact ef244200…","is_archived=f, owner=NULL, exact 1 active lead"
+contact,ef244200-b15a-4a83-a540-56562f8d40da,Saul / saul@joliebeauty.co.uk,active,2026-09-01 22:16+02,2026-09-01 22:16+02,org c3636ba0…,primary_contact link verified; email dedupe=1
+follow_up_task,76e9e04d-43e1-48a6-a971-506b1da5d79a,Jolie Beauty: verzamel operationele prijsdata,open (due 2026-09-04),2026-09-01 22:16+02,2026-09-01 22:16+02,lead 6fca56c9…,visible on Follow-ups
