@@ -1,0 +1,22 @@
+fee_line,unit,value,in_excl_vat,notes
+First pick (per order),per order,LEEG — wacht op Raymonds kostprijs,LEEG,
+Additional pick (per extra item),per item,LEEG,LEEG,Jolie: gem. 2 items/order
+Storage,per pallet / maand,LEEG,LEEG,Jolie: ~5 pallets
+Goods-in / intake,per pallet of per collo,LEEG,LEEG,
+Packaging,per order / per materiaal,LEEG,LEEG,branded materials door Jolie?
+Returns handling,per returned parcel,LEEG,LEEG,retour% onbekend
+Claims administration,per claim / per maand,LEEG,LEEG,
+WMS (ShipHero),per maand of in all-in,LEEG,LEEG,
+Shopify integration,eenmalig / per maand,LEEG,LEEG,
+Setup,eenmalig,LEEG,LEEG,
+Minimum monthly spend,per maand,LEEG,LEEG,
+Deposit / aanbetaling,eenmalig,LEEG,LEEG,
+Contract term,maanden,LEEG,n.v.t.,
+Notice period,maanden,LEEG,n.v.t.,
+Fuel surcharge,% of formule,LEEG,LEEG,
+Peak surcharge,% of formule,LEEG,LEEG,
+Overige ancillary fees,divers,LEEG,LEEG,
+Tracked shipping <100g,per parcel per zone,LEEG,LEEG,kernprofiel Jolie
+Tracked shipping 100-250g,per parcel per zone,LEEG,LEEG,
+Tracked shipping 250-500g,per parcel per zone,LEEG,LEEG,
+Belangrijkste EU-landgroepen (zones),zone-indeling,LEEG,LEEG,bestemmingsmix nog onbekend

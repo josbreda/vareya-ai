@@ -1,0 +1,9 @@
+# Prohibited-claims guard allowlist — historical/internal documents only.
+# These files quote the prohibited phrases as audit citations, register
+# definitions or historical records. Production content (src/, public/,
+# content/*.md live pages) is NEVER allowlisted.
+content/claims-register.md
+docs/*
+reports/*
+content/content/review/*
+research/*

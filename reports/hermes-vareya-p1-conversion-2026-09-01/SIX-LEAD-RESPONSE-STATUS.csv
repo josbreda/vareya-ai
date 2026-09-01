@@ -1,0 +1,7 @@
+lead,recipient,sent,inbox_finding,classification,notes
+Carrier Company,info@carriercompany.co.uk,2026-09-01T16:03:09Z (follow-up; origineel 24-08),"geen reply, geen bounce",NO_REPLY_YET,
+KOMANA,info@komana-design.com,2026-09-01T16:03:13Z (follow-up),geen reply op .com; OUDE bounce 25-08 betrof info@komana-design.pro (oud adres),DELIVERED,Oud .pro-adres NOOIT hergebruiken; huidige status niet door oude bounce overschrijven
+Fergus James,info@fergusjames.com,2026-09-01T16:03:16Z (follow-up; origineel 24-08),"geen reply, geen bounce",NO_REPLY_YET,
+Innermost,hello@liveinnermost.com,2026-09-01T16:03:19Z,"geen reply, geen bounce",NO_REPLY_YET,
+Edge of Ember,hello@edgeofember.com,2026-09-01T20:14:58Z,"geen reply, geen bounce",NO_REPLY_YET,
+Bon Maxie,support@bonmaxie.com.au,2026-09-01T19:56:14Z (extern),"19:56:50 auto-ack van support@bonmaxie.com ('we'll get back to you within 1-2 business days'; noemt Clare, owner)",AUTO_ACKNOWLEDGED,Geen menselijk antwoord; DM-hint: Clare (owner). Geen automatische follow-up.
