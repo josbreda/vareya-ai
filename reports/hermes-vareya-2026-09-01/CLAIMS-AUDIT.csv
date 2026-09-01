@@ -1,0 +1,35 @@
+url,claim_text,claim_category,register_status,evidence_source,safe_wording,confidence,checked_date
+"https://jmconcepts.cloud/","Vareya, een e-fulfilment specialist met 1.000+ merken",brand-count,PROHIBITED,claims-register v1.5 (excluded content) + FulfilmentShortlist-correctie 21-08,"Vareya, een e-fulfilment specialist, liep tegen een grens aan…",high,2026-09-01
+"https://jmconcepts.cloud/samenwerking.html","Vareya, e-fulfilment specialist met 1.000+ merken",brand-count,PROHIBITED,idem,idem,high,2026-09-01
+"https://jmconcepts.cloud/samenwerking.html","Vareya's algoritme kiest per pakket de beste en goedkoopste vervoerder",superlative,PROHIBITED,claims-register v1.5 superlative policy,"Vareya's verzendsysteem kiest per pakket automatisch een passende vervoerder op basis van bestemming en pakketkenmerken",high,2026-09-01
+"https://jmconcepts.cloud/samenwerking.html","Per order de beste vervoerder",superlative,PROHIBITED,idem,"Per order automatisch de passende vervoerder",high,2026-09-01
+"https://jmconcepts.cloud/samenwerking.html","…toevallig de beste keuze is / per order automatisch de beste deal",superlative,PROHIBITED,idem,"…toevallig de juiste keuze is / per order automatisch de gunstigste deal",high,2026-09-01
+"https://jmconcepts.cloud/lid-worden.html","Aanmelden — coöperatie Samen Verzonden (title/meta/body)",cooperative-legal-form,UNSUPPORTED,concept-samen-verzonden.md status 'conceptvoorstel'; geen KvK-registratie,"Samen Verzonden als coöperatief fulfilmentCONCEPT benoemen (niet als bestaande coöperatie)",high,2026-09-01
+"https://vareya.ai/about/","Vareya is being built as a cooperative (Coöperatie U.A.)",cooperative-legal-form,UNSUPPORTED,STRATEGISCH-PAKKET.md ('statuten/notaris week 1') + concept-doc juni 2026 + geen KvK-hit,"Vareya is developing a cooperative model in which the brands it serves can become members… legal form and membership terms will be set out in its formal documents",high,2026-09-01
+"https://vareya.ai/about/","…and returns handling included (hero)",exact-wording-drift,DRIFT,claims-register v1.5 required wording ('Returns handling is available…'),"…and returns handling available",high,2026-09-01
+"https://vareya.ai/","…and returns handling included (home hero)",exact-wording-drift,DRIFT,idem,"…and returns handling available",high,2026-09-01
+"https://vareya.ai/","proof-chip 'Returns included'",exact-wording-drift,DRIFT,idem,"'Returns available'",high,2026-09-01
+"https://vareya.ai/about/","it takes under 3 minutes",duration-claim,DRIFT,register open item #3 (a few minutes tot gemeten),"'a few minutes'",high,2026-09-01
+"https://vareya.ai/contact/","in under 3 minutes",duration-claim,DRIFT,idem,"'in a few minutes'",high,2026-09-01
+"https://vareya.ai/free-rate-scan/","Takes under 3 minutes (pagina + meta)",duration-claim,DRIFT,idem,"'Takes a few minutes'",high,2026-09-01
+"https://vareya.ai/about/","Check your fit → (CTA)",cta-drift,DRIFT,register conversion rules ('Check your EU fulfilment fit'),"'Check your EU fulfilment fit'",high,2026-09-01
+"https://vareya.ai/ (header + CTABanner)","Check your fit",cta-drift,DRIFT,idem,idem,high,2026-09-01
+"https://vareya.ai/llms.txt","Vareya ships to 42 approved destinations",destination-count,OUTDATED,register v1.5 lijst telt 41 landen (script-geteld),"41 approved destinations",high,2026-09-01
+"docs/ENTITY-SUBMISSION-PACK.md","42 countries (v1.4)",destination-count,OUTDATED,idem,"41 countries (v1.5)",high,2026-09-01
+"src/content/pages.ts (NL-meta)","met PostNL als strategische partner",postnl,PROHIBITED,register v1.5 ('strategic partner' NOT CONFERRED; suspended v1.4),"met PostNL als hoofdvervoerder binnen Nederland",high,2026-09-01
+"marketing/experiments.csv FS-TRUST-001","variant-copy: 'PostNL strategic partner'",postnl,PROHIBITED,idem,"'PostNL is Vareya's main carrier within the Netherlands'",high,2026-09-01
+"docs/CLAIMS.md","PostNL is Vareya's strategic partner and main carrier",postnl,OUTDATED (v1.2),register v1.5,"PostNL is Vareya's main carrier… ('strategic partner' prohibited sinds v1.4)",high,2026-09-01
+"content/content/review/COMPETITOR_POSITIONING.md","Exact approved capabilities: PostNL strategic partnership",postnl,CONTRADICTED,register v1.5,"PostNL as main carrier (v1.5 strongest wording)",high,2026-09-01
+"marketing/prospect-queue.csv","'PostNL partnership means reliable NL deliveries' (Prequel) + 'PostNL partnership' (Farmacy)",postnl,DRIFT,register v1.5,"'PostNL handles NL deliveries through Vareya's own shipping agreements' / 'PostNL as our main carrier within the Netherlands'",high,2026-09-01
+"marketing/prospect-queue.csv","'customs clearance included' (Dieux Skin)",exact-wording-drift,DRIFT,register v1.5 ('customs clearance support is available'),"'customs clearance support is available'",high,2026-09-01
+"marketing/publication-queue.csv (B1/B2)","'PostNL is Vareya's strategic partner and main carrier' + v1.2-verwijzingen",postnl,PROHIBITED,register v1.5,"'PostNL is Vareya's main carrier…' + v1.5-verwijzingen",high,2026-09-01
+"https://www.vareya.com/","'empowering over 1000 brands worldwide'",brand-count,PROHIBITED,register v1.5 excluded content,"Zie C-001 safe wording (geen klantenaantal)",high,2026-09-01
+"https://www.vareya.com/","'unparalleled supply chain solutions' / 'lightning-fast shipping' / 'near-perfect order accuracy'",superlative,PROHIBITED,register superlative policy,"Register-veilige beschrijvingen (geen superlatieven)",high,2026-09-01
+"https://www.vareya.com/","Testimonials (Elliot Thomas, Lisa Harrison, Oscar Olsen, Laura Martinez)",testimonial,PROHIBITED,register v1.5 excluded content,"Geen testimonials",high,2026-09-01
+"https://www.vareya.com/","Klantlogo's (Samsung, Nestlé, MAC, AXE, Tree Hut e.a.)",client-logos,PROHIBITED,register v1.5 excluded content,"Geen klantlogo's/namen",high,2026-09-01
+"https://www.vareya.com/","'shipped on the same day' / 'No losses. No errors. Rapid check-ins. Or we cover the cost. Guaranteed.'",performance-guarantee,PROHIBITED,register v1.5 (geen same-day/accuracy-garanties),"Geen garantieclaims",high,2026-09-01
+"https://www.vareya.com/","'Opgericht 2016' + 8 vervoerders + 99% nauwkeurigheid (via FulfilmentShortlist-profiel)",entity-details,UNVERIFIED,register v1.5 (geen oprichtingsjaar; 5 carriers; geen %-claims),"Canonical entity-pack (vareya.ai, 5 carriers, geen %)",high,2026-09-01
+"https://vareya.ai/ (alle commerciële pagina's)","exacte cut-off/volume/returns-zinnen verbatim",exact-wording,OK,claims-register v1.5,"n.v.t.",high,2026-09-01
+"https://vareya.ai/ (alle pagina's)","'strategic partner' afwezig",postnl,OK,register v1.5,"n.v.t.",high,2026-09-01
+"https://vareya.ai/eu-fulfilment/","landenlijst 41/41 aanwezig; geen ROW",destinations,OK,register v1.5,"n.v.t.",high,2026-09-01
+"https://vareya.ai/shipbob-alternative-europe/ en /returns-fulfilment-europe/","'guarantee' alleen in negatieve/afwijkende context ('require guarantees beyond agreed terms', 'does not publish standard turnaround figures')",performance-guarantee,OK,register v1.5,"n.v.t.",high,2026-09-01
