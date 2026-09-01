@@ -16,7 +16,7 @@ Any claim NOT covered here or in `content/claims-register.md` must NOT appear on
 - Shopify integration available
 - Amazon FBM fulfilment available
 - Returns handling available. **Required exact wording wherever returns are mentioned:** "Returns handling is available. Contact Vareya to discuss the required returns process."
-- **Carriers:** PostNL is Vareya's strategic partner and main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes. (Not a flat "carriers include..." list — this exact framing replaced that wording in v1.2.)
+- **Carriers:** PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes. (Not a flat "carriers include..." list — this exact framing replaced that wording in v1.2. "Strategic partner of PostNL" is prohibited since register v1.4; the strongest supportable wording is defined in claims-register.md v1.5.)
 - Cut-off times of up to 23:00 may be available by agreement. **Required exact wording wherever cut-off is mentioned:** "Cut-off times of up to 23:00 may be available by agreement."
 - **Required exact wording wherever order volume is mentioned:** "Vareya is generally best suited to brands shipping 500 or more orders per month." (This is also the one approved exception to the superlative ban below — see Superlatives.)
 - Specialises in: cosmetics, supplements, phone cases, accessories, and other smaller parcel products
