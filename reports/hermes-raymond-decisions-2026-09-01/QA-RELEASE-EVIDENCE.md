@@ -46,6 +46,19 @@
 | Provider message-ID | PASS — Graph message-ID's in log + SentItems-verificatie |
 | Error log | PASS — 0 fouten; stop-regels niet geactiveerd |
 
+## Release-gate correctie (approval-backfill, 2026-09-01 ~21:00 CEST)
+
+Claude's release gate (SAFE_TO_CLOSE_AFTER_LISTED_CORRECTIONS) vond: de 4 verzonden mails liepen buiten de app's eigen enforced send-gate, waardoor `leads.human_approved_at` NULL bleef. Met expliciete toestemming uitgevoerd:
+
+| Check | Resultaat |
+|---|---|
+| Script | `HOS/projects/vareya-ai-lead-engine/data/backfill-approval-20260901.sql` (sha256 `b3ca456c…`), byte-identiek aan de dry-run-geteste versie (diff + sha256 vóór uitvoering) |
+| Backup vóór uitvoering | `/opt/aos/backups/vareya-raymond-20260901-gatecorrection/leads-prebackfill-run-20260901-205242.sql` (1.711.682 B, sha256 `95f7efb4…`, 7 tabellen) |
+| Transactie | Guarded DO-block met ON_ERROR_STOP: rijen-aantal (=4), per-rij waarden, protected-check, onverwachte-rijen-check — afwijking = auto-ROLLBACK |
+| Uitkomst | `GUARDS PASS: 4 rows updated` → COMMIT |
+| Post-COMMIT | 4 lead-ID's hebben `human_approved_by='Raymond (Decision 4A, 2026-09-01)'`, `human_approved_at=sent_at`, `approved_message_version=1`, `sent_by`, `sent_channel='email'`; totalen 331/331/19 ongewijzigd; `leads_with_human_approval=4` |
+| Rollback | Restore `leads-prebackfill-run-20260901-205242.sql` |
+
 ## Conclusie
 
 Alle relevante gates slagen. Deploy uitgevoerd via origin/main (Vercel auto-deploy) en live geverifieerd (zie LIVE-VERIFICATION.md).

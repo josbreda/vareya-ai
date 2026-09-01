@@ -28,3 +28,7 @@ Methode: curl met browser-headers (Vercel bot-challenge geeft anders 403 — met
 - **Thuiswinkel (besluit 2 B):** LIVE — 0 hits op alle gecontroleerde pagina's.
 - **Bestemmingen (besluit 3):** LIVE — 41-landenlijst met de 4 bevestigde landen op de servicepagina; llms.txt consistent op 41.
 - jmconcepts.cloud: coöperatie-wording was 01-09 al gefixt ("coöperatief fulfilmentCONCEPT") — geen nieuwe wijzigingen nodig; geen Thuiswinkel-verwijzingen.
+
+## Release-gate correctie (DB, 2026-09-01 ~21:00 CEST)
+
+Approval-backfill (Claude-gate item 1) uitgevoerd en geverifieerd in productie-DB: 4 leads hebben nu de volledige human-approval velden; geen site-wijziging (geen nieuwe deploy nodig). Details: QA-RELEASE-EVIDENCE.md §Release-gate correctie.
