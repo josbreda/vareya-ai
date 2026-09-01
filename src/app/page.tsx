@@ -91,10 +91,10 @@ export default function HomePage() {
       <NetworkHero
         badge="European Fulfilment — Breda, NL"
         title="Ecommerce fulfilment in Europe, run from the Netherlands"
-        description="Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling included."
+        description="Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling available."
         primaryCTA={{ label: "Check your EU fulfilment fit", href: "/free-rate-scan/" }}
         secondaryCTA={{ label: "Request a fulfilment quote", href: "/request-fulfilment-quote/" }}
-        proofItems={["Breda, NL", "Shopify-ready", "5 carriers", "Returns included"]}
+        proofItems={["Breda, NL", "Shopify-ready", "5 carriers", "Returns available"]}
       >
         {/* Warehouse SVG illustration */}
         <svg className="w-full max-w-[380px] h-auto" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">

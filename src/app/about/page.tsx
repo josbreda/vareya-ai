@@ -22,7 +22,7 @@ export default function AboutPage() {
               Fulfilment from Breda, the Netherlands
             </h1>
             <p className="text-lg text-white/65 leading-relaxed max-w-xl">
-              Vareya fulfils e-commerce orders for growing brands — with Shopify integration, multi-carrier delivery, and returns handling included.
+              Vareya fulfils e-commerce orders for growing brands — with Shopify integration, multi-carrier delivery, and returns handling available.
             </p>
           </div>
         </div>
@@ -45,8 +45,7 @@ export default function AboutPage() {
               smaller parcel products. {CAPABILITIES.volume}
             </p>
             <p>
-              Vareya is being built as a cooperative (Coöperatie U.A.). We believe that the brands
-              who depend on fulfilment should own the operation — not outside shareholders.
+              Vareya is developing a cooperative model in which the brands it serves can become members, sharing ownership and a voice in the strategic decisions reserved for them. The cooperative&apos;s legal form and membership terms will be set out in its formal documents.
             </p>
           </div>
         </div>
@@ -99,13 +98,13 @@ export default function AboutPage() {
             Ready to check your fulfilment fit?
           </h2>
           <p className="text-primary-light/80 mb-8">
-            Take our quick fulfilment scan — it takes under 3 minutes.
+            Take our quick fulfilment scan — it takes a few minutes.
           </p>
           <Link
             href="/free-rate-scan/"
             className="inline-flex items-center px-6 py-3 bg-accent text-ink font-semibold rounded-[10px] hover:bg-[#FF8A3D] transition-colors"
           >
-            Check your fit →
+            Check your EU fulfilment fit →
           </Link>
         </div>
       </section>

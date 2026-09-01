@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Check Your EU Fulfilment Fit | Vareya",
   description:
-    "Quick self-assessment to see if Vareya fulfilment is right for your e-commerce brand. Takes under 3 minutes.",
+    "Quick self-assessment to see if Vareya fulfilment is right for your e-commerce brand. Takes a few minutes.",
   alternates: {
     canonical: "https://vareya.ai/free-rate-scan/",
   },
