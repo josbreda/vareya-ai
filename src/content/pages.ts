@@ -18,7 +18,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/": {
     title: "Vareya | European Fulfilment for E-Commerce Brands",
     description:
-      "Fast, reliable order fulfilment from Breda, the Netherlands. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling included.",
+      "Fast, reliable order fulfilment from Breda, the Netherlands. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling available.",
     canonical: `${BASE}/`,
   },
   "/eu-fulfilment/": {
@@ -84,7 +84,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/free-rate-scan/": {
     title: "Check Your EU Fulfilment Fit | Vareya",
     description:
-      "Quick self-assessment to see if Vareya fulfilment is right for your e-commerce brand. Takes under 3 minutes.",
+      "Quick self-assessment to see if Vareya fulfilment is right for your e-commerce brand. Takes a few minutes.",
     canonical: `${BASE}/free-rate-scan/`,
   },
   "/request-fulfilment-quote/": {
@@ -130,7 +130,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/nl/fulfilment-noord-brabant/": {
     title: "Fulfilmentcentrum Brabant | Vareya in Breda",
     description:
-      "Vareya is een fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops vanaf 500 orders per maand, met PostNL als strategische partner.",
+      "Vareya is een fulfilmentcentrum in Breda, Noord-Brabant. Ecommerce fulfilment voor webshops vanaf 500 orders per maand, met PostNL als hoofdvervoerder binnen Nederland.",
     canonical: `${BASE}/nl/fulfilment-noord-brabant/`,
     updatedAt: "2026-08-21",
   },

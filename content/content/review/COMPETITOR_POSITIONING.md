@@ -73,7 +73,7 @@ Legend: V = VERIFIED | PV = PARTIALLY VERIFIED | NF = NOT FOUND IN REVIEWED SOUR
 
 ### CURRENT VERIFIED DIFFERENTIATION
 - Physical operational fulfilment from Breda, NL (Claims Register v1.2: Bagven Park 6, 4838 EH Breda)
-- Exact approved capabilities: PostNL strategic partnership, ShipHero+Shopify, 5-carrier network, customs clearance support, weekend fulfilment, all-in rates, customised SLAs, free support, Royal Mail direct-entry, automatic carrier selection
+- Exact approved capabilities: PostNL as main carrier within the Netherlands (register v1.5 strongest wording: own shipping agreements + direct cooperation; "strategic partner" prohibited), ShipHero+Shopify, 5-carrier network, customs clearance support, weekend fulfilment, all-in rates, customised SLAs, free support, Royal Mail direct-entry, automatic carrier selection
 - Approved operational service model: scan → fit response within 1 working day
 - Free Rate Scan (once implemented)
 

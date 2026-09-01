@@ -24,7 +24,7 @@
 | Products | cosmetics, supplements, phone cases, accessories, other smaller parcel products (900 mm / 600 mm limits) |
 | Platforms | Shopify (via ShipHero WMS), Amazon FBM |
 | Carriers | PostNL (main, NL), DHL, Asendia, FedEx, Royal Mail |
-| Destinations | 42 countries (volledige lijst in claims register v1.4) |
+| Destinations | 41 countries (volledige lijst in claims register v1.5) |
 | Services | ecommerce fulfilment, returns handling, customs clearance support, weekend fulfilment, cut-off up to 23:00 by agreement |
 
 **VERBODEN in listings:** "strategic partner of PostNL" (suspended pending evidence review), brand-count claims ("1.000+ brands"), logo's/namen van klanten, testimonials, "fastest/cheapest/best/leading", adres Etten-Leur, telefoon anders dan +31 6 19 12 34 72, website anders dan vareya.ai.
