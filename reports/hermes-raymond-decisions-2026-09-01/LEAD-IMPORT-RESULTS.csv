@@ -1,0 +1,27 @@
+company,lead_id,contact_first,contact_last,job_title,linkedin,work_email,org_email_filled,primary_contact_set,action,skip_reason
+47 Skin,7749683f-ee02-4fd6-9d8e-bcdf8f435ac3,Nic,Taylor,Founder & CEO,https://www.linkedin.com/in/nic-taylor-99658b54/,,no (email NOT VERIFIED),yes,CONTACT_CREATED,
+Aroma360,ef673160-a3df-4354-99cd-08f2cde1febf,Benzion,Aboud,Co-Founder & CEO,https://www.linkedin.com/in/benzion-aboud-0b989118a,,support@aroma360.com,yes,CONTACT_CREATED,
+BSSET,4522164b-15d1-4f9f-ba03-4656d23356cd,Ibrahim,Abusamra,Co-Founder,https://uk.linkedin.com/in/ibrahim-abusamra-5b810ab1,,creators@bsset.co.uk,yes,CONTACT_CREATED,
+Carrier Company,f2f93cd1-6d8d-4ac6-b85a-1521eb789a87,Tina,Guillory,Founder,https://www.linkedin.com/in/tina-guillory-53b61132/,,info@carriercompany.co.uk (already present),yes,EXISTING_CONTACT_UPDATED (preferred channel),
+Goodlids,614af041-895f-47c1-8ca1-33e490612ccf,Dane,Watson,Founder & Creative Director,https://www.linkedin.com/in/dane-watson-93134658/,,no (email NOT VERIFIED),yes,CONTACT_CREATED,
+Hello Klean,08b3ba4f-3149-4f24-a3ca-420b497bffa0,Omer,Ozener,Co-Founder & CEO,https://www.linkedin.com/in/omerozener/,,support@helloklean.com,yes,CONTACT_CREATED,
+Innermost,b235d36d-507c-42ae-a55c-795289588faf,Shivraj,Bassi,Founder & CEO,https://ae.linkedin.com/in/shivraj-bassi,,hello@liveinnermost.com (already present),already set pre-write,NO_CHANGE (existing strong row),existing contact complete; do-not-weaken rule
+John Clarke Sports Nutrition,7dbf5c4b-6a75-4d6e-ada2-1c7e911995fa,John,Clarke,Owner/Founder,https://uk.linkedin.com/in/john-clarke-3a556098,,info@jclarkesportsnutrition.com + domain fixed,yes,CONTACT_CREATED + ORG_CORRECTED,
+KOMANA,0d69292e-7633-4402-8675-4ae3bf3b1732,Nina,Henne,Co-Founder (with Livia Henne),,,info@komana-design.com (already present),yes,CONTACT_CREATED,
+LOVIY,19391027-6e6b-469b-99b1-77cb3b98170d,Carmen,de Bruin,Co-Founder & Managing Director,https://www.linkedin.com/in/carmen-de-bruin-57059416,,info@loviy.nl (already present),yes,CONTACT_CREATED,
+Marijke Mul,56fc9cb7-d25e-4f1b-9eac-d9ba4fc74f56,Marijke,Mul,Owner/Director,https://nl.linkedin.com/in/marijkemul,,info@marijkemul.nl,yes,CONTACT_CREATED,
+Not Basics,a10f3d20-d5c4-4da2-bb10-ef45e36fb5bf,Amanda,McCourt,Co-Founder (UK),https://uk.linkedin.com/in/amandamccourt,,hello@notbasics.co.uk,yes,CONTACT_CREATED,
+Orangefit,cfac2f33-347e-43e2-87b4-f86c1b29a4ef,Rens,Slik,Founder & CEO,https://nl.linkedin.com/in/rens-slik,,hallo@orangefit.nl (already present),yes,CONTACT_CREATED,
+Renbe,3f0917c6-0afd-4b4a-981f-5d1ed90f55fd,Sarah,Priley,Company Director,https://uk.linkedin.com/in/sarah-priley-6a9a36107,,info@renbe.co.uk,yes,CONTACT_CREATED,
+Rule 28,39d31e99-e70e-4698-b5ed-16ba0cc742ae,Sam,Calder,Founder & Managing Director,https://www.linkedin.com/in/sam-calder-7ba97a24b,,info@rule28.com,yes,CONTACT_CREATED,
+Taste Salud,6f5f6267-f930-4477-8c3a-18c8e0eda945,Tyler,McCann,Co-Founder,https://www.linkedin.com/in/tyler-mccann-5ab8902,,info@tastesalud.com,yes,CONTACT_CREATED,
+The Beauty Crop,895f580a-5bb1-488d-9ba1-b3b0174f446a,Ning,Cheah,Founder & Director,https://www.linkedin.com/in/ning-cheah-4310642/,,hello@thebeautycrop.com,yes,CONTACT_CREATED,
+Tom's Trunks,a33e2609-ee5b-435d-b4b8-cc73dbce3859,Tom,Holmes,Founder,,,hello@tomstrunks.com,yes,CONTACT_CREATED,LinkedIn NOT VERIFIED in enrichment (name/title from press)
+Whites Beaconsfield,a441678f-ed5d-4752-b9a2-f659fb40d390,James,Pryor,COO,https://uk.linkedin.com/in/jamespryorcoo,,support@whitesbeaconsfield.co.uk,yes,CONTACT_CREATED,
+HER ONE,NOT_IN_DB,,,,,,,,SKIPPED_NO_ORG,geen lead_organizations-rij in productie-DB
+Artah,NOT_IN_DB,,,,,,,,SKIPPED_NO_ORG,geen lead_organizations-rij in productie-DB
+Wild Nutrition,NOT_IN_DB,,,,,,,,SKIPPED_NO_ORG,geen lead_organizations-rij in productie-DB
+Equi London,NOT_IN_DB,,,,,,,,SKIPPED_NO_ORG,geen lead_organizations-rij in productie-DB
+Absolute Collagen,NOT_IN_DB,,,,,,,,SKIPPED_NO_ORG,geen lead_organizations-rij in productie-DB
+Nudient,NOT_IN_DB,,,,,,,,SKIPPED_NO_ORG,geen lead_organizations-rij in productie-DB
+The Nue Co,NOT_IN_DB,,,,,,,,SKIPPED_NO_ORG,geen lead_organizations-rij in productie-DB

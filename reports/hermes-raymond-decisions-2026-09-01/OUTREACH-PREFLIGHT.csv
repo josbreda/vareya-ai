@@ -1,0 +1,7 @@
+draft,company,recipient,dm,status_check,protected,last_contact,personalization_source,scan_url_ok,sender_ok,verdict,sent
+A1,Carrier Company,info@carriercompany.co.uk,Tina Guillory (Founder),PASS,no,Raymond 24-08 (outreach-log),DB notes (EU checkout-duty),yes,Raymond Faber / info@vareya.ai,READY_TO_SEND,yes
+A2,KOMANA,info@komana-design.com,"Nina Henne (Co-Founder, with Livia)",PASS,no,Raymond 24-08 (outreach-log),DB notes (international shipping page),yes,Raymond Faber / info@vareya.ai,READY_TO_SEND,yes
+A3,Fergus James,info@fergusjames.com,"(geen naam in draft — 'Hello,')",PASS,no,Raymond 24-08 (outreach-log),DB notes (DHL EU delivery),yes,Raymond Faber / info@vareya.ai,READY_TO_SEND,yes
+B1,Edge of Ember,hello@edgeofember.com,"(geen naam — 'Hello,')",FAIL,no,n.v.t. (first touch),DB notes (London studio worldwide),yes,Raymond Faber / info@vareya.ai,NEEDS_EDIT,no
+B2,Innermost,hello@liveinnermost.com,Shivraj Bassi (Founder & CEO),PASS,no,n.v.t. (first touch),DB notes (EU region + EUR checkout),yes,Raymond Faber / info@vareya.ai,READY_TO_SEND,yes
+B3,Bon Maxie,MISSING — geen e-mailadres,(geen naam),FAIL,no,18-08 (DB last_contacted_at),"DB notes (Sydney worldwide, Germany)",yes,n.v.t.,BLOCKED,no

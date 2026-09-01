@@ -1,0 +1,5 @@
+decision,value,topic,action,status,owner,evidence
+1,B,Coöperatie,Repo-copy gealigneerd naar 'exploring a possible future cooperative model'; verboden formuleringen 0 hits; register v1.6,IMPLEMENTED_IN_BRANCH,Hermes,grep 0 hits; git diff in branch; live-check na deploy
+2,B,Thuiswinkel,Geen publieke verwijzingen in repo; register-mark PROHIBITED_UNTIL_NEW_VERIFIED_MEMBERSHIP; live-check na deploy,IMPLEMENTED_IN_BRANCH,Hermes,repo-grep 0 hits; register v1.6
+3,4 landen bevestigd,Bestemmingen,Register v1.6 + claims.ts-commentaar + DESTINATION-REGISTER.csv (41) + DESTINATION-CARRIER-MATRIX.csv (4); safe wording exact zinnen,IMPLEMENTED_IN_BRANCH,Hermes,register v1.6; 41=41 script-telling
+4,A,Commerciële activatie,"Backup + 17 contact-imports + org-email-fills + John Clarke-fix + 2 merges + 4/6 mails verzonden (B1 NEEDS_EDIT, B3 BLOCKED)",IMPLEMENTED (DB + Graph),Hermes,psql-verificatie; SentItems; send-log
