@@ -1,0 +1,19 @@
+source,phrase,hits,classification
+"vareya.ai /about/ (live, cache-bypass)",Coöperatie U.A.,0,CLEAN
+vareya.ai /about/ (live),being built as a cooperative,0,CLEAN
+vareya.ai 7 gecontroleerde pagina's (live),is a cooperative,0,CLEAN
+vareya.ai alle pagina's (live),under 3 minutes / takes under 3 minutes,0,CLEAN
+vareya.ai /why-vareya-ai/ OG-meta (live),member-owned,1,SAFE - 'A possible future member-owned model' (toekomst-framing)
+vareya.ai /knowledge/what-is-cooperative-fulfilment/ (live),member-owned,1,"SAFE - conceptbeschrijving, geen actuele claim"
+vareya.ai llms.txt (live),cooperative,1,SAFE - artikel-titel 'What is cooperative fulfilment?'
+jmconcepts.cloud home + lid-worden (live),coöperatie/coöperatief,7 (substring van 'coöperatieve fulfilmentconcept'),SAFE - concept-framing (01-09 fix)
+www.vareya.com / www.vareya.nl (live),coöperatie/built as cooperative/under 3 minutes,0,CLEAN (verboden claims zoals '1000 brands' blijven losstaand blocker)
+origin/main src/public/content,being built as a cooperative / Coöperatie U.A.,0,CLEAN
+origin/main reports/* (historische rapporten),Coöperatie U.A. (citaat van de OUDE claim),meerdere,"HISTORICAL - quotes in audit-rapporten, geen live content"
+worktree vareya-ai-kr (feat/south-korea-cluster),being built as a cooperative (Coöperatie U.A.),1 (src/app/about/page.tsx:48),STALE_BRANCH_RISK - NIET mergen zonder fix
+worktree vareya-ai-m2 (lead-dashboard-webhook),being built as a cooperative (Coöperatie U.A.),1 (src/app/about/page.tsx:48),STALE_BRANCH_RISK - NIET mergen zonder fix
+"lokale main-worktree (67b4c78, WIP)",developing member-owned / oude teksten,ja (achter op origin/main),STALE_WORKTREE - pull na WIP-commit (bestaande blocker B-10)
+kr/m2/main-worktrees,under 3 minutes (about/contact/scan/CTABanner/pages.ts),meerdere,STALE_BRANCH_RISK - idem
+marketing/scan-first-outreach.md (deze run),under 3 minutes,0 (gefixt naar 'a few minutes'),FIXED_THIS_RUN (intern doc)
+prototypes/vareya-visual-prototype.html (deze run),takes under 3 minutes,0 (gefixt),FIXED_THIS_RUN (intern prototype)
+test-results/* (oude playwright-snapshots in git),cooperative members / oude pagina-snapshots,enkele,"HISTORICAL - snapshots, geen content"

@@ -30,7 +30,7 @@ Hi [name],
 
 Scaling skincare into Europe usually raises the same questions: destination mix, parcel profile, customs and returns. Vareya built a short scan around exactly those inputs — it mirrors what our qualification team asks before any quotation.
 
-If your team is evaluating EU fulfilment options, this check takes under 3 minutes: https://vareya.ai/free-rate-scan/
+If your team is evaluating EU fulfilment options, this check takes a few minutes: https://vareya.ai/free-rate-scan/
 
 Best,
 Jos — Vareya

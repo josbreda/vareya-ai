@@ -1,0 +1,7 @@
+message_id,prospect,recipient,type,sent_by,sent_at_utc,provider_message_id,status
+A1,Carrier Company,info@carriercompany.co.uk,follow-up,Hermes (MS Graph),2026-09-01T16:03:09Z,AAMkADcw…APU-ziAAA=,SENT
+A2,KOMANA,info@komana-design.com,follow-up,Hermes (MS Graph),2026-09-01T16:03:12Z,AAMkADcw…APU-zjAAA=,SENT
+A3,Fergus James,info@fergusjames.com,follow-up,Hermes (MS Graph),2026-09-01T16:03:16Z,AAMkADcw…APU-zkAAA=,SENT
+B1,Edge of Ember,hello@edgeofember.com,new outreach,"Hermes (MS Graph), na verbatim-correctie",2026-09-01T20:14:57Z,AAMkADcw…APU-zqAAA=,SENT
+B2,Innermost,hello@liveinnermost.com,new outreach,Hermes (MS Graph),2026-09-01T16:03:19Z,AAMkADcw…APU-zlAAA=,SENT
+B3,Bon Maxie,support@bonmaxie.com.au,new outreach,buiten Hermes om (per opdrachtcontext),n.t.b. (niet door Hermes),(niet in Hermes-log),SENT_EXTERNALLY
