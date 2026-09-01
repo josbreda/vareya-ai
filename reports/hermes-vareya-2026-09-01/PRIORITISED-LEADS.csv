@@ -1,0 +1,9 @@
+lead_id,company,domain,contact_name,contact_role,contact_confidence,channels_verified,status,fit_score,last_contact_date,reply_status,follow_up_status,exclusion_reason,source,checked_date
+gb-carriercompany,Carrier Company,carriercompany.co.uk,Tina Guillory,Founder,medium (LinkedIn metadata + press; geen werk-email),3,contacted,73,none,none,FOLLOW_UP_DUE (Raymond verstuurd 24-08; venster vanaf 31-08),,international-batch-2026-07-27,2026-09-01
+gb-edgeofember,Edge of Ember,edgeofember.com,none,n/a,none,2,new,71,none,none,NONE (draft gereed),,international-batch-2026-07-27,2026-09-01
+ch-komana,KOMANA,komana-design.com,none,n/a,none,2,contacted,71,2026-08-18,none,FOLLOW_UP_DUE (Raymond verstuurd 24-08),,international-batch-2026-07-27,2026-09-01
+ae-fergusjames,Fergus James,fergusjames.com,none,n/a,none,3,contacted,69,none,none,FOLLOW_UP_DUE (Raymond verstuurd 24-08),,international-batch-2026-07-27,2026-09-01
+au-bonmaxie,Bon Maxie,bonmaxie.com.au,none,n/a,none,3,contacted,67,2026-08-18,none,NONE (draft gereed),,international-batch-2026-07-27,2026-09-01
+gb-innermost,Innermost,innermostglobal.com,Shivraj Bassi,Founder & CEO,medium (LinkedIn metadata; geen werk-email),4,new,65,none,none,NONE (draft gereed),,international-batch-2026-07-27,2026-09-01
+us-notbasics,Not Basics,notbasics.com,n/a,n/a,n/a,2,contacted,54,2026-08-27 (sent_at),none,VERZONDEN 27-08 dashboard; follow-up-venster ~03-09,,international-batch-2026-07-27,2026-09-01
+gb-tomstrunks,Tom's Trunks,tomstrunks.com,n/a,n/a,n/a,2,contacted,54,2026-08-27 (sent_at),none,VERZONDEN 27-08 dashboard; follow-up-venster ~03-09,,international-batch-2026-07-27,2026-09-01

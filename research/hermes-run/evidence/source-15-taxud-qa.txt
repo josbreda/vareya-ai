@@ -1,0 +1,5 @@
+Part 3.3.1. Definition of item of the Guidance explains with extended examples in H1, H6 and H7, that the EUR 3 customs duty will be applied per item line, so economic operators must be encouraged to use one line per goods sharing tariff classification in H7 and consider the possibility to include the quantity in 'Description of goods'.
+
+If IOSS holders are to become declarants, they have to apply for the CGU application in the MS where they intend to have the customs declarations lodged (MS competent for the recovery of the customs debt).
+
+The total to be paid per declaration is the sum over all declaration goods items (or the product of 3 EUR multiplied by the number of declaration goods items).

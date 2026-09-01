@@ -1,0 +1,167 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202600382",
+      "title": "Council Regulation (EU) 2026/382",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "From 1 July 2026 until 1 July 2028, a customs duty of EUR 3 per item in a consignment the intrinsic value of which does not exceed a total of EUR 150 shall apply instead of the relief eliminated pursuant to Article 1 of this Regulation.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://taxation-customs.ec.europa.eu/news/guidance-and-legal-text-temporary-flat-fee-low-value-imports-which-will-apply-until-1-july-2028-2026-06-08_en",
+      "title": "DG TAXUD guidance on EUR 3 duty",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "€3 temporary customs duty (from 1 July 2026): is a fixed duty applied per item (not per parcel) for consignments with a value up to €150.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/02/11/council-gives-final-green-light-to-new-customs-duty-rules-for-small-parcels",
+      "title": "Council final green light",
+      "accessed": "2026-09-01"
+    },
+    {
+      "id": 4,
+      "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/03/26/eu-customs-council-and-parliament-agree-on-landmark-reform",
+      "title": "Council-Parliament provisional customs reform agreement",
+      "accessed": "2026-09-01"
+    },
+    {
+      "id": 5,
+      "url": "https://www.douane.nl/onderwerpen/invoer-en-uitvoer/invoer/aangifte-doen/aangifte-doen-bij-e-commerce/invoerrechten-betalen-voor-e-commerce",
+      "title": "Douane NL e-commerce invoerrechten",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "Sinds 1 juli 2026 betaalt u als aangever € 3 invoerrechten voor e-commercezendingen van buiten de Europese Unie (EU) met een waarde van maximaal € 150.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202601022",
+      "title": "Commission Delegated Regulation (EU) 2026/1022",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "‘item’ means one or more goods in a consignment sharing the same tariff classification, description and, if provided in accordance with the data requirements applicable to the relevant customs declaration or to the data to be provided or made available to the customs authorities, origin.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32026R1200",
+      "title": "Commission Implementing Regulation (EU) 2026/1200",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "Where a customs declaration covers two or more items of goods, the particulars stated in that declaration relating to each item shall be regarded as constituting a separate customs declaration.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://taxation-customs.ec.europa.eu/document/download/053e5b4e-f0be-4f20-9a23-3e3b659a6676_en?filename=Customs+Guidance+on+EUR+3+customs+duty.pdf",
+      "title": "DG TAXUD EUR 3 guidance 2 June 2026",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "The existing VAT schemes for imported goods in a consignment up to EUR 150 (IOSS, Special Arrangement and standard procedure) will not be changed because of the implementation of the temporary EUR 3 customs duty.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://www.douane.nl/onderwerpen/invoer-en-uitvoer/invoer/aangifte-doen/handling-fee",
+      "title": "Douane NL Europese handling fee",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "De hoogte van de handelingskostenvergoeding is nog niet bekend. We verwachten dat de handelingskostenvergoeding op 1 november wordt ingevoerd.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "url": "https://www.europarl.europa.eu/news/en/press-room/20260323IPR38815/deal-reached-on-union-customs-code-reform",
+      "title": "EP provisional Union Customs Code deal",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "The Commission will establish the level of the fee and reassess it every two years. Member states will start collecting it as soon as the necessary information technology (IT) system becomes operational, and in any case no later than 1 November 2026.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "url": "https://www.europarl.europa.eu/committees/en/union-customs-code/product-details/20241129CDT13867",
+      "title": "EP Union Customs Code subject file",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "Before the new legislation can take effect, the agreement must still be formally approved by the European Parliament and the Council.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "url": "https://taxation-customs.ec.europa.eu/customs/eu-customs-reform_en",
+      "title": "EC EU Customs Reform",
+      "accessed": "2026-09-01"
+    },
+    {
+      "id": 13,
+      "url": "https://www.consilium.europa.eu/en/policies/modernising-the-eu-customs-union",
+      "title": "Council modernising EU customs union",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "Under the terms of the agreement, the data hub will become operational for e-commerce goods on 1 July 2028. A phased rollout will bring all movement of goods into its scope by 1 March 2034.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "url": "https://www.douane.nl/eherkenning-deco-4-augustus",
+      "title": "Douane NL DECO monthly statements",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "Bedrijven die het aangiftesysteem DECO gebruiken voor e-commercegoederen krijgen vanaf 5 augustus een maandelijkse afrekening van de invoerrechten.",
+          "added": "2026-09-01"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "url": "https://taxation-customs.ec.europa.eu/document/download/8350b1aa-935a-4b80-a349-385b36292fbe_en?filename=Questions%20and%20answers%20on%203%20EUR%20Guidance%20MS%20and%20Economic%20operators_clean15062026.pdf",
+      "title": "DG TAXUD EUR 3 Q&A",
+      "accessed": "2026-09-01",
+      "quotes": [
+        {
+          "text": "The total to be paid per declaration is the sum over all declaration goods items (or the product of 3 EUR multiplied by the number of declaration goods items).",
+          "added": "2026-09-01"
+        }
+      ]
+    }
+  ]
+}

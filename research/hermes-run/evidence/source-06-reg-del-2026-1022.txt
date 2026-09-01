@@ -1,0 +1,9 @@
+‘item’ means one or more goods in a consignment sharing the same tariff classification, description and, if provided in accordance with the data requirements applicable to the relevant customs declaration or to the data to be provided or made available to the customs authorities, origin.
+
+The EUR 3 customs duty applies regardless of whether the goods are declared in the H1, H6 or H7 declaration systems.
+
+This Regulation shall enter into force the day following its publication in the Official Journal of the European Union.
+
+It shall apply from 1 July 2026.
+
+By way of derogation from paragraph 2, point (2), letters (a) and (b) of the Annex shall apply from 1 November 2026. However, operators may voluntarily provide the data as per point (2), letters (a) and (b) of the Annex from 1 July 2026.

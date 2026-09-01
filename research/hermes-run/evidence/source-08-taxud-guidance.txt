@@ -1,0 +1,5 @@
+The intention of Council regulation (EU) No 2026/382 is for the EUR 3 customs duty to apply to all goods in consignments up to EUR 150 sold in distance sales, regardless of the VAT scheme used (IOSS, Special Arrangements or Standard VAT) and regardless of whether the goods are declared in a H1, H6 or H7 declaration.
+
+In essence and due to the limitations imposed by the IT systems, the EUR 3 customs duty will automatically apply per declaration line irrespective of the quantity (number of the articles) in that declaration line, provided that the intrinsic value of all goods included in the declaration does not exceed EUR 150.
+
+The existing VAT schemes for imported goods in a consignment up to EUR 150 (IOSS, Special Arrangement and standard procedure) will not be changed because of the implementation of the temporary EUR 3 customs duty.
