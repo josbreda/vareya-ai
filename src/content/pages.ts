@@ -118,7 +118,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/why-vareya-ai/": {
     title: "Why Vareya.ai: A Cooperative Fulfilment Vision | Vareya",
     description:
-      "The vision behind Vareya: operational fulfilment from Breda and a developing cooperative model for member ownership.",
+      "The vision behind Vareya: operational fulfilment from Breda and a possible future cooperative model for member ownership.",
     canonical: `${BASE}/why-vareya-ai/`,
   },
   "/knowledge/": {

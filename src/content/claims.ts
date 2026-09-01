@@ -100,7 +100,10 @@ export const PROHIBITED_TERMS = [
 // "best" is ONLY permitted inside CLAIM_VOLUME verbatim — audit separately
 
 // ============================================================================
-// Approved shipping destinations v1.2 (do not add/remove)
+// Approved shipping destinations v1.6 — 41 concrete destinations.
+// The 4 confirmed 2026-09-01 (Raymond Decision 3): Saudi Arabia, South Korea,
+// Turkey, United Arab Emirates. "Rest of the World" is never a country name;
+// forms use "Other destination". Publish the list, not a marketing number.
 // ============================================================================
 
 export const APPROVED_DESTINATIONS = [

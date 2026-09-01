@@ -142,12 +142,12 @@ export default function KnowledgePage() {
               Beyond the warehouse
             </p>
             <h2 id="cooperative-path" className="text-3xl font-bold text-ink">
-              Explore why Vareya is developing a cooperative model
+              Explore Vareya&apos;s possible future cooperative model
             </h2>
             <p className="mt-4 leading-7 text-muted">
-              Read the distinction between the operational fulfilment service and Raymond&apos;s
-              developing vision for member ownership, democratic governance and allocation of
-              any eligible surplus.
+              Read the distinction between the operational fulfilment service and the
+              exploration of a possible future cooperative model — member ownership,
+              democratic governance and allocation of any eligible surplus.
             </p>
           </div>
           <Link

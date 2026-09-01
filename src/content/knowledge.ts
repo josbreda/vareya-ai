@@ -55,7 +55,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     slug: "what-is-cooperative-fulfilment",
     title: "What is cooperative fulfilment?",
     description:
-      "A practical explanation of member-owned fulfilment, shared governance and the questions a developing cooperative must answer.",
+      "A practical explanation of member-owned fulfilment, shared governance and the questions a possible future cooperative must answer.",
     summary:
       "How member ownership could change the relationship between a fulfilment operation and the brands it serves.",
     publishedAt: "2026-08-07",
@@ -66,7 +66,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         heading: "The idea behind cooperative fulfilment",
         paragraphs: [
           "A conventional fulfilment provider supplies a service to its customers. A cooperative changes that relationship: eligible customers can also become members of the organisation that operates the service.",
-          "In Raymond's vision for Vareya, participating brands would combine their fulfilment demand while sharing ownership of the cooperative. Member rights, responsibilities and voting arrangements would be set out in the cooperative's formal documents rather than left as a marketing promise.",
+          "In Vareya's vision, participating brands would combine their fulfilment demand while sharing ownership of the cooperative. Member rights, responsibilities and voting arrangements would be set out in the cooperative's formal documents rather than left as a marketing promise.",
           "This distinction matters. Shared ownership is not the same as asking every member to run a warehouse. The operational team can still manage receiving, storage, picking, packing and dispatch while members take part in the strategic decisions reserved for them.",
         ],
       },
@@ -88,7 +88,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         paragraphs: [
           "A cooperative legal form does not replace operational due diligence. A brand should still assess product fit, sales-channel integration, stock intake, dispatch requirements, returns and reporting before choosing a fulfilment setup.",
           CLAIM_VOLUME,
-          "Vareya is developing the cooperative layer alongside its existing fulfilment operation in Breda. The first participating brands are expected to help test the governance principles against practical warehouse needs before final membership terms are presented.",
+          "Vareya is exploring a possible future cooperative model alongside its existing fulfilment operation in Breda. If it moves forward, the first participating brands would help test the governance principles against practical warehouse needs before final membership terms are presented.",
         ],
       },
     ],

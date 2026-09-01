@@ -1,9 +1,9 @@
 Document: Vareya.ai Claims Register
-Version: 1.5
+Version: 1.6
 Status: Approved for implementation
 Commercial approval: Raymond
 Operational owner: Jos
-Last updated: 21 August 2026
+Last updated: 1 September 2026
 
 # Claims Register
 
@@ -39,6 +39,37 @@ Last updated: 21 August 2026
 
 Approved 9 August 2026 by Raymond (commercial approval) — see `DECISIONS_FOR_RAYMOND.md` point 9 and `ASSUMPTIONS.md` A-009–A-018. The percentage of clients using Shopify is not published until dated source data is available (see A-012); only the ShipHero/Shopify integration fact itself is approved.
 
+## Decisions approved 1 September 2026 (Raymond)
+
+### Decision 1 (B) — Cooperative status
+
+The cooperative remains a future vision only. Nothing may present a cooperative as already existing.
+
+- Allowed direction NL: "Vareya onderzoekt een mogelijk toekomstig coöperatief model."
+- Allowed direction EN: "Vareya is exploring a possible future cooperative model."
+- Prohibited: "Vareya is a cooperative", "Vareya Coöperatie U.A.", "Members of the cooperative" as a current situation, and any phrasing presenting founding as a completed fact.
+- Scope: website, metadata, schema, llms.txt, repositories, public Markdown files, presentation texts and content data. Historical strategy information stays internal; it must not be made publicly more factual than this decision allows.
+
+### Decision 2 (B) — Thuiswinkel membership
+
+Vareya is not currently a Thuiswinkel member and must not be presented as one.
+
+- Claim status: **PROHIBITED_UNTIL_NEW_VERIFIED_MEMBERSHIP**.
+- Remove public logos, badges, claims, alt-texts, metadata, structured data, sameAs references and text suggesting current membership. Archive assets rather than destroy them where archiving suffices.
+- After deployment, verify live: zero unwanted hits.
+
+### Decision 3 — Destination confirmation (4 countries)
+
+Raymond confirmed on 1 September 2026: South Korea, Saudi Arabia, Turkey and the United Arab Emirates are operational shipping destinations (parcel shipments). Carriers used: PostNL, Asendia, FedEx, DHL Express. Customs processing is handled through the selected carrier. Returns: available by agreement. No additional Vareya-specific volume restrictions were given. Operational since: the founding of Vareya in 2016 (owner-confirmed; historical evidence required before any public "since 2016" claim — until then INTERNAL_OWNER_CONFIRMED).
+
+- Concrete destinations: 37 existing + 4 now confirmed = **41 concrete destinations**. "Rest of the World" does not count as a country (unchanged rule).
+- Do not claim that each of PostNL, Asendia, FedEx and DHL Express individually serves all four countries unless proven per country. Maintain a service matrix (destination × carrier × service × outbound/returns availability × customs process × evidence × last verified × conditions).
+- Publish a provable country list rather than a standalone marketing number.
+
+### Decision 4 (A) — Commercial activation (exact scope)
+
+Authorised batch only: the 26 decision-maker enrichments, the two pre-identified duplicate merges (carriercompany, komana), the three follow-up emails and the three new outreach emails. No automatic follow-up emails without new human review. Sending is one-by-one, never bulk.
+
 ## Entity decisions approved 21 August 2026 (Raymond)
 
 - Email changes to info@vareya.ai; primary domain is https://vareya.ai. Both owner-confirmed.
@@ -69,7 +100,15 @@ A second, narrowly scoped exception (approved by Raymond 9 August 2026, see `DEC
 
 Vareya ships to the following countries: Australia, Austria, Belgium, Brazil, Bulgaria, Canada, China, Croatia, Cyprus, Czech Republic, Denmark, Estonia, Finland, France, Germany, Greece, Hong Kong, Hungary, Ireland, Italy, Japan, Latvia, Lithuania, Luxembourg, Malta, New Zealand, Norway, Poland, Portugal, Romania, Saudi Arabia, Slovakia, Slovenia, South Korea, Spain, Sweden, Switzerland, Turkey, United Arab Emirates, United Kingdom and United States.
 
-Saudi Arabia, South Korea, Turkey and the United Arab Emirates were added 9 August 2026 (Raymond, `DECISIONS_FOR_RAYMOND.md` point 12) without a separate per-country shipping confirmation, superseding the earlier recommendation to require one.
+Saudi Arabia, South Korea, Turkey and the United Arab Emirates were added 9 August 2026 (Raymond, `DECISIONS_FOR_RAYMOND.md` point 12). Their operational status was owner-confirmed on 1 September 2026 (Decision 3): parcel shipments via the selected carrier, returns available by agreement, no additional Vareya-specific volume restrictions confirmed.
+
+Required exact wording for the four confirmed destinations where public copy describes their service conditions:
+
+- Volume/restrictions: "No additional Vareya-specific volume restrictions have been confirmed. Shipments remain subject to product qualification, carrier acceptance and destination customs requirements."
+- Customs: "Customs processing is handled through the selected carrier, based on complete and accurate shipment documentation. Duties, taxes and importer obligations may apply."
+- Returns: "Returns handling is available by agreement."
+
+"Operational since 2016" is INTERNAL_OWNER_CONFIRMED and may only be published when historical evidence supports it.
 
 "Rest of the World" must not be used as a country name anywhere on the site. Forms that need a catch-all option may use "Other destination" instead. This naming rule is unchanged by the point-12 decision above and stays in force regardless of which countries are on the approved list.
 
@@ -112,7 +151,8 @@ Jos is the internal lead owner of this response. Public website copy must refer 
 
 ## Implementation notes
 
-1. 24 August 2026 (v1.5): PostNL evidence reviewed. Direct external evidence (PostNL International account-manager e-mail, 2026 agreement + meeting request) classified as evidence class A; owner operational facts integrated. Strongest supportable wording established (own shipping agreements + direct cooperation with PostNL International and operational teams); "strategic partner" remains prohibited. ShipHero operational facts recorded as owner-confirmed (WMS environment manages inventory/fulfilment/returns; Shopify via API; carrier contracts incl. PostNL integrated for label generation; reference exchange possible; contact Daniel Lawson) — page wording unchanged until external confirmation where noted. Protected customer evidence pool created (10 customers; NO-CONTACT rule). Human-input pipeline opened for Onboarding and Direct Entry UK topics.
+1. 1 September 2026 (v1.6): Raymond decisions 1-4 recorded (cooperative = future vision only; Thuiswinkel PROHIBITED_UNTIL_NEW_VERIFIED_MEMBERSHIP; 4 destinations owner-confirmed with service-matrix rules; commercial activation authorisation for the exact prepared batch). Public cooperative copy aligned to "exploring a possible future cooperative model" direction (about, why-vareya-ai, knowledge hub + cooperative article, metadata).
+2. 24 August 2026 (v1.5): PostNL evidence reviewed. Direct external evidence (PostNL International account-manager e-mail, 2026 agreement + meeting request) classified as evidence class A; owner operational facts integrated. Strongest supportable wording established (own shipping agreements + direct cooperation with PostNL International and operational teams); "strategic partner" remains prohibited. ShipHero operational facts recorded as owner-confirmed (WMS environment manages inventory/fulfilment/returns; Shopify via API; carrier contracts incl. PostNL integrated for label generation; reference exchange possible; contact Daniel Lawson) — page wording unchanged until external confirmation where noted. Protected customer evidence pool created (10 customers; NO-CONTACT rule). Human-input pipeline opened for Onboarding and Direct Entry UK topics.
 2. 21 August 2026 (v1.4): email updated site-wide from info@vareya.nl to info@vareya.ai (owner-confirmed); KVK/VAT recorded as approved published facts; PostNL wording downgraded from "strategic partner and main carrier" to "main carrier" pending evidence review; domain-consolidation scope recorded (vareya.nl, vareya.com, go.vareya); directory submissions approved. See docs/RAYMOND-AI-DECISIONS.md.
 
 2. 9 August 2026 (v1.2): the destination list in content/shopify-fulfilment-europe.md, content/home.md, content/fulfilment-scan.md, content/eu-fulfilment-us-brands.md, content/eu-fulfilment.md, content/request-fulfilment-quote.md and content/eu-fulfilment-uk-brands.md was updated in place to add Saudi Arabia, South Korea, Turkey and United Arab Emirates, matching the approved shipping destinations list above. No other copy on these pages was changed.

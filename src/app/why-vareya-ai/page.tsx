@@ -11,12 +11,12 @@ import { breadcrumbSchema } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Why Vareya.ai: A Cooperative Fulfilment Vision | Vareya",
   description:
-    "Raymond's vision for cooperative fulfilment: developing democratic member ownership, shared scale and rules for returning eligible surplus to members.",
+    "Vareya's vision for cooperative fulfilment: a possible future cooperative model with democratic member ownership, shared scale and rules for returning eligible surplus to members.",
   alternates: { canonical: "https://vareya.ai/why-vareya-ai/" },
   openGraph: {
     title: "Why Vareya.ai: A Cooperative Fulfilment Vision | Vareya",
     description:
-      "A developing member-owned model for organising European e-commerce fulfilment together.",
+      "A possible future member-owned model for organising European e-commerce fulfilment together.",
     url: "https://vareya.ai/why-vareya-ai/",
     type: "website",
   },
@@ -31,7 +31,7 @@ const PRINCIPLES = [
   {
     number: "02",
     title: "Shared scale",
-    body: "Participating brands combine fulfilment demand. The cooperative can then organise shared warehouse, carrier and technology requirements around the group rather than around one brand alone.",
+    body: "Participating brands combine fulfilment demand. The cooperative would then organise shared warehouse, carrier and technology requirements around the group rather than around one brand alone.",
   },
   {
     number: "03",
@@ -95,8 +95,9 @@ export default function WhyVareyaPage() {
               A different kind of fulfilment company
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-white/70 sm:text-xl">
-              Vareya is developing a cooperative model in which the brands using the
-              operation can help own it, shape it and share in the value it creates.
+              Vareya is exploring a possible future cooperative model in which the brands
+              using the operation could help own it, shape it and share in the value it
+              creates.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -122,7 +123,7 @@ export default function WhyVareyaPage() {
             Clear status
           </span>
           <p className="text-sm leading-6 text-white/70">
-            The cooperative structure and membership terms are being developed. This page
+            The cooperative structure and membership terms are being explored. This page
             explains the intended direction; it is not a completed membership offer or a
             substitute for the cooperative&apos;s final legal documents.
           </p>
@@ -176,8 +177,9 @@ export default function WhyVareyaPage() {
               What exists today — and what comes next
             </h2>
             <p className="mt-5 leading-7 text-muted">
-              The practical fulfilment operation is the foundation. The cooperative layer is
-              being designed alongside it and needs its own formal decisions.
+              The practical fulfilment operation is the foundation. A possible future
+              cooperative model is being explored alongside it and would need its own
+              formal decisions.
             </p>
           </div>
 
@@ -268,7 +270,7 @@ export default function WhyVareyaPage() {
             <p className="mt-3 leading-7 text-muted">
               Brands should first assess whether the operation fits their product, volume,
               channels and markets. {CLAIM_VOLUME} If the operational fit is sound, the
-              developing member model becomes the next conversation.
+              member model — if it moves forward — becomes the next conversation.
             </p>
           </div>
         </div>
@@ -281,7 +283,8 @@ export default function WhyVareyaPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl leading-7 text-white/75">
             Share your current order profile, channels, product category and target markets.
-            Vareya can then review the operation before discussing the developing member model.
+            Vareya can then review the operation before discussing the possible future
+            member model.
           </p>
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Link

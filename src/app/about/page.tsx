@@ -45,7 +45,7 @@ export default function AboutPage() {
               smaller parcel products. {CAPABILITIES.volume}
             </p>
             <p>
-              Vareya is developing a cooperative model in which the brands it serves can become members, sharing ownership and a voice in the strategic decisions reserved for them. The cooperative&apos;s legal form and membership terms will be set out in its formal documents.
+              Vareya is exploring a possible future cooperative model. If it moves forward, the brands Vareya serves could become members, sharing ownership and a voice in the strategic decisions reserved for them. The cooperative&apos;s legal form and membership terms would be set out in its formal documents.
             </p>
           </div>
         </div>
