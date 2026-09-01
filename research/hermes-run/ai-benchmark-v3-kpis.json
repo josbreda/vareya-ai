@@ -1,0 +1,115 @@
+{
+ "frozen_v3": {
+  "date": "2026-09-01",
+  "file": "ai-query-benchmark-v3.csv",
+  "total_tested_rows": 528,
+  "error_rows": 264,
+  "mention_rate_pct": 0.0,
+  "top3_rate_pct": 0.0,
+  "top5_rate_pct": 0.0,
+  "primary_recommendation_rate_pct": 0.0,
+  "citation_rate_pct": 0.0,
+  "qualified_rows": 190,
+  "qualified_mention_rate_pct": 0.0,
+  "top_primary_recommendations": [
+   [
+    "ShipBob",
+    102
+   ],
+   [
+    "DHL",
+    32
+   ],
+   [
+    "Active Ants",
+    26
+   ],
+   [
+    "Amazon FBA",
+    15
+   ],
+   [
+    "PostNL",
+    15
+   ],
+   [
+    "xpo",
+    14
+   ],
+   [
+    "Fulfilment Solutions",
+    9
+   ],
+   [
+    "Hive",
+    6
+   ],
+   [
+    "Sendcloud",
+    5
+   ],
+   [
+    "filment.nl",
+    5
+   ],
+   [
+    "FBA",
+    4
+   ],
+   [
+    "CEVA",
+    4
+   ]
+  ],
+  "top_competitors_mentioned": [
+   [
+    "ShipBob",
+    291
+   ],
+   [
+    "DHL",
+    204
+   ],
+   [
+    "PostNL",
+    128
+   ],
+   [
+    "Hive",
+    127
+   ],
+   [
+    "Zendbox",
+    90
+   ],
+   [
+    "Active Ants",
+    86
+   ],
+   [
+    "FBA",
+    72
+   ],
+   [
+    "Amazon FBA",
+    68
+   ],
+   [
+    "Sendcloud",
+    64
+   ],
+   [
+    "Huboo",
+    64
+   ],
+   [
+    "CEVA",
+    51
+   ],
+   [
+    "Shipmonk",
+    48
+   ]
+  ]
+ }
+}

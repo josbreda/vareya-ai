@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jmconcepts — ideeën tot leven brengen</title>
+<meta name="description" content="jmconcepts helpt je van idee naar realiteit. Geen dikke rapporten, geen hoge kosten — gewoon doen, met de technologie van nu.">
+  <!-- Open Graph -->
+  <meta property="og:title" content="jmconcepts — ideeën tot leven brengen">
+  <meta property="og:description" content="Van eerste idee naar iets dat werkt. Persoonlijk, betaalbaar, technologie-gedreven.">
+  <meta property="og:image" content="https://jmconcepts.cloud/logo.jpg">
+  <meta property="og:url" content="https://jmconcepts.cloud/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="nl_NL">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="jmconcepts — ideeën tot leven brengen">
+  <meta name="twitter:description" content="Van eerste idee naar iets dat werkt.">
+  <meta name="twitter:image" content="https://jmconcepts.cloud/logo.jpg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "jmconcepts",
+  "url": "https://jmconcepts.cloud",
+  "logo": "https://jmconcepts.cloud/logo.jpg",
+  "description": "Ideeën tot leven brengen — persoonlijk, betaalbaar, technologie-gedreven.",
+  "contactPoint": [{
+    "@type": "ContactPoint",
+    "email": "info@jmconcepts.nl",
+    "contactType": "Sales",
+    "areaServed": "NL"
+  }]
+}
+  </script>
+<style>
+  :root {
+    --paper: #f7f9fb;
+    --surface: #ffffff;
+    --ink: #16212a;
+    --ink-soft: #4d5a66;
+    --muted: #7d8a96;
+    --line: #dde4ea;
+    --accent: #069bdf;
+    --accent-deep: #027bb4;
+    --accent-soft: #e3f3fb;
+    --max: 860px;
+    --serif: "Fraunces-fallback", Georgia, "Times New Roman", serif;
+    --sans: "Inter-fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    font-family: var(--sans);
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- Header ---------- */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .logo img { width: 36px; height: 36px; border-radius: 50%; display: block; }
+  .logo span { color: var(--accent); }
+  .nav-links { display: flex; gap: 28px; align-items: center; }
+  .nav-links a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 0.92rem;
+    padding: 10px 2px;
+    border-bottom: 2px solid transparent;
+    transition: color .18s ease, border-color .18s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); border-bottom-color: var(--accent); outline: none; }
+  .nav-links a.nav-cta {
+    background: var(--ink);
+    color: #fff !important;
+    padding: 10px 20px !important;
+    border-radius: 999px;
+    border: none !important;
+    font-weight: 500;
+  }
+  .nav-links a.nav-cta:hover { background: var(--accent); }
+  @media (max-width: 620px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    padding: clamp(64px, 10vw, 120px) 0 clamp(48px, 8vw, 80px);
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    text-wrap: pretty;
+  }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero .intro {
+    margin-top: 28px;
+    font-size: clamp(1.05rem, 1.6vw, 1.2rem);
+    color: var(--ink-soft);
+    max-width: 56ch;
+    text-wrap: pretty;
+  }
+  .hero .intro strong { color: var(--ink); }
+  .hero-actions {
+    margin-top: 36px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    border-radius: 999px;
+    font-size: 0.98rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform .15s ease, background .18s ease, border-color .18s ease;
+    min-height: 44px;
+  }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--ink); color: #fff; }
+  .btn-primary:hover, .btn-primary:focus-visible { background: var(--accent); outline: none; }
+  .btn-ghost { color: var(--ink); border: 1px solid var(--line); background: transparent; }
+  .btn-ghost:hover, .btn-ghost:focus-visible { border-color: var(--ink); outline: none; }
+  .btn .arrow { transition: transform .18s ease; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* ---------- Sections ---------- */
+  section { padding: clamp(56px, 8vw, 100px) 0; }
+  section h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.7rem, 3.4vw, 2.2rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: clamp(24px, 3vw, 36px);
+    text-wrap: pretty;
+  }
+  section h2 em { font-style: italic; color: var(--accent); }
+
+  /* ---------- Wat ik doe ---------- */
+  .doe-lijst { display: grid; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+  .doe-item {
+    background: var(--surface);
+    padding: 28px 30px;
+  }
+  .doe-item h3 {
+    font-size: 1.08rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  .doe-item h3 .icon { font-size: 1.3rem; }
+  .doe-item p { font-size: 0.96rem; color: var(--ink-soft); text-wrap: pretty; }
+
+  /* ---------- Hoe ---------- */
+  .hoe { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .hoe p { color: var(--ink-soft); max-width: 60ch; margin-bottom: 16px; text-wrap: pretty; }
+  .hoe p:last-child { margin-bottom: 0; }
+
+  /* ---------- Project ---------- */
+  .project-card {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: clamp(32px, 5vw, 56px);
+    background: var(--surface);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: clamp(28px, 5vw, 64px);
+    align-items: center;
+  }
+  .project-card h3 {
+    font-family: var(--serif);
+    font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+    font-weight: 600;
+    margin-bottom: 10px;
+    letter-spacing: -0.015em;
+  }
+  .project-card p { color: var(--ink-soft); margin-bottom: 12px; text-wrap: pretty; }
+  .project-card p:last-of-type { margin-bottom: 20px; }
+  .project-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 22px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    font-family: var(--serif);
+    font-size: 0.95rem;
+  }
+  .project-badge .arrow-small { color: var(--accent); }
+  .project-badge strong { font-weight: 600; }
+  @media (max-width: 640px) { .project-card { grid-template-columns: 1fr; } }
+
+  /* ---------- Contact ---------- */
+  .contact-simple {
+    text-align: left;
+  }
+  .contact-simple p {
+    color: var(--ink-soft);
+    max-width: 52ch;
+    margin-bottom: 24px;
+    text-wrap: pretty;
+  }
+
+  /* ---------- Footer ---------- */
+  footer { border-top: 1px solid var(--line); padding: 32px 0; }
+  .footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .footer-inner .logo { font-size: 1.05rem; }
+
+  /* ---------- Reveal ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><img src="logo.jpg" alt="jmconcepts logo">jm<span>concepts</span></a>
+    <nav class="nav-links" aria-label="Hoofdnavigatie">
+      <a href="#wat">Wat ik doe</a>
+      <a href="#hoe">Waarom</a>
+      <a href="samenwerking.html">Project: Samen Verzonden</a>
+      <a href="bereken.html">Bereken je besparing</a>
+      <a href="blog/index.html">Blog</a>
+      <a class="nav-cta" href="#contact">Stuur me een bericht</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- Hero -->
+  <section class="hero wrap" aria-label="Introductie">
+    <h1>Je hebt een idee. <em>Nu nog realiteit.</em></h1>
+    <p class="intro">Ik help je van losse gedachte naar iets dat werkt. Geen dikke rapporten, geen ingewikkeld gedoe, geen rekening waar je van schrikt. <strong>Gewoon doen — met de technologie die dat nu eindelijk mogelijk maakt.</strong></p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#contact">Vertel me je idee <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="samenwerking.html">Bekijk een voorbeeldproject</a>
+    </div>
+  </section>
+
+  <!-- Wat ik doe -->
+  <section id="wat">
+    <div class="wrap">
+      <h2 class="reveal">Wat ik voor je kan doen</h2>
+      <div class="doe-lijst">
+        <div class="doe-item reveal">
+          <h3><span class="icon">💡</span> Van idee naar concept</h3>
+          <p>Je hebt een idee maar weet niet hoe je het concreet maakt? Samen scherpen we het aan: voor wie is het, wat maakt het anders, hoe breng je het naar de praktijk.</p>
+        </div>
+        <div class="doe-item reveal">
+          <h3><span class="icon">🧭</span> Strategie zonder poespas</h3>
+          <p>Een heldere blik op je plannen, aanbod of positionering. Praktisch advies waar je direct mee verder kunt — geen wollig consultancy-taalgebruik.</p>
+        </div>
+        <div class="doe-item reveal">
+          <h3><span class="icon">🚀</span> Realiseren met nieuwe technologie</h3>
+          <p>AI, no-code tools, slimme automatisering — wat vroeger een team van vijf en een ton budget kostte, kan nu met één persoon en een goed plan. Ik laat je zien hoe.</p>
+        </div>
+        <div class="doe-item reveal">
+          <h3><span class="icon">🤝</span> Samen bouwen, niet alleen</h3>
+          <p>Ik blijf betrokken tot het werkt. Eén aanspreekpunt, korte lijnen, en als er meer expertise nodig is schakel ik de juiste mensen in — maar jij houdt het simpel.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Waarom -->
+  <section class="hoe" id="hoe">
+    <div class="wrap">
+      <h2 class="reveal">Waarom ik dit doe</h2>
+      <div class="reveal">
+        <p>Ik ben zelf enorm geholpen door nieuwe technologie. AI, slimme tools, de snelheid waarmee je tegenwoordig iets kunt bouwen en testen — dat heeft voor mij deuren geopend die eerst gesloten waren. En ik dacht: als dit mij zo helpt, waarom zou ik anderen daar dan niet mee helpen?</p>
+        <p>Dus dat is wat jmconcepts is. Geen bureau met uurtarieven en dikke voorstellen. Gewoon iemand die snapt hoe je een idee concreet maakt, en die de tools kent om dat snel en betaalbaar voor elkaar te krijgen.</p>
+        <p><strong>Geen winstoogmerk, geen poespas.</strong> Wat het kost is wat het kost — en vaak is dat een stuk minder dan je denkt.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project showcase -->
+  <section>
+    <div class="wrap">
+      <h2 class="reveal">Een voorbeeld van wat er kan</h2>
+      <div class="project-card reveal">
+        <div>
+          <h3>Samen Verzonden — coöperatief fulfilment</h3>
+          <p>Vareya, een e-fulfilment specialist met 1.000+ merken, liep tegen een grens aan: honderden kleine webshops vielen buiten de boot door hun minimum van 500 orders per maand.</p>
+          <p>Ik ontwikkelde het concept: een coöperatie waarin ondernemers volume bundelen, lid worden, en via Vareya alsnog grootvolumecondities krijgen. Zonder marge op verzending, mét zeggenschap.</p>
+          <a class="btn btn-primary" href="samenwerking.html">Bekijk het project <span class="arrow">→</span></a>
+        </div>
+        <div class="project-badge" aria-hidden="true">
+          jm<span style="color:var(--accent)">concepts</span>
+          <span class="arrow-small">→</span>
+          <strong>Vareya</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="wrap contact-simple">
+      <h2 class="reveal">Heb je een idee <em>dat verder verdient?</em></h2>
+      <p class="reveal">Stuur me een bericht. Vrijblijvend, gewoon om te kijken of er een klik is en wat de eerste stap kan zijn. Geen intakeformulier, geen gedoe — je praat met mij.</p>
+      <div class="hero-actions reveal">
+        <a class="btn btn-primary" href="mailto:info@jmconcepts.nl">Stuur een mail <span class="arrow">→</span></a>
+        <a class="btn btn-ghost" href="lid-worden.html">Aanmelden voor Samen Verzonden</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <a class="logo" href="#top"><img src="logo.jpg" alt="jmconcepts logo">jm<span>concepts</span></a>
+    <span>ideeën tot leven brengen — met de technologie van nu</span>
+    <span>© <span id="jaar"></span> jmconcepts</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('jaar').textContent = new Date().getFullYear();
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const reveals = document.querySelectorAll('.reveal');
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('visible'));
+  } else {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => io.observe(el));
+  }
+</script>
+
+</body>
+</html>
