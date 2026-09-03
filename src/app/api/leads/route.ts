@@ -17,6 +17,7 @@ import { generateSubmissionId, sanitiseLeadData, validateLeadInput } from "@/lib
 import { validateTurnstile } from "@/lib/turnstile";
 import { sendInternalNotification, sendProspectConfirmation } from "@/lib/email";
 import { buildLeadDashboardPayload, notifyLeadDashboard } from "@/lib/lead-dashboard";
+import { buildZapierPayload, notifyZapier } from "@/lib/zapier";
 import { SERVER_ENV } from "@/lib/leads/config";
 
 export const maxDuration = 30;
@@ -259,6 +260,21 @@ export async function POST(request: NextRequest) {
       if (!dashboardStatus || dashboardStatus !== "sent") {
         console.error(
           `[api/leads] Lead dashboard webhook ${dashboardStatus || "incomplete"} for ${submissionId}`
+        );
+      }
+    });
+
+    // 6.6 Zapier webhook — ADDITIVE, best-effort, never blocks the lead.
+    //     Mirrors the lead-dashboard webhook: scheduled via next/server
+    //     after(), skipped entirely when ZAPIER_WEBHOOK_URL is not set.
+    after(async () => {
+      const zapierStatus = await notifyZapier(
+        buildZapierPayload(clean, submissionId),
+        4000
+      );
+      if (!zapierStatus || zapierStatus !== "sent") {
+        console.error(
+          `[api/leads] Zapier webhook ${zapierStatus || "incomplete"} for ${submissionId}`
         );
       }
     });

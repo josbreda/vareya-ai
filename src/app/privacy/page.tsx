@@ -101,6 +101,10 @@ export default function PrivacyPage() {
                 <strong>Google Analytics</strong> — Website analytics (subject to
                 consent)
               </li>
+              <li>
+                <strong>Zapier</strong> — Workflow automation (forwards your
+                enquiry to our quotation tooling)
+              </li>
             </ul>
             <p>
               We do not sell your personal data to third parties.
