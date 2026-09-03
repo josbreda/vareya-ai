@@ -53,6 +53,27 @@ export const PAGE_META: Record<string, PageMeta> = {
     canonical: `${BASE}/eu-fulfilment-south-korean-brands/`,
     updatedAt: "2026-08-30",
   },
+  "/european-fulfilment-for-australian-brands/": {
+    title: "European Fulfilment for Australian Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for Australian ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the AU-EU corridor, customs and GST roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-australian-brands/`,
+    updatedAt: "2026-09-03",
+  },
+  "/european-fulfilment-for-new-zealand-brands/": {
+    title: "European Fulfilment for New Zealand Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for New Zealand ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the NZ-EU corridor, customs and GST roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-new-zealand-brands/`,
+    updatedAt: "2026-09-03",
+  },
+  "/shipping-from-europe-to-australia-new-zealand/": {
+    title: "Shipping Ecommerce Orders from Europe to Australia & New Zealand | Vareya",
+    description:
+      "How ecommerce orders are shipped from a warehouse in the Netherlands to customers in Australia and New Zealand: order flow, carriers, customs, GST and biosecurity per destination, returns, and the Free Rate Scan.",
+    canonical: `${BASE}/shipping-from-europe-to-australia-new-zealand/`,
+    updatedAt: "2026-09-03",
+  },
   "/cosmetics-supplements-fulfilment-europe/": {
     title: "Cosmetics & Supplements Fulfilment Europe | Vareya",
     description:

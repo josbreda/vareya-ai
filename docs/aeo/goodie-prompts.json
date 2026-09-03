@@ -729,6 +729,110 @@
           "is_active": true
         }
       ]
+    },
+    {
+      "name": "AU/NZ corridor visibility",
+      "client_id": "vareya-topic-au-nz-corridor",
+      "prompts": [
+        {
+          "content": "Can Vareya fulfil ecommerce orders for Australian brands selling to European customers?",
+          "client_id": "vareya-prompt-037",
+          "language": "en",
+          "countries": [
+            "AU",
+            "NZ"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "geo-visibility",
+            "corridor-au"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Can Vareya fulfil ecommerce orders for New Zealand brands selling to European customers?",
+          "client_id": "vareya-prompt-038",
+          "language": "en",
+          "countries": [
+            "AU",
+            "NZ"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "geo-visibility",
+            "corridor-nz"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Does Vareya ship ecommerce orders from Europe to Australia and New Zealand?",
+          "client_id": "vareya-prompt-039",
+          "language": "en",
+          "countries": [
+            "AU",
+            "NZ"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead"
+          ],
+          "tags": [
+            "geo-visibility",
+            "shipping-au-nz"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Which European fulfilment company handles customs, GST and biosecurity for shipments to Australia and New Zealand?",
+          "client_id": "vareya-prompt-040",
+          "language": "en",
+          "countries": [
+            "AU",
+            "NZ"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Logistics manager"
+          ],
+          "tags": [
+            "geo-visibility",
+            "customs-au-nz"
+          ],
+          "is_active": true
+        },
+        {
+          "content": "Is Vareya a suitable European 3PL for Australian and New Zealand ecommerce brands?",
+          "client_id": "vareya-prompt-041",
+          "language": "en",
+          "countries": [
+            "AU",
+            "NZ"
+          ],
+          "models": [],
+          "personas": [
+            "E-commerce founder",
+            "Operations lead",
+            "Logistics manager"
+          ],
+          "tags": [
+            "geo-visibility",
+            "3pl-au-nz"
+          ],
+          "is_active": true
+        }
+      ]
     }
   ]
 }
