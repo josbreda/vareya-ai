@@ -9,6 +9,8 @@ const FOOTER_LINKS = {
     { label: "US Brands", href: "/eu-fulfilment-us-brands/" },
     { label: "UK Brands", href: "/eu-fulfilment-uk-brands/" },
     { label: "South Korean Brands", href: "/eu-fulfilment-south-korean-brands/" },
+    { label: "Australian Brands", href: "/european-fulfilment-for-australian-brands/" },
+    { label: "New Zealand Brands", href: "/european-fulfilment-for-new-zealand-brands/" },
     { label: "Cosmetics & Supplements", href: "/cosmetics-supplements-fulfilment-europe/" },
   ],
   Company: [
