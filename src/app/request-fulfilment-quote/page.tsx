@@ -1,8 +1,45 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { TurnstileWidget } from "@/components/forms/TurnstileWidget";
+
+interface FieldProps {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  value?: string;
+  onChange?: (value: string) => void;
+  error?: string;
+  children?: ReactNode;
+}
+
+function Field({ label, name, type = "text", required, value, onChange, error, children }: FieldProps) {
+  return (
+    <div>
+      <label htmlFor={name} className="block text-sm font-medium text-slate-700 mb-1">
+        {label}
+        {required && <span className="text-red-500 ml-0.5">*</span>}
+      </label>
+      {children || (
+        <input
+          id={name}
+          name={name}
+          type={type}
+          value={String(value ?? "")}
+          onChange={(e) => onChange?.(e.target.value)}
+          className={`w-full px-4 py-3 rounded-lg border text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 ${
+            error ? "border-red-400" : "border-slate-300"
+          }`}
+        />
+      )}
+      {error && (
+        <p className="mt-1 text-sm text-red-600">{error}</p>
+      )}
+    </div>
+  );
+}
 
 interface QuoteFormData {
   name: string;
@@ -159,42 +196,6 @@ function QuoteForm() {
     }
   };
 
-  const Field = ({
-    label,
-    name,
-    type = "text",
-    required,
-    children,
-  }: {
-    label: string;
-    name: string;
-    type?: string;
-    required?: boolean;
-    children?: React.ReactNode;
-  }) => (
-    <div>
-      <label htmlFor={name} className="block text-sm font-medium text-slate-700 mb-1">
-        {label}
-        {required && <span className="text-red-500 ml-0.5">*</span>}
-      </label>
-      {children || (
-        <input
-          id={name}
-          name={name}
-          type={type}
-          value={String((data as unknown as Record<string, unknown>)[name] ?? "")}
-          onChange={(e) => update(name as keyof QuoteFormData, e.target.value)}
-          className={`w-full px-4 py-3 rounded-lg border text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 ${
-            errors[name] ? "border-red-400" : "border-slate-300"
-          }`}
-        />
-      )}
-      {errors[name] && (
-        <p className="mt-1 text-sm text-red-600">{errors[name]}</p>
-      )}
-    </div>
-  );
-
   return (
     <form onSubmit={submit} className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8">
       <div className="flex flex-col gap-5">
@@ -203,12 +204,12 @@ function QuoteForm() {
             About you
           </legend>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Field label="Your name" name="name" required />
-            <Field label="Company name" name="company" required />
-            <Field label="Work email" name="work_email" type="email" required />
-            <Field label="Phone (optional)" name="phone" type="tel" />
-            <Field label="Website (optional)" name="website" type="url" />
-            <Field label="Company country" name="company_country" />
+            <Field label="Your name" name="name" required value={data.name} onChange={(v) => update("name", v)} error={errors.name} />
+            <Field label="Company name" name="company" required value={data.company} onChange={(v) => update("company", v)} error={errors.company} />
+            <Field label="Work email" name="work_email" type="email" required value={data.work_email} onChange={(v) => update("work_email", v)} error={errors.work_email} />
+            <Field label="Phone (optional)" name="phone" type="tel" value={data.phone} onChange={(v) => update("phone", v)} error={errors.phone} />
+            <Field label="Website (optional)" name="website" type="url" value={data.website} onChange={(v) => update("website", v)} error={errors.website} />
+            <Field label="Company country" name="company_country" value={data.company_country} onChange={(v) => update("company_country", v)} error={errors.company_country} />
           </div>
         </fieldset>
 
@@ -217,7 +218,7 @@ function QuoteForm() {
             Your fulfilment needs
           </legend>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <Field label="Monthly order volume" name="monthly_order_volume" required>
+            <Field label="Monthly order volume" name="monthly_order_volume" required value={data.monthly_order_volume} onChange={(v) => update("monthly_order_volume", v)} error={errors.monthly_order_volume}>
               <select
                 id="monthly_order_volume"
                 value={data.monthly_order_volume}
@@ -234,8 +235,8 @@ function QuoteForm() {
                 <option value="5000+">5,000+</option>
               </select>
             </Field>
-            <Field label="Number of SKUs" name="sku_count" />
-            <Field label="Product category" name="product_category">
+            <Field label="Number of SKUs" name="sku_count" value={data.sku_count} onChange={(v) => update("sku_count", v)} error={errors.sku_count} />
+            <Field label="Product category" name="product_category" error={errors.product_category}>
               <select
                 id="product_category"
                 value={data.product_category}
@@ -251,7 +252,7 @@ function QuoteForm() {
                 <option value="other">Other</option>
               </select>
             </Field>
-            <Field label="E-commerce platform" name="ecommerce_platform">
+            <Field label="E-commerce platform" name="ecommerce_platform" error={errors.ecommerce_platform}>
               <select
                 id="ecommerce_platform"
                 value={data.ecommerce_platform}
@@ -331,11 +332,11 @@ function QuoteForm() {
           </div>
 
           <div className="mt-4">
-            <Field label="Desired start date" name="desired_start_date" type="date" />
+            <Field label="Desired start date" name="desired_start_date" type="date" value={data.desired_start_date} onChange={(v) => update("desired_start_date", v)} error={errors.desired_start_date} />
           </div>
 
           <div className="mt-4">
-            <Field label="Additional comments" name="comments">
+            <Field label="Additional comments" name="comments" error={errors.comments}>
               <textarea
                 id="comments"
                 rows={4}

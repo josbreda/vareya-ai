@@ -21,8 +21,8 @@ export default function PrivacyPage() {
         <div className="prose prose-slate max-w-none space-y-8">
           <Section title="1. Who we are">
             <p>
-              {COMPANY.legalName} ("Vareya", "we", "us", or "our") operates the
-              website vareya.ai (the "Site"). We are registered in the Netherlands
+              {COMPANY.legalName} (&quot;Vareya&quot;, &quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) operates the
+              website vareya.ai (the &quot;Site&quot;). We are registered in the Netherlands
               at {COMPANY.street}, {COMPANY.postcode} {COMPANY.city}.
             </p>
             <p>
@@ -88,8 +88,8 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-disc pl-5 space-y-1">
               <li>
-                <strong>Supabase</strong> — Lead storage and database hosting
-                (EU-hosted)
+                <strong>Vareya lead dashboard</strong> — Lead storage and database
+                hosting (own infrastructure, EU-hosted VPS in the Netherlands)
               </li>
               <li>
                 <strong>Resend</strong> — Transactional email delivery
@@ -115,7 +115,7 @@ export default function PrivacyPage() {
             <p>
               We retain your enquiry data for as long as necessary to respond to
               your request and maintain a record of our business communications.
-              Analytics data is retained in accordance with Google Analytics'
+              Analytics data is retained in accordance with Google Analytics&apos;
               data retention settings.
             </p>
           </Section>
@@ -125,7 +125,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-5 space-y-1">
               <li>Access your personal data</li>
               <li>Rectify inaccurate data</li>
-              <li>Erase your data ("right to be forgotten")</li>
+              <li>Erase your data (&quot;right to be forgotten&quot;)</li>
               <li>Restrict processing</li>
               <li>Data portability</li>
               <li>Object to processing</li>

@@ -2,15 +2,6 @@
  * Secrets loaded server-side only. Never exposed to client.
  */
 export const SERVER_ENV = {
-  get supabaseUrl() {
-    return process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL || "";
-  },
-  get supabaseServiceRoleKey() {
-    return process.env.SUPABASE_SERVICE_ROLE_KEY || "";
-  },
-  get supabaseAnonKey() {
-    return process.env.SUPABASE_ANON_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
-  },
   get resendApiKey() {
     return process.env.RESEND_API_KEY || "";
   },
@@ -22,8 +13,6 @@ export const SERVER_ENV = {
   },
   get isConfigured() {
     return !!(
-      this.supabaseUrl &&
-      this.supabaseServiceRoleKey &&
       this.resendApiKey &&
       this.turnstileSecretKey &&
       this.leadOwnerEmail

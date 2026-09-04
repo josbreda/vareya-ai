@@ -137,7 +137,7 @@ export default function AmazonFbmPage() {
               <tbody>
                 <tr className="border-b border-slate-100 align-top">
                   <td className="p-4 font-medium">Inventory</td>
-                  <td className="p-4 text-muted">Stock sits in Amazon's fulfilment centres.</td>
+                  <td className="p-4 text-muted">Stock sits in Amazon&apos;s fulfilment centres.</td>
                   <td className="p-4 text-muted">Stock sits with you or your chosen 3PL.</td>
                 </tr>
                 <tr className="border-b border-slate-100 align-top">
@@ -209,7 +209,7 @@ export default function AmazonFbmPage() {
               <h3 className="mb-3 font-semibold">Vareya is not the best fit if you…</h3>
               <ul className="list-disc space-y-2 pl-5 text-sm leading-6 text-muted">
                 <li>need Prime eligibility — Vareya does not claim Seller Fulfilled Prime;</li>
-                <li>want inventory inside Amazon's fulfilment centres (that is FBA);</li>
+                <li>want inventory inside Amazon&apos;s fulfilment centres (that is FBA);</li>
                 <li>ship products outside the approved parcel or product profile.</li>
               </ul>
             </div>

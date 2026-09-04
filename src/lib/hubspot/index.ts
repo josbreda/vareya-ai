@@ -1,6 +1,6 @@
 /**
  * HubSpot CRM Integration — Vareya.ai
- * Architecture: Supabase-first. HubSpot downstream. Never lose a lead.
+ * Architecture: lead dashboard (VPS/Postgres) first. HubSpot downstream. Never lose a lead.
  */
 const HS = "https://api.hubapi.com";
 

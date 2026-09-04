@@ -1,27 +1,28 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * Hook: loads GTM/GA4 only after cookie consent is given.
  * Listens for the custom 'cookie_consent_updated' event from ConsentBanner.
  */
 export function useAnalyticsConsent(): boolean {
-  const consented = useRef(false);
+  const [consented, setConsented] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false;
+    return localStorage.getItem("vareya_cookie_consent") === "accepted";
+  });
 
   useEffect(() => {
-    // Check stored consent
-    const stored = localStorage.getItem("vareya_cookie_consent");
-    if (stored === "accepted") {
-      consented.current = true;
+    // Enable analytics when consent was already stored before hydration
+    if (typeof window !== "undefined" && localStorage.getItem("vareya_cookie_consent") === "accepted") {
       enableAnalytics();
     }
 
     // Listen for consent changes
-    const handler = (e: Event) => {
-      const detail = (e as CustomEvent).detail;
+    const handler = (event: Event) => {
+      const detail = (event as CustomEvent).detail;
       if (detail === "accepted") {
-        consented.current = true;
+        setConsented(true);
         enableAnalytics();
       }
     };
@@ -30,7 +31,7 @@ export function useAnalyticsConsent(): boolean {
     return () => window.removeEventListener("cookie_consent_updated", handler);
   }, []);
 
-  return consented.current;
+  return consented;
 }
 
 function enableAnalytics() {

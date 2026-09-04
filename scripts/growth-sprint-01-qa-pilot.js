@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- one-shot Node CommonJS QA script; `require` is its native module mode */
 // Growth Sprint 01 — outbound UTM e2e test (authorised by Jos) — PRECISE step-driven fill.
 const { chromium } = require("@playwright/test");
 const fs = require("fs");
