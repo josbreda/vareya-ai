@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- one-shot Node CommonJS QA script; `require` is its native module mode */
 // Content Sprint 01 — preview screenshots (desktop + mobile)
 const { chromium, devices } = require("@playwright/test");
 const path = require("path");

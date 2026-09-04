@@ -18,7 +18,6 @@ import { validateTurnstile } from "@/lib/turnstile";
 import { sendInternalNotification, sendProspectConfirmation } from "@/lib/email";
 import { buildLeadDashboardPayload, notifyLeadDashboard } from "@/lib/lead-dashboard";
 import { buildZapierPayload, notifyZapier } from "@/lib/zapier";
-import { SERVER_ENV } from "@/lib/leads/config";
 
 export const maxDuration = 30;
 
@@ -77,88 +76,9 @@ export async function POST(request: NextRequest) {
     const submissionId = generateSubmissionId();
     const clean = sanitiseLeadData({ ...raw, submission_id: submissionId });
 
-    // 4. Insert into Supabase — best effort. Email + HubSpot are the lead
-    //    channels; a storage outage must never cost a lead.
-    let leadId: string | null = null;
-    const supabaseConfigured = SERVER_ENV.supabaseUrl && SERVER_ENV.supabaseServiceRoleKey;
-
-    if (supabaseConfigured) {
-      try {
-        // Dynamic import to avoid build errors when Supabase not installed
-        const { createClient } = await import("@supabase/supabase-js");
-        const supabase = createClient(
-          SERVER_ENV.supabaseUrl,
-          SERVER_ENV.supabaseServiceRoleKey
-        );
-
-        const { data: lead, error: insertError } = await supabase
-          .from("leads")
-          .insert({
-            submission_id: submissionId,
-            form_type: clean.form_type,
-            status: "new",
-            name: clean.name,
-            company: clean.company,
-            work_email: clean.work_email,
-            phone: clean.phone || null,
-            website: clean.website || null,
-            company_country: clean.company_country || null,
-            monthly_order_volume: clean.monthly_order_volume || null,
-            sku_count: clean.sku_count || null,
-            product_category: clean.product_category || null,
-            target_markets: clean.target_markets || [],
-            ecommerce_platform: clean.ecommerce_platform || null,
-            amazon_fbm: clean.amazon_fbm || false,
-            returns_required: clean.returns_required || false,
-            desired_start_date: clean.desired_start_date || null,
-            comments: clean.comments || null,
-            scan_answers: clean.form_type === "scan" ? clean : null,
-            landing_page: clean.landing_page || "",
-            referrer: clean.referrer || "",
-            utm_source: clean.utm_source || null,
-            utm_medium: clean.utm_medium || null,
-            utm_campaign: clean.utm_campaign || null,
-            utm_content: clean.utm_content || null,
-            device: clean.device || null,
-            privacy_acknowledged_at: clean.privacy_acknowledged_at || new Date().toISOString(),
-          })
-          .select("id")
-          .single();
-
-        if (insertError) {
-          console.error("[api/leads] Supabase insert error — continuing email-only:", insertError);
-        } else {
-          leadId = lead?.id || null;
-
-          // Log lead event (best effort — never blocks the lead)
-          try {
-            await supabase.from("lead_events").insert({
-              lead_id: leadId,
-              event_name: "lead_created",
-              metadata: {
-                form_type: clean.form_type,
-                submission_id: submissionId,
-                company: clean.company,
-                processing_time_ms: Date.now() - startTime,
-              },
-            });
-          } catch (eventErr) {
-            console.error("[api/leads] lead_events insert failed:", eventErr);
-          }
-        }
-      } catch (err) {
-        console.error("[api/leads] Supabase unavailable — continuing email-only:", err);
-      }
-    } else {
-      // Supabase not configured — log and continue with mock
-      console.log("[api/leads] Supabase not configured — lead logged only:", {
-        submission_id: submissionId,
-        form_type: clean.form_type,
-        company: clean.company,
-        name: clean.name,
-        processing_time_ms: Date.now() - startTime,
-      });
-    }
+    // 4. Supabase lead storage removed (project retired 2026-09 — migration history in docs/supabase-recovery/).
+    //    Active lead channels: lead-dashboard webhook (VPS/Postgres), HubSpot, email notifications.
+    //    Verified 2026-09-04: full form flow works end-to-end without Supabase.
 
     // 4.5 Sync to HubSpot — awaited with timeout (secondary channel, tolerant)
     if (process.env.HUBSPOT_ACCESS_TOKEN) {

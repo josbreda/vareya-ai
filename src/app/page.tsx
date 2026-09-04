@@ -266,7 +266,7 @@ export default function HomePage() {
 
       <section className="bg-slate-50 py-12" aria-labelledby="support">
         <div className="container-site max-w-4xl">
-          <h2 id="support" className="mb-4 text-2xl font-bold">How you're supported</h2>
+          <h2 id="support" className="mb-4 text-2xl font-bold">How you&apos;re supported</h2>
           <div className="space-y-3 leading-7 text-muted">
             <p>{CAPABILITIES.support}</p>
             <p>{CAPABILITIES.slas}</p>

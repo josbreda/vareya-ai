@@ -1,8 +1,8 @@
 /**
  * HubSpot CRM sync layer for Vareya.ai.
  * 
- * Architecture: Supabase-first. HubSpot is downstream. 
- * If HubSpot fails, the lead is still safely stored in Supabase.
+ * Architecture: lead dashboard (VPS/Postgres) first. HubSpot is downstream. 
+ * If HubSpot fails, the lead is still safely stored in the lead dashboard.
  */
 
 const HUBSPOT_BASE = "https://api.hubapi.com";
@@ -174,8 +174,8 @@ async function createTask(contactId: string, lead: LeadData): Promise<string> {
 }
 
 /**
- * Main sync function — call this after Supabase insert succeeds.
- * Supabase always gets the lead first. HubSpot sync is non-blocking.
+ * Main sync function — call this after the lead-dashboard ingest succeeds.
+ * The lead dashboard always gets the lead first. HubSpot sync is non-blocking.
  */
 export async function syncToHubSpot(lead: LeadData): Promise<HubSpotSyncResult> {
   const result: HubSpotSyncResult = {

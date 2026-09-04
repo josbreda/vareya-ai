@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-require-imports -- one-shot Node CommonJS QA script; `require` is its native module mode */
 
 const { chromium } = require("@playwright/test");
 

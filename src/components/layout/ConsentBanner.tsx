@@ -1,21 +1,20 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 type ConsentChoice = "accepted" | "declined" | null;
 
-export function ConsentBanner() {
-  const [choice, setChoice] = useState<ConsentChoice>(null);
-  const [visible, setVisible] = useState(false);
+function readStoredConsent(): string | null {
+  if (typeof window === "undefined") return null;
+  return localStorage.getItem("vareya_cookie_consent");
+}
 
-  useEffect(() => {
-    const stored = localStorage.getItem("vareya_cookie_consent");
-    if (!stored) {
-      setVisible(true);
-    } else {
-      setChoice(stored as ConsentChoice);
-    }
-  }, []);
+export function ConsentBanner() {
+  const [choice, setChoice] = useState<ConsentChoice>(() => {
+    const stored = readStoredConsent();
+    return stored ? (stored as ConsentChoice) : null;
+  });
+  const [visible, setVisible] = useState<boolean>(() => readStoredConsent() === null);
 
   function handleAccept() {
     localStorage.setItem("vareya_cookie_consent", "accepted");
