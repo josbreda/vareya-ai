@@ -154,6 +154,8 @@ const INTERNAL_LINKS = [
     href: "/cosmetics-supplements-fulfilment-europe/",
     label: "Cosmetics and supplements fulfilment",
   },
+  { href: "/shopify-fulfilment-europe-for-new-zealand-stores/", label: "Shopify fulfilment in Europe for New Zealand stores" },
+  { href: "/european-returns-handling-for-new-zealand-brands/", label: "European returns handling for New Zealand brands" },
 ];
 
 const OFFICIAL_SOURCES = [
