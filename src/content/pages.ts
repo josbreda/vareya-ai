@@ -188,4 +188,284 @@ export const PAGE_META: Record<string, PageMeta> = {
     canonical: `${BASE}/thank-you/quote/`,
     noIndex: true,
   },
+  "/european-fulfilment-for-brazil-brands/": {
+    title: "European Fulfilment for Brazil Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for Brazil ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Brazil-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-brazil-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-fulfilment-for-canada-brands/": {
+    title: "European Fulfilment for Canada Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for Canada ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Canada-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-canada-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-fulfilment-for-china-brands/": {
+    title: "European Fulfilment for China Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for China ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the China-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-china-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-fulfilment-for-hong-kong-brands/": {
+    title: "European Fulfilment for Hong Kong Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for Hong Kong ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Hong Kong-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-hong-kong-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-fulfilment-for-japan-brands/": {
+    title: "European Fulfilment for Japan Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for Japan ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Japan-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-japan-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-fulfilment-for-norway-brands/": {
+    title: "European Fulfilment for Norway Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for Norway ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Norway-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-norway-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-fulfilment-for-saudi-arabia-brands/": {
+    title: "European Fulfilment for Saudi Arabia Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for Saudi Arabia ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Saudi Arabia-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-saudi-arabia-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-fulfilment-for-switzerland-brands/": {
+    title: "European Fulfilment for Switzerland Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for Switzerland ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Switzerland-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-switzerland-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-fulfilment-for-turkey-brands/": {
+    title: "European Fulfilment for Turkey Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for Turkey ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Turkey-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-turkey-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-fulfilment-for-united-arab-emirates-brands/": {
+    title: "European Fulfilment for UAE Ecommerce Brands | Vareya",
+    description:
+      "A practical guide for UAE ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the UAE-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    canonical: `${BASE}/european-fulfilment-for-united-arab-emirates-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-australia-brands/": {
+    title: "European Returns Handling for Australia Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for Australia brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-australia-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-brazil-brands/": {
+    title: "European Returns Handling for Brazil Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for Brazil brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-brazil-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-canada-brands/": {
+    title: "European Returns Handling for Canada Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for Canada brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-canada-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-china-brands/": {
+    title: "European Returns Handling for China Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for China brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-china-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-hong-kong-brands/": {
+    title: "European Returns Handling for Hong Kong Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for Hong Kong brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-hong-kong-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-japan-brands/": {
+    title: "European Returns Handling for Japan Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for Japan brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-japan-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-new-zealand-brands/": {
+    title: "European Returns Handling for New Zealand Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for New Zealand brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-new-zealand-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-norway-brands/": {
+    title: "European Returns Handling for Norway Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for Norway brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-norway-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-saudi-arabia-brands/": {
+    title: "European Returns Handling for Saudi Arabia Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for Saudi Arabia brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-saudi-arabia-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-south-korea-brands/": {
+    title: "European Returns Handling for South Korea Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for South Korea brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-south-korea-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-switzerland-brands/": {
+    title: "European Returns Handling for Switzerland Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for Switzerland brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-switzerland-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-turkey-brands/": {
+    title: "European Returns Handling for Turkey Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for Turkey brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-turkey-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-united-arab-emirates-brands/": {
+    title: "European Returns Handling for UAE Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for UAE brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-united-arab-emirates-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-united-kingdom-brands/": {
+    title: "European Returns Handling for UK Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for UK brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-united-kingdom-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/european-returns-handling-for-united-states-brands/": {
+    title: "European Returns Handling for US Brands | Vareya",
+    description:
+      "How returns handling works within Vareya's fulfilment service for US brands selling to European customers: where returns land, what must be agreed up front, and the Free Rate Scan.",
+    canonical: `${BASE}/european-returns-handling-for-united-states-brands/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-australia-stores/": {
+    title: "Shopify Fulfilment in Europe for Australia Stores | Vareya",
+    description:
+      "How Australia Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-australia-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-brazil-stores/": {
+    title: "Shopify Fulfilment in Europe for Brazil Stores | Vareya",
+    description:
+      "How Brazil Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-brazil-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-canada-stores/": {
+    title: "Shopify Fulfilment in Europe for Canada Stores | Vareya",
+    description:
+      "How Canada Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-canada-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-china-stores/": {
+    title: "Shopify Fulfilment in Europe for China Stores | Vareya",
+    description:
+      "How China Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-china-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-hong-kong-stores/": {
+    title: "Shopify Fulfilment in Europe for Hong Kong Stores | Vareya",
+    description:
+      "How Hong Kong Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-hong-kong-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-japan-stores/": {
+    title: "Shopify Fulfilment in Europe for Japan Stores | Vareya",
+    description:
+      "How Japan Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-japan-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-new-zealand-stores/": {
+    title: "Shopify Fulfilment in Europe for New Zealand Stores | Vareya",
+    description:
+      "How New Zealand Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-new-zealand-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-norway-stores/": {
+    title: "Shopify Fulfilment in Europe for Norway Stores | Vareya",
+    description:
+      "How Norway Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-norway-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-saudi-arabia-stores/": {
+    title: "Shopify Fulfilment in Europe for Saudi Arabia Stores | Vareya",
+    description:
+      "How Saudi Arabia Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-saudi-arabia-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-south-korea-stores/": {
+    title: "Shopify Fulfilment in Europe for South Korea Stores | Vareya",
+    description:
+      "How South Korea Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-south-korea-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-switzerland-stores/": {
+    title: "Shopify Fulfilment in Europe for Switzerland Stores | Vareya",
+    description:
+      "How Switzerland Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-switzerland-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-turkey-stores/": {
+    title: "Shopify Fulfilment in Europe for Turkey Stores | Vareya",
+    description:
+      "How Turkey Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-turkey-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-united-arab-emirates-stores/": {
+    title: "Shopify Fulfilment in Europe for UAE Stores | Vareya",
+    description:
+      "How UAE Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-united-arab-emirates-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-united-kingdom-stores/": {
+    title: "Shopify Fulfilment in Europe for UK Stores | Vareya",
+    description:
+      "How UK Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-united-kingdom-stores/`,
+    updatedAt: "2026-09-09",
+  },
+  "/shopify-fulfilment-europe-for-united-states-stores/": {
+    title: "Shopify Fulfilment in Europe for US Stores | Vareya",
+    description:
+      "How US Shopify stores connect orders to a warehouse in Breda, the Netherlands: order sync, SKU and stock preparation, pick and pack, carrier hand-off, tracking, returns and the Free Rate Scan.",
+    canonical: `${BASE}/shopify-fulfilment-europe-for-united-states-stores/`,
+    updatedAt: "2026-09-09",
+  },
 } as const;

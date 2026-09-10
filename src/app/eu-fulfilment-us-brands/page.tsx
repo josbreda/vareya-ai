@@ -74,6 +74,8 @@ const INTERNAL_LINKS = [
     href: "/cosmetics-supplements-fulfilment-europe/",
     label: "Cosmetics and supplements fulfilment",
   },
+  { href: "/shopify-fulfilment-europe-for-united-states-stores/", label: "Shopify fulfilment in Europe for US stores" },
+  { href: "/european-returns-handling-for-united-states-brands/", label: "European returns handling for US brands" },
 ];
 
 export default function UsBrandsPage() {

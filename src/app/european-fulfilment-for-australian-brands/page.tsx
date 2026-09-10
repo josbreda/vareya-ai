@@ -154,6 +154,8 @@ const INTERNAL_LINKS = [
     href: "/cosmetics-supplements-fulfilment-europe/",
     label: "Cosmetics and supplements fulfilment",
   },
+  { href: "/shopify-fulfilment-europe-for-australia-stores/", label: "Shopify fulfilment in Europe for Australian stores" },
+  { href: "/european-returns-handling-for-australia-brands/", label: "European returns handling for Australian brands" },
 ];
 
 const OFFICIAL_SOURCES = [

@@ -132,6 +132,8 @@ const INTERNAL_LINKS = [
     href: "/cosmetics-supplements-fulfilment-europe/",
     label: "Cosmetics and supplements fulfilment",
   },
+  { href: "/shopify-fulfilment-europe-for-south-korea-stores/", label: "Shopify fulfilment in Europe for South Korean stores" },
+  { href: "/european-returns-handling-for-south-korea-brands/", label: "European returns handling for South Korean brands" },
 ];
 
 const OFFICIAL_SOURCES = [
