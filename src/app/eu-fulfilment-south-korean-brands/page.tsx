@@ -92,10 +92,15 @@ const FAQ_ITEMS = [
   },
   {
     question: "Can Vareya ship to South Korea too?",
-    answer: `Yes. From Breda, Vareya ships to ${destinationList}.`,
+    answer: `Yes. From Breda, Vareya ships to ${destinationList}. Carriers used for this destination: PostNL, Asendia, FedEx and DHL Express.`,
   },
   {
-    question: "What order volume is needed?",
+    question: "Are there volume restrictions or a set returns policy specific to shipments to South Korea?",
+    answer:
+      "No additional Vareya-specific volume restrictions have been confirmed. Shipments remain subject to product qualification, carrier acceptance and destination customs requirements. Returns handling is available by agreement.",
+  },
+  {
+    question: "What order volume is needed to become a client?",
     answer: CAPABILITIES.volume,
   },
   {
@@ -345,26 +350,46 @@ export default function SouthKoreanBrandsPage() {
               "Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail.",
               CAPABILITIES.cutOff,
               CAPABILITIES.volume,
+              "No additional Vareya-specific volume restrictions have been confirmed for shipments to South Korea. Returns handling for this destination is available by agreement.",
             ].map((item) => (
               <p key={item} className="rounded-xl border border-slate-200 bg-white p-5 text-sm leading-6 text-muted">
                 {item}
               </p>
             ))}
           </div>
+          <p className="mt-6 max-w-3xl text-sm leading-6 text-muted">
+            South Korea was confirmed as an operational shipping destination on 1
+            September 2026. Customs processing is handled through the selected
+            carrier, based on complete and accurate shipment documentation. Duties,
+            taxes and importer obligations may apply.
+          </p>
         </div>
       </section>
 
       <section className="bg-slate-50 py-16" aria-labelledby="fit">
         <div className="container-site max-w-4xl">
-          <h2 id="fit" className="mb-5 text-2xl font-bold">Who this fits</h2>
-          <div className="space-y-3 leading-7 text-muted">
-            <p>{CAPABILITIES.volume}</p>
-            <p>
-              Vareya specialises in cosmetics, supplements, phone cases, accessories and
-              other smaller parcel products. Suitable smaller parcels have combined
-              dimensions below 900 mm and a maximum length of 600 mm. Product fit is
-              confirmed during qualification.
-            </p>
+          <h2 id="fit" className="mb-5 text-2xl font-bold">Good fit / may not be a fit</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-xl border border-slate-200 bg-white p-6">
+              <h3 className="mb-3 font-semibold text-slate-900">Typically a good fit</h3>
+              <ul className="space-y-2 text-sm leading-6 text-muted">
+                <li>✓ {CAPABILITIES.volume}</li>
+                <li>✓ Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products.</li>
+                <li>✓ Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.</li>
+                <li>✓ Brands selling through Shopify or Amazon FBM. Shopify integration is available. Amazon FBM fulfilment is available.</li>
+              </ul>
+            </div>
+            <div className="rounded-xl border border-slate-200 bg-white p-6">
+              <h3 className="mb-3 font-semibold text-slate-900">May not be a fit</h3>
+              <ul className="space-y-2 text-sm leading-6 text-muted">
+                <li>✗ Order volumes well below the 500-orders-per-month level.</li>
+                <li>✗ Parcels that exceed the combined 900 mm / length 600 mm guideline.</li>
+                <li>✗ Products with specialist customs, tax or handling requirements — include them in the fulfilment scan so Vareya can confirm which parts of the proposed setup can be supported.</li>
+              </ul>
+              <p className="mt-4 text-sm leading-6 text-muted">
+                Product fit is confirmed during qualification.
+              </p>
+            </div>
           </div>
         </div>
       </section>
