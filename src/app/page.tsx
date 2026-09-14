@@ -286,7 +286,7 @@ export default function HomePage() {
           <h2 id="scan-cta" className="mb-4 text-2xl font-bold sm:text-3xl">
             Check whether your operation may fit
           </h2>
-          <p className="mx-auto mb-8 max-w-2xl text-white/80">
+          <p className="mx-auto mb-8 max-w-2xl text-white/90">
             Check whether your current volume, product category, sales channels and
             target markets may fit Vareya&apos;s fulfilment setup.
           </p>

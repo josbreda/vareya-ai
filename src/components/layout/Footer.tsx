@@ -61,9 +61,9 @@ export function Footer() {
           {/* Link columns */}
           {Object.entries(FOOTER_LINKS).map(([heading, links]) => (
             <div key={heading}>
-              <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
+              <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-4">
                 {heading}
-              </h4>
+              </h3>
               <ul className="flex flex-col gap-2">
                 {links.map((link) => (
                   <li key={link.href}>
@@ -81,7 +81,7 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
+        <div className="mt-12 pt-8 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-400">
           <p>
             &copy; {new Date().getFullYear()} {COMPANY.legalName}. All rights reserved.
           </p>
