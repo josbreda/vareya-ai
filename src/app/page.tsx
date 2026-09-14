@@ -150,7 +150,7 @@ export default function HomePage() {
               "Netherlands-based warehouse.",
               CAPABILITIES.shopify,
               CAPABILITIES.amazonFbm,
-              "Returns handling is available.",
+              CAPABILITIES.returns,
               CAPABILITIES.postNL,
               CAPABILITIES.shipHero,
               CAPABILITIES.carrierSelection,
