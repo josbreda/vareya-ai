@@ -4,8 +4,10 @@ import { COMPANY } from "@/content/facts";
 const FOOTER_LINKS = {
   Services: [
     { label: "EU Fulfilment", href: "/eu-fulfilment/" },
-    { label: "Fulfilmentcentrum Brabant", href: "/nl/fulfilment-noord-brabant/" },
     { label: "Shopify Fulfilment", href: "/shopify-fulfilment-europe/" },
+    { label: "Amazon FBM Fulfilment", href: "/amazon-fbm-fulfilment/" },
+    { label: "ShipBob Alternative in Europe", href: "/shipbob-alternative-europe/" },
+    { label: "Cosmetics & Supplements", href: "/cosmetics-supplements-fulfilment-europe/" },
     { label: "US Brands", href: "/eu-fulfilment-us-brands/" },
     { label: "UK Brands", href: "/eu-fulfilment-uk-brands/" },
     { label: "Canadian Brands", href: "/european-fulfilment-for-canada-brands/" },
@@ -21,10 +23,17 @@ const FOOTER_LINKS = {
     { label: "Saudi Arabian Brands", href: "/european-fulfilment-for-saudi-arabia-brands/" },
     { label: "Turkish Brands", href: "/european-fulfilment-for-turkey-brands/" },
     { label: "UAE Brands", href: "/european-fulfilment-for-united-arab-emirates-brands/" },
-    { label: "Cosmetics & Supplements", href: "/cosmetics-supplements-fulfilment-europe/" },
+  ],
+  Nederlands: [
+    { label: "Fulfilmentcentrum Brabant", href: "/nl/fulfilment-noord-brabant/" },
+    { label: "Fulfilment uitbesteden in Breda", href: "/nl/fulfilment-uitbesteden-breda/" },
+    { label: "Fulfilmentcentrum kiezen", href: "/nl/fulfilmentcentrum-kiezen/" },
+    { label: "Wat kost fulfilment in Brabant?", href: "/nl/wat-kost-fulfilment-brabant/" },
   ],
   Company: [
+    { label: "About Vareya", href: "/about/" },
     { label: "Contact", href: "/contact/" },
+    { label: "Knowledge Centre", href: "/knowledge/" },
     { label: "Fulfilment Scan", href: "/free-rate-scan/" },
     { label: "Request Quote", href: "/request-fulfilment-quote/" },
   ],
@@ -38,7 +47,7 @@ export function Footer() {
   return (
     <footer className="bg-slate-900 text-slate-300 mt-auto">
       <div className="container-site py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div>
             <Link href="/" className="text-xl font-bold text-white">

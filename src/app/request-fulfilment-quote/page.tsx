@@ -1,8 +1,13 @@
 "use client";
 
-import { useState, type ReactNode } from "react";
+import { useState, useEffect, type ReactNode } from "react";
 import { useRouter } from "next/navigation";
 import { TurnstileWidget } from "@/components/forms/TurnstileWidget";
+import {
+  trackQuoteFormStart,
+  trackQuoteFormSubmit,
+  trackQuoteFormSubmitError,
+} from "@/lib/analytics";
 
 interface FieldProps {
   label: string;
@@ -111,6 +116,11 @@ function QuoteForm() {
   const [turnstileToken, setTurnstileToken] = useState("");
   const [turnstileKey, setTurnstileKey] = useState(0);
 
+  // Analytics: form start
+  useEffect(() => {
+    trackQuoteFormStart();
+  }, []);
+
   const update = (field: keyof QuoteFormData, value: string | boolean | string[]) => {
     setData((prev) => ({ ...prev, [field]: value }));
     setErrors((prev) => ({ ...prev, [field]: "" }));
@@ -186,8 +196,10 @@ function QuoteForm() {
         throw new Error(body.error || "Something went wrong. Please try again.");
       }
 
+      trackQuoteFormSubmit();
       router.push("/thank-you/quote/");
     } catch (err: unknown) {
+      trackQuoteFormSubmitError();
       setServerError(
         err instanceof Error ? err.message : "Something went wrong."
       );

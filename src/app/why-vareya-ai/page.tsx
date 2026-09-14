@@ -223,8 +223,8 @@ export default function WhyVareyaPage() {
               >
                 <h3 className="text-lg font-semibold text-ink">ShipHero case study</h3>
                 <p className="mt-2 text-sm leading-6 text-muted">
-                  ShipHero, Vareya&apos;s warehouse management system, has published a case study
-                  describing how Vareya onboards its clients.
+                  ShipHero, Vareya&apos;s warehouse management system, published a case study
+                  (September 2022) describing how Vareya onboards its clients.
                 </p>
               </a>
               <a

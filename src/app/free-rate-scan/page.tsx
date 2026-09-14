@@ -2,12 +2,12 @@
 
 import { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
 import {
   trackRateScanBack,
   trackRateScanComplete,
   trackRateScanStart,
   trackRateScanStep,
+  trackRateScanSubmitError,
   trackRateScanValidationError,
   trackRateScanView,
 } from "@/lib/scan-analytics";
@@ -63,7 +63,7 @@ const STEPS = [
       { value: "it", label: "Italy" },
       { value: "other-eu", label: "Other EU" },
       { value: "us", label: "United States" },
-      { value: "other", label: "Rest of world" },
+      { value: "other", label: "Other destination" },
     ],
   },
   {
@@ -284,6 +284,7 @@ function ScanForm() {
       trackRateScanComplete();
       router.push("/thank-you/scan/");
     } catch (err: unknown) {
+      trackRateScanSubmitError();
       const message =
         err instanceof Error ? err.message : "Something went wrong.";
       setServerError(message);

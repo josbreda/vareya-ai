@@ -54,6 +54,10 @@ export function trackQuoteFormSubmit(): void {
   trackEvent("quote_form_submit", {});
 }
 
+export function trackQuoteFormSubmitError(): void {
+  trackEvent("quote_form_submit_error", {});
+}
+
 export function trackEmailClick(): void {
   trackEvent("email_click", {});
 }

@@ -5,7 +5,7 @@ import { COMPANY, CAPABILITIES } from "@/content/facts";
 export const metadata: Metadata = {
   title: "About Vareya | European Fulfilment from the Netherlands",
   description:
-    "Vareya fulfils e-commerce orders from Breda, the Netherlands. Cooperative fulfilment for growing brands — Shopify integration, multi-carrier delivery, returns handling.",
+    "Vareya fulfils e-commerce orders from Breda, the Netherlands. Shopify integration, multi-carrier delivery, returns handling available.",
   alternates: { canonical: "https://vareya.ai/about/" },
 };
 
@@ -60,7 +60,7 @@ export default function AboutPage() {
               { title: "Shopify integration", body: CAPABILITIES.shopify },
               { title: "Amazon FBM", body: CAPABILITIES.amazonFbm },
               { title: "Returns handling", body: CAPABILITIES.returns },
-              { title: "Multi-carrier delivery", body: `Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail.` },
+              { title: "Multi-carrier delivery", body: CAPABILITIES.postNL },
               { title: "Flexible cut-off", body: CAPABILITIES.cutOff },
             ].map((item) => (
               <div key={item.title} className="p-5 rounded-xl bg-white border border-border">
@@ -68,6 +68,38 @@ export default function AboutPage() {
                 <p className="text-sm text-muted leading-relaxed">{item.body}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 sm:py-20 bg-surface">
+        <div className="container-site max-w-3xl">
+          <h2 className="text-2xl font-bold mb-6">Published about Vareya</h2>
+          <div className="grid gap-4 sm:grid-cols-2">
+            <a
+              href="https://www.shiphero.com/case-studies/vareya-fulfillment"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-5 rounded-xl bg-white border border-border hover:border-primary/40 transition-colors"
+            >
+              <h3 className="font-semibold text-ink mb-1 text-sm">ShipHero case study</h3>
+              <p className="text-sm text-muted leading-relaxed">
+                ShipHero, Vareya&apos;s warehouse management system, published a case study
+                about Vareya&apos;s client onboarding (September 2022).
+              </p>
+            </a>
+            <a
+              href="https://help.digistore24.com/hc/en-us/articles/23713793720721-Connect-Vareya-to-Digistore24"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-5 rounded-xl bg-white border border-border hover:border-primary/40 transition-colors"
+            >
+              <h3 className="font-semibold text-ink mb-1 text-sm">Digistore24 documentation</h3>
+              <p className="text-sm text-muted leading-relaxed">
+                The Digistore24 Help Center documents how sellers connect Vareya as their
+                fulfilment partner.
+              </p>
+            </a>
           </div>
         </div>
       </section>
