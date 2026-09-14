@@ -30,10 +30,17 @@ function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T | undefined>
 }
 
 export async function POST(request: NextRequest) {
-  const startTime = Date.now();
-
   try {
-    const raw = await request.json();
+    let raw: Record<string, unknown>;
+    try {
+      raw = (await request.json()) as Record<string, unknown>;
+    } catch {
+      // Missing or malformed JSON body — the forms always send JSON.
+      return NextResponse.json(
+        { error: "Invalid request body." },
+        { status: 400 }
+      );
+    }
 
     // 0. Honeypot check
     if (raw.website && (raw.website as string).trim() !== "") {
