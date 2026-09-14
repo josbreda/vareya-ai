@@ -1,8 +1,11 @@
 import {
   CLAIM_ALL_IN,
   CLAIM_CARRIER_SELECTION,
+  CLAIM_CUSTOMS,
   CLAIM_POST_SUBMISSION,
   CLAIM_RETURNS,
+  CLAIM_ROYAL_MAIL,
+  CLAIM_SHIPHERO,
   CLAIM_SPECIALIST_FALLBACK,
   CLAIM_VOLUME,
 } from "@/content/claims";
@@ -23,6 +26,11 @@ export interface KnowledgeSource {
   url: string;
 }
 
+export interface KnowledgeInternalLink {
+  label: string;
+  href: string;
+}
+
 export interface KnowledgeSection {
   heading: string;
   paragraphs?: readonly string[];
@@ -31,6 +39,10 @@ export interface KnowledgeSection {
   checklist?: readonly string[];
   faq?: readonly KnowledgeFaqItem[];
   sources?: readonly KnowledgeSource[];
+  // Links to existing country/service/sector pages relevant to this
+  // section specifically (as opposed to the article-level primary/secondary
+  // CTA). Optional and additive — existing articles render unaffected.
+  internalLinks?: readonly KnowledgeInternalLink[];
   reviewNote?: string;
 }
 
@@ -1265,6 +1277,437 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         heading: "How this fits a Shopify shop",
         paragraphs: [
           "Shopify integration is available at Vareya, and returns flow through the same system as orders and inventory. One system means the shop, the warehouse and the returns process see the same stock.",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "uk-gb-eori-vs-eu-eori-stock-transfer",
+    title: "GB EORI vs EU EORI: what a UK brand needs before shipping stock to an EU warehouse",
+    description:
+      "Why a GB EORI number does not cover an EU import, and who is responsible for each side of a UK-to-EU stock transfer.",
+    summary:
+      "A UK brand's own GB EORI number does not carry over to the EU import leg — here is what covers each side of the border.",
+    publishedAt: "2026-09-14",
+    publishedLabel: "14 September 2026",
+    topic: "UK brands",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
+    reviewedAt: "2026-09-14",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "Two EORI numbers, two directions",
+        paragraphs: [
+          "An Economic Operators Registration and Identification (EORI) number identifies a business to customs authorities. Since Brexit, a GB EORI number covers moving goods out of Great Britain — it does not cover the import side once those goods reach the EU.",
+          "A UK brand sending stock to a warehouse inside the EU needs a GB EORI to export the consignment from Great Britain. The import into the EU is a separate customs event, requiring an EU-side EORI held by whichever party is named as the importer of record on that declaration.",
+          "This is easy to miss because both numbers use the same three letters. In practice they are two different registrations, issued by two different customs authorities, and only one of them belongs to the exporting UK business.",
+        ],
+      },
+      {
+        heading: "Who arranges what",
+        paragraphs: [
+          "Getting a GB EORI number (if the business does not already have one) and preparing the UK export declaration is the brand's responsibility, or that of its freight forwarder or customs agent.",
+          CLAIM_CUSTOMS,
+          "In practice this means: the brand's GB EORI and export paperwork cover the outbound leg from the UK; the EU-side import declaration, prepared using an EU EORI, covers the goods arriving at the warehouse in Breda. Vareya's role starts once the consignment has cleared into the EU and arrives at the warehouse.",
+        ],
+      },
+      {
+        heading: "Before the first shipment",
+        bullets: [
+          "Confirm the business holds a GB EORI number, or apply for one before the first consolidated shipment.",
+          "Agree who is preparing the EU-side import declaration and which EU EORI it will be filed under.",
+          "Check whether any of the products being shipped need an export licence, regardless of value.",
+          "Plan for a small number of consolidated shipments rather than frequent small parcels — this is usually simpler to declare correctly on both sides.",
+        ],
+      },
+      {
+        heading: "Frequently asked",
+        faq: [
+          {
+            q: "Does my GB EORI number work for EU imports?",
+            a: "No. A GB EORI number covers exports from Great Britain. Importing into the EU requires a separate EU-side EORI number, held by whichever party is the importer of record for that declaration.",
+          },
+          {
+            q: "Who prepares the EU import declaration for stock arriving at the Breda warehouse?",
+            a: "That is arranged by the brand or its customs representative, using an EU EORI. Vareya's role starts when the goods arrive at the warehouse in Breda.",
+          },
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "Get an EORI number: Who needs an EORI — GOV.UK", url: "https://www.gov.uk/eori" },
+        ],
+        internalLinks: [
+          { label: "EU fulfilment for UK ecommerce brands", href: "/eu-fulfilment-uk-brands/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "uk-eu-tca-rules-of-origin-tariff-free-stock",
+    title: "Does the UK-EU Trade and Cooperation Agreement remove customs duty on UK-origin stock into the EU?",
+    description:
+      "The Trade and Cooperation Agreement can remove customs duty on qualifying UK-origin goods entering the EU — but only if the goods meet its rules of origin and that status is proven.",
+    summary:
+      "Tariff-free access under the TCA is not automatic. It depends on where a product's components and manufacturing actually originate, and on proving that with documentation.",
+    publishedAt: "2026-09-14",
+    publishedLabel: "14 September 2026",
+    topic: "UK brands",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
+    reviewedAt: "2026-09-14",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "What the TCA actually covers",
+        paragraphs: [
+          "The UK-EU Trade and Cooperation Agreement (TCA) allows tariff-free, quota-free trade in goods between the UK and the EU — but only for goods that qualify as 'originating' under the agreement's rules. Being shipped from the UK is not, by itself, enough to qualify.",
+          "This distinction matters for any UK brand assuming that stock sent to an EU warehouse automatically clears without duty. Whether that is true depends on where the product was actually made and where its inputs came from, not on where it was last held before export.",
+        ],
+      },
+      {
+        heading: "Rules of origin: the part brands miss",
+        paragraphs: [
+          "Under the TCA's rules of origin, a product generally needs to be 'wholly obtained' in the UK, or manufactured there using a sufficient proportion of UK or EU inputs, to count as UK-originating. A product bought in from outside the UK and re-exported unchanged typically does not qualify.",
+          "Claiming the preferential (tariff-free) rate also requires proof: a statement on origin from the exporter, or the importer's own knowledge of the goods' origin, supported by supplier declarations where components are involved. Without that evidence, the standard (non-preferential) duty rate applies even if the product would otherwise have qualified.",
+        ],
+      },
+      {
+        heading: "What this means for stock moving to Breda",
+        paragraphs: [
+          "Whether a specific product range qualifies as UK-originating, and what documentation is needed to prove it, is a customs classification question for the brand or its advisers — it depends on the product, its bill of materials and its manufacturing location, not on the fulfilment setup around it.",
+          "Vareya's role starts once goods arrive at the warehouse in Breda. Customs clearance support is available for shipments into and out of Europe. Contact Vareya to discuss specific requirements — including cases where origin documentation needs to accompany a consolidated shipment.",
+          CLAIM_ROYAL_MAIL,
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          {
+            label: "Proving originating status and claiming a reduced rate of Customs Duty for trade between the UK and EU — GOV.UK",
+            url: "https://www.gov.uk/guidance/proving-originating-status-and-claiming-a-reduced-rate-of-customs-duty-for-trade-between-the-uk-and-eu",
+          },
+          {
+            label: "EU-UK Trade and Cooperation Agreement — Access2Markets, European Commission",
+            url: "https://trade.ec.europa.eu/access-to-markets/en/content/eu-uk-trade-and-cooperation-agreement",
+          },
+        ],
+        internalLinks: [
+          { label: "EU fulfilment for UK ecommerce brands", href: "/eu-fulfilment-uk-brands/" },
+          { label: "UK brands and the EU parcel levy", href: "/knowledge/uk-brands-eu-parcel-levy/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "us-schedule-b-aes-filing-eu-stock-transfer",
+    title: "Schedule B and AES filing: what US brands need before shipping stock to an EU warehouse",
+    description:
+      "US export rules require the right Schedule B classification and, above certain thresholds, an AES filing before stock can leave the country for an EU warehouse.",
+    summary:
+      "Exporting stock from the US is a formal, classified process before it ever reaches the EU border — here is what that involves.",
+    publishedAt: "2026-09-14",
+    publishedLabel: "14 September 2026",
+    topic: "US brands",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
+    reviewedAt: "2026-09-14",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "Classifying the shipment before it leaves the US",
+        paragraphs: [
+          "Every commercial export from the United States needs a Schedule B number — a 10-digit code, maintained by the US Census Bureau, that classifies the goods for export statistics and customs purposes. This is separate from any HS or tariff code used on the EU import side.",
+          "Getting the Schedule B classification right matters beyond paperwork: it is one of the details customs authorities on both sides use to check that a declared shipment matches what is actually inside it.",
+        ],
+      },
+      {
+        heading: "When an AES filing is required",
+        paragraphs: [
+          "Above defined value and licensing thresholds, US exporters must file through the Automated Export System (AES) before the goods leave the country. Whether a given consolidated stock shipment crosses that threshold, and which licensing exceptions may apply, depends on the goods, their value and their Schedule B classification.",
+          "A brand shipping a single consolidated pallet of stock to Breda is a different filing situation from a brand shipping frequent smaller parcels — consolidating shipments generally simplifies this side of the process, but it does not remove the classification and filing requirement itself.",
+        ],
+      },
+      {
+        heading: "Where Vareya's role starts",
+        paragraphs: [
+          "The Schedule B classification, any required AES filing, and the export documentation that goes with the shipment are the brand's responsibility, or that of its freight forwarder.",
+          CLAIM_CUSTOMS,
+          "Once the consolidated shipment arrives at the warehouse in Breda, it is received, checked in and made available for fulfilment. " + CLAIM_SHIPHERO,
+        ],
+      },
+      {
+        heading: "Frequently asked",
+        faq: [
+          {
+            q: "Is a Schedule B number the same as an EU customs code?",
+            a: "No. Schedule B is a US export classification maintained by the Census Bureau. The EU uses its own tariff nomenclature on the import side. The two are related in intent but are separate systems.",
+          },
+          {
+            q: "Do I need an AES filing for every shipment to an EU warehouse?",
+            a: "It depends on the value, the goods and their Schedule B classification. Confirm the current thresholds and any licence exceptions for your specific products with the Census Bureau's guidance or your freight forwarder.",
+          },
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "Schedule B — US Census Bureau", url: "https://www.census.gov/scheduleb" },
+        ],
+        internalLinks: [
+          { label: "EU fulfilment for US ecommerce brands", href: "/eu-fulfilment-us-brands/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "us-eu-trade-framework-2026-tariff-free-industrial-goods",
+    title: "The EU-US trade framework, in force since July 2026: what it means for US brands' EU-bound stock",
+    description:
+      "The EU has eliminated tariffs on imports of most US industrial goods under the 2025 EU-US framework, which entered into force on 1 July 2026 — a real change for US brands assessing EU stock.",
+    summary:
+      "A US brand assuming standard EU import duty applies to its stock may be working from outdated information. The EU-US framework changed that picture for many industrial goods in mid-2026.",
+    publishedAt: "2026-09-14",
+    publishedLabel: "14 September 2026",
+    topic: "US brands",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
+    reviewedAt: "2026-09-14",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "What changed, and when",
+        paragraphs: [
+          "In July 2025 the EU and US reached a trade deal, followed by a Joint Statement in August 2025 setting out its terms. After formal approval by the European Parliament and Council of the EU, the framework entered into force on 1 July 2026.",
+          "According to the European Commission, the EU has fully implemented its main commitment under that framework: eliminating tariffs on imports of US industrial goods, alongside improved access for certain non-sensitive agri-food products. In return, US tariffs on EU goods have been capped at 15% as a ceiling.",
+        ],
+      },
+      {
+        heading: "Why this matters for a fulfilment decision",
+        paragraphs: [
+          "A US brand comparing 'ship every order from the US' against 'hold stock in the EU' has historically had to factor in EU import duty on the inbound stock transfer as a cost of the EU-stock option. For goods that qualify as US industrial goods under the new framework, that specific cost may no longer apply from 1 July 2026 onward.",
+          "This does not remove EU import VAT, which is a separate tax applied regardless of any tariff preference, and it does not cover every product category — the framework's language specifically addresses industrial goods, with a narrower, separate set of improvements for certain agri-food products.",
+        ],
+      },
+      {
+        heading: "What this does not decide",
+        paragraphs: [
+          "Whether a specific product range — cosmetics, supplements, accessories or another category — is classified as an industrial good under the framework, and what documentation is needed to claim the preference at import, is a customs classification question for the brand or its advisers.",
+          "Vareya's role starts when the goods arrive at the warehouse in Breda. " + CLAIM_CUSTOMS,
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "The EU-US trade deal: restoring stability and predictability — European Commission", url: "https://commission.europa.eu/topics/trade/eu-us-trade-deal_en" },
+          { label: "Joint Statement on a United States-European Union Framework on an Agreement on Reciprocal, Fair, and Balanced Trade — The White House", url: "https://www.whitehouse.gov/briefings-statements/2025/08/joint-statement-on-a-united-states-european-union-framework-on-an-agreement-on-reciprocal-fair-and-balanced-trade/" },
+        ],
+        internalLinks: [
+          { label: "EU fulfilment for US ecommerce brands", href: "/eu-fulfilment-us-brands/" },
+          { label: "Shipping to the EU from the US after the parcel levy", href: "/knowledge/shipping-to-eu-from-us-after-parcel-levy/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "canada-cbsa-cers-export-declaration-eu-stock-transfer",
+    title: "CBSA export reporting (CERS) for Canadian brands sending stock to an EU warehouse",
+    description:
+      "Canada requires most commercial exports to be reported through the Canadian Export Reporting System before they leave the country — here is what that means for a stock transfer to an EU warehouse.",
+    summary:
+      "Exporting commercial goods from Canada goes through a formal CBSA reporting system before the EU side of the journey even begins.",
+    publishedAt: "2026-09-14",
+    publishedLabel: "14 September 2026",
+    topic: "Canada brands",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
+    reviewedAt: "2026-09-14",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "Reporting the export before it leaves Canada",
+        paragraphs: [
+          "The Canada Border Services Agency (CBSA) requires most commercial goods leaving Canada to be reported, generally through the Canadian Export Reporting System (CERS) portal — an electronic system for submitting export declarations. Certain low-value or exempt goods do not require a full declaration, but a commercial stock shipment for a fulfilment operation typically does.",
+          "This is separate from, and happens before, the import declaration required on the EU side when the shipment reaches the warehouse in Breda.",
+        ],
+      },
+      {
+        heading: "What a brand needs to have in place",
+        bullets: [
+          "Register for CERS access (directly, or through a customs broker or freight forwarder who will file on the brand's behalf).",
+          "Classify the goods correctly for export reporting purposes.",
+          "Confirm whether any of the products require an export permit, separately from the general export declaration.",
+          "Plan for consolidated shipments where practical — this is generally simpler to report correctly than frequent small parcels.",
+        ],
+      },
+      {
+        heading: "Where Vareya's role starts",
+        paragraphs: [
+          "The CERS export declaration and any required export permits are the brand's responsibility, or that of its customs broker.",
+          CLAIM_CUSTOMS,
+          "Once the shipment clears into the EU and arrives at the warehouse in Breda, it is received and made available for fulfilment. " + CLAIM_SHIPHERO,
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "Exporting commercial goods — Canada Border Services Agency", url: "https://www.cbsa-asfc.gc.ca/services/export/menu-eng.html" },
+        ],
+        internalLinks: [
+          { label: "European fulfilment for Canadian brands", href: "/european-fulfilment-for-canada-brands/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "canada-eu-ceta-tariff-free-stock-transfer",
+    title: "CETA and Canadian brands: how the EU-Canada trade agreement affects duty on stock moving into Europe",
+    description:
+      "CETA has provisionally eliminated most tariffs on qualifying goods traded between Canada and the EU since 2017 — a fact many Canadian brands assessing EU stock are not using.",
+    summary:
+      "A trade agreement most Canadian brands already qualify for is often overlooked when comparing the cost of holding stock inside the EU.",
+    publishedAt: "2026-09-14",
+    publishedLabel: "14 September 2026",
+    topic: "Canada brands",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
+    reviewedAt: "2026-09-14",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "What CETA covers",
+        paragraphs: [
+          "The Comprehensive Economic and Trade Agreement (CETA) between Canada and the EU has been provisionally in force since 2017, eliminating tariffs on the large majority of tariff lines for goods that qualify as Canadian-originating. Provisional application means most of the agreement already applies, even though full ratification by every EU member state is not yet complete.",
+          "As with any preferential trade agreement, the tariff elimination is not automatic for every shipment — it applies to goods that meet CETA's rules of origin, supported by the right proof of origin documentation.",
+        ],
+      },
+      {
+        heading: "The part that affects a stock-transfer decision",
+        paragraphs: [
+          "For a Canadian brand comparing the cost of holding stock inside the EU against shipping every order individually from Canada, CETA is directly relevant: qualifying goods can move into the EU as a consolidated shipment without the customs duty that would otherwise apply, provided origin is correctly documented.",
+          "This does not remove EU import VAT, which applies separately, and it does not decide the classification question on its own — that depends on where the goods and their inputs actually originate, not on which country they were shipped from most recently.",
+        ],
+      },
+      {
+        heading: "What stays a customs question",
+        paragraphs: [
+          "Whether a specific product range qualifies as Canadian-originating under CETA, and what proof of origin is needed for a consolidated shipment, is a question for the brand or its customs advisers.",
+          "Vareya's role starts once the shipment arrives at the warehouse in Breda. " + CLAIM_CUSTOMS,
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "EU-Canada agreements — European Commission", url: "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/countries-and-regions/canada/eu-canada-agreements_en" },
+          { label: "Canada-European Union Comprehensive Economic and Trade Agreement (CETA) — Government of Canada", url: "https://www.international.gc.ca/trade-commerce/trade-agreements-accords-commerciaux/agr-acc/ceta-aecg/index.aspx?lang=eng" },
+        ],
+        internalLinks: [
+          { label: "European fulfilment for Canadian brands", href: "/european-fulfilment-for-canada-brands/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "australia-abf-export-declaration-eu-stock-transfer",
+    title: "Australian Border Force export declarations: what changes when shipping stock to an EU warehouse",
+    description:
+      "Goods leaving Australia above AUD 2,000 in value generally need a formal Export Declaration — a step that applies before any EU-side import process begins.",
+    summary:
+      "The AUD 2,000 export declaration threshold decides whether a stock shipment needs a formal declaration before it ever reaches European customs.",
+    publishedAt: "2026-09-14",
+    publishedLabel: "14 September 2026",
+    topic: "Australia brands",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
+    reviewedAt: "2026-09-14",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "The AUD 2,000 threshold",
+        paragraphs: [
+          "Goods exported from Australia generally need an Export Declaration lodged with the Australian Border Force (ABF) if their value exceeds AUD 2,000, if they need an export permit regardless of value, or if duty drawback is being claimed. Goods valued below AUD 2,000 are generally exempt from this specific declaration requirement.",
+          "A single consolidated stock shipment intended for an EU fulfilment warehouse will typically exceed that AUD 2,000 threshold, which means an Export Declaration is the normal expectation rather than the exception for this kind of shipment.",
+        ],
+      },
+      {
+        heading: "What that means in practice",
+        bullets: [
+          "Export Declarations can be lodged up to six months ahead of the planned export date.",
+          "Confirm whether any products in the shipment need an export permit regardless of value.",
+          "A consolidated shipment is a more predictable declaration than frequent smaller parcels sitting just under or over the threshold.",
+        ],
+      },
+      {
+        heading: "Where Vareya's role starts",
+        paragraphs: [
+          "The Export Declaration and any required export permits are arranged by the brand or its freight forwarder before the shipment leaves Australia.",
+          CLAIM_CUSTOMS,
+          "Once the consolidated shipment clears into the EU and arrives at the warehouse in Breda, it is received and made available for fulfilment. " + CLAIM_SHIPHERO,
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "Export requirements — Australian Border Force", url: "https://www.abf.gov.au/importing-exporting-and-manufacturing/exporting/how-to-export/export-requirements" },
+        ],
+        internalLinks: [
+          { label: "European fulfilment for Australian brands", href: "/european-fulfilment-for-australian-brands/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "australia-eu-fta-not-yet-in-force-2026",
+    title: "The EU-Australia trade agreement is not yet in force: what that means for Australian brands' EU stock today",
+    description:
+      "Negotiations on an EU-Australia free trade agreement concluded in March 2026, but the agreement is still pending ratification — standard customs duty still applies to Australian goods entering the EU for now.",
+    summary:
+      "A concluded trade agreement is not the same as one that is in force. For Australian brands, that distinction still matters today.",
+    publishedAt: "2026-09-14",
+    publishedLabel: "14 September 2026",
+    topic: "Australia brands",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
+    reviewedAt: "2026-09-14",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "Where the agreement actually stands",
+        paragraphs: [
+          "Negotiations on an EU-Australia Free Trade Agreement concluded on 24 March 2026. As of this article's publication, the European Commission's own list of trade negotiations still shows the Australia agreement as 'pending' — meaning it is being adopted or ratified, not yet in force.",
+          "Ratification of a trade agreement of this size typically involves legal review, translation into official languages, signature and approval processes on both sides, which takes time after negotiations conclude. There is no confirmed in-force date yet.",
+        ],
+      },
+      {
+        heading: "Why this distinction matters now",
+        paragraphs: [
+          "It is easy to see news that a deal has been 'concluded' or 'finalised' and assume preferential, lower-duty treatment already applies. For Australian goods entering the EU today, that is not yet the case — standard (non-preferential) customs duty and import VAT rules continue to apply until the agreement formally enters into force and its terms take effect.",
+          "This is worth checking again periodically rather than assuming a fixed answer: once ratification progresses, the customs treatment of Australian-origin stock moving into the EU could change, potentially in a way relevant to any brand holding stock inside the EU.",
+        ],
+      },
+      {
+        heading: "What this means for a fulfilment decision today",
+        paragraphs: [
+          "Until the agreement is in force, Australian brands should plan around the current customs position for their products rather than an anticipated future preference. Whether specific goods qualify for any treatment, now or once the agreement takes effect, is a customs classification question for the brand or its advisers.",
+          "Vareya's role starts once a shipment arrives at the warehouse in Breda. " + CLAIM_CUSTOMS,
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "Negotiations and agreements — European Commission (Australia listed as pending)", url: "https://policy.trade.ec.europa.eu/eu-trade-relationships-country-and-region/negotiations-and-agreements_en" },
+          { label: "Australia-European Union Free Trade Agreement — Australian Government Department of Foreign Affairs and Trade", url: "https://www.dfat.gov.au/trade/agreements/not-yet-in-force/aeufta" },
+        ],
+        internalLinks: [
+          { label: "European fulfilment for Australian brands", href: "/european-fulfilment-for-australian-brands/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
         ],
       },
     ],

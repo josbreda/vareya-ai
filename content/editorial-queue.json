@@ -1,0 +1,2234 @@
+{
+  "version": 1,
+  "timezone": "Europe/Amsterdam",
+  "targetArticlesPerCountryPerDay": 2,
+  "generatedAt": "2026-09-14T08:59:31.549459+00:00",
+  "countries": {
+    "united-kingdom": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "published",
+          "slug": "uk-gb-eori-vs-eu-eori-stock-transfer",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "published",
+          "slug": "uk-eu-tca-rules-of-origin-tariff-free-stock",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "united-states": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "published",
+          "slug": "us-schedule-b-aes-filing-eu-stock-transfer",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "published",
+          "slug": "us-eu-trade-framework-2026-tariff-free-industrial-goods",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "canada": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "published",
+          "slug": "canada-cbsa-cers-export-declaration-eu-stock-transfer",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "published",
+          "slug": "canada-eu-ceta-tariff-free-stock-transfer",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "australia": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "published",
+          "slug": "australia-abf-export-declaration-eu-stock-transfer",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "published",
+          "slug": "australia-eu-fta-not-yet-in-force-2026",
+          "publishedAt": "2026-09-14"
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "new-zealand": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "norway": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "switzerland": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "japan": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "china": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "hong-kong": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "brazil": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "south-korea": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "saudi-arabia": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "turkey": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    },
+    "united-arab-emirates": {
+      "practical": [
+        {
+          "category": "export-documentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "amazon-fbm-setup",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "shopify-checkout-eu-shipping",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "returns-handling-eu-customers",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "carrier-choice-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "parcel-size-packaging",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "peak-season-planning",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-channel-fulfilment",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "switching-3pl-to-eu",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cross-border-returns-cost",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "cutoff-dispatch-windows",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "product-fit-smaller-parcels",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "vat-ioss-basics",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ],
+      "deepDive": [
+        {
+          "category": "trade-agreement-context",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-parcel-levy-impact",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "stock-vs-per-order-decision",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "segment-product-fit",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "fulfilment-model-comparison",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "eu-consumer-expectations",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "regulatory-horizon-2028-review",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "multi-marketplace-consolidation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "pricing-currency-presentation",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        },
+        {
+          "category": "ecommerce-market-trend",
+          "status": "pending",
+          "slug": null,
+          "publishedAt": null
+        }
+      ]
+    }
+  },
+  "log": [
+    {
+      "date": "2026-09-14",
+      "country": "united-kingdom",
+      "slot": "practical",
+      "category": "export-documentation",
+      "slug": "uk-gb-eori-vs-eu-eori-stock-transfer",
+      "status": "published"
+    },
+    {
+      "date": "2026-09-14",
+      "country": "united-kingdom",
+      "slot": "deepDive",
+      "category": "trade-agreement-context",
+      "slug": "uk-eu-tca-rules-of-origin-tariff-free-stock",
+      "status": "published"
+    },
+    {
+      "date": "2026-09-14",
+      "country": "united-states",
+      "slot": "practical",
+      "category": "export-documentation",
+      "slug": "us-schedule-b-aes-filing-eu-stock-transfer",
+      "status": "published"
+    },
+    {
+      "date": "2026-09-14",
+      "country": "united-states",
+      "slot": "deepDive",
+      "category": "trade-agreement-context",
+      "slug": "us-eu-trade-framework-2026-tariff-free-industrial-goods",
+      "status": "published"
+    },
+    {
+      "date": "2026-09-14",
+      "country": "canada",
+      "slot": "practical",
+      "category": "export-documentation",
+      "slug": "canada-cbsa-cers-export-declaration-eu-stock-transfer",
+      "status": "published"
+    },
+    {
+      "date": "2026-09-14",
+      "country": "canada",
+      "slot": "deepDive",
+      "category": "trade-agreement-context",
+      "slug": "canada-eu-ceta-tariff-free-stock-transfer",
+      "status": "published"
+    },
+    {
+      "date": "2026-09-14",
+      "country": "australia",
+      "slot": "practical",
+      "category": "export-documentation",
+      "slug": "australia-abf-export-declaration-eu-stock-transfer",
+      "status": "published"
+    },
+    {
+      "date": "2026-09-14",
+      "country": "australia",
+      "slot": "deepDive",
+      "category": "trade-agreement-context",
+      "slug": "australia-eu-fta-not-yet-in-force-2026",
+      "status": "published"
+    }
+  ]
+}

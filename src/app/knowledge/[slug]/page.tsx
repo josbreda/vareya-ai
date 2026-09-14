@@ -296,6 +296,20 @@ export default async function KnowledgeArticlePage({
                     </ol>
                   )}
 
+                  {section.internalLinks && section.internalLinks.length > 0 && (
+                    <div className="mt-6 flex flex-wrap gap-3">
+                      {section.internalLinks.map((link) => (
+                        <Link
+                          key={link.href}
+                          href={link.href}
+                          className="inline-flex items-center rounded-full border border-border bg-surface px-4 py-2 text-sm font-semibold text-primary transition-colors hover:border-primary/40 hover:bg-primary/5"
+                        >
+                          {link.label} <span className="ml-2" aria-hidden="true">→</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+
                   {section.reviewNote && (
                     <div className="mt-6 rounded-2xl border border-amber-400/40 bg-amber-400/5 p-6">
                       <p className="text-xs font-semibold uppercase tracking-[0.14em] text-amber-700">
