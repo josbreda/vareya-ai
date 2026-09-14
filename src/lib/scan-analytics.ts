@@ -40,6 +40,10 @@ export function trackRateScanComplete() {
   push("rate_scan_complete");
 }
 
+export function trackRateScanSubmitError() {
+  push("rate_scan_submit_error");
+}
+
 export function trackQuotationProfileComplete() {
   push("quotation_profile_complete");
 }

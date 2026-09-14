@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FAQ } from "@/components/marketing/FAQ";
 import { NetworkHero } from "@/components/marketing/NetworkHero";
 import { RotatingHeadline } from "@/components/marketing/RotatingHeadline";
-import { APPROVED_DESTINATIONS, CAPABILITIES } from "@/content/facts";
+import { CAPABILITIES } from "@/content/facts";
 
 export const metadata: Metadata = {
   title: "EU Ecommerce Fulfilment from the Netherlands | Vareya",
@@ -11,8 +11,6 @@ export const metadata: Metadata = {
     "Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Check your fulfilment fit in minutes.",
   alternates: { canonical: "https://vareya.ai/" },
 };
-
-const destinationList = APPROVED_DESTINATIONS.join(", ");
 
 const PROCESS_STEPS = [
   {
@@ -152,7 +150,7 @@ export default function HomePage() {
               "Netherlands-based warehouse.",
               CAPABILITIES.shopify,
               CAPABILITIES.amazonFbm,
-              CAPABILITIES.returns,
+              "Returns handling is available.",
               CAPABILITIES.postNL,
               CAPABILITIES.shipHero,
               CAPABILITIES.carrierSelection,
@@ -194,7 +192,6 @@ export default function HomePage() {
                 coordination overhead. Fulfilment also needs to connect cleanly with the
                 sales channels a brand already uses.
               </p>
-              <p>{CAPABILITIES.returns}</p>
             </div>
           </div>
         </div>
@@ -217,29 +214,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-slate-50 py-16 sm:py-20" aria-labelledby="relevant-capabilities">
-        <div className="container-site max-w-4xl">
-          <h2 id="relevant-capabilities" className="mb-6 text-2xl font-bold">
-            Relevant capabilities
-          </h2>
-          <div className="space-y-3 leading-7 text-muted">
-            <p>{CAPABILITIES.shopify}</p>
-            <p>{CAPABILITIES.amazonFbm}</p>
-            <p>{CAPABILITIES.returns}</p>
-            <p>{CAPABILITIES.postNL}</p>
-            <p>{CAPABILITIES.shipHero}</p>
-            <p>{CAPABILITIES.customs}</p>
-            <p>{CAPABILITIES.weekendFulfilment}</p>
-            <p>{CAPABILITIES.cutOff}</p>
-            <p>{CAPABILITIES.volume}</p>
-            <p>
-              Suitable smaller parcels have combined dimensions below 900 mm and a
-              maximum length of 600 mm.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section className="py-16 sm:py-20">
         <div className="container-site grid gap-10 lg:grid-cols-2">
           <div>
@@ -248,9 +222,17 @@ export default function HomePage() {
               {CAPABILITIES.shopify} If you sell through a different platform, share
               the details during qualification so product fit can be assessed.
             </p>
-            <Link href="/shopify-fulfilment-europe/" className="mt-4 inline-flex font-semibold text-primary hover:underline">
-              Explore Shopify fulfilment in Europe
-            </Link>
+            <p className="mt-4 flex flex-col gap-2 sm:flex-row sm:gap-6">
+              <Link href="/shopify-fulfilment-europe/" className="inline-flex font-semibold text-primary hover:underline">
+                Explore Shopify fulfilment in Europe
+              </Link>
+              <Link href="/amazon-fbm-fulfilment/" className="inline-flex font-semibold text-primary hover:underline">
+                Explore Amazon FBM fulfilment
+              </Link>
+              <Link href="/shipbob-alternative-europe/" className="inline-flex font-semibold text-primary hover:underline">
+                Compare with ShipBob
+              </Link>
+            </p>
           </div>
           <div>
             <h2 className="mb-4 text-2xl font-bold">International shipping</h2>

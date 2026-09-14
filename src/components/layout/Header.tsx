@@ -8,6 +8,7 @@ const NAV_ITEMS = [
   { label: "For Shopify", href: "/shopify-fulfilment-europe/" },
   { label: "US Brands", href: "/eu-fulfilment-us-brands/" },
   { label: "UK Brands", href: "/eu-fulfilment-uk-brands/" },
+  { label: "Knowledge", href: "/knowledge/" },
 ];
 
 export function Header() {
