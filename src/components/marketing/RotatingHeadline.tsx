@@ -33,7 +33,7 @@ export function RotatingHeadline({
     <span className={className}>
       {prefix}{" "}
       <span
-        className="inline-block text-network transition-all duration-300"
+        className="inline-block text-primary transition-all duration-300"
         style={{
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(8px)",
