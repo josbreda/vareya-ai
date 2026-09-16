@@ -150,6 +150,7 @@ export default function HomePage() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {[
               "Netherlands-based warehouse.",
+              CAPABILITIES.since2016,
               CAPABILITIES.shopify,
               CAPABILITIES.amazonFbm,
               CAPABILITIES.returns,

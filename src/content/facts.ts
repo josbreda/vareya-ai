@@ -59,6 +59,8 @@ export const CAPABILITIES = {
   royalMailDirect: "Shipments to the United Kingdom may be entered directly into the Royal Mail domestic network. Exact delivery timing depends on the agreed shipping method and is confirmed during qualification.",
   carrierSelection: "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics.",
   weekendFulfilment: "Weekend fulfilment (Saturday and Sunday order processing) is available on a structural basis.",
+  // v1.7 addition (approved 03-09-2026, certified KVK extract: first registration 21-04-2016)
+  since2016: "Vareya has been operational since 2016.",
   ambition: "Vareya's ambition is to become the most consumer-focused fulfilment organisation in Europe.",
 } as const;
 

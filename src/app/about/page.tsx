@@ -35,7 +35,8 @@ export default function AboutPage() {
             <p>
               Vareya BV is a fulfilment company based in {COMPANY.city},{" "}
               {COMPANY.country}. We fulfil e-commerce orders from our warehouse at{" "}
-              {COMPANY.street}, {COMPANY.postcode} {COMPANY.city}.
+              {COMPANY.street}, {COMPANY.postcode} {COMPANY.city}.{" "}
+              {CAPABILITIES.since2016}
             </p>
             <p>
               {CAPABILITIES.shopify} {CAPABILITIES.amazonFbm}
