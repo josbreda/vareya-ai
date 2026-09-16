@@ -49,6 +49,58 @@ export interface LeadDashboardPayload {
   [key: string]: unknown;
 }
 
+const COUNTRY_NAME_TO_ISO2: Record<string, string> = {
+  netherlands: "NL", "the netherlands": "NL", nederland: "NL", holland: "NL",
+  belgium: "BE", belgie: "BE", belgië: "BE",
+  germany: "DE", deutschland: "DE",
+  france: "FR", frankrijk: "FR",
+  "united kingdom": "GB", uk: "GB", "great britain": "GB", england: "GB",
+  "united states": "US", usa: "US", "united states of america": "US",
+  spain: "ES", spanje: "ES",
+  italy: "IT", italie: "IT", italië: "IT",
+  portugal: "PT", poland: "PL", polen: "PL",
+  austria: "AT", oostenrijk: "AT",
+  switzerland: "CH", zwitserland: "CH",
+  denmark: "DK", denemarken: "DK",
+  sweden: "SE", zweden: "SE",
+  norway: "NO", noorwegen: "NO",
+  finland: "FI",
+  ireland: "IE", ierland: "IE",
+  luxembourg: "LU", luxemburg: "LU",
+  "czech republic": "CZ", czechia: "CZ", tsjechie: "CZ", tsjechië: "CZ",
+  greece: "GR", griekenland: "GR",
+  hungary: "HU", hongarije: "HU",
+  romania: "RO", roemenie: "RO", roemenië: "RO",
+  bulgaria: "BG", croatia: "HR", kroatie: "HR", kroatië: "HR",
+  slovenia: "SI", slovenie: "SI", slovenië: "SI",
+  slovakia: "SK", slowakije: "SK",
+  estonia: "EE", estland: "EE",
+  latvia: "LV", letland: "LV",
+  lithuania: "LT", litouwen: "LT",
+  cyprus: "CY", malta: "MT",
+  canada: "CA", australia: "AU", australie: "AU", australië: "AU",
+  "new zealand": "NZ", "nieuw zeeland": "NZ",
+  japan: "JP", "south korea": "KR", "zuid korea": "KR", korea: "KR",
+  china: "CN", "hong kong": "HK", singapore: "SG",
+  "united arab emirates": "AE", uae: "AE",
+  "south africa": "ZA", "zuid afrika": "ZA",
+  brazil: "BR", brazilie: "BR", brazilië: "BR",
+  mexico: "MX", india: "IN", indonesia: "ID",
+  israel: "IL", israël: "IL",
+  turkey: "TR", turkije: "TR",
+};
+
+/** Maps a free-text form country value to an ISO2 code (the dashboard's
+ * `lead_organizations.country` column is varchar(2)). Unknown or empty
+ * values are dropped — the raw value travels separately as `country_name`
+ * so nothing the visitor typed is ever lost. */
+export function normaliseCountry(raw: string | undefined): string | undefined {
+  if (!raw) return undefined;
+  const value = raw.trim();
+  if (value.length === 2) return value.toUpperCase();
+  return COUNTRY_NAME_TO_ISO2[value.toLowerCase()];
+}
+
 /**
  * Maps the actual current Free Rate Scan payload to the dashboard contract.
  * Pure function — unit-tested; optional fields are omitted, extra scan fields
@@ -61,13 +113,16 @@ export function buildLeadDashboardPayload(
   const str = (v: unknown): string | undefined =>
     typeof v === "string" && v.trim() !== "" ? v.trim() : undefined;
 
+  const rawCountry = str(clean.company_country);
+
   return {
     company: str(clean.company) ?? "",
     email: str(clean.work_email) ?? "",
     name: str(clean.name),
     phone: str(clean.phone),
     website: str(clean.website),
-    country: str(clean.company_country),
+    country: normaliseCountry(rawCountry),
+    country_name: rawCountry,
     product_category: str(clean.product_category),
     platform: str(clean.ecommerce_platform),
     order_volume: str(clean.monthly_order_volume),
@@ -76,7 +131,7 @@ export function buildLeadDashboardPayload(
         ? Number(clean.sku_count)
         : undefined,
     message: str(clean.comments),
-    form_type: "scan",
+    form_type: str(clean.form_type) ?? "scan",
     source_page: str(clean.landing_page) ?? "/free-rate-scan/",
     utm_source: str(clean.utm_source),
     utm_medium: str(clean.utm_medium),

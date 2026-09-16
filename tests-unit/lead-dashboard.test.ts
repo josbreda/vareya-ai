@@ -10,6 +10,7 @@ import { join } from "node:path";
 const {
   buildLeadDashboardPayload,
   notifyLeadDashboard,
+  normaliseCountry,
   LEAD_DASHBOARD_ENDPOINT,
 } = await import("../src/lib/lead-dashboard.ts");
 
@@ -95,7 +96,8 @@ test("2. nieuwe scan payload mapping: alle contractvelden juist", () => {
   assert.equal(p.name, "Bob");
   assert.equal(p.phone, "+31 6 0000");
   assert.equal(p.website, "acme.co");
-  assert.equal(p.country, "United Kingdom");
+  assert.equal(p.country, "GB");
+  assert.equal(p.country_name, "United Kingdom");
   assert.equal(p.product_category, "fashion");
   assert.equal(p.platform, "shopify");
   assert.equal(p.order_volume, "500-1000");
@@ -280,4 +282,38 @@ test("14. geen secret in logs", async () => {
   for (const line of logs) {
     assert.ok(!line.includes(SENTINEL), "log mag de key niet bevatten");
   }
+});
+
+test("17. normaliseCountry: volledige landnamen → ISO2, ruwe waarde blijft behouden", () => {
+  assert.equal(normaliseCountry("Netherlands"), "NL");
+  assert.equal(normaliseCountry("the Netherlands"), "NL");
+  assert.equal(normaliseCountry("United Kingdom"), "GB");
+  assert.equal(normaliseCountry("Deutschland"), "DE");
+  assert.equal(normaliseCountry("nl"), "NL");
+  assert.equal(normaliseCountry("  de  "), "DE");
+  assert.equal(normaliseCountry("Atlantis"), undefined);
+  assert.equal(normaliseCountry(""), undefined);
+  assert.equal(normaliseCountry(undefined), undefined);
+});
+
+test("18. quote-formulier: form_type passeert door als 'quote', country genormaliseerd", () => {
+  const p = buildLeadDashboardPayload(
+    {
+      company: "ACEFUEL",
+      work_email: "martin@acefuel.com",
+      name: "Martin Martonfalvy",
+      company_country: "Netherlands",
+      ecommerce_platform: "shopify",
+      monthly_order_volume: "0-200",
+      form_type: "quote",
+      landing_page: "/request-fulfilment-quote/",
+      target_markets: ["nl", "other-eu", "us"],
+    },
+    "sub-18",
+  );
+  assert.equal(p.form_type, "quote");
+  assert.equal(p.country, "NL");
+  assert.equal(p.country_name, "Netherlands");
+  assert.deepEqual(p.target_markets, ["nl", "other-eu", "us"]);
+  assert.equal(p.source_page, "/request-fulfilment-quote/");
 });
