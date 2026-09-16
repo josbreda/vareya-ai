@@ -1,9 +1,9 @@
 Document: Vareya.ai Claims Register
-Version: 1.6
+-Version: 1.7
 Status: Approved for implementation
 Commercial approval: Raymond
 Operational owner: Jos
-Last updated: 1 September 2026
+-Last updated: 3 September 2026
 
 # Claims Register
 
@@ -36,6 +36,7 @@ Last updated: 1 September 2026
 - Shipments to the United Kingdom may be entered directly into the Royal Mail domestic network. Exact delivery timing depends on the agreed shipping method and is confirmed during qualification.
 - Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics.
 - Weekend fulfilment (Saturday and Sunday order processing) is available on a structural basis.
+- Vareya has been operational since 2016. (Approved 3 September 2026, Decision 5 — evidence: certified KVK trade register extract, first registration 21-04-2016.)
 
 Approved 9 August 2026 by Raymond (commercial approval) — see `DECISIONS_FOR_RAYMOND.md` point 9 and `ASSUMPTIONS.md` A-009–A-018. The percentage of clients using Shopify is not published until dated source data is available (see A-012); only the ShipHero/Shopify integration fact itself is approved.
 
@@ -60,7 +61,7 @@ Vareya is not currently a Thuiswinkel member and must not be presented as one.
 
 ### Decision 3 — Destination confirmation (4 countries)
 
-Raymond confirmed on 1 September 2026: South Korea, Saudi Arabia, Turkey and the United Arab Emirates are operational shipping destinations (parcel shipments). Carriers used: PostNL, Asendia, FedEx, DHL Express. Customs processing is handled through the selected carrier. Returns: available by agreement. No additional Vareya-specific volume restrictions were given. Operational since: the founding of Vareya in 2016 (owner-confirmed; historical evidence required before any public "since 2016" claim — until then INTERNAL_OWNER_CONFIRMED).
+Raymond confirmed on 1 September 2026: South Korea, Saudi Arabia, Turkey and the United Arab Emirates are operational shipping destinations (parcel shipments). Carriers used: PostNL, Asendia, FedEx, DHL Express. Customs processing is handled through the selected carrier. Returns: available by agreement. No additional Vareya-specific volume restrictions were given. Operational since: the founding of Vareya in 2016. The public claim was approved on 3 September 2026 (Decision 5) on the basis of the certified KVK trade register extract (first registration 21-04-2016) and Raymond's commercial approval.
 
 - Concrete destinations: 37 existing + 4 now confirmed = **41 concrete destinations**. "Rest of the World" does not count as a country (unchanged rule).
 - Do not claim that each of PostNL, Asendia, FedEx and DHL Express individually serves all four countries unless proven per country. Maintain a service matrix (destination × carrier × service × outbound/returns availability × customs process × evidence × last verified × conditions).
@@ -69,6 +70,14 @@ Raymond confirmed on 1 September 2026: South Korea, Saudi Arabia, Turkey and the
 ### Decision 4 (A) — Commercial activation (exact scope)
 
 Authorised batch only: the 26 decision-maker enrichments, the two pre-identified duplicate merges (carriercompany, komana), the three follow-up emails and the three new outreach emails. No automatic follow-up emails without new human review. Sending is one-by-one, never bulk.
+
+## Decision 5 — "Operational since 2016" claim approved (3 September 2026, Raymond)
+
+The public claim "Vareya has been operational since 2016" is APPROVED.
+
+- Evidence: certified KVK trade register extract (electronic seal, KVK 65877535) — first registration in the Handelsregister 21-04-2016, deed of incorporation 15-04-2016. Extract delivered by Raymond on 3 September 2026 with explicit commercial approval.
+- Owner approval: Jos (operational owner).
+- Public wording: "Vareya has been operational since 2016." Reproduce verbatim. The extract's employee count and personal director details remain internal and are not published.
 
 ## Entity decisions approved 21 August 2026 (Raymond)
 
@@ -150,6 +159,8 @@ Jos is the internal lead owner of this response. Public website copy must refer 
 4. PostNL wording: strongest supportable carrier wording to be established after review of available email evidence (owner instruction 21 August 2026). Current canonical wording is the downgraded "main carrier" sentence; "strategic partner" remains suspended.
 
 ## Implementation notes
+
+**3 September 2026 (v1.7):** "operational since 2016" claim activated after Raymond's commercial approval and the certified KVK trade register extract (first registration 21-04-2016, deed of incorporation 15-04-2016). Fact added to the approved-facts list, `src/content/facts.ts` (`CAPABILITIES.since2016`), the about page ("Who we are"), the home capabilities grid and llms.txt. The employee count and personal director details from the extract are not published.
 
 1. 1 September 2026 (v1.6): Raymond decisions 1-4 recorded (cooperative = future vision only; Thuiswinkel PROHIBITED_UNTIL_NEW_VERIFIED_MEMBERSHIP; 4 destinations owner-confirmed with service-matrix rules; commercial activation authorisation for the exact prepared batch). Public cooperative copy aligned to "exploring a possible future cooperative model" direction (about, why-vareya-ai, knowledge hub + cooperative article, metadata).
 2. 24 August 2026 (v1.5): PostNL evidence reviewed. Direct external evidence (PostNL International account-manager e-mail, 2026 agreement + meeting request) classified as evidence class A; owner operational facts integrated. Strongest supportable wording established (own shipping agreements + direct cooperation with PostNL International and operational teams); "strategic partner" remains prohibited. ShipHero operational facts recorded as owner-confirmed (WMS environment manages inventory/fulfilment/returns; Shopify via API; carrier contracts incl. PostNL integrated for label generation; reference exchange possible; contact Daniel Lawson) — page wording unchanged until external confirmation where noted. Protected customer evidence pool created (10 customers; NO-CONTACT rule). Human-input pipeline opened for Onboarding and Direct Entry UK topics.
