@@ -151,7 +151,7 @@ export default function HomePage() {
               CAPABILITIES.since2016,
               CAPABILITIES.shopify,
               CAPABILITIES.amazonFbm,
-              "Returns handling is available.",
+              CAPABILITIES.returns,
               CAPABILITIES.postNL,
               CAPABILITIES.shipHero,
               CAPABILITIES.carrierSelection,
