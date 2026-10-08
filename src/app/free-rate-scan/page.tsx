@@ -12,6 +12,7 @@ import {
   trackRateScanView,
 } from "@/lib/scan-analytics";
 import { TurnstileWidget } from "@/components/forms/TurnstileWidget";
+import { buildScanConsiderations } from "@/lib/scan-considerations";
 
 /* ── Step definitions ── */
 const STEPS = [
@@ -282,6 +283,26 @@ function ScanForm() {
       }
 
       trackRateScanComplete();
+
+      // Hand the already-collected, non-PII business answers to the
+      // thank-you page so it can show a personalised explanation instead
+      // of a generic message. No new data is collected for this — same
+      // fields already sent above, contact details excluded.
+      try {
+        const result = buildScanConsiderations({
+          monthly_order_volume: data.monthly_order_volume,
+          product_category: data.product_category,
+          target_markets: data.target_markets,
+          ecommerce_platform: data.ecommerce_platform,
+          services_needed: data.services_needed,
+        });
+        sessionStorage.setItem("vareya_scan_result", JSON.stringify(result));
+      } catch {
+        // sessionStorage unavailable (private browsing etc.) — thank-you
+        // page falls back to its generic message, submission already
+        // succeeded above regardless.
+      }
+
       router.push("/thank-you/scan/");
     } catch (err: unknown) {
       trackRateScanSubmitError();
@@ -303,7 +324,14 @@ function ScanForm() {
           </span>
           <span>{current.title}</span>
         </div>
-        <div className="h-2 bg-slate-200 rounded-full overflow-hidden">
+        <div
+          className="h-2 bg-slate-200 rounded-full overflow-hidden"
+          role="progressbar"
+          aria-valuenow={step + 1}
+          aria-valuemin={1}
+          aria-valuemax={TOTAL_STEPS}
+          aria-label={`Step ${step + 1} of ${TOTAL_STEPS}: ${current.title}`}
+        >
           <div
             className="h-full bg-primary rounded-full transition-all duration-300"
             style={{ width: `${((step + 1) / TOTAL_STEPS) * 100}%` }}
@@ -313,7 +341,7 @@ function ScanForm() {
 
       {/* Question */}
       <div className="bg-white rounded-xl border border-slate-200 p-6 sm:p-8">
-        <h2 className="text-xl font-semibold text-slate-900 mb-6">
+        <h2 id="scan-question" className="text-xl font-semibold text-slate-900 mb-6">
           {current.question}
         </h2>
 
@@ -390,7 +418,7 @@ function ScanForm() {
 
         {/* Server error */}
         {serverError && (
-          <p className="mt-4 text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">
+          <p role="alert" className="mt-4 text-sm text-red-600 bg-red-50 px-4 py-3 rounded-lg">
             {serverError}
           </p>
         )}
@@ -448,6 +476,9 @@ function SelectField({
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        aria-labelledby="scan-question"
+        aria-invalid={!!error}
+        aria-describedby={error ? "scan-field-error" : undefined}
         className={`w-full px-4 py-3 rounded-lg border text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 ${
           error ? "border-red-400" : "border-slate-300"
         }`}
@@ -458,7 +489,11 @@ function SelectField({
           </option>
         ))}
       </select>
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+      {error && (
+        <p id="scan-field-error" role="alert" className="mt-1 text-sm text-red-600">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
@@ -475,7 +510,7 @@ function MultiSelectField({
   onToggle: (v: string) => void;
 }) {
   return (
-    <div>
+    <div role="group" aria-labelledby="scan-question" aria-describedby={error ? "scan-field-error" : undefined}>
       <div className="grid grid-cols-2 gap-2">
         {options.map((o) => {
           const active = selected.includes(o.value);
@@ -484,6 +519,7 @@ function MultiSelectField({
               key={o.value}
               type="button"
               onClick={() => onToggle(o.value)}
+              aria-pressed={active}
               className={`px-4 py-3 rounded-lg border text-left text-sm font-medium transition-colors ${
                 active
                   ? "border-primary bg-primary/10 text-primary"
@@ -495,7 +531,11 @@ function MultiSelectField({
           );
         })}
       </div>
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+      {error && (
+        <p id="scan-field-error" role="alert" className="mt-1 text-sm text-red-600">
+          {error}
+        </p>
+      )}
     </div>
   );
 }
@@ -529,11 +569,17 @@ function InputField({
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
+        aria-invalid={!!error}
+        aria-describedby={error ? `${name}-error` : undefined}
         className={`w-full px-4 py-3 rounded-lg border text-slate-900 bg-white focus:outline-none focus:ring-2 focus:ring-primary/50 ${
           error ? "border-red-400" : "border-slate-300"
         }`}
       />
-      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+      {error && (
+        <p id={`${name}-error`} role="alert" className="mt-1 text-sm text-red-600">
+          {error}
+        </p>
+      )}
     </div>
   );
 }

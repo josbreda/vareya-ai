@@ -153,26 +153,64 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     slug: "shopify-fulfilment-europe-what-to-look-for",
     title: "Shopify fulfilment in Europe: what to look for",
     description:
-      "Practical questions for reviewing a European fulfilment setup for Shopify orders, stock, exceptions and returns.",
+      "What's actually confirmed in a Shopify-to-3PL integration, which data flows are store-specific, and a practical checklist for reviewing a European fulfilment setup before launch.",
     summary:
-      "A practical checklist for evaluating a European fulfilment operation for a Shopify store.",
+      "A practical checklist for evaluating a European fulfilment operation for a Shopify store — including which data flows a provider can confirm generically versus only per store.",
     publishedAt: "2026-08-07",
     publishedLabel: "7 August 2026",
     topic: "Shopify",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.7",
+    reviewedAt: "2026-10-09",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
     sections: [
+      {
+        heading: "Direct answer",
+        paragraphs: [
+          `A Shopify-to-3PL integration generally moves three kinds of data: orders flowing in, inventory levels flowing both ways, and fulfilment/tracking status flowing back out. ${APPROVED_FACTS.shopify} ${CLAIM_SHIPHERO} Which specific fields sync, how often, and whether any step is manual depends on the individual Shopify store's apps, markets and order rules — that part is confirmed during onboarding, not generically.`,
+        ],
+      },
+      {
+        heading: "What is confirmed generically, and what is confirmed per store",
+        paragraphs: [
+          "It is worth being precise about this distinction, because \"fully integrated\" can mean very different things in practice.",
+        ],
+        table: {
+          headers: ["Area", "Confirmed generically", "Confirmed only per store, during onboarding"],
+          rows: [
+            [
+              "Platform and WMS",
+              "Shopify integration is available, connected to ShipHero as the warehouse management system.",
+              "—",
+            ],
+            [
+              "Order data",
+              "Eligible orders are transferred into the fulfilment workflow.",
+              "Which order tags, holds, fraud rules or multi-store/Markets setups apply.",
+            ],
+            [
+              "Inventory data",
+              "Stock levels are tracked in the connected warehouse system.",
+              "Sync frequency, and whether multiple Shopify stores share one inventory pool.",
+            ],
+            [
+              "Tracking and status",
+              "Shipment and tracking information can be returned through the connected setup.",
+              "The exact update cadence and which Shopify order events trigger a status change.",
+            ],
+            [
+              "SKUs, variants and bundles",
+              "The warehouse operates on SKUs and barcodes.",
+              "How bundles/kits are modelled and whether every variant already has its own SKU and barcode.",
+            ],
+          ],
+        },
+      },
       {
         heading: "Map the complete order flow",
         paragraphs: [
-          APPROVED_FACTS.shopify,
           "Before onboarding, map what should happen from a customer placing an order through to the warehouse receiving the order data, selecting stock, preparing the parcel and recording dispatch. Include cancellations, address changes and other exceptions rather than reviewing only the normal path.",
           "Confirm which Shopify data is required, how product and order identifiers are matched, when stock updates are exchanged and who investigates an order that does not enter the agreed workflow.",
-        ],
-        bullets: [
-          "Store, market and currency configuration",
-          "SKU and variant identifiers",
-          "Order holds, edits and cancellation rules",
-          "Stock-status and dispatch updates",
-          "Responsibility for exception handling",
         ],
       },
       {
@@ -185,11 +223,54 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
       },
       {
+        heading: "Pre-launch integration checklist",
+        paragraphs: ["Mark each item confirmed before the first live order:"],
+        checklist: [
+          "Store, market and currency configuration documented",
+          "Every SKU and variant that needs individual picking has its own identifier",
+          "Order holds, edits and cancellation rules agreed",
+          "Stock-status and dispatch update cadence confirmed, not assumed",
+          "Named owner on both sides for catalogue data and order exceptions",
+          "Multi-store/Markets inventory-sharing confirmed, if relevant",
+          "A controlled batch of representative test orders run end-to-end",
+          "Returns workflow — physical handling and refund responsibility — agreed and documented",
+        ],
+      },
+      {
         heading: "Agree an onboarding check before launch",
         paragraphs: [
-          "Write down the agreed data flow and physical workflow, then use a controlled set of representative orders to check identifiers, stock allocation, dispatch updates and exceptions. The objective is to discover missing rules before normal order processing begins.",
-          "Keep named owners on both sides for catalogue data, inbound coordination and order exceptions. After launch, review exceptions and stock discrepancies against the agreed process so that changes are deliberate and traceable.",
+          "Use the checklist above with a controlled set of representative orders to check identifiers, stock allocation, dispatch updates and exceptions before normal order processing begins. The objective is to discover missing rules while they're still cheap to fix.",
+          "After launch, review exceptions and stock discrepancies against the agreed process so that changes are deliberate and traceable.",
           "For a Vareya review, include the Shopify store setup, recent order profile, SKU data, target markets and required start window in the fulfilment scan.",
+        ],
+      },
+      {
+        heading: "Frequently asked questions",
+        faq: [
+          {
+            q: "Does the integration sync in real time?",
+            a: "Sync frequency and which events trigger an update are confirmed per store during onboarding — it depends on the Shopify apps and order rules in use, not a single generic answer.",
+          },
+          {
+            q: "Can Vareya connect more than one Shopify store?",
+            a: "This is assessed during qualification, based on your store and inventory setup.",
+          },
+          {
+            q: "Who is responsible for fixing a data mismatch after go-live?",
+            a: "Whoever is named as the owner for that data area in the pre-launch checklist — agreeing this in advance, rather than after a mismatch occurs, is what the checklist is for.",
+          },
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "Shopify Help Center — Editing SKUs, barcodes, and other product details", url: "https://help.shopify.com/en/manual/products/details/edit-sku-barcode" },
+          { label: "Shopify dev docs — Webhooks (order, inventory and fulfilment event notifications)", url: "https://shopify.dev/docs/api/webhooks" },
+        ],
+        internalLinks: [
+          { label: "Shopify fulfilment in Europe", href: "/shopify-fulfilment-europe/" },
+          { label: "Shopify 3PL in Europe: how to compare providers", href: "/knowledge/shopify-3pl-europe-how-to-compare/" },
+          { label: "Shopify product and SKU data: what a 3PL needs before go-live", href: "/knowledge/shopify-product-sku-data-preparation/" },
         ],
       },
     ],
@@ -622,7 +703,17 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     publishedAt: "2026-08-10",
     publishedLabel: "10 August 2026",
     topic: "Costs",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.7",
+    reviewedAt: "2026-10-09",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
     sections: [
+      {
+        heading: "Direct answer",
+        paragraphs: [
+          "Fulfilment cost is not one number — it's the sum of six drivers: order volume, parcel profile, destination mix, storage requirement, platform integration and service-level requirements. There is no universal per-order rate that applies across brands; two shops with the same monthly order count can receive very different quotations once their parcel size, destinations and storage needs differ.",
+        ],
+      },
       {
         heading: "The six cost drivers, in order of impact",
         paragraphs: [
@@ -647,6 +738,63 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
           "Two quotations can look similar and differ materially in scope. Compare the same six drivers: does each quote assume the same volume band, the same destination mix, the same parcel profile, the same storage model and the same service-level commitments?",
           "A lower headline rate that assumes a different volume band or excludes returns is not a cheaper operation — it is a different quotation. Line up the assumptions first, then compare the numbers.",
           "Vareya's fulfilment rates are fixed and all-in per agreement. The scan collects the same driver data a quotation needs, so the fit review starts from the actual operation rather than a guess.",
+        ],
+      },
+      {
+        heading: "Two profiles, same order count, different quotation",
+        paragraphs: [
+          "Composite, illustrative example — not a real quotation or an identifiable brand. Figures are rounded for clarity and are not Vareya rates.",
+        ],
+        table: {
+          headers: ["Driver", "Brand A: 1,000 orders/month", "Brand B: 1,000 orders/month"],
+          rows: [
+            ["Parcel profile", "Small, light (cosmetics)", "Larger, heavier (home goods)"],
+            ["Destination mix", "80% Netherlands + Belgium", "Spread across 10 countries"],
+            ["Storage footprint", "2 pallets", "9 pallets"],
+            ["Returns rate", "Low", "Higher — more carrier legs to reverse"],
+            ["Likely quotation shape", "Lower storage and carrier cost per order", "Higher storage and carrier cost per order"],
+          ],
+        },
+      },
+      {
+        heading: "Quotation-comparison checklist",
+        paragraphs: ["Before comparing numbers from different providers, confirm each quote states:"],
+        checklist: [
+          "The volume band the quote assumes",
+          "The destination mix assumed",
+          "The parcel profile assumed (dimensions and weight)",
+          "What storage model is included, and at what footprint",
+          "Which service levels (cut-off, weekend processing, SLAs) are included by default",
+          "Whether returns handling is included or priced separately",
+          "What sits outside the quoted rate entirely",
+        ],
+      },
+      {
+        heading: "Frequently asked questions",
+        faq: [
+          {
+            q: "Is there a standard per-order fulfilment rate?",
+            a: "No. Rate depends on the six drivers above for your specific operation — there is no single rate that applies across brands or product categories.",
+          },
+          {
+            q: "Does a lower monthly order count always mean a lower total cost?",
+            a: "Not necessarily. A smaller brand with a heavier, more spread-out parcel profile can cost more per order to serve than a larger brand with a compact, concentrated one.",
+          },
+          {
+            q: "What information does Vareya need to quote?",
+            a: "See the dedicated guide on quotation requirements, linked below — it covers the nine inputs a 3PL needs for a reliable quotation.",
+          },
+        ],
+      },
+      {
+        heading: "Sources",
+        paragraphs: [
+          "All operational statements about Vareya in this article come from the Vareya claims register (approved facts). The illustrative example is composite and does not describe a real quotation.",
+        ],
+        internalLinks: [
+          { label: "What information does a 3PL need to prepare a fulfilment quotation?", href: "/knowledge/fulfilment-quotation-requirements/" },
+          { label: "Shopify fulfilment in Europe", href: "/shopify-fulfilment-europe/" },
+          { label: "Request a fulfilment quote", href: "/request-fulfilment-quote/" },
         ],
       },
     ],
@@ -706,7 +854,6 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     reviewer: "Hermes (claims-checked against register v1.4)",
     reviewedAt: "2026-08-21",
     primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
-    secondaryCta: { label: "Request a fulfilment quote", route: "/request-fulfilment-quote/" },
     sections: [
       {
         heading: "You talk to us first",
@@ -747,6 +894,22 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
       },
       {
+        heading: "Onboarding and inbound checklist",
+        paragraphs: [
+          "What to have ready before the first inbound shipment, in the order it usually comes up:",
+        ],
+        checklist: [
+          "Product category, monthly order volume and target destinations confirmed at qualification",
+          "Sales channel (Shopify or other) connected and store/market configuration agreed",
+          "SKU and barcode data clean — one unique SKU and barcode per sellable variant",
+          "Bundles or kits classified as their own stock unit or assembled from components",
+          "Inbound quantities, product identification and arrival timing agreed with Vareya in advance",
+          "Packaging and handling instructions documented for any non-standard product",
+          "Returns process agreed before the first customer order ships",
+          "A start date agreed that both sides can realistically meet",
+        ],
+      },
+      {
         heading: "What we will not promise",
         paragraphs: [
           "We would rather be clear than clever. Vareya is generally best suited to brands shipping 500 or more orders per month.",
@@ -779,6 +942,11 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         heading: "Sources",
         paragraphs: [
           "All operational statements in this article come from the Vareya claims register (approved facts). No customer names, figures or performance promises are used.",
+        ],
+        internalLinks: [
+          { label: "Shopify product and SKU data: what a 3PL needs before go-live", href: "/knowledge/shopify-product-sku-data-preparation/" },
+          { label: "What information does a 3PL need to prepare a fulfilment quotation?", href: "/knowledge/fulfilment-quotation-requirements/" },
+          { label: "Request a fulfilment quote", href: "/request-fulfilment-quote/" },
         ],
       },
     ],
@@ -889,6 +1057,17 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
           },
         ],
       },
+      {
+        heading: "Sources",
+        paragraphs: [
+          "The migration method is generic guidance for any ecommerce brand switching 3PL in Europe. All operational statements about Vareya come from the Vareya claims register (approved facts).",
+        ],
+        internalLinks: [
+          { label: "Shopify fulfilment in Europe", href: "/shopify-fulfilment-europe/" },
+          { label: "Shopify product and SKU data: what a 3PL needs before go-live", href: "/knowledge/shopify-product-sku-data-preparation/" },
+          { label: "What information does a 3PL need to prepare a fulfilment quotation?", href: "/knowledge/fulfilment-quotation-requirements/" },
+        ],
+      },
     ],
   },
   {
@@ -905,7 +1084,6 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     reviewer: "Hermes (claims-checked against register v1.5)",
     reviewedAt: "2026-08-21",
     primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
-    secondaryCta: { label: "Explore Shopify fulfilment in Europe", route: "/shopify-fulfilment-europe/" },
     sections: [
       {
         heading: "Why most comparisons fail",
@@ -965,6 +1143,57 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
       },
       {
+        heading: "A scorecard for your shortlist",
+        paragraphs: [
+          "Score each shortlisted provider 1 (weak), 2 (adequate) or 3 (strong) against the same criteria, using their actual answers — not their marketing. A provider that cannot be scored on a row because it would not give a concrete answer scores 1 on that row by default.",
+        ],
+        table: {
+          headers: ["Criterion", "What a strong (3) answer looks like", "Your score"],
+          rows: [
+            [
+              "Shopify connection",
+              "Names the specific data that syncs (orders, inventory, tracking) and what is confirmed only per store during onboarding, rather than a blanket \"fully integrated\"",
+              "",
+            ],
+            [
+              "Warehouse management system",
+              "Names the actual WMS and states plainly whether it is natively integrated with Shopify or bridged through a third-party connector",
+              "",
+            ],
+            [
+              "Parcel and product fit",
+              "States concrete size/weight boundaries and product categories it specialises in, not \"we handle everything\"",
+              "",
+            ],
+            [
+              "Carrier network and selection",
+              "Names the actual carriers per route and explains how a carrier is chosen per shipment",
+              "",
+            ],
+            [
+              "Cut-off and weekend processing",
+              "Gives a specific cut-off time and states plainly whether it depends on agreement, rather than an unconditional promise",
+              "",
+            ],
+            [
+              "Returns process",
+              "Explains where returns land, who inspects them, and distinguishes physical handling from who issues the customer refund",
+              "",
+            ],
+            [
+              "Rate structure",
+              "Confirms whether the quoted rate is genuinely all-in or lists exclusions explicitly, rather than a single headline number",
+              "",
+            ],
+            [
+              "Support and SLAs",
+              "States what support is included by default versus what is a paid or negotiated extra",
+              "",
+            ],
+          ],
+        },
+      },
+      {
         heading: "Questions we hear often",
         faq: [
           {
@@ -979,12 +1208,21 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
             q: "Are cheaper quotes always better?",
             a: "Only when they compare the same items. Check what is not included before comparing what is.",
           },
+          {
+            q: "What does a low score on one row mean?",
+            a: "Not automatically disqualifying — it means that provider needs a direct follow-up question before you rely on that part of their offer. A pattern of low scores across several rows is the real signal.",
+          },
         ],
       },
       {
         heading: "Sources",
         paragraphs: [
-          "All operational statements about Vareya in this article come from the Vareya claims register (approved facts). The comparison method is generic guidance for any Shopify brand choosing a European 3PL.",
+          "All operational statements about Vareya in this article come from the Vareya claims register (approved facts). The scorecard and comparison method are generic guidance for any Shopify brand choosing a European 3PL — not Vareya-specific scoring criteria.",
+        ],
+        internalLinks: [
+          { label: "Shopify fulfilment in Europe", href: "/shopify-fulfilment-europe/" },
+          { label: "Shopify fulfilment in Europe: what to look for", href: "/knowledge/shopify-fulfilment-europe-what-to-look-for/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
         ],
       },
     ],
@@ -1277,6 +1515,64 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         heading: "How this fits a Shopify shop",
         paragraphs: [
           "Shopify integration is available at Vareya, and returns flow through the same system as orders and inventory. One system means the shop, the warehouse and the returns process see the same stock.",
+        ],
+      },
+      {
+        heading: "Physical return handling and the customer refund are two different jobs",
+        paragraphs: [
+          "It's worth separating these explicitly, because they are handled by different parties by design — not just at Vareya, but in how Shopify itself is built. A fulfilment warehouse can receive a returned parcel, inspect it and restock or dispose of it. Issuing the refund to the customer, and the customer communication around it, is a commercial action taken by the brand through its own Shopify admin.",
+          "Shopify's own documentation confirms this split: refunds are issued by the store owner through the Shopify admin, not by a fulfilment location. A returns process should state explicitly which party does what, rather than leaving the customer refund as an assumed outcome of the physical return.",
+        ],
+        table: {
+          headers: ["Step", "Who typically handles it"],
+          rows: [
+            ["Return authorised / label issued", "Brand, via its own policy and Shopify admin"],
+            ["Parcel received at the warehouse", "Fulfilment partner (Vareya)"],
+            ["Visual inspection, condition check", "Fulfilment partner (Vareya)"],
+            ["Restock, quarantine or disposal decision", "Agreed between brand and fulfilment partner"],
+            ["Refund issued to the customer", "Brand, via Shopify admin"],
+            ["Customer communication about the refund", "Brand"],
+          ],
+        },
+      },
+      {
+        heading: "Returns readiness checklist",
+        paragraphs: ["Confirm each of these before the first customer order ships:"],
+        checklist: [
+          "Return address and labelling process agreed",
+          "Inspection criteria for restockable vs. non-restockable items agreed",
+          "Who decides on quarantine, refurbishment or disposal",
+          "Who issues the customer refund, and through which system",
+          "How the brand is notified that a return has arrived and been processed",
+          "How cross-border returns (where relevant) are kept inside the EU return route",
+        ],
+      },
+      {
+        heading: "Frequently asked questions",
+        faq: [
+          {
+            q: "Does Vareya issue refunds to customers?",
+            a: "Physical return handling and the commercial refund are separate responsibilities. The refund is issued by the brand through its own Shopify admin; Vareya's role is agreed during onboarding and covers the physical handling of the returned goods.",
+          },
+          {
+            q: "Does Vareya automatically restock every return?",
+            a: "No — restocking depends on the inspection outcome. What counts as restockable, and what happens to items that are not, is agreed with each brand as part of the returns process.",
+          },
+          {
+            q: "Are all returns free?",
+            a: CLAIM_RETURNS,
+          },
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "Shopify Help Center — Refunding orders (who issues a refund and how)", url: "https://help.shopify.com/en/manual/fulfillment/managing-orders/refunding-orders" },
+        ],
+        internalLinks: [
+          { label: "Shopify fulfilment in Europe", href: "/shopify-fulfilment-europe/" },
+          { label: "Returns handling in Europe", href: "/returns-fulfilment-europe/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
         ],
       },
     ],
@@ -1726,10 +2022,6 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.7",
     reviewedAt: "2026-10-09",
     primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
-    secondaryCta: {
-      label: "What to look for in a Shopify fulfilment partner",
-      route: "/knowledge/shopify-fulfilment-europe-what-to-look-for/",
-    },
     sections: [
       {
         heading: "Direct answer",
@@ -1829,6 +2121,16 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
           "Multi-store or Shopify Markets inventory-sharing has been confirmed with the 3PL",
           "Packaging or handling requirements are documented per SKU where relevant",
           "Product dimensions and weights are available for parcel planning",
+        ],
+      },
+      {
+        heading: "Download: SKU data template",
+        paragraphs: [
+          "A plain CSV you can fill in with your own catalogue and share during onboarding. It mirrors the checklist above: one row per sellable variant, with the SKU, barcode, which bundle (if any) it's a component of, combined parcel dimensions and weight.",
+          "This is a starting structure, not a required format — if your existing product export already has this information in a different shape, that works too. The point is having SKU, barcode, variant and bundle relationships written down in one place before the first inbound shipment, not the specific file format.",
+        ],
+        internalLinks: [
+          { label: "Download the SKU data template (CSV)", href: "/downloads/vareya-shopify-sku-data-template.csv" },
         ],
       },
       {
