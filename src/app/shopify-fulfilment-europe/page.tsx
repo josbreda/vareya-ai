@@ -390,6 +390,11 @@ export default function ShopifyFulfilmentPage() {
               </ul>
             </div>
           </div>
+          <p className="mt-6 text-sm leading-6 text-muted">
+            <Link href="/knowledge/shopify-fulfilment-europe-what-to-look-for/" className="text-primary underline-offset-2 hover:underline">
+              What to look for in a Shopify fulfilment partner ↗
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -552,6 +557,11 @@ export default function ShopifyFulfilmentPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-sm leading-6 text-muted">
+            <Link href="/knowledge/fulfilment-cost-drivers/" className="text-primary underline-offset-2 hover:underline">
+              What determines ecommerce fulfilment and shipping costs ↗
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -569,6 +579,11 @@ export default function ShopifyFulfilmentPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-sm leading-6 text-muted">
+            <Link href="/knowledge/shopify-3pl-europe-how-to-compare/" className="text-primary underline-offset-2 hover:underline">
+              Read the full comparison guide ↗
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -589,6 +604,11 @@ export default function ShopifyFulfilmentPage() {
               </article>
             ))}
           </div>
+          <p className="mt-6 text-sm leading-6 text-muted">
+            <Link href="/knowledge/switching-fulfilment-providers-europe/" className="text-primary underline-offset-2 hover:underline">
+              Read the full switching guide ↗
+            </Link>
+          </p>
         </div>
       </section>
 

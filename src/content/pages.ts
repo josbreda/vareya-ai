@@ -29,10 +29,11 @@ export const PAGE_META: Record<string, PageMeta> = {
     updatedAt: "2026-08-21",
   },
   "/shopify-fulfilment-europe/": {
-    title: "Shopify Fulfilment Europe | Vareya",
+    title: "Shopify Fulfilment Europe | European 3PL | Vareya",
     description:
-      "Direct Shopify integration for European order fulfilment. Orders sync automatically from your store to our Breda warehouse.",
+      "Connect your Shopify store to a European fulfilment operation in the Netherlands. Vareya handles inventory, pick and pack, shipping and returns for growing ecommerce brands.",
     canonical: `${BASE}/shopify-fulfilment-europe/`,
+    updatedAt: "2026-10-08",
   },
   "/eu-fulfilment-us-brands/": {
     title: "EU Fulfilment for US Brands | Vareya",
