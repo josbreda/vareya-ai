@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { COMPANY, WAREHOUSE } from "@/content/facts";
+import { TrackedContactLink } from "@/components/marketing/TrackedContactLink";
 
 export const metadata: Metadata = {
   title: "Contact Vareya | European Fulfilment",
@@ -30,16 +31,12 @@ export default function ContactPage() {
               <h2 className="text-xl font-semibold mb-6">Get in touch</h2>
 
               <div className="flex flex-col gap-6">
-                <ContactItem
-                  label="Phone"
-                  value={COMPANY.phone}
-                  href={`tel:${COMPANY.phone.replace(/\s/g, "")}`}
-                />
-                <ContactItem
-                  label="Email"
-                  value={COMPANY.email}
-                  href={`mailto:${COMPANY.email}`}
-                />
+                <ContactItem label="Phone">
+                  <TrackedContactLink kind="phone" value={COMPANY.phone} href={`tel:${COMPANY.phone.replace(/\s/g, "")}`} />
+                </ContactItem>
+                <ContactItem label="Email">
+                  <TrackedContactLink kind="email" value={COMPANY.email} href={`mailto:${COMPANY.email}`} />
+                </ContactItem>
                 <ContactItem label="Address" value={null}>
                   <address className="not-italic text-muted leading-relaxed">
                     {WAREHOUSE.label}

@@ -47,6 +47,17 @@ export function organizationSchema() {
     url: "https://vareya.ai",
     email: "info@vareya.ai",
     telephone: "+31 6 19 12 34 72",
+    // KVK 65877535 / VAT NL856299790B02 — already published as text on
+    // /about/; approved for publication 21 August 2026 (claims-register.md,
+    // "Entity decisions approved 21 August 2026"). taxID carries the KVK
+    // trade-register number since schema.org has no dedicated KVK property.
+    taxID: "65877535",
+    vatID: "NL856299790B02",
+    // Approved 3 September 2026, claims-register.md Decision 5 — certified
+    // KVK trade-register extract: deed of incorporation 15-04-2016, first
+    // registration 21-04-2016. Employee count and director details stay
+    // unpublished per that decision.
+    foundingDate: "2016-04-15",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Bagven Park 6",

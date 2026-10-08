@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { GTM } from "@/components/layout/GTM";
+import { AnalyticsLoader } from "@/components/layout/AnalyticsLoader";
 import { ConsentBanner } from "@/components/layout/ConsentBanner";
 import { organizationSchema, websiteSchema } from "@/lib/seo";
 
@@ -41,9 +41,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en-GB" className={`${inter.variable} h-full`}>
+    // lang defaults to en-GB (correct for ~95% of routes) and is corrected
+    // to nl-NL for /nl/* by the inline script below. A per-route static
+    // value would need the whole app tree split into (en)/(nl) route
+    // groups (Next's documented pattern for multiple <html lang> values)
+    // — that's a much bigger structural change than this fix warrants, and
+    // using headers()/a pathname-reading layout instead was tried and
+    // reverted: it forced all ~90 routes from static (○) to dynamic (ƒ)
+    // rendering, a real performance regression for a cosmetic attribute.
+    // suppressHydrationWarning scopes the known, intentional lang mismatch
+    // to this one element — nothing else on the page is exempted.
+    <html lang="en-GB" suppressHydrationWarning className={`${inter.variable} h-full`}>
       <head>
-        <GTM />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(function(){var p=location.pathname;if(p==='/nl'||p.indexOf('/nl/')===0){document.documentElement.lang='nl-NL';}})();",
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -67,6 +82,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <ConsentBanner />
+        <AnalyticsLoader />
       </body>
     </html>
   );
