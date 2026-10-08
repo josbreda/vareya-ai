@@ -237,6 +237,13 @@ const INTERNAL_LINKS = [
     href: "/cosmetics-supplements-fulfilment-europe/",
     label: "Cosmetics and supplements fulfilment",
   },
+  { href: "/knowledge/shopify-3pl-europe-how-to-compare/", label: "Shopify 3PL in Europe: how to compare providers" },
+  { href: "/knowledge/shopify-fulfilment-europe-what-to-look-for/", label: "Shopify fulfilment in Europe: what to look for" },
+  { href: "/knowledge/shopify-fulfilment-europe-3pl-checklist/", label: "Shopify 3PL evaluation checklist" },
+  { href: "/knowledge/how-onboarding-works-at-vareya/", label: "How onboarding works at Vareya" },
+  { href: "/knowledge/switching-fulfilment-providers-europe/", label: "How to switch fulfilment providers" },
+  { href: "/knowledge/fulfilment-cost-drivers/", label: "What determines fulfilment and shipping costs" },
+  { href: "/knowledge/eu-fulfilment-netherlands-us-uk-brands/", label: "EU fulfilment guide for US and UK brands" },
 ];
 
 export default function ShopifyFulfilmentPage() {
@@ -637,7 +644,7 @@ export default function ShopifyFulfilmentPage() {
 
       <section className="py-14" aria-labelledby="related-pages">
         <div className="container-site">
-          <h2 id="related-pages" className="mb-6 text-2xl font-bold">Related fulfilment pages</h2>
+          <h2 id="related-pages" className="mb-6 text-2xl font-bold">Related fulfilment pages and guides</h2>
           <div className="flex flex-wrap gap-3">
             {INTERNAL_LINKS.map((link) => (
               <Link key={link.href} href={link.href} className="rounded-lg border border-slate-200 px-4 py-2 text-sm font-medium text-primary hover:border-primary/40">

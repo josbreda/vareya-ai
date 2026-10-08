@@ -2,12 +2,17 @@ import {
   CLAIM_ALL_IN,
   CLAIM_CARRIER_SELECTION,
   CLAIM_CUSTOMS,
+  CLAIM_CUTOFF,
+  CLAIM_POSTNL,
   CLAIM_POST_SUBMISSION,
   CLAIM_RETURNS,
   CLAIM_ROYAL_MAIL,
   CLAIM_SHIPHERO,
+  CLAIM_SLAS,
   CLAIM_SPECIALIST_FALLBACK,
+  CLAIM_SUPPORT,
   CLAIM_VOLUME,
+  CLAIM_WEEKEND,
 } from "@/content/claims";
 import { APPROVED_FACTS } from "@/content/claims";
 
@@ -1707,6 +1712,358 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
         internalLinks: [
           { label: "European fulfilment for Australian brands", href: "/european-fulfilment-for-australian-brands/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "eu-fulfilment-netherlands-us-uk-brands",
+    title: "EU fulfilment from the Netherlands: a practical guide for US and UK brands",
+    description:
+      "A practical guide for US and UK brands covering customs support, Vareya's Breda location, PostNL, Royal Mail direct entry and carrier selection.",
+    summary:
+      "What a Netherlands-based EU fulfilment setup involves for a US or UK brand — and the questions to settle before stock moves into Europe.",
+    publishedAt: null,
+    publishedLabel: null,
+    topic: "Cross-border",
+    indexable: false,
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "The setup, in one paragraph",
+        paragraphs: [
+          "A Netherlands-based EU fulfilment setup means holding your stock inside the EU and shipping each customer order from there. Stock is imported into a warehouse in the Netherlands, that warehouse is connected to your store, and customer orders are picked, packed and handed to carriers for delivery across Europe and to other destinations.",
+          `Vareya operates from ${APPROVED_FACTS.address}. Vareya has been operational since 2016. ${CLAIM_VOLUME}`,
+          "For a brand, the change is mostly structural: instead of sending every customer order across a border, you move stock in bulk and fulfil from within the EU. The rest of this guide walks through the customs questions, the carrier model and the points to confirm before you commit.",
+        ],
+      },
+      {
+        heading: "Two movements, not one",
+        paragraphs: [
+          "Cross-border fulfilment from outside the EU involves two separate physical movements. First, inventory travels from your warehouse or supplier into the EU — one bulk shipment, cleared into the region. Second, each customer order travels from the European warehouse to your customer, usually as a domestic or intra-EU parcel.",
+          "Treating those as a single process is where most confusion starts. The bulk import raises questions about export and import documentation, duties and taxes, and who is responsible for each step. The order flow raises different questions: carrier services per destination, processing times and returns routing.",
+        ],
+        bullets: [
+          "Bulk inbound: import documentation, duties and who acts as importer.",
+          "Storage: what is held at the warehouse and how it is recorded.",
+          "Order flow: picking, packing, carrier hand-off and tracking per destination.",
+          "Returns: where returns arrive and how they are processed.",
+          "Reporting: what you can see about stock and orders.",
+        ],
+      },
+      {
+        heading: "The customs questions to settle first",
+        paragraphs: [
+          "Before stock moves into Europe, most US and UK brands settle a short list of customs questions: who acts as exporter and importer, which documents accompany the shipment, and how duties and taxes are handled on entry.",
+          CLAIM_CUSTOMS,
+          "That sentence is deliberately specific about what it covers. Customs clearance support concerns the movement of shipments; questions about tax registration, fiscal representation or import structures depend on your company, and belong with your own advisers.",
+          CLAIM_SPECIALIST_FALLBACK,
+        ],
+        table: {
+          headers: ["To settle", "Why it matters early", "Usually handled by"],
+          rows: [
+            ["Exporter and importer of record", "Determines documentation, duties and responsibility on entry", "The brand, with its customs adviser"],
+            ["Shipment documentation", "Customs clearance needs accurate product, value and origin data", "The brand"],
+            ["Duties and taxes", "Affects the landed cost of your stock in Europe", "The brand, with its adviser"],
+            ["Product restrictions", "Some product types need extra checks before they can move", "The brand and its adviser; carrier acceptance also applies"],
+          ],
+        },
+      },
+      {
+        heading: "What changes for a US brand",
+        paragraphs: [
+          "For US brands, the shift is usually about where the customer experience is run from. Orders for European customers ship from inside the EU instead of crossing the Atlantic one parcel at a time. That does not remove customs — it moves the import from per-order to per-shipment.",
+          "US brands considering this route typically start by mapping their European order data: which countries customers actually order from, typical parcel weights and dimensions, and how many orders per month each market represents. That profile decides everything downstream — carrier services, cost structure and whether a European warehouse makes sense for you at all.",
+          "Vareya works with brands selling through Shopify and Amazon FBM — Shopify integration is available, and Amazon FBM fulfilment is available. The exact channel setup is reviewed during qualification and onboarding.",
+        ],
+      },
+      {
+        heading: "What changes for a UK brand",
+        paragraphs: [
+          "Since Brexit, UK brands face the same two-movement logic as US brands: stock crossing into the EU, and customer orders shipping from within it. Many UK brands also keep serving UK customers — and that is where the routing question becomes more interesting, because a UK-destined order from a Netherlands warehouse is its own cross-border movement.",
+          "For those orders, there may be a route directly into the UK's Royal Mail domestic network. The next section sets out exactly what that sentence can and cannot cover.",
+        ],
+      },
+      {
+        heading: "The UK route: direct entry explained",
+        paragraphs: [
+          CLAIM_ROYAL_MAIL,
+          "Two things that sentence deliberately does not say: that every UK order travels through this route, and that a specific delivery time is guaranteed. Direct entry is a routing arrangement for eligible shipments — the shipping method agreed during qualification determines what applies to your orders.",
+          "For UK brands, this can mean UK-destined orders are fulfilled from the same Breda operation as EU orders, with the UK route used where it fits the shipment profile.",
+        ],
+      },
+      {
+        heading: "Carriers and how a service is chosen",
+        paragraphs: [
+          CLAIM_POSTNL,
+          "Beyond the Dutch domestic service, DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes, and the exact service per destination is agreed during qualification.",
+          CLAIM_CARRIER_SELECTION,
+        ],
+      },
+      {
+        heading: "Service basics: cut-off, weekends, support",
+        paragraphs: [
+          CLAIM_CUTOFF,
+          CLAIM_WEEKEND,
+          `${CLAIM_SLAS} ${CLAIM_SUPPORT}`,
+        ],
+      },
+      {
+        heading: "What a quotation depends on",
+        paragraphs: [
+          CLAIM_ALL_IN,
+          "Behind that sentence sits a practical picture of your operation. A quotation normally reflects order volume, the number of SKUs and storage space, items per order, parcel dimensions and weights, packaging requirements, the destination mix, returns volume and inbound shipments. Two brands with the same monthly order count can still have very different fulfilment profiles — the mix matters more than the headline number.",
+        ],
+        bullets: [
+          "The more of this profile you can share, the more concrete the first quote will be.",
+          "A clearly labelled forecast is workable for an initial assessment.",
+          "Where numbers are unknown, the assessment flags them instead of guessing.",
+        ],
+      },
+      {
+        heading: "Is your brand a fit?",
+        paragraphs: [
+          `Vareya's fulfilment operation fits brands with a predictable, repeatable order pattern. ${CLAIM_VOLUME}`,
+          "In practice, a good fit usually looks like this:",
+        ],
+        bullets: [
+          "Sells through Shopify or Amazon FBM — Shopify integration is available, and Amazon FBM fulfilment is available.",
+          "Ships smaller parcel products — suitable parcels have combined dimensions below 900 mm and a maximum length of 600 mm.",
+          "Wants stock held inside the EU, with an agreed process for returns.",
+          "Can share a realistic order and parcel profile for qualification.",
+        ],
+      },
+      {
+        heading: "How the first conversation usually goes",
+        paragraphs: [
+          CLAIM_POST_SUBMISSION,
+          "A useful first assessment needs six things from your side:",
+        ],
+        checklist: [
+          "Our order volumes per destination country — current figures or a clearly labelled forecast.",
+          "Our product categories and any compliance constraints.",
+          "Our packed parcel dimensions and weights — not just product sizes.",
+          "Our SKU count and average items per order.",
+          "Our sales channels: Shopify store setup, Amazon FBM, or both.",
+          "Our returns expectations and desired start timing.",
+        ],
+      },
+      {
+        heading: "What we will not promise",
+        paragraphs: [
+          "This guide deliberately avoids three things. First, delivery-time promises: timing depends on the agreed shipping method and destination, and is confirmed during qualification. Second, capability lists we cannot support: specialist requirements belong in the scan, where Vareya can confirm which parts of a setup can be supported. Third, numbers we cannot prove — no savings percentages, no case results.",
+          "What we will do is keep the assessment concrete. Your order profile, product and parcel data, destinations and returns requirements determine what is proposed, and product fit is confirmed during qualification.",
+        ],
+      },
+      {
+        heading: "Frequently asked questions",
+        faq: [
+          {
+            q: "Do you handle customs for shipments into and out of the EU?",
+            a: CLAIM_CUSTOMS,
+          },
+          {
+            q: "Can orders for our UK customers go through Royal Mail?",
+            a: CLAIM_ROYAL_MAIL,
+          },
+          {
+            q: "Which carriers will ship our orders?",
+            a: `${CLAIM_POSTNL} ${CLAIM_CARRIER_SELECTION}`,
+          },
+          {
+            q: "Do we need an EU company or entity to hold stock in the EU?",
+            a: "Holding stock in the EU can be arranged through different structures, and which one fits depends on your situation and your advisers. Include your intended structure and any customs, tax or specialist requirements in the fulfilment scan so Vareya can confirm which parts of the setup can be supported.",
+          },
+          {
+            q: "How is pricing structured?",
+            a: `${CLAIM_ALL_IN} The structure follows your order and parcel profile — start with the fulfilment scan for an initial fit assessment.`,
+          },
+        ],
+      },
+      {
+        heading: "Related reading",
+        internalLinks: [
+          { label: "EU fulfilment for US brands", href: "/eu-fulfilment-us-brands/" },
+          { label: "EU fulfilment for UK brands", href: "/eu-fulfilment-uk-brands/" },
+          { label: "Shopify fulfilment in Europe", href: "/shopify-fulfilment-europe/" },
+          { label: "UK brands and the EU parcel levy", href: "/knowledge/uk-brands-eu-parcel-levy/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "shopify-fulfilment-europe-3pl-checklist",
+    title: "Shopify fulfilment in Europe: a 3PL evaluation checklist",
+    description:
+      "Compare European Shopify 3PLs on ShipHero integration, carrier setup, agreed all-in rates, weekend order processing, SLAs and support.",
+    summary:
+      "The five checks that decide whether a European fulfilment setup will work — with the questions to ask every provider before you commit.",
+    publishedAt: null,
+    publishedLabel: null,
+    topic: "Shopify",
+    indexable: false,
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    sections: [
+      {
+        heading: "Five checks, in order of consequence",
+        paragraphs: [
+          "Most Shopify brands compare European 3PLs on price and location first. The providers that turn out to be a poor fit usually fail somewhere else: an integration that was never fully configured, a carrier network that does not cover the destination mix, or an agreement where 'all-in' quietly meant something narrower than expected.",
+          "Run these five checks for every provider you compare — including Vareya. Each one below comes with the questions that surface the differences:",
+          "In practice, checks 1, 3 and 5 decide the day-to-day experience: the integration sets the daily friction, the agreement sets the cost surprises, and support sets what happens on a bad day. The other two are easier to assess — write them down anyway.",
+        ],
+        bullets: [
+          "1. The warehouse system behind the Shopify connection — what is confirmed before go-live.",
+          "2. The carrier model — who can ship your destination mix, and how a service is chosen per order.",
+          "3. What the agreement's 'all-in' actually covers — and what sits outside it.",
+          "4. Cut-off and weekend processing — as operating realities, not sales lines.",
+          "5. Support and SLAs — who picks up when an order goes wrong.",
+        ],
+        table: {
+          headers: ["Check", "The core question", "What to ask for"],
+          rows: [
+            ["1. WMS and Shopify connection", "How does an order travel from your store to the warehouse — and back again as a shipment?", "An order-lifecycle walk-through on your store setup"],
+            ["2. Carrier model", "Can the provider serve your destination mix, and how is a service chosen per order?", "A destination-by-carrier overview and the selection logic"],
+            ["3. 'All-in' scope", "What does the rate include — and what does the agreement list outside it?", "The written scope behind the all-in rate"],
+            ["4. Cut-off and weekend", "What processing cut-off applies to your order pattern, and what does weekend cover?", "Written cut-off and weekend rules, including peak periods"],
+            ["5. Support and SLAs", "Who answers when something goes wrong, and how is performance reviewed?", "A named support route and the agreed service levels"],
+          ],
+        },
+      },
+      {
+        heading: "Check 1 — The warehouse system behind the Shopify connection",
+        paragraphs: [
+          CLAIM_SHIPHERO,
+          "Integration quality is less about a logo on a website and more about how the day-to-day chain behaves: how orders transfer from your store, how product and inventory data stay aligned, and what has been tested before go-live. Ask each provider to walk through the order lifecycle on your store setup — including returns and inventory corrections — rather than describing the integration in general terms.",
+          "Vareya confirms the exact configuration during onboarding, because every Shopify store can carry different apps, markets, SKUs, bundles and order rules.",
+        ],
+        bullets: [
+          "How do orders move from Shopify into the warehouse workflow?",
+          "How is inventory updated, and where do corrections happen?",
+          "What is tested before go-live, and with which test orders?",
+          "Who owns product data, SKU mapping and the barcode structure?",
+        ],
+      },
+      {
+        heading: "Check 2 — The carrier model",
+        paragraphs: [
+          CLAIM_POSTNL,
+          `Behind the network sits a routing logic. ${CLAIM_CARRIER_SELECTION}`,
+          "Ask which carriers can serve your actual destination mix, where labels are generated, and what happens when a service is unavailable or a parcel is refused at the door.",
+        ],
+        bullets: [
+          "Which carriers can serve your top destinations?",
+          "How is a carrier chosen per order — and can you influence the rule?",
+          "Where is the label created, and how does tracking reach your customers?",
+          "What happens with exceptions: refused, lost or damaged parcels?",
+        ],
+      },
+      {
+        heading: "Check 3 — What 'all-in' should mean",
+        paragraphs: [
+          CLAIM_ALL_IN,
+          "The phrase is only meaningful when it is anchored to a written scope. When you compare providers, ask each one to point at the items the agreement lists outside the all-in rate — and how each of those items is priced. The answer tells you more about working with a provider than any summary sentence.",
+        ],
+        bullets: [
+          "Which items are billed separately, and at what unit?",
+          "How does the agreement treat peak surcharges if a carrier introduces one?",
+          "What are the minimum commitment and notice period?",
+          "Are there any onboarding, setup or systems fees — and are they listed?",
+        ],
+      },
+      {
+        heading: "Check 4 — Cut-off and weekend, without the fog",
+        paragraphs: [
+          CLAIM_CUTOFF,
+          CLAIM_WEEKEND,
+          "Read both sentences exactly: weekend fulfilment is about processing orders on Saturday and Sunday. It is not a delivery guarantee, and it does not mean every order ships the same day it arrives. Ask each provider what their cut-off means in practice for your order pattern, including busy periods.",
+        ],
+        bullets: [
+          "What is the real cut-off for same-working-day processing?",
+          "Does weekend processing apply to all order types, or only some?",
+          "How do holidays and peak season affect the schedule?",
+        ],
+      },
+      {
+        heading: "Check 5 — Support, SLAs and the human line",
+        paragraphs: [
+          `${CLAIM_SLAS} ${CLAIM_SUPPORT}`,
+          "Support quality shows up in the exceptions, not the brochure. Ask who answers when an order needs intervention, how issues are reported back to the brand, and how service levels are reviewed after go-live.",
+        ],
+        bullets: [
+          "Who is the day-to-day contact for your account?",
+          "How are incidents and exceptions reported, and within what rhythm?",
+          "How often are service levels reviewed, and against which measures?",
+        ],
+      },
+      {
+        heading: "The checklist",
+        paragraphs: [
+          "Use this as a working checklist in your provider conversations. Tick items off as you get concrete answers — the goal is an informed comparison, not a quick signing.",
+        ],
+        checklist: [
+          "I have seen an order-lifecycle walk-through on our store setup — including returns and inventory corrections.",
+          "I know which carriers serve our top destinations.",
+          "I understand how a carrier is selected per order, and where labels come from.",
+          "I know which items the agreement lists outside the all-in rate, and how they are priced.",
+          "I have the real cut-off and weekend rules in writing, including peak periods.",
+          "I know who supports the account after go-live, and how incidents are escalated.",
+          "I know what is tested before go-live, and how inventory is reconciled on transfer.",
+          "I know who receives, inspects, reports and refunds returns.",
+          "I have discussed multi-store setups, bundles, kits and subscription orders for our case.",
+        ],
+      },
+      {
+        heading: "Where Vareya stands on each check",
+        paragraphs: [
+          `Check 1: ${APPROVED_FACTS.shopify} ${CLAIM_SHIPHERO} The exact configuration is confirmed during onboarding.`,
+          `Check 2: ${CLAIM_POSTNL} ${CLAIM_CARRIER_SELECTION}`,
+          `Check 3: ${CLAIM_ALL_IN}`,
+          `Check 4: ${CLAIM_CUTOFF} ${CLAIM_WEEKEND}`,
+          `Check 5: ${CLAIM_SLAS} ${CLAIM_SUPPORT}`,
+          "Everything else — integration specifics, pricing for your profile, returns detail and service levels — is confirmed during qualification and onboarding. That is deliberate: it keeps the working agreement accurate rather than optimistic.",
+        ],
+      },
+      {
+        heading: "What we will not promise",
+        paragraphs: [
+          "We will not promise a setup without testing, a delivery time without an agreed shipping method, or a capability we have not confirmed. In this guide that means: no claims about sync speed beyond what is configured for your store, no setup-time figures, and no service combinations outside the ones the qualification confirms.",
+          CLAIM_SPECIALIST_FALLBACK,
+        ],
+      },
+      {
+        heading: "Frequently asked questions",
+        faq: [
+          {
+            q: "Does Vareya integrate with Shopify?",
+            a: `${APPROVED_FACTS.shopify} ${CLAIM_SHIPHERO}`,
+          },
+          {
+            q: "Can one setup handle multiple Shopify stores, bundles or subscriptions?",
+            a: "Multi-store setups, bundles, kits and subscription orders are reviewed during qualification and onboarding, so the order behaviour is clear before stock moves. This is assessed based on your specific store and inventory setup.",
+          },
+          {
+            q: "How much does Shopify fulfilment in Europe cost?",
+            a: `${CLAIM_ALL_IN} The rate depends on your order profile — order volume, parcel profile, storage and destinations. Start with the fulfilment scan for an initial assessment.`,
+          },
+          {
+            q: "Our store uses Shopify Markets with different languages — does that change anything?",
+            a: "Shopify Markets and your storefront setup remain yours; the fulfilment connection works alongside them. Destination-specific shipping behaviour and order rules are part of the onboarding review, so the flow matches the way you actually sell.",
+          },
+          {
+            q: "Which destinations can Vareya ship to?",
+            a: "From Breda, Vareya ships to the destinations published on our fulfilment pages — across Europe and to selected international markets — with an 'Other destination' option in the scan for anything outside the current list.",
+          },
+        ],
+      },
+      {
+        heading: "Related reading",
+        internalLinks: [
+          { label: "Shopify fulfilment in Europe", href: "/shopify-fulfilment-europe/" },
+          { label: "Shopify 3PL in Europe: how to compare providers", href: "/knowledge/shopify-3pl-europe-how-to-compare/" },
+          { label: "How onboarding works at Vareya", href: "/knowledge/how-onboarding-works-at-vareya/" },
+          { label: "How to switch fulfilment providers", href: "/knowledge/switching-fulfilment-providers-europe/" },
           { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
         ],
       },
