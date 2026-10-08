@@ -433,6 +433,11 @@ export default function ShopifyFulfilmentPage() {
             multiple Shopify stores can share the same fulfilment inventory is
             assessed during qualification, based on your store and inventory setup.
           </p>
+          <p className="mt-4 text-sm leading-6 text-muted">
+            <Link href="/knowledge/shopify-product-sku-data-preparation/" className="text-primary underline-offset-2 hover:underline">
+              Preparing your product and SKU data before onboarding ↗
+            </Link>
+          </p>
         </div>
       </section>
 

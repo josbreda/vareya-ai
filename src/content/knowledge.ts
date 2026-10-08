@@ -1712,6 +1712,173 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
       },
     ],
   },
+  {
+    slug: "shopify-product-sku-data-preparation",
+    title: "Shopify product and SKU data: what a 3PL needs before go-live",
+    description:
+      "What SKU, barcode, variant and bundle data a fulfilment partner needs from a Shopify catalogue before onboarding, and the most common data problems that delay a go-live.",
+    summary:
+      "Clean product and SKU data is what actually determines how fast a Shopify integration can go live — not the integration itself. A practical preparation checklist.",
+    publishedAt: "2026-10-09",
+    publishedLabel: "9 October 2026",
+    topic: "Shopify",
+    indexable: true,
+    reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.7",
+    reviewedAt: "2026-10-09",
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    secondaryCta: {
+      label: "What to look for in a Shopify fulfilment partner",
+      route: "/knowledge/shopify-fulfilment-europe-what-to-look-for/",
+    },
+    sections: [
+      {
+        heading: "Direct answer",
+        paragraphs: [
+          "Before a Shopify catalogue can be connected to a fulfilment warehouse, a 3PL typically needs a unique SKU for every sellable variant, a scannable barcode for every SKU, a clear definition of how bundles or kits are built from individual stock items, and confirmation of which Shopify stores and Markets share (or don't share) the same inventory pool. Messy or inconsistent product data — not the technical integration itself — is the most common reason a Shopify go-live is delayed.",
+        ],
+      },
+      {
+        heading: "Why product data decides onboarding speed",
+        paragraphs: [
+          "The technical side of connecting a Shopify store to a warehouse management system is usually the fast part. What takes longer is making sure that every product, variant and bundle in the Shopify catalogue maps to exactly one, unambiguous location in the warehouse.",
+          "A warehouse operates on SKUs and barcodes, not on product titles. If two different physical products share a SKU, or one product has two different barcodes in circulation, the warehouse cannot reliably tell them apart — which shows up later as mis-picks, incorrect stock counts or orders that cannot be fulfilled automatically.",
+          APPROVED_FACTS.shopify,
+        ],
+      },
+      {
+        heading: "The core data categories a 3PL checks",
+        paragraphs: [
+          "Requirements vary by provider and by warehouse management system, but most of the categories below come up in any Shopify-to-3PL onboarding.",
+        ],
+        bullets: [
+          "SKU structure — one unique, stable SKU per sellable variant, not per product.",
+          "Barcode per SKU — a scannable barcode (not necessarily GS1/GTIN, but consistent) for every SKU that will be picked individually.",
+          "Product variants — how size, colour or other options are modelled, and whether each variant already has its own SKU and barcode.",
+          "Bundles, kits and multipacks — whether a bundle is its own stock-keeping unit, or picked and assembled from its component SKUs at order time.",
+          "Multi-store and Shopify Markets — whether more than one Shopify store or Market should draw from the same inventory pool.",
+          "Discontinued or duplicate SKUs — old SKUs still present in product data but no longer intended to be stocked.",
+          "Packaging and handling flags — anything requiring specific packaging, orientation, or handling instructions at pick time.",
+        ],
+      },
+      {
+        heading: "Data categories, common mistakes and what they cause",
+        table: {
+          headers: ["Data category", "Common mistake", "What it causes"],
+          rows: [
+            [
+              "SKU structure",
+              "The same SKU reused across different physical products, or a product sold without any SKU at all",
+              "The warehouse cannot reliably tell products apart, which leads to mis-picks and incorrect stock counts",
+            ],
+            [
+              "Barcodes",
+              "A SKU with no barcode, or the same barcode printed on two different products",
+              "Items cannot be scanned reliably during receiving or picking, slowing every subsequent step",
+            ],
+            [
+              "Variants",
+              "Variants sharing one SKU, or variant options changed after stock has already been received",
+              "Stock gets allocated to the wrong variant, and counts drift between Shopify and the warehouse",
+            ],
+            [
+              "Bundles and kits",
+              "A bundle treated as a single stock item in Shopify but assembled from components in the warehouse, without that distinction being agreed",
+              "Bundle orders cannot be fulfilled correctly, or component stock is not deducted when a bundle sells",
+            ],
+            [
+              "Multi-store / Markets",
+              "Assuming inventory is automatically shared across stores or Markets without confirming this with the 3PL",
+              "Overselling in one store while stock sits allocated to another, or orders rejected unexpectedly",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Variants, bundles and kits",
+        paragraphs: [
+          "Shopify variants let one product carry several sellable options — size or colour, for example — and each variant can have its own SKU, barcode, price and inventory count. For fulfilment, the practical question is simpler: does every variant that needs to be picked separately already have its own SKU and barcode in Shopify, or only the parent product?",
+          "Bundles raise a different question. A bundle can be treated as its own stock-keeping unit — received and picked as one item — or it can be assembled at pick time from its individual component SKUs, with each component's stock deducted separately. Both approaches work, but the warehouse and the brand need to agree on which model applies to which bundle before stock arrives, since the two models require different warehouse setup.",
+        ],
+      },
+      {
+        heading: "Multiple Shopify stores and Shopify Markets",
+        paragraphs: [
+          "Brands running more than one Shopify store, or using Shopify Markets to present different storefronts for different regions, need to confirm whether those stores or Markets should draw from one shared fulfilment inventory pool or be kept separate.",
+          "Can multiple Shopify stores use the same fulfilment inventory? This depends on the store and inventory configuration. Vareya assesses multi-store requirements during qualification and onboarding before confirming the final setup.",
+        ],
+      },
+      {
+        heading: "Illustrative example: cleaning up SKU data before onboarding",
+        paragraphs: [
+          "Composite, anonymised example. It does not describe an identifiable current or former Vareya customer.",
+          "A cosmetics brand with roughly 80 Shopify products expected onboarding to take a few days. During data review, around a third of its variants turned out to share SKUs with discontinued products still visible in the product catalogue, and several best-selling variants had no barcode assigned at all — only the parent product did. Three bundles were configured as single Shopify products with no link back to their component SKUs.",
+          "Resolving this required relabelling the affected variants with unique SKUs, printing and applying barcodes to the previously unbarcoded stock, and agreeing with the warehouse that the three bundles would be assembled from components at pick time rather than received as pre-built units. Once that was done, inbound stock receipt and the first live orders processed without exceptions.",
+          "Lesson: the Shopify-to-warehouse connection itself was ready well before the product data was. Reviewing SKU and barcode data before sending the first inbound shipment avoids discovering these issues during receiving, when they are more disruptive to fix.",
+        ],
+      },
+      {
+        heading: "Product-data readiness checklist",
+        paragraphs: ["Mark each item ready, in progress, or not started:"],
+        checklist: [
+          "Every sellable variant has its own unique, stable SKU",
+          "Every SKU that will be picked individually has a scannable barcode",
+          "No SKU or barcode is reused across more than one product or variant",
+          "Discontinued SKUs are flagged or removed from the active catalogue",
+          "Bundles and kits are classified as either their own stock unit or assembled from components",
+          "Component SKUs for every bundle are identified and in stock",
+          "Multi-store or Shopify Markets inventory-sharing has been confirmed with the 3PL",
+          "Packaging or handling requirements are documented per SKU where relevant",
+          "Product dimensions and weights are available for parcel planning",
+        ],
+      },
+      {
+        heading: "Frequently asked questions",
+        faq: [
+          {
+            q: "Does my SKU data need to be perfect before I contact a 3PL?",
+            a: "No. Data problems are normal and are exactly what the onboarding data review is for. What matters is being able to share an honest picture of the catalogue, including known gaps, rather than assuming everything is already clean.",
+          },
+          {
+            q: "Do bundles need their own SKU?",
+            a: "Not necessarily. A bundle can be its own stock-keeping unit, or it can be assembled at pick time from its component SKUs. Both are workable, but the warehouse needs to know which model applies before stock arrives.",
+          },
+          {
+            q: "Can Vareya fulfil orders for more than one Shopify store?",
+            a: "This is assessed during qualification, based on your store and inventory setup.",
+          },
+          {
+            q: "Does Vareya require GS1/GTIN barcodes specifically?",
+            a: APPROVED_FACTS.shopify + " Specific barcode and data requirements are confirmed during onboarding, since they depend on the warehouse management system configuration and the brand's existing catalogue.",
+          },
+          {
+            q: "What happens if bad SKU data is only discovered after stock has arrived?",
+            a: "It can still be corrected, but it is more disruptive once stock is already on the shelf — mismatched items may need to be physically located and re-labelled. Reviewing SKU and barcode data before the first inbound shipment is faster and lower-risk than correcting it afterwards.",
+          },
+        ],
+      },
+      {
+        heading: "Sources",
+        sources: [
+          { label: "Shopify Help Center — Editing SKUs, barcodes, and other product details, retrieved 9 October 2026", url: "https://help.shopify.com/en/manual/products/details/edit-sku-barcode" },
+          { label: "Shopify Help Center — Adding and managing product variants, retrieved 9 October 2026", url: "https://help.shopify.com/en/manual/products/variants" },
+          { label: "Shopify Help Center — Selling product bundles, retrieved 9 October 2026", url: "https://help.shopify.com/en/manual/products/bundles" },
+          { label: "Shopify Help Center — Shopify Markets, retrieved 9 October 2026", url: "https://help.shopify.com/en/manual/markets" },
+        ],
+        internalLinks: [
+          { label: "Shopify fulfilment in Europe", href: "/shopify-fulfilment-europe/" },
+          { label: "Shopify fulfilment in Europe: what to look for", href: "/knowledge/shopify-fulfilment-europe-what-to-look-for/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+        ],
+      },
+      {
+        heading: "Human contribution and review",
+        paragraphs: [
+          "This article combines approved Vareya claims from the Claims Register (v1.7) with public Shopify documentation. The onboarding example is composite and anonymised and does not describe an identifiable current or former customer.",
+        ],
+        reviewNote: "Drafted by Claude (Anthropic), AOS content pipeline, 2026-10-09. Claims checked against claims-register.md v1.7 and scripts/prohibited-claims-scan.sh.",
+      },
+    ],
+  },
 ];
 
 export type KnowledgeSlug = (typeof KNOWLEDGE_ARTICLES)[number]["slug"];
