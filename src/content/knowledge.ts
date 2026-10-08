@@ -2124,6 +2124,16 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
       },
       {
+        heading: "Download: SKU data template",
+        paragraphs: [
+          "A plain CSV you can fill in with your own catalogue and share during onboarding. It mirrors the checklist above: one row per sellable variant, with the SKU, barcode, which bundle (if any) it's a component of, combined parcel dimensions and weight.",
+          "This is a starting structure, not a required format — if your existing product export already has this information in a different shape, that works too. The point is having SKU, barcode, variant and bundle relationships written down in one place before the first inbound shipment, not the specific file format.",
+        ],
+        internalLinks: [
+          { label: "Download the SKU data template (CSV)", href: "/downloads/vareya-shopify-sku-data-template.csv" },
+        ],
+      },
+      {
         heading: "Frequently asked questions",
         faq: [
           {

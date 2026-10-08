@@ -1,0 +1,2 @@
+SKU,Barcode,Product name,Variant,Bundle component of (leave blank if not a component),Combined dimensions (mm, L+W+H),Weight (g),Notes
+EXAMPLE-SKU-001,1234567890123,Example product,Small / Red,,350,120,Replace this row with your own data — one row per sellable variant
