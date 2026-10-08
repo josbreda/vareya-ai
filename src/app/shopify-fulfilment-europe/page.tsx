@@ -177,6 +177,10 @@ const FAQ_ITEMS = [
     answer: `Yes. ${CAPABILITIES.shopify} ${CAPABILITIES.shipHero}`,
   },
   {
+    question: "Which warehouse management system does Vareya use?",
+    answer: CAPABILITIES.shipHero,
+  },
+  {
     question: "Where is Vareya's warehouse?",
     answer: "Vareya operates its ecommerce fulfilment service from Breda, the Netherlands.",
   },
@@ -242,6 +246,7 @@ const INTERNAL_LINKS = [
   { href: "/knowledge/shopify-fulfilment-europe-3pl-checklist/", label: "Shopify 3PL evaluation checklist" },
   { href: "/knowledge/how-onboarding-works-at-vareya/", label: "How onboarding works at Vareya" },
   { href: "/knowledge/switching-fulfilment-providers-europe/", label: "How to switch fulfilment providers" },
+  { href: "/knowledge/fulfilment-quotation-requirements/", label: "What a 3PL needs for a quotation" },
   { href: "/knowledge/fulfilment-cost-drivers/", label: "What determines fulfilment and shipping costs" },
   { href: "/knowledge/eu-fulfilment-netherlands-us-uk-brands/", label: "EU fulfilment guide for US and UK brands" },
 ];
