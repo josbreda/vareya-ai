@@ -28,13 +28,13 @@ const destinationList = APPROVED_DESTINATIONS.join(", ");
 
 const TRUST_BAR = [
   "Based in Breda, the Netherlands",
-  CAPABILITIES.shopify,
-  CAPABILITIES.shipHero,
+  "Direct Shopify integration",
+  "ShipHero warehouse management system",
   "Multi-carrier shipping: DHL, PostNL, Asendia, FedEx and Royal Mail",
   CAPABILITIES.returns,
-  CAPABILITIES.weekendFulfilment,
+  "Weekend fulfilment on a structural basis",
   CAPABILITIES.cutOff,
-  CAPABILITIES.customs,
+  "Customs clearance support for shipments into and out of Europe",
   CAPABILITIES.allInRates,
 ];
 
@@ -195,6 +195,10 @@ const FAQ_ITEMS = [
   {
     question: "Does Vareya handle Shopify returns?",
     answer: `${CAPABILITIES.returns} Physical return handling and the commercial refund to the customer are treated as separate responsibilities, confirmed with each brand during onboarding.`,
+  },
+  {
+    question: "Which warehouse management system does Vareya use?",
+    answer: CAPABILITIES.shipHero,
   },
   {
     question: "Which carriers does Vareya use?",
@@ -447,7 +451,7 @@ export default function ShopifyFulfilmentPage() {
           <div className="space-y-3 leading-7 text-muted">
             <p>{CAPABILITIES.postNL}</p>
             <p>Shopify orders are shipped to {destinationList}.</p>
-            <p>{CAPABILITIES.cutOff} {CAPABILITIES.weekendFulfilment}</p>
+            <p>{CAPABILITIES.cutOff}</p>
           </div>
         </div>
       </section>
@@ -562,9 +566,12 @@ export default function ShopifyFulfilmentPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-6 text-sm leading-6 text-muted">
+          <p className="mt-6 flex flex-col gap-1 text-sm leading-6 text-muted sm:flex-row sm:gap-6">
             <Link href="/knowledge/fulfilment-cost-drivers/" className="text-primary underline-offset-2 hover:underline">
               What determines ecommerce fulfilment and shipping costs ↗
+            </Link>
+            <Link href="/knowledge/fulfilment-quotation-requirements/" className="text-primary underline-offset-2 hover:underline">
+              What a 3PL needs for a quotation ↗
             </Link>
           </p>
         </div>
@@ -656,14 +663,16 @@ export default function ShopifyFulfilmentPage() {
       <section className="bg-primary py-16 text-white">
         <div className="container-site text-center">
           <h2 className="mb-4 text-2xl font-bold sm:text-3xl">Assess your Shopify fulfilment setup</h2>
-          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <Link href="/free-rate-scan/" className="rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
-              Check your EU fulfilment fit
-            </Link>
-            <Link href="/request-fulfilment-quote/" className="rounded-lg border border-white/30 px-6 py-3 font-medium hover:bg-white/10">
+          <Link href="/free-rate-scan/" className="inline-block rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
+            Check your EU fulfilment fit
+          </Link>
+          <p className="mt-5 text-sm text-white/70">
+            Prefer a tailored quote instead?{" "}
+            <Link href="/request-fulfilment-quote/" className="underline underline-offset-2 hover:text-white">
               Request a fulfilment quote
             </Link>
-          </div>
+            .
+          </p>
         </div>
       </section>
     </>
