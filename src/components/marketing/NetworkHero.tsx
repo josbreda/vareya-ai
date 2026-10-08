@@ -7,7 +7,7 @@ interface NetworkHeroProps {
   title: string;
   description: string;
   primaryCTA: { label: string; href: string };
-  secondaryCTA: { label: string; href: string };
+  secondaryCTA?: { label: string; href: string };
   proofItems: string[];
   children?: React.ReactNode;
 }
@@ -168,12 +168,14 @@ export function NetworkHero({
               >
                 {primaryCTA.label} →
               </a>
-              <a
-                href={secondaryCTA.href}
-                className="inline-flex items-center gap-2 px-6 py-3.5 border border-white/15 text-white font-medium rounded-[10px] hover:bg-white/5 transition-colors text-[15px]"
-              >
-                {secondaryCTA.label}
-              </a>
+              {secondaryCTA && (
+                <a
+                  href={secondaryCTA.href}
+                  className="inline-flex items-center gap-2 px-6 py-3.5 border border-white/15 text-white font-medium rounded-[10px] hover:bg-white/5 transition-colors text-[15px]"
+                >
+                  {secondaryCTA.label}
+                </a>
+              )}
             </div>
             {proofItems.length > 0 && (
               <div className="flex flex-wrap gap-5">
