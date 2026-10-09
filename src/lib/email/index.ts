@@ -6,6 +6,20 @@ interface EmailPayload {
   html: string;
 }
 
+function escapeHtml(value: unknown): string {
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function escapedOrFallback(value: unknown, fallback = "N/A"): string {
+  const text = typeof value === "string" ? value.trim() : "";
+  return escapeHtml(text || fallback);
+}
+
 /**
  * Sends an email via Resend API.
  * Returns { success: true } or { success: false, error: string }.
@@ -51,7 +65,8 @@ export async function sendEmail(payload: EmailPayload): Promise<
 /**
  * Sends internal notification to LEAD_OWNER_EMAIL.
  * Returns true when the email was accepted by Resend, false otherwise.
- * This is the minimum delivery condition for a lead — callers must await it.
+ * This is a complete actionable fallback copy; durable acceptance is gated by
+ * the lead-dashboard write in /api/leads.
  */
 export async function sendInternalNotification(
   submissionId: string,
@@ -59,6 +74,10 @@ export async function sendInternalNotification(
   company: string,
   name: string,
   attribution?: {
+    email?: string;
+    phone?: string;
+    website?: string;
+    message?: string;
     utm_source?: string;
     utm_medium?: string;
     utm_campaign?: string;
@@ -75,22 +94,26 @@ export async function sendInternalNotification(
       ? `
       <hr />
       <p><strong>Attribution:</strong><br />
-      Landing: ${att.landing_page || "N/A"}<br />
-      UTM source: ${att.utm_source || "—"}<br />
-      UTM medium: ${att.utm_medium || "—"}<br />
-      UTM campaign: ${att.utm_campaign || "—"}<br />
-      UTM content: ${att.utm_content || "—"}</p>`
+      Landing: ${escapedOrFallback(att.landing_page)}<br />
+      UTM source: ${escapedOrFallback(att.utm_source, "—")}<br />
+      UTM medium: ${escapedOrFallback(att.utm_medium, "—")}<br />
+      UTM campaign: ${escapedOrFallback(att.utm_campaign, "—")}<br />
+      UTM content: ${escapedOrFallback(att.utm_content, "—")}</p>`
       : "";
   const result = await sendEmail({
     to: SERVER_ENV.leadOwnerEmail,
     subject: `New ${formType} lead: ${company}`,
     html: `
       <h2>New Vareya Lead</h2>
-      <p><strong>Type:</strong> ${formType}</p>
-      <p><strong>Company:</strong> ${company}</p>
-      <p><strong>Name:</strong> ${name}</p>
-      <p><strong>Submission ID:</strong> ${submissionId}</p>
-      <p><strong>Platform:</strong> ${att.platform || "N/A"} · <strong>Volume:</strong> ${att.volume || "N/A"} · <strong>Markets:</strong> ${(att.markets ?? []).join(", ") || "N/A"}</p>
+      <p><strong>Type:</strong> ${escapeHtml(formType)}</p>
+      <p><strong>Company:</strong> ${escapeHtml(company)}</p>
+      <p><strong>Name:</strong> ${escapeHtml(name)}</p>
+      <p><strong>Email:</strong> ${escapedOrFallback(att.email)}</p>
+      <p><strong>Phone:</strong> ${escapedOrFallback(att.phone)}</p>
+      <p><strong>Website:</strong> ${escapedOrFallback(att.website)}</p>
+      <p><strong>Message:</strong> ${escapedOrFallback(att.message)}</p>
+      <p><strong>Submission ID:</strong> ${escapeHtml(submissionId)}</p>
+      <p><strong>Platform:</strong> ${escapedOrFallback(att.platform)} · <strong>Volume:</strong> ${escapedOrFallback(att.volume)} · <strong>Markets:</strong> ${escapeHtml((att.markets ?? []).join(", ") || "N/A")}</p>
       ${attLines}
     `,
   });
@@ -109,7 +132,7 @@ export async function sendProspectConfirmation(
   name: string,
   formType: string,
   submissionId: string
-): Promise<void> {
+): Promise<boolean> {
   const isScan = formType === "scan";
 
   const result = await sendEmail({
@@ -131,6 +154,7 @@ export async function sendProspectConfirmation(
   });
 
   if (!result.success) {
-    console.error(`[email] Failed to send confirmation to ${email} for ${submissionId}: ${result.error}`);
+    console.error(`[email] Failed to send confirmation for ${submissionId}: ${result.error}`);
   }
+  return result.success;
 }

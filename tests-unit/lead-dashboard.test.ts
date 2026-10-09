@@ -209,7 +209,7 @@ test("9. attributie behouden in payload", () => {
   assert.equal(p.source_page, "/free-rate-scan/");
 });
 
-test("12. dashboard-falen breekt geaccepteerde lead niet: geen throw", async () => {
+test("12. dashboard network failure returns status without throwing", async () => {
   process.env.LEAD_DASHBOARD_FREE_RATE_SCAN_API_KEY = SENTINEL;
   mockFetch(() => Promise.reject(new Error("ECONNREFUSED")));
   const status = await notifyLeadDashboard(
@@ -232,24 +232,26 @@ test("13. credential zit niet in client-bundel: scanpagina importeert module nie
   assert.ok(!quotePage.includes("lead-dashboard"));
 });
 
-test("15. webhook wordt via next/server after() gepland — geen untracked fire-and-forget", () => {
+test("15. dashboard is awaited once; secondary integrations stay in after()", () => {
   const route = readFileSync(
     join(process.cwd(), "src", "app", "api", "leads", "route.ts"),
     "utf8",
   );
   assert.ok(route.includes('import { after, NextRequest, NextResponse } from "next/server"'));
-  const webhookIdx = route.indexOf("notifyLeadDashboard(");
-  assert.ok(webhookIdx > 0, "notifyLeadDashboard moet aangeroepen worden");
-  const before = route.lastIndexOf("after(async () => {", webhookIdx);
-  assert.ok(before > 0, "webhook-aanroep moet binnen after() zitten");
-  const blockEnd = route.indexOf("});", webhookIdx);
-  assert.ok(webhookIdx > before && webhookIdx < blockEnd, "aanroep staat in het after()-blok");
+
+  const dashboardCalls = route.match(/notifyLeadDashboard\(/g)?.length ?? 0;
+  assert.equal(dashboardCalls, 1, "dashboard must be forwarded exactly once");
+  const dashboardIdx = route.indexOf("notifyLeadDashboard(");
+  const firstAfterIdx = route.indexOf("after(async () => {");
+  assert.ok(dashboardIdx > 0 && dashboardIdx < firstAfterIdx, "durable dashboard write must be awaited before after() work");
+  assert.ok(route.includes('dashboardStatus !== "sent"'), "non-sent dashboard status must gate success");
   assert.ok(!route.includes("void notifyLeadDashboard"), "geen untracked promise");
-  // Bevestigingsmail mag de bezoeker niet blokkeren — ook via after()
-  const afterCalls = route.match(/after\(async \(\) => \{/g)?.length ?? 0;
-  assert.ok(afterCalls >= 2, "zowel bevestiging als webhook via after()");
-  const confirmIdx = route.lastIndexOf("sendProspectConfirmation(");
-  assert.ok(confirmIdx > route.indexOf("// 6. Prospect confirmation"), "bevestiging zit in het after()-blok");
+
+  for (const call of ["syncLead(", "sendProspectConfirmation(", "notifyZapier("]) {
+    const idx = route.indexOf(call);
+    const enclosingAfter = route.lastIndexOf("after(async () => {", idx);
+    assert.ok(idx > 0 && enclosingAfter > 0, `${call} moet binnen after() zitten`);
+  }
 });
 
 test("16. env-var-naam is exact LEAD_DASHBOARD_FREE_RATE_SCAN_API_KEY (server-side)", () => {

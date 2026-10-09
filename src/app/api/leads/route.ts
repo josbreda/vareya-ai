@@ -2,7 +2,8 @@
  * POST /api/leads
  *
  * Processes fulfilment scan and quote form submissions.
- * Processing order: validate → Turnstile → insert → notify → confirm → log
+ * Processing order: honeypot → validate → Turnstile → durable dashboard gate
+ * → fallback notification → post-response secondary integrations
  *
  * Security:
  * - Server-side only (service role key never exposed)
@@ -42,8 +43,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // 0. Honeypot check
-    if (raw.website && (raw.website as string).trim() !== "") {
+    // 0. Honeypot check — bot-only field, never the legitimate website field.
+    if (typeof raw.bot_field === "string" && raw.bot_field.trim() !== "") {
       // Bot detected — return fake success
       console.log("[api/leads] Honeypot triggered — returning fake success");
       return NextResponse.json({
@@ -87,8 +88,66 @@ export async function POST(request: NextRequest) {
     //    Active lead channels: lead-dashboard webhook (VPS/Postgres), HubSpot, email notifications.
     //    Verified 2026-09-04: full form flow works end-to-end without Supabase.
 
-    // 4.5 Sync to HubSpot — awaited with timeout (secondary channel, tolerant)
-    if (process.env.HUBSPOT_ACCESS_TOKEN) {
+    // 4.5 Durable lead-dashboard write — REQUIRED before any HTTP 200.
+    //     The endpoint is idempotent via submission_id and the client makes
+    //     exactly one bounded attempt.
+    const dashboardDelivery = notifyLeadDashboard(
+      buildLeadDashboardPayload(clean, submissionId),
+      4000
+    );
+
+    // 5. Complete internal notification — actionable fallback copy.
+    //    A dashboard write is the durable gate; email failure is logged but
+    //    cannot turn an already persisted lead into a visitor-facing failure.
+    const internalDelivery = withTimeout(
+      sendInternalNotification(
+        submissionId,
+        (clean.form_type as string) || "unknown",
+        (clean.company as string) || "Unknown",
+        (clean.name as string) || "Unknown",
+        {
+          email: clean.work_email ? String(clean.work_email) : undefined,
+          phone: clean.phone ? String(clean.phone) : undefined,
+          website: clean.website ? String(clean.website) : undefined,
+          message: clean.comments ? String(clean.comments) : undefined,
+          utm_source: clean.utm_source ? String(clean.utm_source) : undefined,
+          utm_medium: clean.utm_medium ? String(clean.utm_medium) : undefined,
+          utm_campaign: clean.utm_campaign ? String(clean.utm_campaign) : undefined,
+          utm_content: clean.utm_content ? String(clean.utm_content) : undefined,
+          landing_page: clean.landing_page ? String(clean.landing_page) : undefined,
+          platform: clean.ecommerce_platform ? String(clean.ecommerce_platform) : undefined,
+          volume: clean.monthly_order_volume ? String(clean.monthly_order_volume) : undefined,
+          markets: Array.isArray(clean.target_markets) ? clean.target_markets : undefined,
+        }
+      ),
+      6000
+    );
+
+    const [dashboardStatus, internalDelivered] = await Promise.all([
+      dashboardDelivery,
+      internalDelivery,
+    ]);
+
+    if (!internalDelivered) {
+      console.error(
+        `[api/leads] Internal fallback notification failed/timed out for ${submissionId}`
+      );
+    }
+
+    if (dashboardStatus !== "sent") {
+      console.error(
+        `[api/leads] Durable lead-dashboard write ${dashboardStatus} for ${submissionId}`
+      );
+      return NextResponse.json(
+        { error: "We couldn't safely save your submission right now. Please try again in a moment." },
+        { status: 503 }
+      );
+    }
+
+    // 5.5 HubSpot sync — secondary, post-response and lifecycle-tracked.
+    after(async () => {
+      if (!process.env.HUBSPOT_ACCESS_TOKEN) return;
+
       try {
         const { syncLead } = await import("@/lib/hubspot");
         const hsResult = await withTimeout(
@@ -113,50 +172,18 @@ export async function POST(request: NextRequest) {
           6000
         );
         if (!hsResult) {
-          console.error("[api/leads] HubSpot sync timed out");
+          console.error(`[api/leads] HubSpot sync timed out for ${submissionId}`);
         } else if (hsResult.status === "synced") {
-          console.log("[api/leads] HubSpot synced:", {
-            contactId: hsResult.contactId,
-            companyId: hsResult.companyId,
-            taskId: hsResult.taskId,
-          });
+          console.log(`[api/leads] HubSpot synced for ${submissionId}`);
         } else {
-          console.error("[api/leads] HubSpot sync error:", hsResult.error ?? hsResult.status);
+          console.error(
+            `[api/leads] HubSpot sync ${hsResult.status} for ${submissionId}`
+          );
         }
-      } catch (importErr) {
-        console.error("[api/leads] HubSpot module load failed:", importErr);
+      } catch {
+        console.error(`[api/leads] HubSpot module load failed for ${submissionId}`);
       }
-    }
-
-    // 5. Internal notification — REQUIRED minimum delivery condition.
-    //    A 2xx/thank-you is only returned when the lead has reached the
-    //    owner's inbox. Everything else is secondary or best-effort.
-    const internalDelivered = await sendInternalNotification(
-      submissionId,
-      (clean.form_type as string) || "unknown",
-      (clean.company as string) || "Unknown",
-      (clean.name as string) || "Unknown",
-      {
-        utm_source: clean.utm_source ? String(clean.utm_source) : undefined,
-        utm_medium: clean.utm_medium ? String(clean.utm_medium) : undefined,
-        utm_campaign: clean.utm_campaign ? String(clean.utm_campaign) : undefined,
-        utm_content: clean.utm_content ? String(clean.utm_content) : undefined,
-        landing_page: clean.landing_page ? String(clean.landing_page) : undefined,
-        platform: clean.ecommerce_platform ? String(clean.ecommerce_platform) : undefined,
-        volume: clean.monthly_order_volume ? String(clean.monthly_order_volume) : undefined,
-        markets: Array.isArray(clean.target_markets) ? clean.target_markets : undefined,
-      }
-    );
-
-    if (!internalDelivered) {
-      console.error(
-        `[api/leads] Minimum delivery condition FAILED — internal notification not delivered for ${submissionId}`
-      );
-      return NextResponse.json(
-        { error: "We couldn't process your submission right now. Please try again in a moment." },
-        { status: 502 }
-      );
-    }
+    });
 
     // 6. Prospect confirmation — post-response via after() (best-effort).
     //    No visitor-facing latency; tracked by the function lifecycle.
@@ -175,25 +202,10 @@ export async function POST(request: NextRequest) {
       }
     });
 
-    // 6.5 Lead-dashboard webhook — ADDITIVE, best-effort, never blocks the lead.
-    //     Scheduled via next/server after(): tracked by the Vercel function
-    //     lifecycle (runs after the response is flushed, within maxDuration),
-    //     NOT an untracked fire-and-forget promise.
-    after(async () => {
-      const dashboardStatus = await notifyLeadDashboard(
-        buildLeadDashboardPayload(clean, submissionId),
-        4000
-      );
-      if (!dashboardStatus || dashboardStatus !== "sent") {
-        console.error(
-          `[api/leads] Lead dashboard webhook ${dashboardStatus || "incomplete"} for ${submissionId}`
-        );
-      }
-    });
 
-    // 6.6 Zapier webhook — ADDITIVE, best-effort, never blocks the lead.
-    //     Mirrors the lead-dashboard webhook: scheduled via next/server
-    //     after(), skipped entirely when ZAPIER_WEBHOOK_URL is not set.
+    // 6.6 Zapier webhook — secondary, best-effort and post-response.
+    //     Scheduled via next/server after(), skipped entirely when
+    //     ZAPIER_WEBHOOK_URL is not set.
     after(async () => {
       const zapierStatus = await notifyZapier(
         buildZapierPayload(clean, submissionId),

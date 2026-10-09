@@ -154,7 +154,6 @@ function QuoteForm() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    if (honeypot) return;
 
     // Security check must have produced a token before we submit
     if (!turnstileToken) {
@@ -171,6 +170,7 @@ function QuoteForm() {
       const params = new URLSearchParams(window.location.search);
       const payload = {
         ...data,
+        bot_field: honeypot,
         form_type: "quote",
         landing_page: window.location.pathname,
         referrer: document.referrer || "",
@@ -382,7 +382,7 @@ function QuoteForm() {
         <div className="absolute opacity-0 pointer-events-none" aria-hidden="true">
           <input
             type="text"
-            name="website"
+            name="bot_field"
             tabIndex={-1}
             autoComplete="off"
             value={honeypot}

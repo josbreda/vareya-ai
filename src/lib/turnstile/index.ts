@@ -16,9 +16,8 @@ export async function validateTurnstile(token: string): Promise<{
   }
 
   if (!SERVER_ENV.turnstileSecretKey) {
-    // Not configured yet — allow through in development
-    console.warn("[turnstile] Secret key not configured — allowing request");
-    return { valid: true, codes: [] };
+    console.error("[turnstile] Secret key not configured — rejecting request");
+    return { valid: false, codes: ["missing-input-secret"] };
   }
 
   if (!token) {

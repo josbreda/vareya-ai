@@ -1,9 +1,9 @@
 /**
  * Lead Dashboard webhook client (vareya.ai → leads.jmconcepts.cloud).
  *
- * ADDITIVE, BEST-EFFORT, SERVER-ONLY:
- * - called only after the existing minimum-delivery gate has passed;
- * - a dashboard outage must never fail, roll back, or duplicate a lead;
+ * REQUIRED DURABLE GATE, SERVER-ONLY:
+ * - awaited by /api/leads before it returns HTTP 200;
+ * - a dashboard outage must refuse success rather than silently drop a lead;
  * - no automatic retries (the endpoint is idempotent via submission_id,
  *   so reconciliation/retry is always safe later);
  * - never logs secrets or PII beyond the submission ID.
@@ -149,7 +149,8 @@ export function buildLeadDashboardPayload(
 }
 
 /**
- * POSTs the scan payload to the lead dashboard. Never throws.
+ * POSTs a lead payload to the lead dashboard. Never throws; the route decides
+ * whether each returned status is safe to accept.
  */
 export async function notifyLeadDashboard(
   payload: LeadDashboardPayload,
@@ -163,11 +164,13 @@ export async function notifyLeadDashboard(
     return "not_configured";
   }
 
+  const endpoint =
+    process.env.LEAD_DASHBOARD_FREE_RATE_SCAN_URL || LEAD_DASHBOARD_ENDPOINT;
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), timeoutMs);
 
   try {
-    const res = await fetch(LEAD_DASHBOARD_ENDPOINT, {
+    const res = await fetch(endpoint, {
       method: "POST",
       headers: {
         "X-API-Key": apiKey,
