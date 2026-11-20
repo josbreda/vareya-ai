@@ -7,11 +7,11 @@ const ROUTE = "/european-fulfilment-for-china-brands/";
 
 export const metadata: Metadata = {
   title: "European Fulfilment for China Ecommerce Brands | Vareya",
-  description: "A practical guide for China ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the China-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+  description: "EU fulfilment for China brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT and Free Rate Scan.",
   alternates: { canonical: "https://vareya.ai/european-fulfilment-for-china-brands/" },
   openGraph: {
     title: "European Fulfilment for China Ecommerce Brands | Vareya",
-    description: "A practical guide for China ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the China-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
+    description: "EU fulfilment for China brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT and Free Rate Scan.",
     url: "https://vareya.ai/european-fulfilment-for-china-brands/",
     type: "website",
     locale: "en_GB",

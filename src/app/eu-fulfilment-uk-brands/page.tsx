@@ -10,14 +10,14 @@ import {
 export const metadata: Metadata = {
   title: "European Fulfilment for UK Ecommerce Brands | Vareya",
   description:
-    "A practical guide for UK ecommerce brands assessing fulfilment from a Netherlands warehouse for EU orders after Brexit. Covers the GB-EU customs border, VAT, product fit and the Free Rate Scan.",
+    "EU fulfilment for UK brands post-Brexit. Hold stock in the Netherlands and ship to EU customers. Customs, VAT and Free Rate Scan explained.",
   alternates: {
     canonical: "https://vareya.ai/eu-fulfilment-uk-brands/",
   },
   openGraph: {
     title: "European Fulfilment for UK Ecommerce Brands | Vareya",
     description:
-      "A practical guide for UK ecommerce brands assessing fulfilment from a Netherlands warehouse for EU orders after Brexit. Covers the GB-EU customs border, VAT, product fit and the Free Rate Scan.",
+      "EU fulfilment for UK brands post-Brexit. Hold stock in the Netherlands and ship to EU customers. Customs, VAT and Free Rate Scan explained.",
     url: "https://vareya.ai/eu-fulfilment-uk-brands/",
     type: "website",
     locale: "en_GB",

@@ -10,14 +10,14 @@ import {
 export const metadata: Metadata = {
   title: "European Fulfilment for New Zealand Ecommerce Brands | Vareya",
   description:
-    "A practical guide for New Zealand ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the NZ-EU corridor, customs and GST roles, product fit and the Free Rate Scan.",
+    "EU fulfilment for New Zealand brands. Hold stock in the Netherlands, ship to EU. Customs, GST roles and Free Rate Scan.",
   alternates: {
     canonical: "https://vareya.ai/european-fulfilment-for-new-zealand-brands/",
   },
   openGraph: {
     title: "European Fulfilment for New Zealand Ecommerce Brands | Vareya",
     description:
-      "A practical guide for New Zealand ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the NZ-EU corridor, customs and GST roles, product fit and the Free Rate Scan.",
+      "EU fulfilment for New Zealand brands. Hold stock in the Netherlands, ship to EU. Customs, GST roles and Free Rate Scan.",
     url: "https://vareya.ai/european-fulfilment-for-new-zealand-brands/",
     type: "website",
     locale: "en_GB",
