@@ -7,11 +7,11 @@ const ROUTE = "/european-fulfilment-for-saudi-arabia-brands/";
 
 export const metadata: Metadata = {
   title: "European Fulfilment for Saudi Arabia Ecommerce Brands | Vareya",
-  description: "EU fulfilment for Saudi Arabia brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT and Free Rate Scan.",
+  description: "A practical guide for Saudi Arabia ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Saudi Arabia-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
   alternates: { canonical: "https://vareya.ai/european-fulfilment-for-saudi-arabia-brands/" },
   openGraph: {
     title: "European Fulfilment for Saudi Arabia Ecommerce Brands | Vareya",
-    description: "EU fulfilment for Saudi Arabia brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT and Free Rate Scan.",
+    description: "A practical guide for Saudi Arabia ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Saudi Arabia-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     url: "https://vareya.ai/european-fulfilment-for-saudi-arabia-brands/",
     type: "website",
     locale: "en_GB",

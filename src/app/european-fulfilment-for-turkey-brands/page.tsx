@@ -7,11 +7,11 @@ const ROUTE = "/european-fulfilment-for-turkey-brands/";
 
 export const metadata: Metadata = {
   title: "European Fulfilment for Turkey Ecommerce Brands | Vareya",
-  description: "EU fulfilment for Turkey brands. Hold stock in the Netherlands, ship to EU customers. Customs, VAT and Free Rate Scan.",
+  description: "A practical guide for Turkey ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Turkey-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
   alternates: { canonical: "https://vareya.ai/european-fulfilment-for-turkey-brands/" },
   openGraph: {
     title: "European Fulfilment for Turkey Ecommerce Brands | Vareya",
-    description: "EU fulfilment for Turkey brands. Hold stock in the Netherlands, ship to EU customers. Customs, VAT and Free Rate Scan.",
+    description: "A practical guide for Turkey ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Turkey-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     url: "https://vareya.ai/european-fulfilment-for-turkey-brands/",
     type: "website",
     locale: "en_GB",

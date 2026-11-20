@@ -10,14 +10,14 @@ import {
 export const metadata: Metadata = {
   title: "European Fulfilment for US Ecommerce Brands | Vareya",
   description:
-    "EU fulfilment for US brands from a Netherlands warehouse. Compare holding stock in the EU vs shipping per order. Customs, VAT and Free Rate Scan included.",
+    "A practical guide for US ecommerce brands assessing fulfilment from a Netherlands warehouse for European orders. Covers the US-EU corridor, export documentation, customs and VAT roles, and the Free Rate Scan.",
   alternates: {
     canonical: "https://vareya.ai/eu-fulfilment-us-brands/",
   },
   openGraph: {
     title: "European Fulfilment for US Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for US brands from a Netherlands warehouse. Compare holding stock in the EU vs shipping per order. Customs, VAT and Free Rate Scan included.",
+      "A practical guide for US ecommerce brands assessing fulfilment from a Netherlands warehouse for European orders. Covers the US-EU corridor, export documentation, customs and VAT roles, and the Free Rate Scan.",
     url: "https://vareya.ai/eu-fulfilment-us-brands/",
     type: "website",
     locale: "en_US",

@@ -7,11 +7,11 @@ const ROUTE = "/european-fulfilment-for-japan-brands/";
 
 export const metadata: Metadata = {
   title: "European Fulfilment for Japan Ecommerce Brands | Vareya",
-  description: "EU fulfilment for Japan brands. Hold stock in the Netherlands, ship to EU customers. Customs, VAT and Free Rate Scan.",
+  description: "A practical guide for Japan ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Japan-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
   alternates: { canonical: "https://vareya.ai/european-fulfilment-for-japan-brands/" },
   openGraph: {
     title: "European Fulfilment for Japan Ecommerce Brands | Vareya",
-    description: "EU fulfilment for Japan brands. Hold stock in the Netherlands, ship to EU customers. Customs, VAT and Free Rate Scan.",
+    description: "A practical guide for Japan ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Japan-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     url: "https://vareya.ai/european-fulfilment-for-japan-brands/",
     type: "website",
     locale: "en_GB",

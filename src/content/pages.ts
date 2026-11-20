@@ -50,14 +50,14 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/eu-fulfilment-south-korean-brands/": {
     title: "EU Fulfilment for South Korean Brands | Vareya",
     description:
-      "EU fulfilment for South Korean brands. Warehouse in the Netherlands, customs, VAT and Free Rate Scan.",
+      "A practical guide for South Korean ecommerce brands assessing fulfilment from a Netherlands warehouse for European orders. Covers preparation, customs and VAT roles, product compliance and the Free Rate Scan.",
     canonical: `${BASE}/eu-fulfilment-south-korean-brands/`,
     updatedAt: "2026-08-30",
   },
   "/european-fulfilment-for-australian-brands/": {
-    title: "European Fulfilment for Australian Brands | Vareya",
+    title: "European Fulfilment for Australian Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for Australian brands. Hold stock in the Netherlands, ship to EU customers. Customs, GST roles and Free Rate Scan.",
+      "A practical guide for Australian ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the AU-EU corridor, customs and GST roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-australian-brands/`,
     updatedAt: "2026-09-03",
   },
@@ -71,7 +71,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/shipping-from-europe-to-australia-new-zealand/": {
     title: "Shipping Ecommerce Orders from Europe to Australia & New Zealand | Vareya",
     description:
-      "Shipping ecommerce orders from the Netherlands to Australia and New Zealand: order flow, carriers, customs, GST, biosecurity, returns and the Free Rate Scan.",
+      "How ecommerce orders are shipped from a warehouse in the Netherlands to customers in Australia and New Zealand: order flow, carriers, customs, GST and biosecurity per destination, returns, and the Free Rate Scan.",
     canonical: `${BASE}/shipping-from-europe-to-australia-new-zealand/`,
     updatedAt: "2026-09-03",
   },
@@ -85,21 +85,21 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/amazon-fbm-fulfilment/": {
     title: "Amazon FBM Fulfilment from the Netherlands | Vareya",
     description:
-      "Amazon FBM fulfilment from the Netherlands. When a 3PL adds value, FBM vs FBA trade-offs, and how Vareya supports Amazon FBM alongside Shopify. Warehouse in Breda.",
+      "What Amazon FBM means for European sellers, when a 3PL adds value, FBM vs FBA trade-offs, and how Vareya supports Amazon FBM alongside Shopify from a warehouse in Breda, the Netherlands.",
     canonical: `${BASE}/amazon-fbm-fulfilment/`,
     updatedAt: "2026-08-21",
   },
   "/shipbob-alternative-europe/": {
     title: "ShipBob Alternatives for European Fulfilment | Vareya",
     description:
-      "Compare ShipBob alternatives for European fulfilment: EU warehouse footprint, fixed all-in rates, carrier setup and volume fit. Vareya fits 500+ orders per month.",
+      "What DTC brands should compare when evaluating European alternatives to ShipBob: EU warehouse footprint, support structure, carrier setup and volume fit. Includes Vareya's fit for 500+ orders per month.",
     canonical: `${BASE}/shipbob-alternative-europe/`,
     updatedAt: "2026-08-21",
   },
   "/returns-fulfilment-europe/": {
     title: "Ecommerce Returns Handling for European Fulfilment | Vareya",
     description:
-      "European ecommerce returns handling framework: where returns should land, what a 3PL needs from you, and how Vareya handles returns from Breda, the Netherlands.",
+      "A decision framework for European ecommerce returns: where returns should land, what a 3PL needs from you, and what Vareya does and does not claim for returns handling from Breda, the Netherlands.",
     canonical: `${BASE}/returns-fulfilment-europe/`,
     updatedAt: "2026-08-21",
   },
@@ -192,70 +192,70 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/european-fulfilment-for-brazil-brands/": {
     title: "European Fulfilment for Brazil Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for Brazil brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT and Free Rate Scan.",
+      "A practical guide for Brazil ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Brazil-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-brazil-brands/`,
     updatedAt: "2026-09-09",
   },
   "/european-fulfilment-for-canada-brands/": {
     title: "European Fulfilment for Canada Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for Canadian brands. Hold stock in the Netherlands, ship to EU. Customs, VAT roles and Free Rate Scan.",
+      "A practical guide for Canada ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Canada-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-canada-brands/`,
     updatedAt: "2026-09-09",
   },
   "/european-fulfilment-for-china-brands/": {
     title: "European Fulfilment for China Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for China brands. Hold stock in the Netherlands, ship to EU customers. Customs, VAT and Free Rate Scan.",
+      "A practical guide for China ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the China-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-china-brands/`,
     updatedAt: "2026-09-09",
   },
   "/european-fulfilment-for-hong-kong-brands/": {
     title: "European Fulfilment for Hong Kong Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for Hong Kong brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT and Free Rate Scan.",
+      "A practical guide for Hong Kong ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Hong Kong-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-hong-kong-brands/`,
     updatedAt: "2026-09-09",
   },
   "/european-fulfilment-for-japan-brands/": {
     title: "European Fulfilment for Japan Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for Japan brands. Hold stock in the Netherlands, ship to EU. Customs, VAT roles and Free Rate Scan.",
+      "A practical guide for Japan ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Japan-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-japan-brands/`,
     updatedAt: "2026-09-09",
   },
   "/european-fulfilment-for-norway-brands/": {
     title: "European Fulfilment for Norway Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for Norway brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT and Free Rate Scan.",
+      "A practical guide for Norway ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Norway-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-norway-brands/`,
     updatedAt: "2026-09-09",
   },
   "/european-fulfilment-for-saudi-arabia-brands/": {
     title: "European Fulfilment for Saudi Arabia Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for Saudi Arabia brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT and Free Rate Scan.",
+      "A practical guide for Saudi Arabia ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Saudi Arabia-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-saudi-arabia-brands/`,
     updatedAt: "2026-09-09",
   },
   "/european-fulfilment-for-switzerland-brands/": {
     title: "European Fulfilment for Switzerland Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for Swiss brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT roles and Free Rate Scan.",
+      "A practical guide for Switzerland ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Switzerland-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-switzerland-brands/`,
     updatedAt: "2026-09-09",
   },
   "/european-fulfilment-for-turkey-brands/": {
     title: "European Fulfilment for Turkey Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for Turkey brands. Hold stock in the Netherlands, ship to EU. Customs, VAT and Free Rate Scan.",
+      "A practical guide for Turkey ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the Turkey-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-turkey-brands/`,
     updatedAt: "2026-09-09",
   },
   "/european-fulfilment-for-united-arab-emirates-brands/": {
     title: "European Fulfilment for UAE Ecommerce Brands | Vareya",
     description:
-      "EU fulfilment for UAE brands. Hold stock in the Netherlands, ship across Europe. Customs, VAT and Free Rate Scan.",
+      "A practical guide for UAE ecommerce brands assessing fulfilment from a warehouse in the Netherlands for European orders. Covers holding stock in the EU, the UAE-EU corridor, customs and VAT roles, product fit and the Free Rate Scan.",
     canonical: `${BASE}/european-fulfilment-for-united-arab-emirates-brands/`,
     updatedAt: "2026-09-09",
   },
