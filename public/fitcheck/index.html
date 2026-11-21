@@ -873,7 +873,10 @@ async function submitFitcheck() {
   btn.disabled = true;
 
   try {
-    const response = await fetch('/api/fitcheck/submit', {
+    const apiBase = window.location.hostname === 'vareya.ai' || window.location.hostname === 'www.vareya.ai'
+      ? 'https://commerce.jmconcepts.cloud'
+      : '';
+    const response = await fetch(apiBase + '/api/fitcheck/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(window._fitcheckData || {})
