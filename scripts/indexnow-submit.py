@@ -2,22 +2,32 @@
 """IndexNow submitter for vareya.ai.
 
 - Auto-discovers the key from public/{key}.txt in the repo.
-- Reads the LIVE sitemap.xml, compares each URL's lastmod against a local state file.
-- Submits only URLs that are new or whose lastmod changed since last submission.
+- Reads the LIVE sitemap.xml, compares each URL's lastmod against a local
+  state file.
+- Submits only URLs that are new or whose lastmod changed since last
+  submission.
 - Idempotent; never resubmits unchanged URLs (no spam).
-- POSTs to api.indexnow.org (forwards to Bing/Yandex/Seznam/Naver/etc.).
+- POSTs to api.indexnow.org (forwards to Bing/Yandex/Seznam/Naver/etc).
+
+Paths are resolved relative to this script's location by default, so it
+runs the same way locally (any OS) or in CI — no machine-specific paths.
+Override via env vars if a different location is wanted:
+  INDEXNOW_STATE_PATH   (default: <repo>/.indexnow/state.json)
+  INDEXNOW_LOG_PATH     (default: <repo>/.indexnow/submissions.csv)
+
 Usage: python scripts/indexnow-submit.py
 """
-import csv, json, os, sys, time, urllib.request, urllib.error, re, glob
+import csv, json, os, sys, urllib.request, urllib.error, re, glob
 from datetime import datetime, timezone
 
-REPO = r"C:\Users\josme\HOS\projects\vareya-ai"
-STATE = r"C:\Users\josme\HOS\projects\vareya-ai-lead-engine\data\indexnow-state.json"
-LOG = r"C:\Users\josme\HOS\projects\vareya-ai-lead-engine\data\indexnow-submissions.csv"
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.dirname(SCRIPT_DIR)
+STATE = os.environ.get("INDEXNOW_STATE_PATH", os.path.join(REPO, ".indexnow", "state.json"))
+LOG = os.environ.get("INDEXNOW_LOG_PATH", os.path.join(REPO, ".indexnow", "submissions.csv"))
 HOST = "vareya.ai"
 ENDPOINT = "https://api.indexnow.org/indexnow"
 
-UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
+UA = "Mozilla/5.0 (compatible; VareyaIndexNowSubmitter/1.0)"
 
 
 def find_key():

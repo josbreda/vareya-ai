@@ -6,6 +6,25 @@ import {
 } from "@/content/facts";
 import type { CountryData } from "@/content/countries";
 import { EU_SOURCES } from "@/content/countries";
+import { breadcrumbSchema } from "@/lib/seo";
+
+const SITE = "https://vareya.ai";
+
+function BreadcrumbJsonLd({ label, path }: { label: string; path: string }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(
+          breadcrumbSchema([
+            { name: "Home", url: `${SITE}/` },
+            { name: label, url: `${SITE}${path}` },
+          ]),
+        ),
+      }}
+    />
+  );
+}
 
 export interface CountryPageLinks {
   fulfilment: string; // route A (same country)
@@ -220,6 +239,7 @@ export function CountryFulfilmentPage({ data, links }: { data: CountryData; link
 
   return (
     <>
+      <BreadcrumbJsonLd label={`European fulfilment for ${data.adjective} brands`} path={links.fulfilment} />
       <Hero
         breadcrumb={`European fulfilment for ${data.adjective} brands`}
         h1={`European fulfilment for ${data.adjective} ecommerce brands`}
@@ -329,6 +349,7 @@ export function CountryShopifyPage({ data, links }: { data: CountryData; links: 
 
   return (
     <>
+      <BreadcrumbJsonLd label={`Shopify fulfilment in Europe for ${data.adjective} stores`} path={links.shopify} />
       <Hero
         breadcrumb={`Shopify fulfilment in Europe for ${data.adjective} stores`}
         h1={`Shopify fulfilment in Europe for ${data.adjective} stores`}
@@ -512,6 +533,7 @@ export function CountryReturnsPage({ data, links }: { data: CountryData; links: 
 
   return (
     <>
+      <BreadcrumbJsonLd label={`European returns handling for ${data.adjective} brands`} path={links.returns} />
       <Hero
         breadcrumb={`European returns handling for ${data.adjective} brands`}
         h1={`European returns handling for ${data.adjective} brands`}
