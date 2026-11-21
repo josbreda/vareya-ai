@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { ScanResult } from "./ScanResult";
 
 export const metadata: Metadata = {
   title: "Thank You | Vareya",
@@ -22,7 +23,8 @@ export default function ScanThankYou() {
           Your fulfilment scan has been submitted. We will review your answers
           and get back to you within one working day.
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <ScanResult />
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             href="/"
             className="inline-flex items-center px-6 py-3 text-base font-semibold text-white bg-primary rounded-lg hover:bg-primary-dark transition-colors"
