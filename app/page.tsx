@@ -364,7 +364,7 @@ export default async function HomePage() {
               <p className="mt-2 text-lg font-semibold text-primary">{t("People buy people.")}</p>
               <footer className="mt-1 text-sm text-slate-500">
                 {signatureLead}
-                <Link href="/knowledge/dedication-in-fulfilment/" className="underline underline-offset-4 hover:text-primary">{DEDICATION_TAG}</Link>
+                <Link href="/knowledge/dedication-in-fulfilment/" className="underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">{DEDICATION_TAG}</Link>
                 {signatureTail}
               </footer>
             </blockquote>
