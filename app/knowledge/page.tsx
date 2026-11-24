@@ -26,6 +26,13 @@ const sourceMetadata: Metadata = {
 };
 export async function generateMetadata(): Promise<Metadata> { return localizePageMetadata(sourceMetadata, "/knowledge/"); }
 
+// Artwork with text: cropping it would hide qualifiers such as "Not a delay of all packaging rules".
+const CONTAINED_CARD_IMAGES = new Set([
+  "primal-fx-supplements-fulfilment-evidence",
+  "ppwr-epr-representative-suspension",
+  "dedication-in-fulfilment",
+]);
+
 const NEW_PAGES = [
   {
     href: "/cherry-picking-shipping/",
@@ -183,9 +190,9 @@ export default async function KnowledgePage() {
                         alt=""
                         loading="lazy"
                         decoding="async"
-                        className={`absolute inset-0 h-full w-full ${article.slug === "primal-fx-supplements-fulfilment-evidence" ? "bg-white object-contain" : "object-cover"}`}
+                        className={`absolute inset-0 h-full w-full ${CONTAINED_CARD_IMAGES.has(article.slug) ? "bg-white object-contain" : "object-cover"}`}
                       />
-                      {article.slug !== "primal-fx-supplements-fulfilment-evidence" && <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/15 to-transparent" />}
+                      {!CONTAINED_CARD_IMAGES.has(article.slug) && <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/15 to-transparent" />}
                     </>
                   ) : (
                     <div
