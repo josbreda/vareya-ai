@@ -1,0 +1,7 @@
+﻿component,what_is_included,unit,your_assumption,your_quote,source,date
+1. Pick and pack,"Core handling fee + any per-additional-item charge; confirm whether pick, pack and label are one fee or three",per order (+ per extra item),items per order:,,,
+2. Storage,Confirm the storage type your stock actually needs (pallet or bin),per pallet per day / per bin per day,storage type + space between replenishments:,,,
+3. Goods-in / inbound handling,"Charged per pallet, per carton or per unit; confirm what is included: counting, checking, quality control, labelling, photographing",per pallet / per carton / per unit,inbound frequency + units per delivery:,,,
+4. Shipping materials,"Boxes, mailers, filler, tape, labels; confirm whether included in pick-and-pack or billed separately",per material unit,materials you actually use:,,,
+5. Returns handling,"Cost to receive, check and restock; confirm what happens when a product cannot be resold and who decides",per return,return rate assumption:,,,
+6. Shipping rates,"Carrier cost per parcel; depends on packed weight, packed size, destination and service level",per parcel,average packed weight + packed dimensions + destinations + service level:,,,

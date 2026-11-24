@@ -1,13 +1,28 @@
+import { PACKAGING_AND_SHIPPING_ARTICLES } from "./packaging-and-international-shipping";
+import PRIMAL from "./primal-evidence.json";
+import SHIPHERO from "./shiphero-evidence.json";
+import POSTNL_ARTICLE from "./postnl-article.json";
+import { WEEK1_ARTICLES } from "./week1-knowledge";
+import { PIPELINE_ARTICLE as PIPELINE_ARTICLE_72929975df3e } from "./pipeline-article-shopify-inventory-transfer-receiving-discrepancy";
+import { PIPELINE_ARTICLE as PIPELINE_ARTICLE_710acad42225 } from "./pipeline-article-shopify-fulfillment-hold-investigation";
+import { PIPELINE_ARTICLE as PIPELINE_ARTICLE_841247209d45 } from "./pipeline-article-shopify-order-routing-location-priority";
+import { PIPELINE_ARTICLE as PIPELINE_ARTICLE_5d9202230e09 } from "./pipeline-article-shopify-split-shipping-checkout-review";
+import { PIPELINE_ARTICLE as PIPELINE_ARTICLE_90ae1cfc5f27 } from "./pipeline-article-shopify-location-deactivation-stock-check";
+import { PIPELINE_ARTICLE } from "./pipeline-article";
 import {
   CLAIM_ALL_IN,
   CLAIM_CARRIER_SELECTION,
   CLAIM_CUSTOMS,
+  CLAIM_CUTOFF,
+  CLAIM_POSTNL,
   CLAIM_POST_SUBMISSION,
   CLAIM_RETURNS,
   CLAIM_ROYAL_MAIL,
   CLAIM_SHIPHERO,
   CLAIM_SPECIALIST_FALLBACK,
+  CLAIM_SUPPORT,
   CLAIM_VOLUME,
+  CLAIM_WEEKEND,
 } from "@/content/claims";
 import { APPROVED_FACTS } from "@/content/claims";
 
@@ -36,6 +51,7 @@ export interface KnowledgeSection {
   paragraphs?: readonly string[];
   bullets?: readonly string[];
   table?: KnowledgeTable;
+  tableNote?: string;
   checklist?: readonly string[];
   faq?: readonly KnowledgeFaqItem[];
   sources?: readonly KnowledgeSource[];
@@ -55,6 +71,7 @@ export interface KnowledgeArticle {
   publishedLabel: string | null;
   topic: string;
   indexable?: boolean;
+  imageAlt?: string;
   reviewer?: string | null;
   reviewedAt?: string | null;
   primaryCta?: { label: string; route: string };
@@ -63,6 +80,17 @@ export interface KnowledgeArticle {
 }
 
 export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
+  ...PACKAGING_AND_SHIPPING_ARTICLES,
+  POSTNL_ARTICLE,
+  PRIMAL,
+  SHIPHERO,
+  ...WEEK1_ARTICLES,
+  PIPELINE_ARTICLE_72929975df3e,
+  PIPELINE_ARTICLE_710acad42225,
+  PIPELINE_ARTICLE_841247209d45,
+  PIPELINE_ARTICLE_5d9202230e09,
+  PIPELINE_ARTICLE_90ae1cfc5f27,
+  PIPELINE_ARTICLE,
   {
     slug: "what-is-cooperative-fulfilment",
     title: "What is cooperative fulfilment?",
@@ -207,10 +235,10 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Jos",
     reviewedAt: "2026-08-17",
-    primaryCta: { label: "Start your Free Rate Scan", route: "/free-rate-scan/" },
+    primaryCta: { label: "Start your Free Rate Scan", route: "/free-rate-scan/?lang=en" },
     secondaryCta: {
       label: "Request a fulfilment quote",
-      route: "/request-fulfilment-quote/",
+      route: "/request-fulfilment-quote/?lang=en",
     },
     sections: [
       {
@@ -628,10 +656,20 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         paragraphs: [
           "Fulfilment pricing is not a single number applied uniformly. Six drivers shape what any provider quotes, and understanding them makes both quotations and invoices readable.",
           "Order volume sets the baseline: how many orders pass through the warehouse each month, and how concentrated they are. Volume influences storage planning, staffing and the commercial terms a provider can offer.",
-          "Parcel profile comes next. Combined dimensions below 900 mm with a maximum length of 600 mm describe the smaller-parcel range Vareya is set up for; heavier or larger items change handling, packaging and carrier fees.",
+          "Parcel profile comes next. Combined dimensions ≤900 mm with a longest side ≤600 mm describe the smaller-parcel range Vareya is set up for; heavier or larger items change handling, packaging and carrier fees.",
           "Destination mix decides carrier routing. Different countries carry different carrier costs and service options, so the same parcel profile can quote differently depending on where orders actually go.",
           "Storage requirement — pallets, SKU spread and replenishment rhythm — drives warehouse space. Platform integration determines how orders, stock and returns flow between your shop and the warehouse system.",
           "Service-level requirements — cut-off times, weekend processing, customised SLAs and returns — are the final lever, and often the most negotiable.",
+        ],
+        internalLinks: [
+          {
+            label: "How the Boxable Product Framework assesses cost and handling",
+            href: "/boxable-product-framework/",
+          },
+          {
+            label: "Boxable Shipping and the packed order",
+            href: "/boxable-shipping/",
+          },
         ],
       },
       {
@@ -705,8 +743,8 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Hermes (claims-checked against register v1.4)",
     reviewedAt: "2026-08-21",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
-    secondaryCta: { label: "Request a fulfilment quote", route: "/request-fulfilment-quote/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
+    secondaryCta: { label: "Request a fulfilment quote", route: "/request-fulfilment-quote/?lang=en" },
     sections: [
       {
         heading: "You talk to us first",
@@ -735,7 +773,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         heading: "We pick, pack and ship",
         paragraphs: [
           "Orders come in from your shop. We pick them, pack them and hand them to the relevant carrier.",
-          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, Deutsche Post, Royal Mail, DPD and DHL Express are part of the carrier network for other routes.",
           "Cut-off times of up to 23:00 may be available by agreement. Weekend fulfilment — Saturday and Sunday order processing — is available on a structural basis. That matters when your customers order on Friday evening and you want the parcel moving on Saturday.",
         ],
       },
@@ -750,7 +788,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         heading: "What we will not promise",
         paragraphs: [
           "We would rather be clear than clever. Vareya is generally best suited to brands shipping 500 or more orders per month.",
-          "We specialise in cosmetics, supplements, phone cases, accessories and other smaller parcel products. Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.",
+          "We specialise in cosmetics, supplements, phone cases, accessories and other smaller parcel products. Suitable smaller parcels have combined dimensions ≤900 mm and a longest side ≤600 mm.",
           "If your operation fits those boundaries, we agree the practical start dates with you during onboarding. If it does not, we will tell you that too.",
         ],
       },
@@ -793,7 +831,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     publishedAt: "2026-08-21",
     publishedLabel: "21 August 2026",
     topic: "Operations",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "When switching makes sense",
@@ -904,7 +942,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Hermes (claims-checked against register v1.5)",
     reviewedAt: "2026-08-21",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     secondaryCta: { label: "Explore Shopify fulfilment in Europe", route: "/shopify-fulfilment-europe/" },
     sections: [
       {
@@ -918,7 +956,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         heading: "Build a shortlist of three, not ten",
         paragraphs: [
           "A shortlist of three providers is enough. More than that and the quotes blur together.",
-          "Pick providers that match your actual profile. Vareya is generally best suited to brands shipping 500 or more orders per month, with smaller parcels — cosmetics, supplements, phone cases, accessories and similar products. Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.",
+          "Pick providers that match your actual profile. Vareya is generally best suited to brands shipping 500 or more orders per month, with smaller parcels — cosmetics, supplements, phone cases, accessories and similar products. Suitable smaller parcels have combined dimensions ≤900 mm and a longest side ≤600 mm.",
           "If a provider does not fit those boundaries, that is fine — cross it off early. Product fit is confirmed during qualification.",
         ],
       },
@@ -960,7 +998,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         heading: "How Vareya fits a Shopify shop",
         paragraphs: [
           "Shopify integration is available, fully connected to ShipHero as our warehouse management system. Orders, inventory and returns flow through one setup.",
-          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, Deutsche Post, Royal Mail, DPD and DHL Express are part of the carrier network for other routes.",
           "Cut-off times of up to 23:00 may be available by agreement, and weekend fulfilment is available on a structural basis. Customs clearance support is available for shipments into and out of Europe.",
         ],
       },
@@ -1002,7 +1040,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Hermes (public news facts + register v1.5)",
     reviewedAt: "2026-08-24",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "What changed",
@@ -1054,7 +1092,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Hermes (public news facts + register v1.5)",
     reviewedAt: "2026-08-24",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     secondaryCta: { label: "Explore EU fulfilment", route: "/eu-fulfilment/" },
     sections: [
       {
@@ -1101,7 +1139,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Hermes (public news facts + register v1.5)",
     reviewedAt: "2026-08-24",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "The promise your shop actually makes",
@@ -1114,7 +1152,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         heading: "What EU stock does for delivery",
         paragraphs: [
           "When stock sits in a European warehouse, most orders never cross an external border. They travel the short route: from the warehouse to a carrier to the customer's door.",
-          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, Deutsche Post, Royal Mail, DPD and DHL Express are part of the carrier network for other routes.",
           "Cut-off times of up to 23:00 may be available by agreement, and weekend fulfilment is available on a structural basis. For a shop, that means orders keep moving on days when a cross-border shipment would be sitting at a border.",
         ],
       },
@@ -1127,7 +1165,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
       {
         heading: "The honest fit check",
         paragraphs: [
-          "Moving stock to Europe only makes sense when your volume and products fit a European fulfilment setup. Vareya is generally best suited to brands shipping 500 or more orders per month, specialising in cosmetics, supplements, phone cases, accessories and other smaller parcel products. Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.",
+          "Moving stock to Europe only makes sense when your volume and products fit a European fulfilment setup. Vareya is generally best suited to brands shipping 500 or more orders per month, specialising in cosmetics, supplements, phone cases, accessories and other smaller parcel products. Suitable smaller parcels have combined dimensions ≤900 mm and a longest side ≤600 mm.",
           "Product fit is confirmed during qualification. The scan is the fastest way to check it.",
         ],
       },
@@ -1174,7 +1212,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         paragraphs: [
           "Vareya fulfils ecommerce orders from a warehouse in Breda, the Netherlands, shipping across Europe and beyond. Shopify integration is available, and Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.",
           "Customs clearance support is available for shipments into and out of Europe, so the inbound leg from the US is handled as part of the process.",
-          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands, with DHL, Asendia, FedEx and Royal Mail in the carrier network for other routes.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands, with DHL, Asendia, Deutsche Post, Royal Mail, DPD and DHL Express in the carrier network for other routes.",
         ],
       },
       {
@@ -1219,7 +1257,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         paragraphs: [
           "Vareya operates from a warehouse in Breda, the Netherlands, and ships across Europe. Shopify integration is available, fully connected to ShipHero as the warehouse management system.",
           "Customs clearance support is available for shipments into and out of Europe, including the inbound leg from the UK.",
-          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands, with DHL, Asendia, FedEx and Royal Mail in the carrier network for other routes.",
+          "Vareya's shipping system can automatically select an appropriate carrier for each shipment, based on destination and parcel characteristics. PostNL is Vareya's main carrier for shipments within the Netherlands, with DHL, Asendia, Deutsche Post, Royal Mail, DPD and DHL Express in the carrier network for other routes.",
         ],
       },
       {
@@ -1243,7 +1281,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Hermes (register v1.5 only — no performance claims)",
     reviewedAt: "2026-08-24",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "Why returns decide whether European customers stay",
@@ -1294,7 +1332,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
     reviewedAt: "2026-09-14",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "Two EORI numbers, two directions",
@@ -1341,7 +1379,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
         internalLinks: [
           { label: "EU fulfilment for UK ecommerce brands", href: "/eu-fulfilment-uk-brands/" },
-          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/?lang=en" },
         ],
       },
     ],
@@ -1359,7 +1397,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
     reviewedAt: "2026-09-14",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "What the TCA actually covers",
@@ -1415,7 +1453,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
     reviewedAt: "2026-09-14",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "Classifying the shipment before it leaves the US",
@@ -1459,7 +1497,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
         internalLinks: [
           { label: "EU fulfilment for US ecommerce brands", href: "/eu-fulfilment-us-brands/" },
-          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/?lang=en" },
         ],
       },
     ],
@@ -1477,7 +1515,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
     reviewedAt: "2026-09-14",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "What changed, and when",
@@ -1526,7 +1564,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
     reviewedAt: "2026-09-14",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "Reporting the export before it leaves Canada",
@@ -1559,7 +1597,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
         internalLinks: [
           { label: "European fulfilment for Canadian brands", href: "/european-fulfilment-for-canada-brands/" },
-          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/?lang=en" },
         ],
       },
     ],
@@ -1577,7 +1615,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
     reviewedAt: "2026-09-14",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "What CETA covers",
@@ -1608,7 +1646,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
         internalLinks: [
           { label: "European fulfilment for Canadian brands", href: "/european-fulfilment-for-canada-brands/" },
-          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/?lang=en" },
         ],
       },
     ],
@@ -1626,7 +1664,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
     reviewedAt: "2026-09-14",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "The AUD 2,000 threshold",
@@ -1658,7 +1696,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
         internalLinks: [
           { label: "European fulfilment for Australian brands", href: "/european-fulfilment-for-australian-brands/" },
-          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/?lang=en" },
         ],
       },
     ],
@@ -1676,7 +1714,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.6",
     reviewedAt: "2026-09-14",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     sections: [
       {
         heading: "Where the agreement actually stands",
@@ -1707,7 +1745,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         ],
         internalLinks: [
           { label: "European fulfilment for Australian brands", href: "/european-fulfilment-for-australian-brands/" },
-          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/?lang=en" },
         ],
       },
     ],
@@ -1725,7 +1763,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
     indexable: true,
     reviewer: "Claude (Anthropic) — AOS content pipeline, public sources + claims register v1.7",
     reviewedAt: "2026-10-09",
-    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/" },
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
     secondaryCta: {
       label: "What to look for in a Shopify fulfilment partner",
       route: "/knowledge/shopify-fulfilment-europe-what-to-look-for/",
@@ -1758,6 +1796,16 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
           "Multi-store and Shopify Markets — whether more than one Shopify store or Market should draw from the same inventory pool.",
           "Discontinued or duplicate SKUs — old SKUs still present in product data but no longer intended to be stocked.",
           "Packaging and handling flags — anything requiring specific packaging, orientation, or handling instructions at pick time.",
+        ],
+        internalLinks: [
+          {
+            label: "Boxable Product Framework",
+            href: "/boxable-product-framework/",
+          },
+          {
+            label: "Boxable fulfilment for small products",
+            href: "/boxable-fulfilment/",
+          },
         ],
       },
       {
@@ -1867,7 +1915,7 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
         internalLinks: [
           { label: "Shopify fulfilment in Europe", href: "/shopify-fulfilment-europe/" },
           { label: "Shopify fulfilment in Europe: what to look for", href: "/knowledge/shopify-fulfilment-europe-what-to-look-for/" },
-          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/" },
+          { label: "Check your EU fulfilment fit", href: "/free-rate-scan/?lang=en" },
         ],
       },
       {
@@ -1876,6 +1924,539 @@ export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
           "This article combines approved Vareya claims from the Claims Register (v1.7) with public Shopify documentation. The onboarding example is composite and anonymised and does not describe an identifiable current or former customer.",
         ],
         reviewNote: "Drafted by Claude (Anthropic), AOS content pipeline, 2026-10-09. Claims checked against claims-register.md v1.7 and scripts/prohibited-claims-scan.sh.",
+      },
+    ],
+  },
+  {
+    slug: "fulfilment-cost-benchmark-report",
+    title: "Fulfilment costs in Europe: how to build a benchmark you can check",
+    description:
+      "How to benchmark fulfilment costs in Europe without guesswork: the six cost components, a comparison worksheet you can fill with your own quotes, and what we do not promise to publish.",
+    summary:
+      "A like-for-like method for comparing fulfilment quotes — with a worksheet you fill in with your own figures, not a set of market rates.",
+    publishedAt: "2026-10-14",
+    publishedLabel: "14 October 2026",
+    topic: "Fulfilment costs",
+    indexable: true,
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
+    secondaryCta: { label: "Request a fulfilment quote", route: "/request-fulfilment-quote/?lang=en" },
+    sections: [
+      {
+        heading: "Why fulfilment quotes are hard to compare",
+        paragraphs: [
+          "All-in fulfilment quotes look easy to compare — until you read them. Two providers can quote the same headline figure and mean two different things: one includes storage, the other does not; one charges per item picked, the other per order; one treats returns as a fixed fee, the other as a project. A benchmark is only useful when it compares the same components in the same units.",
+          "This report is a method, not a measured market benchmark: it shows you the components that matter, explains how to build a like-for-like comparison, and gives you a worksheet you can fill in with your own quotes. It does not publish a set of market rates, and we will explain why.",
+        ],
+      },
+      {
+        heading: "The six cost components",
+        bullets: [
+          "1. Pick and pack. The core handling fee per order, plus any per-additional-item charge. The unit is usually 'per order' and the variable is items per order. Ask whether a pick, a pack and a label are one fee or three.",
+          "2. Storage. Usually charged per pallet per day or per bin per day. The number that matters for you is not the unit rate — it is the storage type your stock actually needs and how much space it occupies between replenishments.",
+          "3. Goods-in and inbound handling. Charged per pallet, per carton or per unit when your stock arrives. Ask what is included: counting, checking, quality control, labelling, photographing.",
+          "4. Shipping materials. Boxes, mailers, filler, tape, labels. Some providers include these in the pick-and-pack fee; others list them separately. Ask which model applies to you — and for the price list of the materials you will actually use.",
+          "5. Returns handling. What does a return cost to receive, check and put back into stock? Ask what happens when a product cannot be resold, and who decides.",
+          "6. Shipping rates. The carrier cost per parcel. These depend on weight, packed size, destination and service level. Always quote the packed parcel, not the unpacked product — packaging changes both weight and dimensions.",
+        ],
+      },
+      {
+        heading: "How to compare quotes",
+        bullets: [
+          "1. Set one unit per component. Per order, per item, per parcel, per pallet, per return. Write the unit next to every figure.",
+          "2. Ask what 'all-in' means. " + CLAIM_ALL_IN + " The scope of any agreement is exactly what that agreement says, so read the exclusions line by line and ask about anything unclear.",
+          "3. Separate fulfilment costs from shipping costs. They behave differently: fulfilment costs scale with your operation, shipping costs scale with your parcels.",
+          "4. Use the same assumptions everywhere. Order volume, items per order, average packed weight, average packed dimensions, destinations, return rate.",
+          "5. Re-quote when your profile changes. A new product line, a heavier average parcel or a new destination can move any of the six components.",
+        ],
+      },
+      {
+        heading: "The worksheet",
+        paragraphs: [
+          "For each component, record: what is included · unit · your assumption · your quote · source · date. No row is complete without a source and a date. This discipline is what separates a benchmark from a brochure. Here is the full worksheet structure — copy it into your own spreadsheet and fill it with your own quotes:",
+        ],
+        table: {
+          headers: [
+            "Component",
+            "What is included",
+            "Unit",
+            "Your assumption",
+            "Your quote",
+            "Source",
+            "Date",
+          ],
+          rows: [
+            [
+              "1. Pick and pack",
+              "Core handling fee + any per-additional-item charge",
+              "per order (+ per extra item)",
+              "items per order",
+              "",
+              "",
+              "",
+            ],
+            [
+              "2. Storage",
+              "The storage type your stock actually needs",
+              "per pallet per day / per bin per day",
+              "storage type and space between replenishments",
+              "",
+              "",
+              "",
+            ],
+            [
+              "3. Goods-in / inbound handling",
+              "Counting, checking, quality control, labelling, photographing",
+              "per pallet / per carton / per unit",
+              "inbound frequency and units per delivery",
+              "",
+              "",
+              "",
+            ],
+            [
+              "4. Shipping materials",
+              "Boxes, mailers, filler, tape, labels",
+              "per material unit",
+              "the materials you actually use",
+              "",
+              "",
+              "",
+            ],
+            [
+              "5. Returns handling",
+              "Receive, check and restock; what happens when a product cannot be resold",
+              "per return",
+              "return rate",
+              "",
+              "",
+              "",
+            ],
+            [
+              "6. Shipping rates",
+              "Carrier cost for the packed parcel",
+              "per parcel",
+              "packed weight, packed size, destination, service level",
+              "",
+              "",
+              "",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "A note on the missing figures",
+        paragraphs: [
+          "This version of the report is a methodology, not a measured benchmark: it does not include a current, comparable set of published market rates. Tariff data changes quickly, and we do not publish our own rates — Vareya provides rates in quotes, for your specific operation. Rather than fill a table with numbers we cannot verify, we give you the method and the worksheet. Fill it with comparable quotes for your own order profile.",
+          "Prefer to work from a file? Download the [fulfilment cost comparison worksheet (CSV)](/fulfilment-cost-comparison-worksheet.csv): columns for the six components, the units and assumption prompts — with the quote, source and date fields deliberately empty until you have a real figure to put in them. An empty field is more honest than an estimate.",
+          "If you want context for the components themselves, start with our article on [fulfilment cost drivers](/knowledge/fulfilment-cost-drivers/), then use our guide to the [information a fulfilment provider needs before quoting](/knowledge/fulfilment-quotation-requirements/).",
+        ],
+      },
+      {
+        heading: "Why small, light and boxable products tend to compare well",
+        paragraphs: [
+          "Carriers price parcels in weight and size bands. When your products are small, light and boxable, parcels can sit in lower bands: less volumetric weight, fewer oversized surcharges, more parcels per pallet, more units per shelf. Compare the handling charge for your actual order mix; a smaller product does not by itself prove faster packing. These are structural differences in how costs are built up — not a savings figure. We do not publish one, because it would depend on your products and your quotes.",
+        ],
+      },
+      {
+        heading: "What we will not promise",
+        bullets: [
+          "We do not publish a 'market average'. Averages hide exactly the differences this report teaches you to find.",
+          "We do not publish our own rates. " + CLAIM_ALL_IN + " You receive your rates in a quote for your operation.",
+          "We do not present expired tariffs as current. If a source has no valid date, it does not belong in your benchmark.",
+        ],
+      },
+      {
+        heading: "Where does Vareya fit?",
+        paragraphs: [
+          CLAIM_VOLUME + " " + APPROVED_FACTS.parcelSize + " " + APPROVED_FACTS.productFit,
+          "If that sounds like your profile, the simplest way to get your own benchmark rows filled is to start with our [free fulfilment scan](/free-rate-scan/?lang=en): you share your volume, products and destinations. " +
+            CLAIM_POST_SUBMISSION +
+            " You can also [request a fulfilment quote](/request-fulfilment-quote/?lang=en) directly, or compare the questions to ask any provider with our article on [comparing fulfilment partners](/knowledge/compare-fulfilment-partners/).",
+        ],
+      },
+    ],
+  },
+  {
+    slug: "ecommerce-shipping-guide",
+    title: "Ecommerce shipping from the Netherlands: a practical guide",
+    description:
+      "Parcel formats, carrier choices, cost build-up and cross-border basics for webshops shipping from the Netherlands — a practical guide from Vareya, Europe’s Boxable Fulfilment Specialist.",
+    summary:
+      "How shipping works when your stock sits in the Netherlands: parcel formats, carriers, how costs are built up, and what changes across borders.",
+    publishedAt: "2026-10-14",
+    publishedLabel: "14 October 2026",
+    topic: "Shipping",
+    indexable: true,
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
+    secondaryCta: { label: "Request a fulfilment quote", route: "/request-fulfilment-quote/?lang=en" },
+    sections: [
+      {
+        heading: "Shipping is the part of fulfilment customers see",
+        paragraphs: [
+          "Shipping is the part of fulfilment your customers actually see. They do not see your warehouse. They see a parcel arrive — quickly, undamaged, from a sender they trust. This guide explains how shipping works when your stock sits in the Netherlands: parcel formats, carriers, how costs are built up, and what changes when you ship across borders.",
+        ],
+      },
+      {
+        heading: "Start with the parcel format",
+        paragraphs: [
+          "Start by checking the packed size and weight. This guide distinguishes three useful parcel profiles:",
+        ],
+        bullets: [
+          "Letterbox-friendly parcels. Thin enough to fit through a letterbox opening, so they can be delivered without a doorstep handover. Suited to low-value, sturdy, light items. The format has its own guide: [letterbox parcels and how they work](/letterbox-parcel-fulfilment/).",
+          "Small parcels. The range Vareya is set up for. " + APPROVED_FACTS.parcelSize + " " + APPROVED_FACTS.productFit + " Note that this is the overall small-parcel profile, not a letterbox limit — letterbox-friendly parcels are a smaller subset that must additionally fit through the door opening.",
+          "Larger parcels. Above that range, handling, packaging and carrier fees change. " + APPROVED_FACTS.productFit,
+        ],
+        internalLinks: [
+          { label: "Small parcel fulfilment in Europe", href: "/small-parcel-fulfilment-europe/" },
+          { label: "Letterbox parcel fulfilment", href: "/letterbox-parcel-fulfilment/" },
+        ],
+      },
+      {
+        heading: "Choose the carrier with the route in mind",
+        paragraphs: [
+          CLAIM_POSTNL,
+          CLAIM_CARRIER_SELECTION + " You set your rules once and the system applies them per order.",
+          "For international orders, customs handling is part of the route. " + CLAIM_CUSTOMS,
+        ],
+      },
+      {
+        heading: "Understand how shipping costs are built up",
+        paragraphs: [
+          "Four things drive the price of a parcel:",
+        ],
+        bullets: [
+          "Weight — actual weight and, for services that use it, volumetric weight. Check the charging rule for the chosen service.",
+          "Size — length, width and height, sometimes as a combined total.",
+          "Destination — domestic, EU or further afield.",
+          "Service level and surcharges — delivery speed, signature, fuel or peak surcharges.",
+        ],
+      },
+      {
+        heading: "The packed parcel is what gets priced",
+        paragraphs: [
+          "This is why you always quote the packed parcel, not the product. Good packaging that keeps a parcel inside the next-lower weight or size band is a shipping decision, not just a warehouse decision.",
+        ],
+      },
+      {
+        heading: "Shipping inside the EU",
+        paragraphs: [
+          "For EU destinations, two topics come up again and again: the EU parcel levy and the growing value customers place on a domestic-feeling delivery promise. We explain both in [what the EU parcel levy means for your shop](/knowledge/eu-parcel-levy-2026-what-it-means/) and [why EU-based fulfilment protects your delivery promise](/knowledge/eu-based-fulfilment-protects-delivery-promise/) — treat those articles as the current reference and check them for the latest position before you plan. The practical takeaway: where your stock sits shapes how your delivery promise looks to your customer. If you sell into several EU markets, read our [ecommerce fulfilment guide for the Netherlands](/knowledge/ecommerce-fulfilment-netherlands-guide/) for the full picture.",
+        ],
+      },
+      {
+        heading: "Shipping to the UK",
+        paragraphs: [
+          "Post-Brexit, UK parcels need a route that handles customs cleanly. " +
+            CLAIM_ROYAL_MAIL +
+            " Vareya groups UK parcels for daily transport, arranges customs handling collectively using your VAT number, and enters them into the Royal Mail network — typically within 24 hours after handover. This is not an order-to-door guarantee. Full details of how the route works are on our [UK fulfilment page](/eu-fulfilment-uk-brands/#uk-direct-entry).",
+        ],
+      },
+      {
+        heading: "Shipping beyond Europe",
+        paragraphs: [
+          "Destinations outside the EU need customs processing, and the requirements differ per country. Vareya supports a defined list of 41 destinations in Europe and beyond — the current list is shown on the [request a quote page](/request-fulfilment-quote/?lang=en). " +
+            CLAIM_CUSTOMS +
+            " Specific duties or tax questions are always case-specific and are confirmed during qualification.",
+        ],
+      },
+      {
+        heading: "Returns are part of shipping",
+        paragraphs: [
+          CLAIM_RETURNS,
+          "Plan the return address and transport route separately from outbound shipping. A local returns address can give customers a local first destination; any onward transport, timing and costs still need to be agreed. More on this in our article about [returns centres in Europe](/knowledge/ecommerce-returns-centre-europe/).",
+        ],
+      },
+      {
+        heading: "Timing: what to expect",
+        paragraphs: [
+          CLAIM_CUTOFF +
+            " " +
+            CLAIM_WEEKEND +
+            " We do not publish same-day or next-day promises — delivery timing depends on the destination, the service level you choose and the carrier. Before you agree the service, confirm how packed weight, labelling and carrier handover will be handled.",
+        ],
+      },
+      {
+        heading: "Checklist: choosing your shipping method",
+        paragraphs: ["Work through these questions before you agree a shipping method:"],
+        checklist: [
+          "What does the packed parcel weigh, including packaging?",
+          "Which weight or size band does that put it in?",
+          "Must it fit through a letterbox, or can it be handed over?",
+          "Is the destination domestic, EU or beyond?",
+          "What tracking does your customer expect?",
+          "How will returns come back — and to which address?",
+        ],
+      },
+      {
+        heading: "Where does Vareya fit?",
+        paragraphs: [
+          CLAIM_VOLUME +
+            " Our core profile is small, light and boxable products — think cosmetics, supplements, phone cases and accessories. " +
+            APPROVED_FACTS.productFit,
+          "To see how your products, volumes and destinations line up, use the [free fulfilment scan](/free-rate-scan/?lang=en): " +
+            CLAIM_POST_SUBMISSION,
+        ],
+        internalLinks: [
+          {
+            label: "Boxable Fulfilment for small and lightweight products",
+            href: "/boxable-fulfilment/",
+          },
+          {
+            label: "Boxable Shipping and the packed order",
+            href: "/boxable-shipping/",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "europe-expansion-guide",
+    title: "Selling into Europe: a practical guide for US and UK brands",
+    description:
+      "Moving stock to Europe, serving EU customers from the Netherlands, and handling the UK route: a practical expansion guide for US and UK brands — with the corridor questions that matter.",
+    summary:
+      "What changes when the US, UK and other corridor brands hold stock inside the EU, and the corridor questions to resolve before moving goods.",
+    publishedAt: "2026-10-14",
+    publishedLabel: "14 October 2026",
+    topic: "EU expansion",
+    indexable: true,
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
+    secondaryCta: { label: "Request a fulfilment quote", route: "/request-fulfilment-quote/?lang=en" },
+    sections: [
+      {
+        heading: "One decision first: where does your stock live?",
+        paragraphs: [
+          "Selling into Europe starts with one decision: where does your stock live? Shipping orders individually from the US or UK means each order crosses an EU external border. Holding stock inside the EU changes that flow: stock is imported first, then orders are dispatched from the EU warehouse. Shipping between EU countries is still international delivery. This guide walks through that move: why EU stock changes the delivery experience, which corridor questions matter for your origin country, and what to prepare before moving your stock.",
+        ],
+      },
+      {
+        heading: "Why EU stock first",
+        paragraphs: [
+          "Two topics come up in every EU expansion plan. First, the [EU parcel levy](/knowledge/eu-parcel-levy-2026-what-it-means/) — our article explains how it may change cross-border parcel flows; treat it as the current reference for that topic. Second, customers increasingly expect a delivery promise that feels local — an expectation we cover in [why EU-based fulfilment protects your delivery promise](/knowledge/eu-based-fulfilment-protects-delivery-promise/). Neither is a reason to panic; both are reasons to consider serving Europe from EU stock rather than shipping every parcel across a border.",
+        ],
+      },
+      {
+        heading: "The corridor check: what changes per origin",
+        paragraphs: [
+          "The mechanics depend on where your stock comes from. Each live article below covers one corridor in detail:",
+        ],
+        table: {
+          headers: ["Your origin", "The core question", "Where we explain it"],
+          rows: [
+            [
+              "UK",
+              "Tariff treatment for stock moving into the EU after Brexit",
+              "[UK–EU TCA rules of origin](/knowledge/uk-eu-tca-rules-of-origin-tariff-free-stock/), [GB EORI vs EU EORI](/knowledge/uk-gb-eori-vs-eu-eori-stock-transfer/), [UK brands and the parcel levy](/knowledge/uk-brands-eu-parcel-levy/)",
+            ],
+            [
+              "US",
+              "Export filing and tariff treatment when you transfer inventory",
+              "[US Schedule B and AES filing](/knowledge/us-schedule-b-aes-filing-eu-stock-transfer/), [the 2026 US–EU trade framework](/knowledge/us-eu-trade-framework-2026-tariff-free-industrial-goods/)",
+            ],
+            [
+              "Canada",
+              "Whether goods qualify for CETA preferential tariff treatment",
+              "[Canada–EU CETA stock transfers](/knowledge/canada-eu-ceta-tariff-free-stock-transfer/), [CBSA CERS export declaration](/knowledge/canada-cbsa-cers-export-declaration-eu-stock-transfer/)",
+            ],
+            [
+              "Australia",
+              "Export declaration and current FTA status",
+              "[Australia ABF export declaration](/knowledge/australia-abf-export-declaration-eu-stock-transfer/), [Australia–EU FTA status 2026](/knowledge/australia-eu-fta-not-yet-in-force-2026/)",
+            ],
+            [
+              "Asia",
+              "Shipping stock to EU warehouses as an operating model",
+              "[From Asia: shipping to EU stock](/knowledge/from-asia-shipping-to-eu-stock/)",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Corridor articles are education, not advice",
+        paragraphs: [
+          "These articles explain the questions to raise with your freight forwarder and tax adviser. They are education, not advice for your specific case. Your pricing, VAT registration and product compliance are your decisions, made with your advisers.",
+        ],
+      },
+      {
+        heading: "Why the Netherlands",
+        paragraphs: [
+          "The Netherlands is one of Europe’s natural distribution points: a short hop to Germany, Belgium, France and the UK, mature carrier infrastructure, and a port and airport network built for international trade. Vareya's warehouse is at Bagven Park 6 in Breda. " +
+            CLAIM_POSTNL +
+            " Vareya supports a defined list of 41 destinations — you can see the current list on the [request a quote page](/request-fulfilment-quote/?lang=en).",
+        ],
+      },
+      {
+        heading: "How the move works, in five steps",
+        bullets: [
+          "1. Fit check. You share volume, product types, packed dimensions and destinations. " + APPROVED_FACTS.productFit + " " + CLAIM_VOLUME,
+          "2. Quote and agreement. You receive a quote that separates fulfilment costs from shipping costs, and a fulfilment agreement covering services, service levels and the returns setup.",
+          "3. Onboarding. We connect your webshop to the WMS (for Shopify, you receive an invitation to connect your store to the ShipHero setup), agree packing instructions, and set up your returns process.",
+          "4. Stock transfer. You ship inventory to Breda — via your own freight provider or with transport arranged by Vareya. You create a purchase order in the WMS; when the goods arrive they are checked and counted, and stock levels are updated when the purchase order is accepted.",
+          "5. Go live. We run test orders, fine-tune, and start fulfilling real orders — " + CLAIM_SUPPORT.charAt(0).toLowerCase() + CLAIM_SUPPORT.slice(1) + " You also have a monthly catch-up with your account manager.",
+        ],
+      },
+      {
+        heading: "The UK route in practice",
+        paragraphs: [
+          "If you also sell to UK customers, ask whether serving them from stock in the Netherlands fits your operation. " +
+            CLAIM_ROYAL_MAIL +
+            " Vareya groups UK parcels for daily transport, arranges customs handling collectively using your VAT number, and enters them into the Royal Mail network — typically within 24 hours after handover. This is not an order-to-door guarantee. The full route is explained on our [UK fulfilment page](/eu-fulfilment-uk-brands/#uk-direct-entry).",
+        ],
+      },
+      {
+        heading: "Returns from Europe",
+        paragraphs: [
+          CLAIM_RETURNS,
+          "For UK customers, a UK returns address is available as part of the returns setup, so customers can send their return to a UK address. Any onward transport is agreed separately. More context in our article on [returns centres in Europe](/knowledge/ecommerce-returns-centre-europe/).",
+        ],
+      },
+      {
+        heading: "What we will not promise",
+        bullets: [
+          "We will not give you a customs or tax plan for your specific situation — that belongs with your adviser, using the corridor articles above as a starting point.",
+          "We will not promise a fixed number of days from order to doorstep for UK orders. The qualified timing above is exactly what we stand behind.",
+          "We will not pretend expansion is only about logistics: your pricing, VAT registration and product compliance are your decisions, made with your advisers.",
+        ],
+      },
+      {
+        heading: "Start with a fit check",
+        paragraphs: [
+          "Before you ship a single pallet, run the numbers on your profile. Our [free fulfilment scan](/free-rate-scan/?lang=en) takes a few minutes: you share volume, product types and destination markets. " +
+            CLAIM_POST_SUBMISSION,
+        ],
+      },
+    ],
+  },
+  {
+    slug: "shopify-fulfilment-guide",
+    title: "Shopify fulfilment in Europe: a practical guide",
+    description:
+      "How Shopify orders flow to a European 3PL, what to prepare before onboarding, and how multi-store, bundles, subscriptions and returns work when Vareya fulfils your orders from the Netherlands.",
+    summary:
+      "The operational side of moving Shopify fulfilment to a European 3PL: data flow, onboarding, capabilities and costs.",
+    publishedAt: "2026-10-14",
+    publishedLabel: "14 October 2026",
+    topic: "Shopify",
+    indexable: true,
+    primaryCta: { label: "Check your EU fulfilment fit", route: "/free-rate-scan/?lang=en" },
+    secondaryCta: { label: "Request a fulfilment quote", route: "/request-fulfilment-quote/?lang=en" },
+    sections: [
+      {
+        heading: "Your store sells; fulfilment delivers",
+        paragraphs: [
+          "Your Shopify store decides how customers buy. Your fulfilment decides what happens next: how fast the parcel leaves, how it looks, and how a return is handled. This guide covers the practical side of moving Shopify fulfilment to a European 3PL — the data flow, what to prepare, how onboarding works, and the capabilities to check before you choose. For the full service overview, start with our [Shopify fulfilment in Europe](/shopify-fulfilment-europe/) page.",
+        ],
+      },
+      {
+        heading: "How the Shopify to 3PL data flow works",
+        paragraphs: [
+          "When a customer places an order, it flows from your store to your provider's warehouse management system. " +
+            CLAIM_SHIPHERO +
+            " " +
+            APPROVED_FACTS.shopify +
+            " From there:",
+        ],
+        bullets: [
+          "Orders arrive in the WMS and are picked, packed and labelled against the rules you agreed.",
+          "Labels come from integrated carrier contracts. " + CLAIM_CARRIER_SELECTION,
+          "Stock levels update when inbound stock is received. You create a purchase order in the WMS; when goods arrive they are checked and counted, and the purchase order acceptance updates stock levels.",
+          "Returns are recorded in the WMS, so return status is visible to you.",
+        ],
+      },
+      {
+        heading: "Inventory allocation and pre-orders",
+        paragraphs: [
+          "Agree when stock is reserved for DTC orders and when a pre-order may be released to the warehouse. Confirm how your setup handles orders without available stock, fulfilment holds and mixed orders; do not assume every connector behaves the same way.",
+          "Further reading: [Managing pre-orders on your 3PL](https://preproduct.io/managing-pre-orders-on-your-3pl/) by PreProduct covers inventory synchronisation, Shopify fulfilment holds and partial shipments. It is an external practical guide, not confirmation of a configured Vareya integration.",
+        ],
+      },
+      {
+        heading: "Turn your order flow into rules",
+        paragraphs: [
+          "The right setup turns your order flow into rules: which carrier for which destination, what packaging per product line, and what happens on a return.",
+        ],
+      },
+      {
+        heading: "Prepare your product and SKU data first",
+        paragraphs: [
+          "Onboarding is faster when your data is clean. Each product needs a clear SKU, weight, packed dimensions and barcode convention that match between Shopify and the warehouse. Our step-by-step article on [preparing Shopify product and SKU data](/knowledge/shopify-product-sku-data-preparation/) covers exactly what to check — do that before you start comparing providers.",
+        ],
+      },
+      {
+        heading: "What to look for in a European 3PL",
+        paragraphs: [
+          "There is more to a 3PL than price per order. Fit, integration, the returns setup and how a provider handles exceptions all shape your day-to-day. We cover the evaluation criteria in detail in [what to look for in a Shopify 3PL](/knowledge/shopify-fulfilment-europe-what-to-look-for/) and the comparison method in [how to compare 3PLs in Europe](/knowledge/shopify-3pl-europe-how-to-compare/) — this guide stays on the operational side.",
+        ],
+      },
+      {
+        heading: "What Vareya supports",
+        paragraphs: [
+          "We support multiple webshops, product bundles, subscriptions and stock with batch numbers or expiry dates. We also handle B2B orders and stock transfers.",
+        ],
+        bullets: [
+          "Multiple webshops: several stores can run on one fulfilment setup.",
+          "Product bundles: bundle fulfilment is supported. The SKU structure and packing instructions are agreed during setup.",
+          "Subscriptions: subscription orders are supported. Confirm the order flow and any subscription-specific packing rules during setup.",
+          "Batch and expiry stock: stock can carry batch numbers or expiry dates in the WMS.",
+          "B2B and stock transfers: wholesale and transfer orders can be part of the operation.",
+        ],
+      },
+      {
+        heading: "Our core product profile",
+        paragraphs: [
+          "If you sell cosmetics, supplements, phone cases, accessories or other smaller parcel products, you are in our core profile. " +
+            APPROVED_FACTS.productFit,
+        ],
+      },
+      {
+        heading: "Onboarding with Vareya, step by step",
+        bullets: [
+          "1. Quote and agreement. We discuss the services you need, prepare an online quote, and work through the fulfilment agreement together.",
+          "2. Connect your store. You receive an invitation on your chosen email address to connect your Shopify store to our ShipHero setup. Once connected, we map your account.",
+          "3. Send stock. You ship inventory to our Breda warehouse and create a purchase order in the WMS. We check, count and update your stock levels.",
+          "4. Agree the details. We set the WMS rules, packing instructions and materials, and your returns process.",
+          "5. Test and go live. We run test orders and final checks, then start fulfilling your orders. " + CLAIM_SUPPORT + " You also have a monthly catch-up with your account manager.",
+        ],
+        paragraphs: [
+          "There is no fixed duration for onboarding in this guide — timing depends on your data, stock and requirements, and is agreed with you.",
+        ],
+      },
+      {
+        heading: "Costs: know what you are comparing",
+        paragraphs: [
+          CLAIM_ALL_IN +
+            " Your quote separates fulfilment costs from shipping costs, so you can see both parts clearly. We do not publish prices: rates depend on your order profile and are prepared for your operation. " +
+            CLAIM_VOLUME,
+        ],
+      },
+      {
+        heading: "Switching providers",
+        paragraphs: [
+          "Moving from one 3PL to another is a project: you need stock transferred, SKUs mapped and a tested order flow before the switch. If you are currently with another provider, our guide on [switching fulfilment providers in Europe](/knowledge/switching-fulfilment-providers-europe/) covers the handover questions to resolve before moving stock.",
+        ],
+      },
+      {
+        heading: "Frequently asked questions",
+        faq: [
+          {
+            q: "Does Vareya work with Shopify?",
+            a: "Yes. " + APPROVED_FACTS.shopify + " " + CLAIM_SHIPHERO,
+          },
+          {
+            q: "Can Vareya fulfil subscription orders and bundles?",
+            a: "Yes. We support multiple webshops, product bundles and subscriptions.",
+          },
+          {
+            q: "Does Vareya fulfil Amazon orders too?",
+            a: "Yes. " + APPROVED_FACTS.amazonFbm + " FBA-related capabilities are confirmed case by case during qualification.",
+          },
+        ],
+      },
+      {
+        heading: "Ready to check your fit?",
+        paragraphs: [
+          "Send us your order profile — products, volumes, markets — and we will tell you how Shopify fulfilment from the Netherlands would work for your brand. " +
+            CLAIM_POST_SUBMISSION,
+        ],
       },
     ],
   },

@@ -1,0 +1,2 @@
+.responsive { --editorial-padding: 3rem; }
+@media (min-width: 640px) { .responsive { --editorial-padding: 4rem; } }

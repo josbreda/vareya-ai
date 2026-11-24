@@ -1,0 +1,45 @@
+{
+  "slug": "shiphero-vareya-growth-case-study",
+  "title": "ShipHero features Vareya’s growth since 2022",
+  "description": "ShipHero’s November 2026 case study reports 300% growth in Vareya’s annual order volume since 2022 and describes the role of an integrated WMS.",
+  "summary": "ShipHero’s November 2026 case study reports 300% growth in Vareya’s annual order volume since 2022 and describes the role of an integrated WMS.",
+  "topic": "Partner coverage",
+  "publishedAt": "2026-11-11",
+  "publishedLabel": "11 November 2026",
+  "indexable": true,
+  "imageAlt": "Aerial view of VareYa’s warehouse with rooftop solar panels, as featured in ShipHero’s case study",
+  "sections": [
+    {
+      "heading": "A new case study from ShipHero",
+      "paragraphs": [
+        "Published on 10 November 2026, ShipHero’s updated Vareya case study looks at the move from separate operational tools to an integrated warehouse management system. It covers inventory, orders, warehouse workflows and support for multiple ecommerce brands."
+      ]
+    },
+    {
+      "heading": "What the growth figure means",
+      "paragraphs": [
+        "In the article, Raymond Faber reports that Vareya’s annual order volume increased by 300% since 2022. That means four times the starting volume. It is a company-reported order-volume figure, distinct from the earlier statement that the business had tripled. It does not establish that the software alone caused the growth."
+      ]
+    },
+    {
+      "heading": "Read the original case study",
+      "internalLinks": [
+        { "label": "Shopify fulfilment in Europe", "href": "/shopify-fulfilment-europe/" },
+        { "label": "Check Your Product Fit", "href": "/product-fit-check/" }
+      ],
+      "paragraphs": [
+        "The full story, including ShipHero’s interviews and photographs, is available on ShipHero’s website."
+      ],
+      "sources": [
+        {
+          "label": "ShipHero: Scaling up — How Vareya grew annual order volume by 300% (10 November 2026)",
+          "url": "https://www.shiphero.com/case-studies/vareya-fulfillment"
+        }
+      ]
+    }
+  ],
+  "primaryCta": {
+    "label": "Check your EU fulfilment fit",
+    "route": "/free-rate-scan/?lang=en"
+  }
+}

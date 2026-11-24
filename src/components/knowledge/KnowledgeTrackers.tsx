@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useT } from "@/i18n/client";
+import Link from "@/i18n/Link";
 import { useEffect, useRef } from "react";
 import {
   trackFreeRateScanCtaClick,
@@ -25,6 +26,7 @@ export function KnowledgeChecklist({
   slug: string;
   items: readonly string[];
 }) {
+  const t = useT();
   const ref = useRef<HTMLDivElement>(null);
   const fired = useRef(false);
 
@@ -50,7 +52,7 @@ export function KnowledgeChecklist({
       ref={ref}
       className="mt-6 rounded-2xl border border-border bg-surface p-6"
       role="list"
-      aria-label="Quotation-readiness checklist"
+      aria-label={t("Article checklist")}
     >
       <ul className="space-y-3 text-sm leading-6 text-muted">
         {items.map((item) => (

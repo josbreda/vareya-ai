@@ -12,8 +12,19 @@ interface LeadData {
   phone_number?: string; company_country?: string;
   ecommerce_platform?: string; monthly_order_volume?: string;
   target_markets?: string[]; landing_page?: string; device?: string;
-  utm_source?: string; utm_medium?: string; utm_campaign?: string; utm_content?: string;
+  utm_source?: string; utm_medium?: string; utm_campaign?: string; utm_content?: string; utm_term?: string;
+  original_landing_page?: string; original_referrer?: string;
+  first_utm_source?: string; first_utm_medium?: string; first_utm_campaign?: string; first_utm_content?: string; first_utm_term?: string;
+  first_landing_page?: string; first_referrer?: string;
   submission_id: string; form_type: string;
+}
+
+/** CRM-only untrusted attribution. Escape HTML in HubSpot rich task text. */
+function crmAttributionValue(value: string | undefined): string {
+  return (value?.trim().slice(0, 300) || "—")
+    .replace(/[\u0000-\u001f\u007f]/g, " ")
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 }
 
 interface SyncResult { contactId: string | null; companyId: string | null; taskId: string | null; dealId: string | null; status: SyncStatus; fitScore?: number; error?: string; }
@@ -77,14 +88,22 @@ export async function syncLead(lead: LeadData): Promise<SyncResult> {
       else { const cr = await hs("POST","/crm/v3/objects/companies",{properties:{name:lead.company,country:lead.company_country||""}}); companyId = cr.id; }
     } catch(e) { const cr = await hs("POST","/crm/v3/objects/companies",{properties:{name:lead.company}}); companyId = cr.id; }
     result.companyId = companyId;
-    // 3. Association
-    try { await hs("PUT",`/crm/v4/objects/contacts/${contactId}/associations/companies/${companyId}`); } catch(e) { /* non-blocking */ }
+    // 3. Association - v4 default association endpoint (no request body); the
+    //    label-less route requires an association-specs body and rejected this call.
+    try {
+      await hs("PUT", `/crm/v4/objects/contacts/${contactId}/associations/default/companies/${companyId}`);
+    } catch (e) {
+      const msg = e instanceof Error ? e.message.slice(0, 200) : "Unknown";
+      result.error = `contact-company association failed: ${msg}`;
+      result.status = "retry_pending";
+      console.error(`[hubspot] Contact-company association failed: ${msg}`);
+    }
     // 4. Score & task
     const w = scoreWarmth(lead);
     result.fitScore = w.totalScore;
     const taskProps: Record<string, string> = {
       hs_task_subject: `[${w.status}] ${lead.company} — ${lead.name}`,
-      hs_task_body: `WARMTH: ${w.totalScore}/100 (${w.status}) | FIT: ${w.fitScore}/50 | INTENT: ${w.intentScore}/50\n\nSubmission: ${lead.submission_id}\nForm: ${lead.form_type}\nPlatform: ${lead.ecommerce_platform||"N/A"}\nVolume: ${lead.monthly_order_volume||"N/A"}\nMarkets: ${(lead.target_markets||[]).join(", ")||"N/A"}\nLanding: ${lead.landing_page||"N/A"}\nDevice: ${lead.device||"N/A"}\nAttribution: utm_source=${lead.utm_source||"—"} · utm_medium=${lead.utm_medium||"—"} · utm_campaign=${lead.utm_campaign||"—"} · utm_content=${lead.utm_content||"—"}\n\nREVIEW: Check platform compatibility, volume threshold (500+/mo), product fit, market coverage within 1 working day.`,
+      hs_task_body: `WARMTH: ${w.totalScore}/100 (${w.status}) | FIT: ${w.fitScore}/50 | INTENT: ${w.intentScore}/50\n\nSubmission: ${lead.submission_id}\nForm: ${lead.form_type}\nPlatform: ${lead.ecommerce_platform||"N/A"}\nVolume: ${lead.monthly_order_volume||"N/A"}\nMarkets: ${(lead.target_markets||[]).join(", ")||"N/A"}\nLanding: ${lead.landing_page||"N/A"}\nDevice: ${lead.device||"N/A"}\nAttribution (latest relevant campaign): utm_source=${crmAttributionValue(lead.utm_source)} · utm_medium=${crmAttributionValue(lead.utm_medium)} · utm_campaign=${crmAttributionValue(lead.utm_campaign)} · utm_content=${crmAttributionValue(lead.utm_content)} · utm_term=${crmAttributionValue(lead.utm_term)}\nLatest campaign landing: ${crmAttributionValue(lead.original_landing_page)}\nLatest campaign referrer (origin only): ${crmAttributionValue(lead.original_referrer)}\nFirst relevant campaign: utm_source=${crmAttributionValue(lead.first_utm_source)} · utm_medium=${crmAttributionValue(lead.first_utm_medium)} · utm_campaign=${crmAttributionValue(lead.first_utm_campaign)} · utm_content=${crmAttributionValue(lead.first_utm_content)} · utm_term=${crmAttributionValue(lead.first_utm_term)}\nFirst campaign landing: ${crmAttributionValue(lead.first_landing_page)}\nFirst campaign referrer (origin only): ${crmAttributionValue(lead.first_referrer)}\n\nREVIEW: Check platform compatibility, volume profile, product fit and market coverage. Confirm the assigned human reviewer before preparing a quote.`,
       hs_task_status: "NOT_STARTED", hs_task_priority: w.totalScore >= 40 ? "HIGH" : "MEDIUM",
       hs_timestamp: new Date().toISOString(),
     };
@@ -101,7 +120,7 @@ export async function syncLead(lead: LeadData): Promise<SyncResult> {
     } catch (e) {
       console.error("[hubspot] Task association to contact failed:", e instanceof Error ? e.message : e);
     }
-    result.status = "synced";
+    if (!result.error) result.status = "synced";
   } catch(e) { result.status = "retry_pending"; result.error = e instanceof Error ? e.message.slice(0,255) : "Unknown"; }
   return result;
 }

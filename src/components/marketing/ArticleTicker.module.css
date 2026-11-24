@@ -1,0 +1,25 @@
+.root { margin-top: 24px; }
+.viewport { container-type: inline-size; overflow: hidden; }
+.track { display: flex; width: max-content; animation: drift 45s linear infinite; will-change: transform; }
+.root[data-paused="true"] .track { animation-play-state: paused; }
+.group { display: flex; flex-shrink: 0; gap: 16px; padding-right: 16px; }
+.group > * { flex: 0 0 auto; width: 100cqw; }
+.controls { display: flex; justify-content: flex-end; align-items: center; min-height: 44px; margin-top: 8px; }
+.toggle { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: 6px; padding: 4px 12px; border-radius: 6px; color: var(--color-primary, #4d781e); font-size: 13px; cursor: pointer; }
+.toggle:hover { background: #eef3e7; }
+.toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; }
+.motionNote { display: none; margin: 0; color: #575756; font-size: 13px; }
+.root[data-user-paused="true"] .viewport { overflow-x: auto; }
+@keyframes drift { to { transform: translateX(-50%); } }
+@media (min-width: 640px) { .group > * { width: calc((100cqw - 16px) / 2); } }
+@media (min-width: 1024px) { .group > * { width: calc((100cqw - 32px) / 3); } }
+/* Keyboard navigation exposes a stable list; visual copies remain clickable by pointer. */
+.viewport:has(a:focus-visible) { overflow-x: auto; }
+.viewport:has(a:focus-visible) .track { animation: none; }
+.viewport:has(a:focus-visible) .duplicate { display: none; }
+@media (prefers-reduced-motion: reduce) {
+  .viewport { overflow-x: auto; }
+  .track { animation: none; }
+  .duplicate, .toggle { display: none; }
+  .motionNote { display: block; }
+}

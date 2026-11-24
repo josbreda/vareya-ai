@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { PAGE_META, PageMeta } from "@/content/pages";
+import { SAME_AS } from "@/content/social";
 
 /**
  * Builds page metadata from the central PAGE_META registry.
@@ -54,27 +55,26 @@ export function organizationSchema() {
       addressLocality: "Breda",
       addressCountry: "NL",
     },
-    sameAs: [
-      "https://nl.linkedin.com/company/vareya",
-      "https://www.fulfilmentshortlist.com/partijen/vareya",
-      "https://www.crunchbase.com/organization/vareya",
-      "https://www.creditsafe.com/business-index/en-gb/company/vareya-bv-nl04232551",
-    ],
+    sameAs: [...SAME_AS],
   };
 }
 
 /**
  * Returns structured data for WebSite schema.
  */
-export function websiteSchema() {
+export function websiteSchema(
+  locale: string = "en",
+  t?: (key: string) => string,
+) {
+  const description =
+    "European fulfilment for growing e-commerce brands. Based in Breda, the Netherlands.";
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Vareya",
     url: "https://vareya.ai",
-    description:
-      "European fulfilment for growing e-commerce brands. Based in Breda, the Netherlands.",
-    inLanguage: "en-GB",
+    description: t ? t(description) : description,
+    inLanguage: locale === "en" ? "en-GB" : locale,
   };
 }
 

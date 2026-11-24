@@ -1,0 +1,18 @@
+.carousel { min-width: 0; margin-top: 1.5rem; color: #0f766e; }
+.track { display: flex; gap: 1.5rem; align-items: stretch; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px 0; }
+.track::-webkit-scrollbar { display: none; }
+.track:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; border-radius: 1rem; }
+.item { flex: 0 0 100%; min-width: 0; display: flex; scroll-snap-align: start; scroll-snap-stop: always; }
+.item > * { width: 100%; }
+.controls { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+.buttons { display: flex; align-items: center; gap: .5rem; }
+.button { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .5rem .875rem; border: 1px solid currentColor; border-radius: 999px; color: inherit; background: transparent; cursor: pointer; font-size: .875rem; font-weight: 600; }
+.button:hover:not(:disabled) { background: #0f766e; color: #fff; }
+.button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+.button:disabled { cursor: default; opacity: .55; }
+.counter { font-size: .875rem; font-variant-numeric: tabular-nums; }
+.dark { color: #fff; }
+.dark .button { border-color: #64748b; }
+.dark .button:hover:not(:disabled) { color: #0f172a; background: #fff; }
+@media (min-width: 768px) { .multiple .item { flex-basis: calc((100% - 1.5rem) / 2); } }
+@media (prefers-reduced-motion: reduce) { .track { scroll-behavior: auto; } }

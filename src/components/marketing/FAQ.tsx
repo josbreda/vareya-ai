@@ -1,3 +1,5 @@
+import { getT } from "@/i18n/server";
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -9,11 +11,15 @@ interface FAQProps {
   subheading?: string;
 }
 
-export function FAQ({
+export async function FAQ({
   items,
-  heading = "Frequently asked questions",
+  heading,
   subheading,
 }: FAQProps) {
+  const t = await getT();
+  items = items.map(item => ({ question: t(item.question), answer: t(item.answer) }));
+  const resolvedHeading = t(heading ?? "Frequently asked questions");
+  subheading = subheading ? t(subheading) : subheading;
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -36,7 +42,7 @@ export function FAQ({
       <section className="py-16 sm:py-20 bg-slate-50">
         <div className="container-site max-w-3xl">
           <h2 className="text-2xl sm:text-3xl font-bold text-center mb-4">
-            {heading}
+            {resolvedHeading}
           </h2>
           {subheading && (
             <p className="text-muted text-center mb-12">{subheading}</p>

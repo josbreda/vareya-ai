@@ -21,7 +21,7 @@ export const CLAIM_RETURNS =
 // ============================================================================
 
 export const CLAIM_POSTNL =
-  "PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.";
+  "PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, Deutsche Post, Royal Mail, DPD and DHL Express are part of the carrier network for other routes.";
 
 export const CLAIM_SUPPORT =
   "Customer support is included at no additional charge.";
@@ -66,7 +66,7 @@ export const CLAIM_SPECIALIST_FALLBACK =
 // ============================================================================
 
 export const CLAIM_POST_SUBMISSION =
-  "Vareya will review your answers and send an initial fit response by email within one working day.";
+  "Vareya will review your answers and send an initial fit response by email.";
 
 // ============================================================================
 // Primary CTA (mandatory on all commercial pages)
@@ -121,6 +121,11 @@ export const APPROVED_DESTINATIONS = [
 // Approved facts (may appear on any page)
 // ============================================================================
 
+// Raymond-approved taxonomy, 4 November 2026. Complete packed order only.
+export const CLAIM_BOXABLE_PROFILE_A = "Profile A (Boxable Brievenbuspakket): complete packed dimensions up to 38 × 26.5 × 3.2 cm and packed weight up to 2 kg.";
+export const CLAIM_BOXABLE_PROFILE_B = "Profile B (Non-Boxable parcel): outside Profile A, with L + W + H up to 900 mm, a longest side up to 600 mm and packed weight up to 2 kg.";
+export const CLAIM_BOXABLE_ACCEPTANCE = "These are Vareya classification profiles, not universal carrier or shipping guarantees. Carrier, service, destination, handling, capacity, operational suitability and commercial viability require separate checks.";
+
 export const APPROVED_FACTS = {
   company: "Vareya BV",
   address: "Bagven Park 6, 4838 EH Breda, The Netherlands",
@@ -128,11 +133,11 @@ export const APPROVED_FACTS = {
   email: "info@vareya.ai",
   shopify: "Shopify integration is available.",
   amazonFbm: "Amazon FBM fulfilment is available.",
-  carriers: "Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail.",
+  carriers: "Carriers include DHL, PostNL, Asendia, Deutsche Post, Royal Mail, DPD and DHL Express.",
   specialises:
     "Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products.",
   parcelSize:
-    "Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.",
+    CLAIM_BOXABLE_PROFILE_A + " " + CLAIM_BOXABLE_PROFILE_B + " " + CLAIM_BOXABLE_ACCEPTANCE,
   productFit: "Product fit is confirmed during qualification.",
 } as const;
 

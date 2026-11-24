@@ -5,6 +5,7 @@ import { useEffect, useRef, useCallback } from "react";
 interface NetworkHeroProps {
   badge?: string;
   title: string;
+  payoff?: string;
   description: string;
   primaryCTA: { label: string; href: string };
   secondaryCTA?: { label: string; href: string };
@@ -20,6 +21,7 @@ const DPR_CAP = 2;
 export function NetworkHero({
   badge,
   title,
+  payoff,
   description,
   primaryCTA,
   secondaryCTA,
@@ -141,7 +143,19 @@ export function NetworkHero({
   }, [initNodes]);
 
   return (
-    <section className="relative min-h-[clamp(620px,78vh,820px)] flex items-center overflow-hidden bg-gradient-to-br from-primary-950 via-ink to-ink isolation">
+    <section className="relative min-h-[clamp(620px,78vh,820px)] flex items-center overflow-hidden bg-ink isolation">
+      {/* Background photo — owner-supplied aerial of the Vareya site (15 October 2026).
+          Replaces the dark/black gradient background; all text and content stay unchanged. */}
+      <img
+        src="/images/hero/hero-background-20261015.webp"
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 h-full w-full object-cover"
+      />
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/60 to-ink/40"
+      />
       <canvas
         ref={canvasRef}
         aria-hidden="true"
@@ -158,6 +172,11 @@ export function NetworkHero({
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-[1.08] mb-5 max-w-[14ch]">
               {title}
             </h1>
+            {payoff && (
+              <p className="mb-5 text-base font-semibold tracking-wide text-network sm:text-lg">
+                {payoff}
+              </p>
+            )}
             <p className="text-lg text-white/65 leading-relaxed mb-8 max-w-[460px]">
               {description}
             </p>
@@ -191,7 +210,7 @@ export function NetworkHero({
               </div>
             )}
           </div>
-          <div className="hidden lg:flex items-center justify-center">
+          <div className="mt-10 flex items-center justify-center lg:mt-0">
             {children}
           </div>
         </div>

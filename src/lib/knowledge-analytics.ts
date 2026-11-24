@@ -1,9 +1,11 @@
 /**
- * Knowledge article analytics — dataLayer events for knowledge pages.
- * PII-FREE: never push names, emails, companies, phones, websites, scan
- * answers, destination splits, dimensions, weights, SKU counts, comments
- * or submission IDs. Only article slugs, CTA locations and site routes.
+ * Knowledge article analytics — consent-gated dataLayer events for knowledge
+ * pages. Every event goes through the shared trackEvent allowlist, so it is
+ * dropped before consent and never carries article slugs, destination URLs,
+ * campaign values, answers or submission IDs.
  */
+
+import { trackEvent } from "./analytics/events.js";
 
 declare global {
   interface Window {
@@ -11,18 +13,14 @@ declare global {
   }
 }
 
-function push(event: string, payload: Record<string, unknown> = {}) {
-  if (typeof window === "undefined") return;
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event, ...payload });
-}
-
 export function trackKnowledgeArticleView(articleSlug: string) {
-  push("knowledge_article_view", { article_slug: articleSlug });
+  void articleSlug;
+  trackEvent("knowledge_article_view");
 }
 
 export function trackQuotationChecklistView(articleSlug: string) {
-  push("quotation_checklist_view", { article_slug: articleSlug });
+  void articleSlug;
+  trackEvent("quotation_checklist_view");
 }
 
 export function trackFreeRateScanCtaClick(
@@ -30,9 +28,7 @@ export function trackFreeRateScanCtaClick(
   destinationUrl: string,
   articleSlug: string,
 ) {
-  push("free_rate_scan_cta_click", {
-    cta_location: ctaLocation,
-    destination_url: destinationUrl,
-    article_slug: articleSlug,
-  });
+  void destinationUrl;
+  void articleSlug;
+  trackEvent("free_rate_scan_cta_click", { cta_location: ctaLocation });
 }

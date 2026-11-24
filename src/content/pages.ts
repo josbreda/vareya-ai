@@ -15,23 +15,29 @@ export interface PageMeta {
 const BASE = "https://vareya.ai";
 
 export const PAGE_META: Record<string, PageMeta> = {
+  "/jewelry-letterbox-fulfilment/": {"title":"Jewelry Letterbox Fulfilment™ | VareYa","description":"Small package. Tracked delivery. Global reach. International fulfilment designed around small, lightweight jewelry orders.","canonical":"https://vareya.ai/jewelry-letterbox-fulfilment/","updatedAt":"2026-11-09"},
+  "/case-studies/vegamelts/": {"title": "VegaMelts: 300% Order Growth with Boxable Fulfilment | VareYa", "description": "How compact packaging, efficient fulfilment and smarter shipping supported VegaMelts as its order volume grew by 300%. Discover the VareYa Boxable approach.", "canonical": "https://vareya.ai/case-studies/vegamelts/", "updatedAt": "2026-11-09"},
+  "/digistore24-fulfilment-europe/": { title: "Digistore24 Fulfilment in Europe with Vareya | Vareya", description: "Fulfil physical Digistore24 orders from Breda, the Netherlands. Explore Vareya’s compact product focus and the official Digistore24 integration guide.", canonical: `${BASE}/digistore24-fulfilment-europe/`, updatedAt: "2026-11-09" },
+  "/nonboxable/": { title: "NonBoxable Fulfilment & Shipping | Vareya", description: "Compact parcels outside the letterbox profile. Understand NonBoxable fulfilment, shipping and your complete packed order before choosing a service.", canonical: `${BASE}/nonboxable/`, updatedAt: "2026-11-09" },
+  "/product-fit-check/": { title: "Check Your Product Fit | Vareya", description: "Check your complete packed dimensions, weight, product and destinations for a preliminary Vareya fulfilment fit, then continue with your answers.", canonical: `${BASE}/product-fit-check/`, updatedAt: "2026-11-09" },
   "/": {
-    title: "Vareya | European Fulfilment for E-Commerce Brands",
+    title: "Vareya | Boxable Fulfilment from the Netherlands",
     description:
-      "Fast, reliable order fulfilment from Breda, the Netherlands. Shopify and Amazon FBM integration, multi-carrier delivery, and returns handling available.",
+      "Vareya fulfils small, light and boxable products from a warehouse in Breda, the Netherlands — stock, packing, shipping and returns for ecommerce brands.",
     canonical: `${BASE}/`,
+    updatedAt: "2026-10-14",
   },
   "/eu-fulfilment/": {
     title: "EU Fulfilment Services | Vareya",
     description:
-      "European fulfilment for growing e-commerce brands. Warehouse in Breda, Netherlands with DHL, PostNL, Asendia, FedEx, and Royal Mail delivery.",
+      "European fulfilment for growing e-commerce brands. Warehouse in Breda, Netherlands with multi-carrier delivery (PostNL, DHL, DHL Express, DPD and more).",
     canonical: `${BASE}/eu-fulfilment/`,
     updatedAt: "2026-08-21",
   },
   "/shopify-fulfilment-europe/": {
     title: "Shopify Fulfilment Europe | European 3PL | Vareya",
     description:
-      "Connect your Shopify store to European fulfilment in the Netherlands. Vareya handles inventory, pick and pack, shipping and returns for growing ecommerce brands.",
+      "Connect your Shopify store to European fulfilment in the Netherlands. Vareya handles inventory, pick and pack, shipping and returns for growing ecommerce.",
     canonical: `${BASE}/shopify-fulfilment-europe/`,
     updatedAt: "2026-10-08",
   },
@@ -80,7 +86,7 @@ export const PAGE_META: Record<string, PageMeta> = {
     description:
       "Specialist fulfilment for cosmetics and supplement brands. Product-fit review, careful handling, and multi-carrier European delivery.",
     canonical: `${BASE}/cosmetics-supplements-fulfilment-europe/`,
-    updatedAt: "2026-08-21",
+    updatedAt: "2026-10-14",
   },
   "/amazon-fbm-fulfilment/": {
     title: "Amazon FBM Fulfilment from the Netherlands | Vareya",
@@ -367,7 +373,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/shopify-fulfilment-europe-for-australia-stores/": {
     title: "Shopify Fulfilment in Europe for Australia Stores | Vareya",
     description:
-      "Shopify fulfilment in Europe for Australia stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate Scan.",
+      "Shopify fulfilment in Europe for Australia stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate.",
     canonical: `${BASE}/shopify-fulfilment-europe-for-australia-stores/`,
     updatedAt: "2026-09-09",
   },
@@ -395,7 +401,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/shopify-fulfilment-europe-for-hong-kong-stores/": {
     title: "Shopify Fulfilment in Europe for Hong Kong Stores | Vareya",
     description:
-      "Shopify fulfilment in Europe for Hong Kong stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate Scan.",
+      "Shopify fulfilment in Europe for Hong Kong stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate.",
     canonical: `${BASE}/shopify-fulfilment-europe-for-hong-kong-stores/`,
     updatedAt: "2026-09-09",
   },
@@ -409,7 +415,7 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/shopify-fulfilment-europe-for-new-zealand-stores/": {
     title: "Shopify Fulfilment in Europe for New Zealand Stores | Vareya",
     description:
-      "Shopify fulfilment in Europe for New Zealand stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate Scan.",
+      "Shopify fulfilment in Europe for New Zealand stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate.",
     canonical: `${BASE}/shopify-fulfilment-europe-for-new-zealand-stores/`,
     updatedAt: "2026-09-09",
   },
@@ -423,21 +429,21 @@ export const PAGE_META: Record<string, PageMeta> = {
   "/shopify-fulfilment-europe-for-saudi-arabia-stores/": {
     title: "Shopify Fulfilment in Europe for Saudi Arabia Stores | Vareya",
     description:
-      "Shopify fulfilment in Europe for Saudi Arabia stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate Scan.",
+      "Shopify fulfilment in Europe for Saudi Arabia stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate.",
     canonical: `${BASE}/shopify-fulfilment-europe-for-saudi-arabia-stores/`,
     updatedAt: "2026-09-09",
   },
   "/shopify-fulfilment-europe-for-south-korea-stores/": {
     title: "Shopify Fulfilment in Europe for South Korea Stores | Vareya",
     description:
-      "Shopify fulfilment in Europe for South Korea stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate Scan.",
+      "Shopify fulfilment in Europe for South Korea stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate.",
     canonical: `${BASE}/shopify-fulfilment-europe-for-south-korea-stores/`,
     updatedAt: "2026-09-09",
   },
   "/shopify-fulfilment-europe-for-switzerland-stores/": {
     title: "Shopify Fulfilment in Europe for Switzerland Stores | Vareya",
     description:
-      "Shopify fulfilment in Europe for Switzerland stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate Scan.",
+      "Shopify fulfilment in Europe for Switzerland stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate.",
     canonical: `${BASE}/shopify-fulfilment-europe-for-switzerland-stores/`,
     updatedAt: "2026-09-09",
   },
@@ -468,5 +474,47 @@ export const PAGE_META: Record<string, PageMeta> = {
       "Shopify fulfilment in Europe for US stores. Connect your store to Breda: order sync, pick and pack, carrier hand-off, tracking, returns and Free Rate Scan.",
     canonical: `${BASE}/shopify-fulfilment-europe-for-united-states-stores/`,
     updatedAt: "2026-09-09",
+  },
+  "/small-parcel-fulfilment-europe/": {
+    title: "Small Parcel Fulfilment in Europe | Vareya",
+    description:
+      "Vareya fulfils small, light and boxable products from Breda, the Netherlands — Shopify integration and EU DTC distribution. Check your fit with a free scan.",
+    canonical: `${BASE}/small-parcel-fulfilment-europe/`,
+    updatedAt: "2026-10-14",
+  },
+  "/letterbox-parcel-fulfilment/": {
+    title: "Letterbox Parcels from the Netherlands: What to Know | Vareya",
+    description:
+      "What makes a parcel letterbox-friendly, how letterbox parcels differ from small parcels and mailbox services, and when lightweight fulfilment makes sense — a practical guide from Vareya.",
+    canonical: `${BASE}/letterbox-parcel-fulfilment/`,
+    updatedAt: "2026-10-14",
+  },
+  "/cherry-picking-shipping/": {
+    title: "Cherry Picking Shipping™ | Multi-Carrier Shipping | Vareya",
+    description:
+      "Cherry Picking Shipping™ is Vareya's multi-carrier shipping strategy: every order is matched to a suitable carrier service based on destination, parcel profile, service level and rate.",
+    canonical: `${BASE}/cherry-picking-shipping/`,
+    updatedAt: "2026-10-16",
+  },
+  "/boxable-fulfilment/": {
+    title: "Boxable Fulfilment for Small, Light Products | Vareya",
+    description:
+      "Vareya's Boxable Fulfilment approach for small, lightweight ecommerce products: packed-order fit, storage, pick and pack, shipping and agreed returns.",
+    canonical: `${BASE}/boxable-fulfilment/`,
+    updatedAt: "2026-10-27",
+  },
+  "/boxable-shipping/": {
+    title: "Boxable Shipping for Small Ecommerce Products | Vareya",
+    description:
+      "Understand shipping for small ecommerce products. Check packed dimensions, weight, product handling and delivery requirements before choosing a service.",
+    canonical: `${BASE}/boxable-shipping/`,
+    updatedAt: "2026-10-27",
+  },
+  "/boxable-product-framework/": {
+    title: "The Vareya Boxable Product Framework | Working Method",
+    description:
+      "Vareya's working method for assessing small, lightweight products: ten factors, acceptance gates and evidence status. Version 0.1, not a certified standard.",
+    canonical: `${BASE}/boxable-product-framework/`,
+    updatedAt: "2026-10-27",
   },
 } as const;

@@ -1,4 +1,6 @@
-import Link from "next/link";
+import { localizeNode } from "@/i18n/localize-node";
+import { getT as getTForContent } from "@/i18n/server";
+import Link from "@/i18n/Link";
 import { FAQ } from "@/components/marketing/FAQ";
 import {
   CAPABILITIES,
@@ -16,7 +18,7 @@ export interface CountryPageLinks {
 
 /* ---------- shared blocks ---------- */
 
-function Hero({
+async function Hero({
   breadcrumb,
   h1,
   intro,
@@ -27,8 +29,9 @@ function Hero({
   intro: string[];
   extra?: string;
 }) {
-  return (
-    <section className="bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white">
+  const __pageT = await getTForContent();
+  return localizeNode((
+    <section className="photo-green bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white">
       <div className="container-site py-20 sm:py-24">
         <nav aria-label="Breadcrumb" className="mb-8 text-sm text-white/75">
           <Link href="/" className="hover:text-white">Home</Link>
@@ -44,10 +47,10 @@ function Hero({
             {extra ? <p>{extra}</p> : null}
           </div>
           <div className="flex flex-col gap-4 sm:flex-row">
-            <Link href="/free-rate-scan/" className="rounded-lg bg-white px-6 py-3 text-center font-semibold text-primary hover:bg-slate-100">
+            <Link href="/free-rate-scan/?lang=en" className="rounded-lg bg-white px-6 py-3 text-center font-semibold text-primary hover:bg-slate-100">
               Check your EU fulfilment fit
             </Link>
-            <Link href="/request-fulfilment-quote/" className="rounded-lg border border-white/30 px-6 py-3 text-center font-medium hover:bg-white/10">
+            <Link href="/request-fulfilment-quote/?lang=en" className="rounded-lg border border-white/30 px-6 py-3 text-center font-medium hover:bg-white/10">
               Request a fulfilment quote
             </Link>
           </div>
@@ -58,11 +61,12 @@ function Hero({
         </div>
       </div>
     </section>
-  );
+  ), __pageT);
 }
 
-function Capabilities() {
-  return (
+async function Capabilities() {
+  const __pageT = await getTForContent();
+  return localizeNode((
     <section className="py-16" aria-labelledby="capabilities">
       <div className="container-site">
         <h2 id="capabilities" className="mb-8 text-2xl font-bold">Capabilities</h2>
@@ -71,7 +75,7 @@ function Capabilities() {
             CAPABILITIES.shopify,
             CAPABILITIES.amazonFbm,
             CAPABILITIES.returns,
-            "Carriers include DHL, PostNL, Asendia, FedEx and Royal Mail.",
+            "Carriers include DHL, PostNL, Asendia, Deutsche Post, Royal Mail, DPD and DHL Express.",
             CAPABILITIES.cutOff,
             CAPABILITIES.volume,
           ].map((item) => (
@@ -82,11 +86,12 @@ function Capabilities() {
         </div>
       </div>
     </section>
-  );
+  ), __pageT);
 }
 
-function FitSection() {
-  return (
+async function FitSection() {
+  const __pageT = await getTForContent();
+  return localizeNode((
     <section className="bg-slate-50 py-16" aria-labelledby="fit">
       <div className="container-site max-w-4xl">
         <h2 id="fit" className="mb-5 text-2xl font-bold">Good fit / may not be a fit</h2>
@@ -96,7 +101,7 @@ function FitSection() {
             <ul className="space-y-2 text-sm leading-6 text-muted">
               <li>✓ {CAPABILITIES.volume}</li>
               <li>✓ Vareya specialises in cosmetics, supplements, phone cases, accessories and other smaller parcel products.</li>
-              <li>✓ Suitable smaller parcels have combined dimensions below 900 mm and a maximum length of 600 mm.</li>
+              <li>✓ Suitable smaller parcels have combined dimensions ≤900 mm and a longest side ≤600 mm.</li>
               <li>✓ Brands selling through Shopify or Amazon FBM. Shopify integration is available. Amazon FBM fulfilment is available.</li>
               <li>✓ Brands that want orders fulfilled from the Netherlands for European customers.</li>
             </ul>
@@ -105,7 +110,7 @@ function FitSection() {
             <h3 className="mb-3 font-semibold text-slate-900">May not be a fit</h3>
             <ul className="space-y-2 text-sm leading-6 text-muted">
               <li>✗ Order volumes well below the 500-orders-per-month level.</li>
-              <li>✗ Parcels that exceed the combined 900 mm / length 600 mm guideline.</li>
+              <li>✗ Parcels whose combined dimensions exceed 900 mm, or whose longest side exceeds 600 mm.</li>
               <li>✗ Products with specialist customs, tax or handling requirements — include them in the fulfilment scan so Vareya can confirm which parts of the proposed setup can be supported.</li>
             </ul>
             <p className="mt-4 text-sm leading-6 text-muted">Product fit is confirmed during qualification.</p>
@@ -113,12 +118,13 @@ function FitSection() {
         </div>
       </div>
     </section>
-  );
+  ), __pageT);
 }
 
-function SourcesSection({ data }: { data: CountryData }) {
+async function SourcesSection({ data }: { data: CountryData }) {
+  const __pageT = await getTForContent();
   const all = [...data.sources, ...EU_SOURCES];
-  return (
+  return localizeNode((
     <div className="mt-8">
       <h3 className="mb-3 font-semibold text-slate-900">Official planning resources</h3>
       <ul className="space-y-2">
@@ -135,17 +141,18 @@ function SourcesSection({ data }: { data: CountryData }) {
         information, not legal, tax or customs advice.
       </p>
     </div>
-  );
+  ), __pageT);
 }
 
-function RelatedLinks({ links, selfHref }: { links: CountryPageLinks; selfHref: string }) {
+async function RelatedLinks({ links, selfHref }: { links: CountryPageLinks; selfHref: string }) {
+  const __pageT = await getTForContent();
   const items = [
     { href: links.fulfilment, label: "European fulfilment" },
     { href: links.shopify, label: "Shopify fulfilment in Europe" },
     { href: links.returns, label: "European returns handling" },
     ...links.hubs,
   ].filter((item) => item.href !== selfHref);
-  return (
+  return localizeNode((
     <section className="py-14" aria-labelledby="related-pages">
       <div className="container-site">
         <h2 id="related-pages" className="mb-6 text-2xl font-bold">Related fulfilment pages</h2>
@@ -158,19 +165,20 @@ function RelatedLinks({ links, selfHref }: { links: CountryPageLinks; selfHref: 
         </div>
       </div>
     </section>
-  );
+  ), __pageT);
 }
 
-function FinalCta({ title }: { title: string }) {
-  return (
-    <section className="bg-primary py-16 text-white">
+async function FinalCta({ title }: { title: string }) {
+  const __pageT = await getTForContent();
+  return localizeNode((
+    <section className="photo-green bg-primary py-16 text-white">
       <div className="container-site text-center">
         <h2 className="mb-4 text-2xl font-bold sm:text-3xl">{title}</h2>
         <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link href="/free-rate-scan/" className="rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
+          <Link href="/free-rate-scan/?lang=en" className="rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
             Check your EU fulfilment fit
           </Link>
-          <Link href="/request-fulfilment-quote/" className="rounded-lg border border-white/30 px-6 py-3 font-medium hover:bg-white/10">
+          <Link href="/request-fulfilment-quote/?lang=en" className="rounded-lg border border-white/30 px-6 py-3 font-medium hover:bg-white/10">
             Request a fulfilment quote
           </Link>
         </div>
@@ -180,12 +188,13 @@ function FinalCta({ title }: { title: string }) {
         </p>
       </div>
     </section>
-  );
+  ), __pageT);
 }
 
 /* ---------- A: European fulfilment for {country} brands ---------- */
 
-export function CountryFulfilmentPage({ data, links }: { data: CountryData; links: CountryPageLinks }) {
+export async function CountryFulfilmentPage({ data, links }: { data: CountryData; links: CountryPageLinks }) {
+  const __pageT = await getTForContent();
   const faqs = [
     {
       question: `When does holding stock in the EU become worth assessing for a ${data.adjective} brand?`,
@@ -218,7 +227,7 @@ export function CountryFulfilmentPage({ data, links }: { data: CountryData; link
     },
   ];
 
-  return (
+  return localizeNode((
     <>
       <Hero
         breadcrumb={`European fulfilment for ${data.adjective} brands`}
@@ -276,7 +285,7 @@ export function CountryFulfilmentPage({ data, links }: { data: CountryData; link
       <RelatedLinks links={links} selfHref={links.fulfilment} />
       <FinalCta title={`Assess EU fulfilment for your ${data.adjective} brand`} />
     </>
-  );
+  ), __pageT);
 }
 
 /* ---------- B: Shopify fulfilment in Europe for {country} stores ---------- */
@@ -301,7 +310,8 @@ const ORDER_FLOW = [
   { step: "Returns", body: "Where agreed, returns land at the Breda warehouse. Returns handling is available. Contact Vareya to discuss the required returns process." },
 ];
 
-export function CountryShopifyPage({ data, links }: { data: CountryData; links: CountryPageLinks }) {
+export async function CountryShopifyPage({ data, links }: { data: CountryData; links: CountryPageLinks }) {
+  const __pageT = await getTForContent();
   const faqs = [
     {
       question: `Can a ${data.adjective} Shopify store connect to the Breda warehouse?`,
@@ -327,7 +337,7 @@ export function CountryShopifyPage({ data, links }: { data: CountryData; links: 
     },
   ];
 
-  return (
+  return localizeNode((
     <>
       <Hero
         breadcrumb={`Shopify fulfilment in Europe for ${data.adjective} stores`}
@@ -439,8 +449,8 @@ export function CountryShopifyPage({ data, links }: { data: CountryData; links: 
             ))}
           </ul>
           <p className="leading-7 text-muted">
-            Vareya will review your answers and send an initial fit response by email
-            within one working day.
+            Vareya will review your answers and email a personal fit response. If
+            more details are needed, we will ask before discussing a proposal.
           </p>
         </div>
       </section>
@@ -450,7 +460,7 @@ export function CountryShopifyPage({ data, links }: { data: CountryData; links: 
       <RelatedLinks links={links} selfHref={links.shopify} />
       <FinalCta title={`Connect your ${data.adjective} Shopify store to EU fulfilment`} />
     </>
-  );
+  ), __pageT);
 }
 
 /* ---------- C: European returns handling for {country} brands ---------- */
@@ -482,7 +492,8 @@ const RETURNS_QUESTIONS = [
   "Which return flows are needed for the European countries you sell into?",
 ];
 
-export function CountryReturnsPage({ data, links }: { data: CountryData; links: CountryPageLinks }) {
+export async function CountryReturnsPage({ data, links }: { data: CountryData; links: CountryPageLinks }) {
+  const __pageT = await getTForContent();
   const faqs = [
     {
       question: `Does Vareya handle returns for ${data.adjective} brands?`,
@@ -510,7 +521,7 @@ export function CountryReturnsPage({ data, links }: { data: CountryData; links: 
     },
   ];
 
-  return (
+  return localizeNode((
     <>
       <Hero
         breadcrumb={`European returns handling for ${data.adjective} brands`}
@@ -597,5 +608,5 @@ export function CountryReturnsPage({ data, links }: { data: CountryData; links: 
       <RelatedLinks links={links} selfHref={links.returns} />
       <FinalCta title={`Set up European returns for your ${data.adjective} brand`} />
     </>
-  );
+  ), __pageT);
 }

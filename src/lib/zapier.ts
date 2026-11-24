@@ -42,6 +42,7 @@ export interface ZapierPayload {
   utm_medium?: string;
   utm_campaign?: string;
   utm_content?: string;
+  utm_term?: string;
   desired_start_date?: string;
   timestamp: string;
   submission_id: string;
@@ -72,7 +73,7 @@ export function buildZapierPayload(
     [
       "name" | "phone" | "website" | "country" | "product_category" | "platform" |
         "order_volume" | "message" | "source_page" | "referrer" | "utm_source" |
-        "utm_medium" | "utm_campaign" | "utm_content" | "desired_start_date",
+        "utm_medium" | "utm_campaign" | "utm_content" | "utm_term" | "desired_start_date",
       string | undefined,
     ]
   > = [
@@ -90,6 +91,7 @@ export function buildZapierPayload(
     ["utm_medium", str(clean.utm_medium)],
     ["utm_campaign", str(clean.utm_campaign)],
     ["utm_content", str(clean.utm_content)],
+    ["utm_term", str(clean.utm_term)],
     ["desired_start_date", str(clean.desired_start_date)],
   ];
   for (const [key, value] of optional) {

@@ -40,7 +40,7 @@ export const CAPABILITIES = {
   shopify: "Shopify integration is available.",
   amazonFbm: "Amazon FBM fulfilment is available.",
   returns: "Returns handling is available. Contact Vareya to discuss the required returns process.",
-  carriers: ["DHL", "PostNL", "Asendia", "FedEx", "Royal Mail"] as const,
+  carriers: ["DHL", "PostNL", "Asendia", "Deutsche Post", "Royal Mail", "DPD", "DHL Express"] as const,
   cutOff: "Cut-off times of up to 23:00 may be available by agreement.",
   cutOffTime: "Cut-off times of up to 23:00 may be available by agreement.",
   volume: "Vareya is generally best suited to brands shipping 500 or more orders per month.",
@@ -49,7 +49,7 @@ export const CAPABILITIES = {
   parcelLimits: { combinedDimensionsMm: 900, maxLengthMm: 600 },
   productFit: "Product fit is confirmed during qualification.",
   // v1.2 additions
-  postNL: "PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, FedEx and Royal Mail remain part of the carrier network for other routes.",
+  postNL: "PostNL is Vareya's main carrier for shipments within the Netherlands. DHL, Asendia, Deutsche Post, Royal Mail, DPD and DHL Express are part of the carrier network for other routes.",
   support: "Customer support is included at no additional charge.",
   slas: "Clients can agree customised SLAs with Vareya, within boundaries confirmed during qualification.",
   shipHero: "Vareya uses ShipHero as its warehouse management system, fully integrated with Shopify.",
