@@ -11,6 +11,9 @@
  */
 // November illustrations are distinct conceptual images, not photographs of customer operations.
 export const KNOWLEDGE_IMAGE_BY_SLUG: Record<string, string> = {
+  // Supplied artwork for the November 2026 editorials.
+  "ppwr-epr-representative-suspension": "/images/knowledge/ppwr-epr-representative-suspension.jpg",
+  "dedication-in-fulfilment": "/images/knowledge/dedication-in-fulfilment.jpg",
   "jewelry-letterbox-fulfilment": "/images/knowledge/jewelry-letterbox-card.webp",
   "smarter-ecommerce-packaging-shipping-profile": "/images/knowledge/tpc-packaging.jpg",
   "european-fulfilment-international-ecommerce-shipping-netherlands": "/images/knowledge/fedex-shipping.jpg",

@@ -3,6 +3,7 @@ import PRIMAL from "./primal-evidence.json";
 import SHIPHERO from "./shiphero-evidence.json";
 import POSTNL_ARTICLE from "./postnl-article.json";
 import { WEEK1_ARTICLES } from "./week1-knowledge";
+import { EDITORIAL_LISTING } from "./editorial-articles";
 import { PIPELINE_ARTICLE as PIPELINE_ARTICLE_72929975df3e } from "./pipeline-article-shopify-inventory-transfer-receiving-discrepancy";
 import { PIPELINE_ARTICLE as PIPELINE_ARTICLE_710acad42225 } from "./pipeline-article-shopify-fulfillment-hold-investigation";
 import { PIPELINE_ARTICLE as PIPELINE_ARTICLE_841247209d45 } from "./pipeline-article-shopify-order-routing-location-priority";
@@ -71,6 +72,7 @@ export interface KnowledgeArticle {
   publishedLabel: string | null;
   topic: string;
   indexable?: boolean;
+  englishOnly?: boolean;
   imageAlt?: string;
   reviewer?: string | null;
   reviewedAt?: string | null;
@@ -80,6 +82,7 @@ export interface KnowledgeArticle {
 }
 
 export const KNOWLEDGE_ARTICLES: readonly KnowledgeArticle[] = [
+  ...EDITORIAL_LISTING,
   ...PACKAGING_AND_SHIPPING_ARTICLES,
   POSTNL_ARTICLE,
   PRIMAL,

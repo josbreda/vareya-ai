@@ -35,7 +35,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const article = getKnowledgeArticle(slug);
 
-  if (!article) notFound();
+  // Editorials without sections only render through their own route.
+  if (!article || article.sections.length === 0) notFound();
 
   const { locale } = await getRequestI18n();
   const canonical = localizedAbsoluteUrl(`/knowledge/${article.slug}/`, locale);
@@ -65,7 +66,7 @@ export default async function KnowledgeArticlePage({
   const { slug } = await params;
   const article = getKnowledgeArticle(slug);
 
-  if (!article) notFound();
+  if (!article || article.sections.length === 0) notFound();
 
   const { locale } = await getRequestI18n();
   const canonical = localizedAbsoluteUrl(`/knowledge/${article.slug}/`, locale);

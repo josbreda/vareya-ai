@@ -20,6 +20,8 @@ export function generateMetadata(): Promise<Metadata> {
   return buildLocalizedMetadata("/");
 }
 
+const DEDICATION_TAG = "#Dedication";
+
 const PROCESS_STEPS = [
   {
     title: "Qualification",
@@ -121,6 +123,8 @@ const WAREHOUSE_PHOTO = {
 
 export default async function HomePage() {
   const { t, locale } = await getRequestI18n();
+  // Same catalogue string in every language; only the hashtag itself becomes a link.
+  const [signatureLead, signatureTail] = t("— Raymond, Vareya · #Dedication").split(DEDICATION_TAG);
   const warehouse = WAREHOUSE_PHOTO[locale];
   const homeFaq = HOME_FAQ.map((item) => ({
     question: t(item.question),
@@ -358,7 +362,11 @@ export default async function HomePage() {
                 {t("Je koopt bij de VENT niet bij de TENT!")}
               </p>
               <p className="mt-2 text-lg font-semibold text-primary">{t("People buy people.")}</p>
-              <footer className="mt-1 text-sm text-slate-500">{t("— Raymond, Vareya · #Dedication")}</footer>
+              <footer className="mt-1 text-sm text-slate-500">
+                {signatureLead}
+                <Link href="/knowledge/dedication-in-fulfilment/" className="underline underline-offset-4 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">{DEDICATION_TAG}</Link>
+                {signatureTail}
+              </footer>
             </blockquote>
             <p className="mb-4 leading-7 text-muted">
               {t("You buy from the people, not from the warehouse. When you work with Vareya, you meet your operational contact or account manager — the person who sets up the operation with you and who stays in touch through the monthly catch-up.")}
