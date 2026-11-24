@@ -9,8 +9,8 @@ const nextConfig: NextConfig = {
 
   // Strict TypeScript in production
   typescript: {
-      ignoreBuildErrors: true,
-    },
+    ignoreBuildErrors: false,
+  },
 
   // Security headers
   async headers() {
