@@ -33,6 +33,12 @@ const CONTAINED_CARD_IMAGES = new Set([
   "dedication-in-fulfilment",
 ]);
 
+// Keep the complete artwork sharp, while its colors fill the edge-to-edge card header.
+const FULL_BLEED_ARTWORK_CARDS = new Set([
+  "ppwr-epr-representative-suspension",
+  "dedication-in-fulfilment",
+]);
+
 const NEW_PAGES = [
   {
     href: "/cherry-picking-shipping/",
@@ -183,6 +189,19 @@ export default async function KnowledgePage() {
                     </div>
                   ) : KNOWLEDGE_IMAGE_BY_SLUG[article.slug] ? (
                     <>
+                      {FULL_BLEED_ARTWORK_CARDS.has(article.slug) && (
+                        <>
+                          {/* eslint-disable-next-line @next/next/no-img-element -- reuse the card image for a decorative surround */}
+                          <img
+                            src={KNOWLEDGE_IMAGE_BY_SLUG[article.slug]}
+                            alt=""
+                            loading="lazy"
+                            decoding="async"
+                            className="absolute inset-0 h-full w-full scale-125 object-cover opacity-80 blur-xl"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-primary-950/75 via-primary-950/25 to-primary-950/25" />
+                        </>
+                      )}
                       {/* Mixed source photography and editorial illustrations; see article context. */}
                       {/* eslint-disable-next-line @next/next/no-img-element -- static WebP export, avoids a runtime optimizer dependency */}
                       <img
@@ -190,7 +209,7 @@ export default async function KnowledgePage() {
                         alt=""
                         loading="lazy"
                         decoding="async"
-                        className={`absolute inset-0 h-full w-full ${CONTAINED_CARD_IMAGES.has(article.slug) ? "bg-white object-contain" : "object-cover"}`}
+                        className={`absolute top-0 h-full ${FULL_BLEED_ARTWORK_CARDS.has(article.slug) ? "left-8 w-[calc(100%_-_4rem)] object-contain" : `left-0 w-full ${CONTAINED_CARD_IMAGES.has(article.slug) ? "bg-white object-contain" : "object-cover"}`}`}
                       />
                       {!CONTAINED_CARD_IMAGES.has(article.slug) && <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-primary-950/15 to-transparent" />}
                     </>
@@ -204,7 +223,9 @@ export default async function KnowledgePage() {
                       }}
                     />
                   )}
-                  <span className={`absolute bottom-4 left-5 font-mono text-xs font-semibold tracking-[0.15em] ${article.slug === "shiphero-vareya-growth-case-study" ? "text-primary" : "text-network"}`}>
+                  <span className={`absolute bottom-4 font-mono text-xs font-semibold ${FULL_BLEED_ARTWORK_CARDS.has(article.slug)
+                    ? "left-2 flex h-5 w-6 items-center justify-center rounded bg-primary-950 text-network"
+                    : `left-5 tracking-[0.15em] ${article.slug === "shiphero-vareya-growth-case-study" ? "text-primary" : "text-network"}`}`}>
                     {String(index + 1).padStart(2, "0")}
                   </span>
                 </div>
