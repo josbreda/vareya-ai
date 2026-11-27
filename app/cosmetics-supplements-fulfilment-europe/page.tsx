@@ -1,6 +1,6 @@
 import { localizePageMetadata } from "@/i18n/localize-metadata";
 import { localizeNode } from "@/i18n/localize-node";
-import { getT as getTForContent } from "@/i18n/server";
+import { getRequestI18n, getT as getTForContent } from "@/i18n/server";
 import type { Metadata } from "next";
 
 
@@ -103,6 +103,8 @@ const INTERNAL_LINKS = [
 
 export default async function CosmeticsPage() {
   const __pageT = await getTForContent();
+  const { locale } = await getRequestI18n();
+  const ctaSuffix = locale === "nl" ? "nl" : "en";
   return localizeNode((
     <>
       <section className="photo-green bg-gradient-to-br from-primary-dark via-primary to-primary-light text-white">
@@ -128,7 +130,7 @@ export default async function CosmeticsPage() {
               <Link href="/free-rate-scan/?lang=en" className="rounded-lg bg-white px-6 py-3 text-center font-semibold text-primary hover:bg-slate-100">
                 Check your EU fulfilment fit
               </Link>
-              <Link href="/request-fulfilment-quote/?lang=en" className="rounded-lg border border-white/30 px-6 py-3 text-center font-medium hover:bg-white/10">
+              <Link href="/request-fulfilment-quote/?lang=en" data-topic-id="S01" data-cta-id={`s01--quote--supplements--hero--${ctaSuffix}`} data-locale={locale} data-form-id="request-fulfilment-quote" data-form-version="v1" data-event-version="1" data-test-flag="S01" data-submission-id={`S01-${ctaSuffix}`} className="rounded-lg border border-white/30 px-6 py-3 text-center font-medium hover:bg-white/10">
                 Request a fulfilment quote
               </Link>
             </div>
@@ -289,7 +291,7 @@ export default async function CosmeticsPage() {
             <Link href="/free-rate-scan/?lang=en" className="rounded-lg bg-white px-6 py-3 font-semibold text-primary hover:bg-slate-100">
               Check your EU fulfilment fit
             </Link>
-            <Link href="/request-fulfilment-quote/?lang=en" className="rounded-lg border border-white/30 px-6 py-3 font-medium hover:bg-white/10">
+            <Link href="/request-fulfilment-quote/?lang=en" data-topic-id="S01" data-cta-id={`s01--quote--cosmetics-skincare--body--${ctaSuffix}`} data-locale={locale} data-form-id="request-fulfilment-quote" data-form-version="v1" data-event-version="1" data-test-flag="S01" data-submission-id={`S01-${ctaSuffix}`} className="rounded-lg border border-white/30 px-6 py-3 font-medium hover:bg-white/10">
               Request a fulfilment quote
             </Link>
           </div>

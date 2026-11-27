@@ -11,7 +11,7 @@
  * dossier: an unknown value must stay unknown, not be guessed or derived.
  * Both the browser handoff and the server sanitizer share these allowlists.
  */
-export const TOPIC_IDS = ["F01", "F03", "F05", "F09"] as const;
+export const TOPIC_IDS = ["F01", "F03", "F05", "F09", "S01"] as const;
 export type TopicId = (typeof TOPIC_IDS)[number];
 
 export const CTA_IDS = [
@@ -25,6 +25,10 @@ export const CTA_IDS = [
   "p1-f09-primary",
   "p1-fit-result",
   "p1-fit-to-scan",
+  "s01--quote--supplements--hero--en",
+  "s01--quote--supplements--hero--nl",
+  "s01--quote--cosmetics-skincare--body--en",
+  "s01--quote--cosmetics-skincare--body--nl",
 ] as const;
 export type CtaId = (typeof CTA_IDS)[number];
 
