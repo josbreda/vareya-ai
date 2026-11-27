@@ -1,0 +1,11 @@
+export const ATTRIBUTION_STORAGE_KEY: "vareya_campaign_session_v1";
+export const ATTRIBUTION_TTL_MS: number;
+export type AttributionParams = Partial<Record<"utm_source" | "utm_medium" | "utm_campaign" | "utm_content" | "utm_term", string>>;
+export type AttributionTouch = AttributionParams & { landing_page: string; referrer: string; captured_at: number };
+export type AttributionSnapshot = { version: 1; first: AttributionTouch; latest: AttributionTouch; expires_at: number };
+export function parseAttribution(source: string | URLSearchParams): AttributionParams;
+export function getAttributionSnapshot(now?: number): AttributionSnapshot | null;
+export function captureAttribution(source?: string | URLSearchParams, now?: number): void;
+export function readAttribution(source: string | URLSearchParams): AttributionParams;
+export type AttributionContext = { original_landing_page?: string; original_referrer?: string; first_landing_page?: string; first_referrer?: string } & Partial<Record<`first_${keyof AttributionParams}`, string>>;
+export function readAttributionContext(): AttributionContext;

@@ -1,0 +1,17 @@
+import type { AttributionParams } from "../attribution.js";
+export const FUNNEL_DEFINITION: "2026-10-29-first-change-v1";
+export const SCAN_STEP_IDS: readonly ["volume", "category", "markets", "platform", "needs", "contact"];
+export const SUBMIT_ERROR_REASONS: readonly ["validation", "turnstile_missing", "turnstile_expired", "turnstile_error", "network", "timeout", "rejected", "storage_unavailable", "unknown"];
+export type SubmitErrorReason = (typeof SUBMIT_ERROR_REASONS)[number];
+export function routeGroup(value: string): string;
+export function trackEvent(eventName: string, params?: Record<string, string | number | boolean>): void;
+export function trackPageView(path: string, title: string): void;
+export function trackCTAClick(label: string, href: string): void;
+export function trackScanStart(): void;
+export function trackScanStep(step: number, stepTitle: string): void;
+export function trackScanComplete(submissionIdOrAttribution?: string | AttributionParams): void;
+export function trackQuoteFormStart(): void;
+export function trackQuoteFormSubmit(attribution?: AttributionParams): void;
+export function trackQuoteFormSubmitError(): void;
+export function trackEmailClick(): void;
+export function trackPhoneClick(): void;
